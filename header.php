@@ -19,20 +19,6 @@
                             <div class="ht-right_area">
                                 <div class="ht-menu">
                                     <ul>
-                                        <!-- <li><a href="javascript:void(0)">Currency<i class="fa fa-chevron-down"></i></a>
-                                            <ul class="ht-dropdown ht-currency">
-                                                <li><a href="javascript:void(0)">€ EUR</a></li>
-                                                <li class="active"><a href="javascript:void(0)">£ Pound Sterling</a></li>
-                                                <li><a href="javascript:void(0)">$ Us Dollar</a></li>
-                                            </ul>
-                                        </li> 
-                                         <li><a href="javascript:void(0)">Language <i class="fa fa-chevron-down"></i></a>
-                                            <ul class="ht-dropdown">
-                                                <li class="active"><a href="javascript:void(0)"><img src="assets/images/menu/icon/1.jpg" alt="JB's Language Icon">English</a></li>
-                                                <li><a href="javascript:void(0)"><img src="assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Français</a>
-                                                </li>
-                                            </ul>
-                                        </li> -->
                                         <li style="border-left: 1px solid #e5e5e5"><a href="my-account.php">Mi Cuenta<i class="fa fa-chevron-down"></i></a>
                                             <ul class="ht-dropdown ht-my_account">
                                                 <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasRight">Login</a></li>
