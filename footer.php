@@ -148,7 +148,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="copyright">
-                                    <span>Copyright &copy; 2022 <a href="index.html">Hiraola.</a> All rights reserved.</span>
+                                    <span>Copyright &copy; 2022 <a href="index.php">PVSupplies.</a> All rights reserved.</span>
                                 </div>
                             </div>
                         </div>
@@ -201,16 +201,16 @@
                                         {"breakpoint":321, "settings": {"slidesToShow": 2}}
                                     ]'>
                                         <div class="single-slide red">
-                                            <img src="assets/images/single-product/small-size/1.jpg" alt="Hiraola's Product Thumnail">
+                                            <img src="assets/images/single-product/small-size/1.jpg" alt="PVSupplies's Product Thumnail">
                                         </div>
                                         <div class="single-slide orange">
-                                            <img src="assets/images/single-product/small-size/2.jpg" alt="Hiraola's Product Thumnail">
+                                            <img src="assets/images/single-product/small-size/2.jpg" alt="PVSupplies's Product Thumnail">
                                         </div>
                                         <div class="single-slide brown">
-                                            <img src="assets/images/single-product/small-size/3.jpg" alt="Hiraola's Product Thumnail">
+                                            <img src="assets/images/single-product/small-size/3.jpg" alt="PVSupplies's Product Thumnail">
                                         </div>
                                         <div class="single-slide umber">
-                                            <img src="assets/images/single-product/small-size/4.jpg" alt="Hiraola's Product Thumnail">
+                                            <img src="assets/images/single-product/small-size/4.jpg" alt="PVSupplies's Product Thumnail">
                                         </div>
                                     </div>
                                 </div>
@@ -288,9 +288,9 @@
                                     </div>
                                     <div class="hiraola-group_btn">
                                         <ul>
-                                            <li><a href="cart.html" class="add-to_cart">Cart To Cart</a></li>
-                                            <li><a href="cart.html"><i class="ion-android-favorite-outline"></i></a></li>
-                                            <li><a href="cart.html"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                            <li><a href="cart.php" class="add-to_cart">Cart To Cart</a></li>
+                                            <li><a href="cart.php"><i class="ion-android-favorite-outline"></i></a></li>
+                                            <li><a href="cart.php"><i class="ion-ios-shuffle-strong"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="hiraola-tag-line">
