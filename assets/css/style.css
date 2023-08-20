@@ -7592,8 +7592,8 @@ button.li-btn:hover {
 .login-form {
   background-color: #ffffff;
   padding: 30px;
-  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  /* -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1); */
 }
 .login-form .login-title {
   font-size: 20px;

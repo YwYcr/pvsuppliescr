@@ -50,12 +50,11 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <h5 id="offcanvasRightLabel">Login</h5>
-                    <button type="button" class="btn-close text-reset btn-regis-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
+                    <button type="button" class="btn-close text-reset btn-regis-close hiraola-btn-bondi_blue" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
                 </div>
                 <div class="offcanvas-body">
                 <form action="Admin\light\index.html">
                             <div class="login-form">
-                                <h4 class="login-title">Login</h4>
                                 <div class="row">
                                     <div class="col-md-12 col-12">
                                         <label>Correo Electrónico</label>
@@ -71,14 +70,15 @@
                                             <label for="remember_me">Recuerdame</label>
                                         </div>
                                     </div>
-                                    <br><br>
+                                    <br>
                                     <div class="col-md-12 col-12">
                                         <div class="forgotton-password_info">
                                             <a href="#"> Olvido la contraseña?</a>
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="col-md-12">
-                                        <button class="hiraola-login_btn">Login</button>
+                                        <button class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Login</button>
                                     </div>
                                 </div>
                             </div>
@@ -115,8 +115,9 @@
                                         <label>Confirm Password</label>
                                         <input type="password" placeholder="Confirm Password">
                                     </div>
+                                    <br>
                                     <div class="col-12">
-                                        <button class="hiraola-register_btn">Register</button>
+                                        <button class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Register</button>
                                     </div>
                                 </div>
                             </div>
