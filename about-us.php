@@ -45,7 +45,7 @@
 include 'header.php'
 ?>
 
-        <!-- Begin Hiraola's Breadcrumb Area -->
+        <!-- Begin Puerto Viejo Supplies Breadcrumb Area -->
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
@@ -57,14 +57,14 @@ include 'header.php'
                 </div>
             </div>
         </div>
-        <!-- Hiraola's Breadcrumb Area End Here -->
-        <!-- Begin Hiraola's About Us Area -->
+        <!-- Puerto Viejo Supplies Breadcrumb Area End Here -->
+        <!-- Begin Puerto Viejo Supplies About Us Area -->
         <div class="about-us-area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-7 d-flex align-items-center">
                         <div class="overview-content">
-                            <h2>Welcome To <span>Hiraola's</span> Store!</h2>
+                            <h2>Welcome To <span>Puerto Viejo Supplies</span> Store!</h2>
                             <p class="short_desc">We Provide Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                                 Repudiandae nisi fuga facilis, consequuntur, maiores eveniet voluptatum, omnis possimus
                                 temporibus aspernatur nobis animi in exercitationem vitae nulla! Adipisci ullam illum quisquam.
@@ -78,16 +78,16 @@ include 'header.php'
                     <div class="col-lg-6 col-md-5">
                         <div class="overview-img text-center img-hover_effect">
                             <a href="#">
-                                <img class="img-full" src="assets/images/about-us/1.jpg" alt="Hiraola's About Us Image">
+                                <img class="img-full" src="assets/images/about-us/1.jpg" alt="Puerto Viejo Supplies About Us Image">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Hiraola's About Us Area End Here -->
+        <!-- Puerto Viejo Supplies About Us Area End Here -->
 
-        <!-- Begin Hiraola's Project Countdown Area -->
+        <!-- Begin Puerto Viejo Supplies Project Countdown Area -->
         <div class="project-count-area">
             <div class="container">
                 <div class="row">
@@ -138,9 +138,9 @@ include 'header.php'
                 </div>
             </div>
         </div>
-        <!-- Hiraola's Project Countdown Area End Here -->
+        <!-- Puerto Viejo Supplies Project Countdown Area End Here -->
 
-        <!-- Begin Hiraola's Team Area -->
+        <!-- Begin Puerto Viejo Supplies Team Area -->
         <div class="team-area">
             <div class="container">
                 <div class="row">
@@ -326,7 +326,7 @@ include 'header.php'
                 </div>
             </div>
         </div>
-        <!-- Hiraola's Team Area End Here -->
+        <!-- Puerto Viejo Supplies Team Area End Here -->
 
         
 <?php
