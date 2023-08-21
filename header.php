@@ -39,7 +39,7 @@
                     <button type="button" class="btn-close text-reset btn-regis-close hiraola-btn-bondi_blue" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
                 </div>
                 <div class="offcanvas-body">
-                <form action="Admin\light\index.html">
+                <form action="Admin\light\index.php">
                             <div class="login-form">
                                 <div class="row">
                                     <div class="col-md-12 col-12">
