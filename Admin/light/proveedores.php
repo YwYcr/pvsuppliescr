@@ -40,7 +40,55 @@
                         </div>
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-hover js-basic-example dataTable table-custom spacing5">
+                            <?php
+                            include '../../bd_conn.php';
+
+                            $consulta = "SELECT * FROM SUPPLIER";
+                            $result = $con->query($consulta);
+
+
+                            if ($result->num_rows>0){
+                                echo "<table class='table table-hover js-basic-example dataTable table-custom spacing5>'";
+                                echo "<tr><th>Num de Proveedor</th><th>Nombre</th><th>CedJuridica</th><th>Telefono</th><th>POC</th><th>Email</th><th>Direccion</th><th>Acciones</th></tr>";
+
+                                while ($row = $result->fetch_assoc()){
+                                    echo "<tr>";
+                                    echo "<td>" . $row['IDSUPPLIER'] . "</td>";
+                                    $supplierID= $row['IDSUPPLIER'];
+                                    echo "<td>" . $row['NAME'] . "</td>";
+                                    echo "<td>" . $row['SOCIALID'] . "</td>";
+                                    echo "<td>" . $row['PHONE'] . "</td>";                              
+                                    echo "<td>" . $row['POC'] . "</td>";
+                                    echo "<td>" . $row['EMAIL'] . "</td>";
+                                    echo "<td>" . $row['ADDRESS'] . "</td>";
+                                    echo "<td>
+
+                                    <button type='button' class='btn btn-info mb-2' data-bs-toggle='modal' data-bs-target='#info' data-bs-id='$supplierID'> 
+                                    <i class='fa fa-info-circle'></i>
+                                    <span>Ver</span></button>
+                                    
+                                    <button type='button' class='btn btn-editar btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$supplierID' data-bs-target='#edit' >
+                                    <i class='fa fa-pencil'></i>
+                                    <span>Editar</span></button>
+                                  
+                                    <button type='button' class='btn btn-borrar btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$supplierID'>
+                                    <i class='fa fa-trash-o'></i> 
+                                    <span>Eliminar</span></button>
+                             
+                                    </td>";
+
+                                }
+                                echo "</table>";
+                            }else {
+                                echo "No hay proveedores";
+                            }                            
+                            include '../../bd_disconn.php'
+                            ?>
+
+
+
+
+                                <!-- <table class="table table-hover js-basic-example dataTable table-custom spacing5">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -52,17 +100,6 @@
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
                                             <td>Tiger Nixon</td>
@@ -1148,7 +1185,7 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table> -->
                             </div>
                         </div>
                     </div>

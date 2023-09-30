@@ -60,55 +60,52 @@ include 'header.php'
         <!-- Begin Contact Main Page Area -->
         <div class="contact-main-page">
             <div class="container">
-                <div id="google-map"></div>
-            </div>
-            <div class="container">
                 <div class="row">
                     <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                         <div class="contact-page-side-content">
-                            <h3 class="contact-page-title">Contact Us</h3>
-                            <p class="contact-page-message">Claritas est etiam processus dynamicus, qui sequitur
-                                mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum
-                                claram anteposuerit litterarum formas human.</p>
+                            <h3 class="contact-page-title">Contactanos</h3>
+                            <p class="contact-page-message">Ponte en contacto con nosotros para lo que sea que necesites, no importa si 
+                                eres un hotel 5 estrellas o estas buscando renovar la ropa de cama para tu familia. Este es el lugar indicado.
+                            </p>
                             <div class="single-contact-block">
-                                <h4><i class="fa fa-fax"></i> Address</h4>
-                                <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                                <h4><i class="fa fa-fax"></i> Direccion</h4>
+                                <p>Nos localizamos en Alajuela - Costa Rica</p>
+                                <p>Hacemos envios a todo Costa Rica e internacional</p>
                             </div>
                             <div class="single-contact-block">
-                                <h4><i class="fa fa-phone"></i> Phone</h4>
-                                <p>Mobile: (08) 123 456 789</p>
-                                <p>Hotline: 1009 678 456</p>
+                                <h4><i class="fa fa-phone"></i> Telefono</h4>
+                                <p>Linea oficial: +506 8888 8888</p>
+                                
                             </div>
                             <div class="single-contact-block last-child">
-                                <h4><i class="fa fa-envelope-o"></i> Email</h4>
-                                <p>yourmail@domain.com</p>
-                                <p>support@hastech.company</p>
+                                <h4><i class="fa fa-envelope-o"></i> Correo</h4>
+                                <p>admin@pvsuppliescr.com</p>                               
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                         <div class="contact-form-content">
-                            <h3 class="contact-page-title">Tell Us Your Message</h3>
+                            <h3 class="contact-page-title">Cuentanos que necesitas</h3>
                             <div class="contact-form">
                                 <form id="contact-form" action="https://whizthemes.com/mail-php/mamunur/hiraola/hiraola.php">
                                     <div class="form-group">
-                                        <label>Your Name <span class="required">*</span></label>
-                                        <input type="text" name="con_name" required>
+                                        <label>Nombre <span class="required">*</span></label>
+                                        <input  id="txtNombre" type="text" name="txtNombre" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Your Email <span class="required">*</span></label>
-                                        <input type="email" name="con_email" required>
+                                        <label>Correo Electronico<span class="required">*</span></label>
+                                        <input  id="txtEmail" type="email" name="txtEmail" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Subject</label>
-                                        <input type="text" name="con_subject">
+                                        <label>Asunto</label>
+                                        <input id="txtAsunto" type="text" name="txtAsunto">
                                     </div>
                                     <div class="form-group form-group-2">
-                                        <label>Your Message</label>
-                                        <textarea name="con_message"></textarea>
+                                        <label>Mensaje</label>
+                                        <textarea id="txtMensaje" name="txtMensaje"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" value="submit" id="submit" class="hiraola-contact-form_btn" name="submit">send</button>
+                                        <button type="submit" value="submit" id="btnEnviarMensaje" class="hiraola-contact-form_btn" name="submit">Enviar</button>
                                     </div>
                                 </form>
                                 <p class="form-message mt-3 mb-0"></p>
@@ -169,6 +166,42 @@ include 'footer.php'
     <!-- <script src="assets/js/main.min.js"></script> -->
     <!-- Begin Hiraola's Google Map Area -->
     <script src="https://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry&amp;v=3.22&amp;key=AIzaSyChs2QWiAhnzz0a4OEhzqCXwx_qA9ST_lE"></script>
+
+    <script>
+    $(document).ready(function() {
+        $("#btnEnviarMensaje").click(function() {
+        var nombre = $("#txtNombre").val();
+        var email = $("#txtEmail").val();
+        var asunto = $("#txtAsunto").val();
+        var mensaje = $("#txtMensaje").val();
+
+        console.log("Email: " + email);
+
+        var data = {
+            nombre: nombre,
+            email: email,
+            asunto: asunto,
+            mensaje: mensaje,
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "enviarMensaje.php", 
+            data: data,
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+        });
+    });
+
+ </script>
+
 
     <script>
         // When the window has finished loading create our google map below
