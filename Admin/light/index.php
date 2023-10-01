@@ -318,6 +318,148 @@
         </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Modal info Contactos-->
+        <div class="modal fade" id="infoContacto" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del contacto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="infoContactoForm">
+                        <div class="mb-3">                                
+                                <input type="hidden" class="form-control" id="infoContactoID" name="infoContactoID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoContactoName" class="form-label">Nombre Contacto</label>
+                                <input type="text" class="form-control" id="infoContactoName" name="infoContactoName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoContactoEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="infoContactoEmail" name="infoContactoEmail" required>
+                            </div>                          
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-type="success">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <!-- Modal Create Contactos -->
+        <div class="modal fade" id="createContacto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Crear usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createContactoForm">
+                            <div class="mb-3">
+                                <label for="createContactoName" class="form-label">Nombre Contacto</label>
+                                <input type="text" class="form-control" id="createContactoName" name="createContactoName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createContactoEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="createContactoEmail" name="createContactoEmail" required>
+                            </div>                           
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="createContactoButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Modal Edit Contactos -->
+
+        <div class="modal fade" id="editContacto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modificar Contacto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editContactoForm">
+                        <div class="mb-3">                                
+                                <input type="hidden" class="form-control" id="editContactoID" name="editContactoID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editContactoName" class="form-label">Nombre Contacto</label>
+                                <input type="text" class="form-control" id="editContactoName" name="editContactoName" required>
+                            </div>
+                        <div class="mb-3">
+                                <label for="editContactoEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="editContactoEmail" name="editContactoEmail" required>
+                            </div>
+
+                            
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-actualizarContacto btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     <!-- Javascript -->
@@ -331,6 +473,16 @@
     <script src="../assets/vendor/sweetalert/sweetalert.min.js"></script><!-- SweetAlert Plugin Js -->
 
 
+
+
+
+
+
+
+
+
+    <!-- USERS -->
+    <!-- Script para ver usuarios -->
     <!-- Script para ver usuarios -->
     <script>
     $(document).ready(function() {
@@ -475,12 +627,6 @@
     });
  </script>
 
-
-
-
-
-
-
     <!-- Script para borrar usuarios -->
     <script>
     $(document).ready(function() {
@@ -508,13 +654,8 @@
 
 
 
-
-
-
-
-
-
-    
+    <!-- PROVEEDORES -->
+    <!-- Script para ver proveedores -->
     <!-- Script para ver proveedores -->
     <script>
     $(document).ready(function() {
@@ -690,6 +831,159 @@
 
 
 
+
+<!-- Contactos -->
+<!-- Script para ver contactos -->
+<!-- Script para ver contactos -->
+<script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-infoContacto", function(){
+            var contactID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "GET",
+            url: "../../getContacto.php", 
+            data: { contactID: contactID },
+            dataType: "json",
+            success: function(response) {
+                               
+                $("#infoContactoName").val(response.NAME);
+                $("#infoContactoEmail").val(response.EMAIL);
+
+                // $("#info").modal("show");
+                
+                // console.log("Email: " + response.EMAIL);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+    </script>
+
+    <!-- Script para agregar contactos nuevos -->
+    <script>
+    $(document).ready(function() {
+        $("#createContactoButton").click(function() {
+        var nombre = $("#createContactoName").val();
+        var email = $("#createContactoEmail").val();
+        
+        var data = {
+            nombre: nombre,
+            email: email,           
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "../../crearContactoModal.php", 
+            data: data,
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+        });
+    });
+
+ </script>
+  <!-- Script para traer 1 contacto a modificar  -->
+  <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-editarContacto", function(){
+            var contactID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "GET",
+            url: "../../getContacto.php", 
+            data: { contactID: contactID },
+            dataType: "json",
+            success: function(response) {
+                $("#editContactoID").val(response.IDCONTACT);
+                $("#editContactoName").val(response.NAME);
+                $("#editContactoEmail").val(response.EMAIL);
+                
+                // $("#info").modal("show");
+                
+                console.log("Email: " + response.EMAIL);
+                console.log("ID a modificar: " + response.IDCONTACT);
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+ </script>
+
+
+
+
+ <!-- Script para actualizar contactos  -->
+ <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-actualizarContacto", function(){
+            var contactID = $("#editContactoID").val();
+            var nombre = $("#editContactoName").val();
+            var email = $("#editContactoEmail").val();
+            
+
+
+            var data = {
+            contactID: contactID,  
+            nombre: nombre,  
+            email: email,     
+            };
+
+
+            $.ajax({
+            type: "POST",
+            url: "../../updateContacto.php", 
+            data: data,
+            success: function(response){
+                console.log("Email enviado: " + email);
+                console.log("ID enviado: " + contactID);
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+ </script>
+
+
+
+
+
+
+
+    <!-- Script para borrar contactos -->
+    <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-borrarContacto", function(){
+            var contactID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "POST",
+            url: "../../borrarContacto.php", 
+            data: { contactID: contactID },
+            success: function(response) {
+                console.log("contacto eliminado: " + contactID);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+    </script>
 
 
 

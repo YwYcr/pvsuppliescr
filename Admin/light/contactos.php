@@ -9,7 +9,7 @@
                            </ol>
                     </nav>
                 </div>            
-                <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#edit">
+                <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createContacto">
                     <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="" ><i class="icon-user-follow"></i><span>  Crear Contacto</span></a>
                 </div>
             </div>
@@ -48,27 +48,28 @@
 
                             if ($result->num_rows>0){
                                 echo "<table class='table table-hover js-basic-example dataTable table-custom spacing5>'";
-                                echo "<tr><th>Num de Contacto</th><th>Email</th><th>Asunto</th><th>Mensaje</th><th>Acciones</th></tr>";
+                                echo "<tr><th>Num de Contacto</th><th>Nombre</th><th>Email</th><th>Asunto</th><th>Mensaje</th><th>Acciones</th></tr>";
 
                                 while ($row = $result->fetch_assoc()){
                                     echo "<tr>";
                                     echo "<td>" . $row['IDCONTACT'] . "</td>";
                                     $contactID= $row['IDCONTACT'];
+                                    echo "<td>" . $row['NAME'] . "</td>";
                                     echo "<td>" . $row['EMAIL'] . "</td>";
                                     echo "<td>" . $row['SUBJECT'] . "</td>";
                                     echo "<td>" . $row['MESSAGE'] . "</td>";                              
 
                                     echo "<td>
 
-                                    <button type='button' class='btn btn-info mb-2' data-bs-toggle='modal' data-bs-target='#info' data-bs-id='$contactID'> 
+                                    <button type='button' class='btn btn-info btn-infoContacto mb-2' data-bs-toggle='modal' data-bs-target='#infoContacto' data-bs-id='$contactID'> 
                                     <i class='fa fa-info-circle'></i>
                                     <span>Ver</span></button>
                                     
-                                    <button type='button' class='btn btn-editar btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$contactID' data-bs-target='#edit' >
+                                    <button type='button' class='btn btn-editar btn-editarContacto btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$contactID' data-bs-target='#editContacto' >
                                     <i class='fa fa-pencil'></i>
                                     <span>Editar</span></button>
                                   
-                                    <button type='button' class='btn btn-borrar btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$contactID'>
+                                    <button type='button' class='btn btn-borrar btn-borrarContacto btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$contactID'>
                                     <i class='fa fa-trash-o'></i> 
                                     <span>Eliminar</span></button>
                              
