@@ -2,6 +2,7 @@ console.log("Hello, world!");
 
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("register-form");
+
     registerForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const firstName = document.getElementById("name").value;
@@ -39,6 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Las claves son diferentes. Intente de nuevo");
             return;
         }
+
+        alert("Registration successful! You can now log in.");
+
+        console.log("DATOS:");
+        console.log("Nombre:", firstName);
+        console.log("Apellido:", lastName);
+        console.log("Email:", email);
+        console.log("Clave:", password);
 
         // Hash clave con bcrypt.js -- TODO
         // const saltRounds = 10;
