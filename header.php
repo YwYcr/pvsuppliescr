@@ -1,6 +1,6 @@
 <!-- Begin Hiraola's Header Main Area -->
 <header class="header-main_area">
-<script src="assets/js/validations.js"></script>
+<script src="assets/js/FormRegistro.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>
             <div class="header-top_area">
                 <div class="container">

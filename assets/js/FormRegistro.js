@@ -1,5 +1,7 @@
 console.log("Hello, world!");
 
+//JS para validar los datos del form y hacer el envio a la BD usando AJAX
+
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("register-form");
 
@@ -41,6 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        var data = {
+            nombre: firstName,
+            primerApellido: lastName,
+            email: email,
+            password: password
+        };
+
         alert("Registration successful! You can now log in.");
 
         console.log("DATOS:");
@@ -57,20 +66,20 @@ document.addEventListener("DOMContentLoaded", function () {
         //         return;
         //     }
 
-            // AJAX para guardar data
-            // $.ajax({
-            //     type: "POST",
-            //     url: "save_user.php",
-            //     data: {
-            //         firstName: firstName,
-            //         lastName: lastName,
-            //         email: email,
-            //         hashedPassword: hash, // Use the hashed password
-            //     },
-            //     success: function (response) {
-            //         // Handle the response from the server (e.g., success or error message)
-            //     },
-            // });
+        // AJAX para guardar datos
+        $.ajax({
+            type: "POST",
+            url: "../../FormRegistro.php",
+            data: data,
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
         // });
     });
 });
