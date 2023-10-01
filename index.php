@@ -119,6 +119,7 @@ include 'footer.php'
 
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+
 <!-- <script src="assets/js/main.min.js"></script> -->
 <script>
     $(document).ready(function() {

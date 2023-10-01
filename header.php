@@ -1,5 +1,7 @@
 <!-- Begin Hiraola's Header Main Area -->
 <header class="header-main_area">
+<script src="assets/js/validations.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>
             <div class="header-top_area">
                 <div class="container">
                     <div class="row">
@@ -74,32 +76,32 @@
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegister" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
-                    <h5 id="offcanvasRightLabel">Register</h5>
+                    <h5 id="offcanvasRightLabel">Registro</h5>
                     <button type="button" class="btn-close text-reset btn-regis-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
                 </div>
                 <div class="offcanvas-body">
-                <form action="#">
+                <form action="#" id="register-form">
                             <div class="login-form">
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb--20">
-                                        <label>First Name</label>
-                                        <input type="text" placeholder="First Name">
+                                        <label>Nombre:</label>
+                                        <input type="text" id="name" placeholder="Nombre" required>
                                     </div>
                                     <div class="col-md-6 col-12 mb--20">
-                                        <label>Last Name</label>
-                                        <input type="text" placeholder="Last Name">
+                                        <label>Apellido:</label>
+                                        <input type="text" id="flastname" placeholder="Apellido" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label>Email Address*</label>
-                                        <input type="email" placeholder="Email Address">
+                                        <label>Correo electrónico:</label>
+                                        <input type="email" id="email" placeholder="Correo electronico" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Password</label>
-                                        <input type="password" placeholder="Password">
+                                        <label>Contraseña:</label>
+                                        <input type="password" id="password" placeholder="Password" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Confirm Password</label>
-                                        <input type="password" placeholder="Confirm Password">
+                                        <label>Confirme Contraseña</label>
+                                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
                                     </div>
                                     <br>
                                     <div class="col-12">
@@ -602,5 +604,6 @@
                     </div>
                 </div>
             </div>
+            
         </header>
         <!-- Hiraola's Header Main Area End Here -->
