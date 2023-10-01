@@ -64,7 +64,7 @@
 
         </div>
 
-        <!-- Modal info-->
+        <!-- Modal info Users -->
         <div class="modal fade" id="info" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -73,9 +73,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="infoUserForm">
+                        <form id="infoUserForm"> 
                         <div class="mb-3">                                
-                                <input type="hidden " class="form-control" id="infoUserID" name="infoUserID" required>
+                                <input type="hidden" class="form-control" id="infoUserID" name="infoUserID" required>
                             </div>
 
                             <div class="mb-3">
@@ -107,52 +107,9 @@
                 </div>
             </div>
         </div>
+        <!-- Modal Edit User -->
 
-        <!-- Modal Create -->
-        <div class="modal fade" id="create" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Crear usuario</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="createUserForm">
-                        <div class="mb-3">
-                                <label for="createUserEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="createUserEmail" name="createUserEmail"  required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="createUserName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="createUserName" name="createUserName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="createUserFLASTNAME" class="form-label"> Primer apellido </label>
-                                <input type="text" class="form-control" id="createUserFLASTNAME" name="createUserFLASTNAME" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="createUserSLASTNAME" class="form-label"> Segundo apellido </label>
-                                <input type="text" class="form-control" id="createUserSLASTNAME" name="createUserSLASTNAME" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="createUserPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="createUserPassword" name="createUserPassword"  autocomplete="on" required>
-                            </div>
-                        </form>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button id="crearUsuarioButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal Edit -->
-
-        <div class="modal fade" id="edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="editUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -162,7 +119,7 @@
                     <div class="modal-body">
                         <form id="editUserForm">
                         <div class="mb-3">                                
-                                <input type="hidden " class="form-control" id="editUserID" name="editUserID" required>
+                                <input type="hidden" class="form-control" id="editUserID" name="editUserID" required>
                             </div>
                         <div class="mb-3">
                                 <label for="editUserEmail" class="form-label">Email</label>
@@ -189,7 +146,171 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button class="btn btn-actualizar btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                        <button class="btn btn-actualizarUser btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Modal info PROVEEDORES-->
+        <div class="modal fade" id="infoProveedor" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del proveedor</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="infoProveedorForm">
+                        <div class="mb-3">                                
+                                <input type="hidden" class="form-control" id="infoProveedorID" name="infoProveedorID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorName" class="form-label">Nombre Proveedor</label>
+                                <input type="text" class="form-control" id="infoProveedorName" name="infoProveedorName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="infoProveedorEmail" name="infoProveedorEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorTelefono" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="infoProveedorTelefono" name="infoProveedorTelefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorPOC" class="form-label">POC</label>
+                                <input type="text" class="form-control" id="infoProveedorPOC" name="infoProveedorPOC" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorCedJuridica" class="form-label">Ced. Juridica</label>
+                                <input type="text" class="form-control" id="infoProveedorCedJuridica" name="infoProveedorCedJuridica" required>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-type="success">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <!-- Modal Create Proveedor -->
+        <div class="modal fade" id="createProveedor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Crear usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createProveedorForm">
+                            <div class="mb-3">
+                                <label for="createProveedorName" class="form-label">Nombre Proveedor</label>
+                                <input type="text" class="form-control" id="createProveedorName" name="createProveedorName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProveedorEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="createProveedorEmail" name="createProveedorEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProveedorTelefono" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="createProveedorTelefono" name="createProveedorTelefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProveedorPOC" class="form-label">POC</label>
+                                <input type="text" class="form-control" id="createProveedorPOC" name="createProveedorPOC" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProveedorCedJuridica" class="form-label">Ced. Juridica</label>
+                                <input type="text" class="form-control" id="createProveedorCedJuridica" name="createProveedorCedJuridica" required>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="createProveedorButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Modal Edit Proveedor -->
+
+        <div class="modal fade" id="editProveedor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modificar Proveedor</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProveedorForm">
+                        <div class="mb-3">                                
+                                <input type="hidden" class="form-control" id="editProveedorID" name="editProveedorID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProveedorName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editProveedorName" name="editProveedorName" required>
+                            </div>
+                        <div class="mb-3">
+                                <label for="editProveedorEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="editProveedorEmail" name="editProveedorEmail" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editProveedorTelefono" class="form-label"> Telefono </label>
+                                <input type="text" class="form-control" id="editProveedorTelefono" name="editProveedorTelefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProveedorPOC" class="form-label"> POC </label>
+                                <input type="text" class="form-control" id="editProveedorPOC" name="editProveedorPOC" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProveedorCedJuridica" class="form-label">Ced. Juridica</label>
+                                <input type="text" class="form-control" id="editProveedorCedJuridica" name="editProveedorCedJuridica" autocomplete="on" required>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-actualizarProveedor btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
                     
                     </div>
                 </div>
@@ -213,7 +334,7 @@
     <!-- Script para ver usuarios -->
     <script>
     $(document).ready(function() {
-        $(document).on("click", ".btn-info", function(){
+        $(document).on("click", ".btn-infoUsuarios", function(){
             var userID = $(this).data("bs-id");
 
             $.ajax({
@@ -281,11 +402,10 @@
     });
 
  </script>
-
-    <!-- Script para modificar usuarios  -->
-    <script>
+  <!-- Script para traer 1 usuario a modificar  -->
+  <script>
     $(document).ready(function() {
-        $(document).on("click", ".btn-editar", function(){
+        $(document).on("click", ".btn-editarUser", function(){
             var userID = $(this).data("bs-id");
 
             $.ajax({
@@ -314,10 +434,13 @@
     });
  </script>
 
+
+
+
  <!-- Script para actualizar usuarios  -->
-<script>
+ <script>
     $(document).ready(function() {
-        $(document).on("click", ".btn-actualizar", function(){
+        $(document).on("click", ".btn-actualizarUser", function(){
             var userID = $("#editUserID").val();
             var email = $("#editUserEmail").val();
             var nombre = $("#editUserName").val();
@@ -351,10 +474,17 @@
         });
     });
  </script>
+
+
+
+
+
+
+
     <!-- Script para borrar usuarios -->
     <script>
     $(document).ready(function() {
-        $(document).on("click", ".btn-borrar", function(){
+        $(document).on("click", ".btn-borrarUser", function(){
             var userID = $(this).data("bs-id");
 
             $.ajax({
@@ -371,6 +501,196 @@
         });
     });
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- Script para ver proveedores -->
+    <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-infoProveedor", function(){
+            var proveedorID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "GET",
+            url: "../../getProveedor.php", 
+            data: { proveedorID: proveedorID },
+            dataType: "json",
+            success: function(response) {
+                
+                $("#infoProveedorName").val(response.NAME);
+                $("#infoProveedorEmail").val(response.EMAIL);
+                $("#infoProveedorTelefono").val(response.PHONE);
+                $("#infoProveedorPOC").val(response.POC);
+                $("#infoProveedorCedJuridica").val(response.SOCIALID);
+                // $("#info").modal("show");
+                
+                // console.log("Email: " + response.EMAIL);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+    </script>
+
+
+
+
+
+
+  <!-- Script para agregar proveedores nuevos -->
+  <script>
+    $(document).ready(function() {
+        $("#createProveedorButton").click(function() {
+        var nombre = $("#createProveedorName").val();
+        var email = $("#createProveedorEmail").val();
+        var telefono = $("#createProveedorTelefono").val();
+        var poc = $("#createProveedorPOC").val();
+        var cedJuridica = $("#createProveedorCedJuridica").val();
+
+        // console.log("Email: " + email);
+        // console.log("Nombre: " + nombre);
+        // console.log("Primer Apellido: " + primerApellido);
+        // console.log("Segundo Apellido: " + segundoApellido);
+        // console.log("Contraseña: " + password);
+
+        var data = {
+            nombre: nombre,
+            email: email,
+            telefono: telefono,
+            poc: poc,
+            cedJuridica: cedJuridica
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "../../crearProveedor.php", 
+            data: data,
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+        });
+    });
+
+ </script>
+
+  
+
+    <!-- Script para traer 1 proveedor a modificar  -->
+    <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-editarProveedor", function(){
+            var proveedorID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "GET",
+            url: "../../getProveedor.php", 
+            data: { proveedorID: proveedorID },
+            dataType: "json",
+            success: function(response) {
+                $("#editProveedorID").val(response.IDSUPPLIER);
+                $("#editProveedorEmail").val(response.EMAIL);
+                $("#editProveedorName").val(response.NAME);
+                $("#editProveedorTelefono").val(response.PHONE);
+                $("#editProveedorPOC").val(response.POC);
+                $("#editProveedorCedJuridica").val(response.SOCIALID);
+                // $("#info").modal("show");
+                
+                console.log("Email: " + response.EMAIL);
+                console.log("ID a modificar: " + response.IDSUPPLIER);
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+ </script>
+
+ <!-- Script para actualizar proveedor  -->
+ <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-actualizarProveedor", function(){
+            var proveedorID = $("#editProveedorID").val();
+            var email = $("#editProveedorEmail").val();
+            var nombre = $("#editProveedorName").val();
+            var telefono = $("#editProveedorTelefono").val();
+            var poc = $("#editProveedorPOC").val();
+            var cedJuridica = $("#editProveedorCedJuridica").val();
+
+            var data = {
+            proveedorID: proveedorID,    
+            email: email,
+            nombre: nombre,
+            telefono: telefono,
+            poc: poc,
+            cedJuridica: cedJuridica
+            };
+
+
+            $.ajax({
+            type: "POST",
+            url: "../../updateProveedor.php", 
+            data: data,
+            success: function(response){
+                
+                console.log("ID enviado: " + proveedorID);
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+ </script>
+
+
+
+    <!-- Script para borrar provveedor -->
+    <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-borrarProveedor", function(){
+            var proveedorID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "POST",
+            url: "../../borrarProveedor.php", 
+            data: { proveedorID: proveedorID },
+            success: function(response) {
+                console.log("Proveedor eliminado: " + proveedorID);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+    </script>
+
+
+
+
+
 
 
 

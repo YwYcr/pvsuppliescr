@@ -10,7 +10,7 @@
                            </ol>
                     </nav>
                 </div>            
-                <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#create">
+                <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createUser">
                     <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="" ><i class="icon-user-follow"></i><span>  Crear Usuario</span></a>
                 </div>
             </div>
@@ -58,15 +58,15 @@
                                     echo "<td>" . $row['EMAIL'] . "</td>";
                                     echo "<td>
 
-                                    <button type='button' class='btn btn-info mb-2' data-bs-toggle='modal' data-bs-target='#info' data-bs-id='$userId'> 
+                                    <button type='button' class='btn btn-info btn-infoUsuarios  mb-2' data-bs-toggle='modal' data-bs-target='#info' data-bs-id='$userId'> 
                                     <i class='fa fa-info-circle'></i>
                                     <span>Ver</span></button>
                                     
-                                    <button type='button' class='btn btn-editar btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$userId' data-bs-target='#edit' >
+                                    <button type='button' class='btn btn-editar btn-editarUser btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$userId' data-bs-target='#editUser' >
                                     <i class='fa fa-pencil'></i>
                                     <span>Editar</span></button>
                                   
-                                    <button type='button' class='btn btn-borrar btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$userId'>
+                                    <button type='button' class='btn btn-borrar btn-borrarUser btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$userId'>
                                     <i class='fa fa-trash-o'></i> 
                                     <span>Eliminar</span></button>
                              

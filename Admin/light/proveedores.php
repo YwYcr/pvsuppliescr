@@ -10,7 +10,7 @@
                            </ol>
                     </nav>
                 </div>            
-                <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#edit">
+                <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createProveedor">
                     <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="" ><i class="icon-user-follow"></i><span>  Crear Proveedor</span></a>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                                 while ($row = $result->fetch_assoc()){
                                     echo "<tr>";
                                     echo "<td>" . $row['IDSUPPLIER'] . "</td>";
-                                    $supplierID= $row['IDSUPPLIER'];
+                                    $proveedorID= $row['IDSUPPLIER'];
                                     echo "<td>" . $row['NAME'] . "</td>";
                                     echo "<td>" . $row['SOCIALID'] . "</td>";
                                     echo "<td>" . $row['PHONE'] . "</td>";                              
@@ -63,15 +63,15 @@
                                     echo "<td>" . $row['ADDRESS'] . "</td>";
                                     echo "<td>
 
-                                    <button type='button' class='btn btn-info mb-2' data-bs-toggle='modal' data-bs-target='#info' data-bs-id='$supplierID'> 
+                                    <button type='button' class='btn btn-info btn-infoProveedor mb-2' data-bs-toggle='modal' data-bs-target='#infoProveedor' data-bs-id='$proveedorID'> 
                                     <i class='fa fa-info-circle'></i>
                                     <span>Ver</span></button>
                                     
-                                    <button type='button' class='btn btn-editar btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$supplierID' data-bs-target='#edit' >
+                                    <button type='button' class='btn btn-editarProveedor btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$proveedorID' data-bs-target='#editProveedor' >
                                     <i class='fa fa-pencil'></i>
                                     <span>Editar</span></button>
                                   
-                                    <button type='button' class='btn btn-borrar btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$supplierID'>
+                                    <button type='button' class='btn btn-borrarProveedor btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$proveedorID'>
                                     <i class='fa fa-trash-o'></i> 
                                     <span>Eliminar</span></button>
                              
