@@ -42,6 +42,8 @@
 
 <body class="theme-blue">
 
+
+
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -615,6 +617,9 @@
             url: "../../updateUsuario.php", 
             data: data,
             success: function(response){
+                // window.location.href = "usuarios.php";
+                // href="#" data-page="usuarios";
+                $("#usuarios-link").click();
                 console.log("Email enviado: " + email);
                 console.log("ID enviado: " + userID);
 

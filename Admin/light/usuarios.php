@@ -47,7 +47,7 @@
 
 
                             if ($result->num_rows>0){
-                                echo "<table class='table table-hover js-basic-example dataTable table-custom spacing5>'";
+                                echo "<table  class='table table-hover js-basic-example dataTable table-custom spacing5>'";
                                 echo "<tr><th>Num de Usuario</th><th>Nombre</th><th>Email</th><th>Acciones</th></tr>";
 
                                 while ($row = $result->fetch_assoc()){
