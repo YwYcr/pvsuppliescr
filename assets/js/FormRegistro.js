@@ -7,19 +7,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     registerForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        const firstName = document.getElementById("name").value;
-        const lastName = document.getElementById("flastname").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
+        var firstName = document.getElementById("name").value;
+        var lastName = document.getElementById("flastname").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
 
-        // Validation functions
+        // Funciones de validaciones
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
         function isValidName(name) {
             return /^[A-Za-z]+$/.test(name);
+        }
+
+        function isValidPassword(password) {
+            // Clave 8 caracteres minimo, minimo 1 # y 1 mayuscula
+            const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+            return regex.test(password);
         }
 
         // Perform validations
@@ -38,8 +44,15 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         if (password !== confirmPassword) {
             alert("Las claves son diferentes. Intente de nuevo");
+            return;
+        }
+
+        // Validate the password
+        if (!isValidPassword(password)) {
+            alert("La clave debe ser al menos 8 caracteres. Debe contener al menos 1 número y una letra mayúscula.");
             return;
         }
 
@@ -50,13 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             password: password
         };
 
-        alert("Registration successful! You can now log in.");
-
-        console.log("DATOS:");
-        console.log("Nombre:", firstName);
-        console.log("Apellido:", lastName);
-        console.log("Email:", email);
-        console.log("Clave:", password);
+        console.log("VAR DATA:", data);
 
         // Hash clave con bcrypt.js -- TODO
         // const saltRounds = 10;
@@ -78,8 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
             error: function(xhr, status, error) {
                 // Manejar errores de la solicitud AJAX
                 console.error(error);
-            }
+            }            
         });
-        // });
+
+        // alert("Registro exitoso! Revise su correo para confirmar su cuenta.");
     });
 });

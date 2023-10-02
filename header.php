@@ -1,7 +1,5 @@
 <!-- Begin Hiraola's Header Main Area -->
 <header class="header-main_area">
-<script src="assets/js/FormRegistro.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>
             <div class="header-top_area">
                 <div class="container">
                     <div class="row">
@@ -604,6 +602,7 @@
                     </div>
                 </div>
             </div>
-            
+            <!-- <script src="assets/js/FormRegistro.js"></script> -->
+            <script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>    
         </header>
         <!-- Hiraola's Header Main Area End Here -->
