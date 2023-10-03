@@ -82,8 +82,8 @@
                             <div class="login-form">
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb--20">
-                                        <label>First Name</label>
-                                        <input type="text" placeholder="First Name">
+                                        <label for="registerUserName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="registerUserName" name="registerUserName" required placeholder="First Name">
                                     </div>
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>Last Name</label>
@@ -495,7 +495,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="login-register.php">
+                                            <a href="login-.php">
                                                 <span class="mm-text">Login | Register</span>
                                             </a>
                                         </li>

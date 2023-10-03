@@ -58,7 +58,7 @@
                                     echo "<td>" . $row['EMAIL'] . "</td>";
                                     echo "<td>
 
-                                    <button type='button' class='btn btn-info btn-infoUsuarios  mb-2' data-bs-toggle='modal' data-bs-target='#info' data-bs-id='$userId'> 
+                                    <button type='button' class='btn btn-info btn-infoUsuarios  mb-2' data-bs-toggle='modal' data-bs-target='#infoUser' data-bs-id='$userId'> 
                                     <i class='fa fa-info-circle'></i>
                                     <span>Ver</span></button>
                                     

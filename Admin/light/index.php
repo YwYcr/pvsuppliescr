@@ -67,7 +67,7 @@
         </div>
 
         <!-- Modal info Users -->
-        <div class="modal fade" id="info" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="infoUser" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -149,6 +149,49 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button class="btn btn-actualizarUser btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Create Users -->
+        <div class="modal fade" id="createUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Crear usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createContactoForm">
+                        <div class="mb-3">
+                                <label for="createUserEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="createUserEmail" name="createUserEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="createUserName" name="createUserName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserFLASTNAME" class="form-label"> Primer apellido </label>
+                                <input type="text" class="form-control" id="createUserFLASTNAME" name="createUserFLASTNAME" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserSLASTNAME" class="form-label"> Segundo apellido </label>
+                                <input type="text" class="form-control" id="createUserSLASTNAME" name="createUserSLASTNAME" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="createUserPassword" name="createUserPassword" autocomplete="on" required>
+                            </div>                           
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="crearUsuarioButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
                     
                     </div>
                 </div>
