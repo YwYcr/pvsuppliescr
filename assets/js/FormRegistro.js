@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // AJAX para guardar datos
         $.ajax({
             type: "POST",
-            url: "../../FormRegistro.php",
+            url: "FormRegistro.php",
             data: data,
             success: function(response) {
                 // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
