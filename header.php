@@ -83,11 +83,11 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>Nombre:</label>
-                                        <input type="text" id="name" placeholder="Nombre" required>
+                                        <input type="text" id="name" name="name" placeholder="Nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}">
                                     </div>
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>Apellido:</label>
-                                        <input type="text" id="flastname" placeholder="Apellido" required>
+                                        <input type="text" id="flastname" name="flastname" placeholder="Apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}">
                                     </div>
                                     <div class="col-md-12">
                                         <label>Correo electrónico:</label>
@@ -602,7 +602,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <script src="assets/js/FormRegistro.js"></script> -->
+            <script src="assets/js/FormRegistro.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>    
         </header>
         <!-- Hiraola's Header Main Area End Here -->

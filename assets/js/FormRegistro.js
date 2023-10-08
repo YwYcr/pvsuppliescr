@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
         var confirmPassword = document.getElementById("confirmPassword").value;
 
         // Funciones de validaciones
-        function isValidEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
+        // function isValidEmail(email) {
+        //     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        // }
 
-        function isValidName(name) {
-            return /^[A-Za-z]+$/.test(name);
-        }
+        // function isValidName(name) {
+        //     return /^[A-Za-z]+$/.test(name);
+        // }
 
         function isValidPassword(password) {
             // Clave 8 caracteres minimo, minimo 1 # y 1 mayuscula
@@ -29,20 +29,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Perform validations
-        if (!isValidName(firstName)) {
-            alert("Nombre Invalido. Utilice solamente letras.");
-            return;
-        }
+        // if (!isValidName(firstName)) {
+        //     alert("Nombre Invalido. Utilice solamente letras.");
+        //     return;
+        // }
 
-        if (!isValidName(lastName)) {
-            alert("Apellido Invalido. Utilice solamente letras.");
-            return;
-        }
+        // if (!isValidName(lastName)) {
+        //     alert("Apellido Invalido. Utilice solamente letras.");
+        //     return;
+        // }
 
-        if (!isValidEmail(email)) {
-            alert("Formato de correo incorrecto.");
-            return;
-        }
+        // if (!isValidEmail(email)) {
+        //     alert("Formato de correo incorrecto.");
+        //     return;
+        // }
 
 
         if (password !== confirmPassword) {
