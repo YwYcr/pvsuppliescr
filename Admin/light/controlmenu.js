@@ -40,6 +40,21 @@ const scriptMappings = {
     "assets/js/common.js",
     "assets/js/pages/tables/jquery-datatable.js"
   ],
+  contactos: [
+    "../assets/vendor/jquery/jquery-3.3.1.min.js",
+    "../assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+    "assets/bundles/vendorscripts.bundle.js",
+    "assets/bundles/datatablescripts.bundle.js",
+    "../assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js",
+    "../assets/vendor/jquery-datatable/buttons/buttons.bootstrap4.min.js",
+    "../assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js",
+    "../assets/vendor/jquery-datatable/buttons/buttons.html5.min.js",
+    "../assets/vendor/jquery-datatable/buttons/buttons.print.min.js",
+    "../assets/vendor/sweetalert/sweetalert.min.js",
+    "assets/js/pages/ui/dialogs.js",
+    "assets/js/common.js",
+    "assets/js/pages/tables/jquery-datatable.js"
+  ],
   calendario: [
     "../assets/vendor/jquery/jquery-3.3.1.min.js",
     "../assets/vendor/bootstrap/js/bootstrap.bundle.min.js",

@@ -46,18 +46,17 @@
             <div class="test">
                 <span class="popup_off"><i class="ion-android-close"></i></span>
                 <div class="subscribe_area">
-                    <h2>Sign Up Newsletter</h2>
-                    <p>Subscribe to the our store mailing list to receive updates on new arrivals, special offers and other
-                        discount information.</p>
+                    <h2>Suscribete</h2>
+                    <p>Registrate para recibir nuestras ofertas como nuevos productos, descuentos y mucho mas.</p>
                     <div class="subscribe-form-group">
                         <form class="subscribe-form" action="#">
-                            <input autocomplete="off" type="text" name="message" id="message" placeholder="Enter your email address">
-                            <button type="submit">subscribe</button>
+                            <input autocomplete="on" type="text" name="txtEmail" id="txtEmail" placeholder="Correo Electronico">
+                            <button id="btnCrearContacto" type="submit">Suscribirme</button>
                         </form>
                     </div>
                     <div class="subscribe-bottom">
                         <input type="checkbox" id="newsletter-permission">
-                        <label for="newsletter-permission">Don't show this popup again</label>
+                        <label for="newsletter-permission">No mostrar de nuevo</label>
                     </div>
                 </div>
             </div>
@@ -121,6 +120,36 @@ include 'footer.php'
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
 <!-- <script src="assets/js/main.min.js"></script> -->
+<script>
+    $(document).ready(function() {
+        $("#btnCrearContacto").click(function() {
+        var email = $("#txtEmail").val();
+
+        console.log("Email: " + email);
+
+        var data = {
+            email: email,
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "crearContacto.php", 
+            data: data,
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+        });
+    });
+
+ </script>
+
+
 
 </body>
 
