@@ -489,6 +489,188 @@
 
 
 
+        <!-- Modal info Producto -->
+        <div class="modal fade" id="infoProducto" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="infoProductoForm"> 
+                        <div class="mb-3">                                
+                                <input type="hidden" class="form-control" id="infoProductID" name="infoProductID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="infoProductName" name="infoProductName" required>
+                            </div>
+							<div class="mb-3">
+                                <label for="infoProductDescription" class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="infoProductDescription" name="infoProductDescription" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductMarca" class="form-label"> Marca </label>
+                                <input type="text" class="form-control" id="infoProductMarca" name="infoProductMarca" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductCantidad" class="form-label"> Cantidad </label>
+                                <input type="text" class="form-control" id="infoProductCantidad" name="infoProductCantidad" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductPrecio" class="form-label">Precio</label>
+                                <input type="text" class="form-control" id="infoProductPrecio" name="infoProductPrecio" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductCategoria" class="form-label">Categoria</label>
+                                <input type="text" class="form-control" id="infoProductCategoria" name="infoProductCategoria" required>
+                            </div>							
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-type="success">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Edit Producto -->
+
+        <div class="modal fade" id="editProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modificar Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProductoForm">
+                            <div class="mb-3">                                
+                                <input type="hidden" class="form-control" id="editProductID" name="editProductID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editProductName" name="editProductName" required>
+                            </div>
+							<div class="mb-3">
+                                <label for="editProductDescription" class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="editProductDescription" name="editProductDescription" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductMarca" class="form-label"> Marca </label>
+                                <input type="text" class="form-control" id="editProductMarca" name="editProductMarca" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductCantidad" class="form-label"> Cantidad </label>
+                                <input type="text" class="form-control" id="editProductCantidad" name="editProductCantidad" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductPrecio" class="form-label">Precio</label>
+                                <input type="text" class="form-control" id="editProductPrecio" name="editProductPrecio" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductCategoria" class="form-label">Categoria</label>
+                                <input type="text" class="form-control" id="editProductCategoria" name="editProductCategoria" required>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-actualizarProducto btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Create Producto -->
+        <div class="modal fade" id="createProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Crear producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createProductoForm">
+                            <div class="mb-3">
+                                <label for="createProductName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="createProductName" name="createProductName" required>
+                            </div>
+							<div class="mb-3">
+                                <label for="createProductDescription" class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="createProductDescription" name="createProductDescription" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProductMarca" class="form-label"> Marca </label>
+                                <input type="text" class="form-control" id="createProductMarca" name="createProductMarca" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProductCantidad" class="form-label"> Cantidad </label>
+                                <input type="text" class="form-control" id="createProductCantidad" name="createProductCantidad" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProductPrecio" class="form-label">Precio</label>
+                                <input type="text" class="form-control" id="createProductPrecio" name="createProductPrecio" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProductCategoria" class="form-label">Categoria</label>
+                                <input type="text" class="form-control" id="createProductCategoria" name="createProductCategoria" required>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="crearProductoButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- Modal Create Categoria -->
+        <div class="modal fade" id="createCategoria" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Crear categoria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createCategoriaForm">
+                            <div class="mb-3">
+                                <label for="createCategoriaName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="createCategoriaName" name="createCategoriaName" required>
+                            </div>
+							<div class="mb-3">
+                                <label for="createCategoriaDescription" class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="createCategoriaDescription" name="createCategoriaDescription" required>
+                            </div>          
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="crearCategoriaButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal" data-type="success">Save</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -929,6 +1111,7 @@
             success: function(response) {
                 // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
                 alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                
             },
             error: function(xhr, status, error) {
                 // Manejar errores de la solicitud AJAX
@@ -1024,6 +1207,209 @@
             data: { contactID: contactID },
             success: function(response) {
                 console.log("contacto eliminado: " + contactID);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+    </script>
+
+
+
+
+
+
+<!-- Productos del inventario -->
+    <!-- Script para ver productos -->
+    <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-infoProducto", function(){
+            var productID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "GET",
+            url: "../../getProducto.php", 
+            data: { productID: productID },
+            dataType: "json",
+            success: function(response) {
+                $("#infoProductID").val(response.IDPRODUCT);
+                $("#infoProductName").val(response.NAME);
+                $("#infoProductDescription").val(response.DESCRIPTION);
+                $("#infoProductMarca").val(response.BRAND);
+                $("#infoProductCantidad").val(response.QUANTITY);
+                $("#infoProductPrecio").val(response.PRICE);
+				$("#infoProductCategoria").val(response.IDCATEGORY);   
+                    
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+    </script>
+
+    <!-- Script para crear productos nuevos -->
+    <script>
+    $(document).ready(function() {
+        $("#crearProductoButton").click(function() {
+		
+		var nombre = $("#createProductName").val();
+		var descripcion = $("#createProductDescription").val();
+		var marca = $("#createProductMarca").val();
+		var cantidad = $("#createProductCantidad").val();
+		var precio = $("#createProductPrecio").val();
+		var categoria = $("#createProductCategoria").val();			
+
+        var data = {
+		
+		nombre:nombre,
+		descripcion:descripcion,
+		marca:marca,
+		cantidad:cantidad,
+		precio:precio,
+		categoria:categoria
+		};
+		
+        $.ajax({
+            type: "POST",
+            url: "../../crearProducto.php", 
+            data: data,
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+        });
+    });
+
+ </script>
+ 
+ <!-- Script para crear categorias nuevas -->
+    <script>
+    $(document).ready(function() {
+        $("#crearCategoriaButton").click(function() {
+		
+		var nombre = $("#createCategoriaName").val();
+		var descripcion = $("#createCategoriaDescription").val();
+		
+
+        var data = {
+		
+		nombre:nombre,
+		descripcion:descripcion
+		};
+		
+        $.ajax({
+            type: "POST",
+            url: "../../crearCategoria.php", 
+            data: data,
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
+        });
+        });
+    });
+
+ </script>
+ 
+ 
+  <!-- Script para traer 1 producto a modificar  -->
+  <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-editarProducto", function(){
+            var productID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "GET",
+            url: "../../getProducto.php", 
+            data: { productID: productID },
+            dataType: "json",
+            success: function(response) {
+			
+                $("#editProductID").val(response.IDPRODUCT);
+                $("#editProductName").val(response.NAME);
+                $("#editProductDescription").val(response.DESCRIPTION);
+                $("#editProductMarca").val(response.BRAND);
+                $("#editProductCantidad").val(response.QUANTITY);
+                $("#editProductPrecio").val(response.PRICE);
+				$("#editProductCategoria").val(response.IDCATEGORY);
+                
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+ </script>
+
+
+
+
+ <!-- Script para actualizar productos  -->
+ <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-actualizarProducto", function(){
+		
+		 var productID = $("#editProductID").val();
+		 var nombre = $("#editProductName").val();
+		 var descripcion = $("#editProductDescription").val();
+		 var marca = $("#editProductMarca").val();
+		 var cantidad = $("#editProductCantidad").val();
+		 var precio = $("#editProductPrecio").val();
+		 var categoria = $("#editProductCategoria").val();
+		
+            var data = {
+            productID: productID,    
+            nombre: nombre,
+            descripcion: descripcion,
+            marca: marca,
+            cantidad: cantidad,
+            precio: precio,
+			categoria: categoria
+            };
+
+
+            $.ajax({
+            type: "POST",
+            url: "../../updateProducto.php", 
+            data: data,
+            success: function(response){
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+            });
+        });
+    });
+ </script>
+
+    <!-- Script para borrar productos -->
+    <script>
+    $(document).ready(function() {
+        $(document).on("click", ".btn-borrarProducto", function(){
+            var productID = $(this).data("bs-id");
+
+            $.ajax({
+            type: "POST",
+            url: "../../borrarProducto.php", 
+            data: { productID: productID },
+            success: function(response) {
+                console.log("Producto eliminado: " + userID);
             },
             error: function(xhr, status, error) {
                 console.error(error);
