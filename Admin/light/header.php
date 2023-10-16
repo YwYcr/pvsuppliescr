@@ -260,15 +260,15 @@
                             <div class="text-center mb-3">
                                 <img class="img-thumbnail rounded-circle" src="../assets/images/sm/avatar1.jpg" alt="">
                                 <h6 class="mt-3 mb-0">Michelle Green</h6>
-                                <div class="text-center text-muted">Manager</div>
+                                <div class="text-center text-muted">Administrador</div>
                                 <hr>
-                                <small class="text-muted">Address: </small>
+                                <small class="text-muted">Dirección: </small>
                                 <p> San Francisco</p>
-                                <small class="text-muted">Email address: </small>
+                                <small class="text-muted">Correo: </small>
                                 <p>louispierce@example.com</p>
-                                <small class="text-muted">Mobile: </small>
+                                <small class="text-muted">Teléfono: </small>
                                 <p>+ 202-222-2121</p>
-                                <a href="#" class="btn btn-block btn-success mb-2" title="" id="viewProfileLink">View Profile</a>
+                                <a href="#" class="btn btn-block btn-success mb-2" title="" id="viewProfileLink">Ver Perfil</a>
                             </div>
                         </div>
                     </nav>
