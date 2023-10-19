@@ -10,10 +10,10 @@
              </nav>
          </div>
          <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createProducto">
-             <a href="javascript:void(0);" class="btn btn-sm btn-primary" title=""><i class="icon-user-follow"></i><span> Crear Producto</span></a>
+             <a href="javascript:void(0);" class="btn btn-sm btn-primary" title=""><i class="icon-user-follow"></i><span> Agregar Producto</span></a>
          </div>
          <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createCategoria">
-             <a href="javascript:void(0);" class="btn btn-sm btn-primary" title=""><i class="icon-user-follow"></i><span> Crear Categoria</span></a>
+             <a href="javascript:void(0);" class="btn btn-sm btn-primary" title=""><i class="icon-user-follow"></i><span> Agregar Categoria</span></a>
          </div>
      </div>
  </div>

@@ -1,34 +1,35 @@
- 
- <div class="block-header">
-            <div class="row clearfix">
-                <div class="col-md-6 col-sm-12">
-                    <h1>Control de Contactos</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php"><img src="bedicon.svg" alt="Bed Icon" style="height: 1rem;"></a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Proovedores</li>
-                           </ol>
-                    </nav>
-                </div>            
-                <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createProveedor">
-                    <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="" ><i class="icon-user-follow"></i><span>  Crear Proveedor</span></a>
-                </div>
-            </div>
+<div class="block-header">
+    <div class="row clearfix">
+        <div class="col-md-6 col-sm-12">
+            <h1>Control de Contactos</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.php"><img src="bedicon.svg" alt="Bed Icon"
+                                style="height: 1rem;"></a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Proovedores</li>
+                </ol>
+            </nav>
         </div>
+        <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createProveedor">
+            <a href="javascript:void(0);" class="btn btn-sm btn-primary" title=""><i class="icon-user-follow"></i><span>
+                    Agregar Proveedor</span></a>
+        </div>
+    </div>
+</div>
 
-        <div class="container-fluid">
-            
-            <div class="row clearfix">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Información de Proovedores 
-                                <!-- <small>Basic example without any additional modification classes</small> -->
-                            </h2>
-                            <ul class="header-dropdown dropdown">
-                                
-                                <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
-                                <!-- <li class="dropdown">
+<div class="container-fluid">
+
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2>Información de Proovedores
+                        <!-- <small>Basic example without any additional modification classes</small> -->
+                    </h2>
+                    <ul class="header-dropdown dropdown">
+
+                        <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
+                        <!-- <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0);">Action</a></li>
@@ -36,32 +37,42 @@
                                         <li><a href="javascript:void(0);">Something else</a></li>
                                     </ul>
                                 </li> -->
-                            </ul>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="searchSupplierInput"
+                                    placeholder="Buscar proveedor">
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <button class="btn btn-primary" onclick="searchSupplier()">Buscar</button>
+                            </div>
                         </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                            <?php
-                            include '../../bd_conn.php';
+                        <?php
+                        include '../../bd_conn.php';
 
-                            $consulta = "SELECT * FROM SUPPLIER";
-                            $result = $con->query($consulta);
+                        $consulta = "SELECT * FROM SUPPLIER";
+                        $result = $con->query($consulta);
 
 
-                            if ($result->num_rows>0){
-                                echo "<table class='table table-hover js-basic-example dataTable table-custom spacing5>'";
-                                echo "<tr><th>Num de Proveedor</th><th>Nombre</th><th>CedJuridica</th><th>Telefono</th><th>POC</th><th>Email</th><th>Direccion</th><th>Acciones</th></tr>";
+                        if ($result->num_rows > 0) {
+                            echo "<table id='supplierTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
+                            echo "<thead><tr><th>Num de Proveedor</th><th>Nombre</th><th>CedJuridica</th><th>Telefono</th><th>POC</th><th>Email</th><th>Direccion</th><th>Acciones</th></tr></thead>";
+                            echo "<tbody id='supplierTableBody'>";
 
-                                while ($row = $result->fetch_assoc()){
-                                    echo "<tr>";
-                                    echo "<td>" . $row['IDSUPPLIER'] . "</td>";
-                                    $proveedorID= $row['IDSUPPLIER'];
-                                    echo "<td>" . $row['NAME'] . "</td>";
-                                    echo "<td>" . $row['SOCIALID'] . "</td>";
-                                    echo "<td>" . $row['PHONE'] . "</td>";                              
-                                    echo "<td>" . $row['POC'] . "</td>";
-                                    echo "<td>" . $row['EMAIL'] . "</td>";
-                                    echo "<td>" . $row['ADDRESS'] . "</td>";
-                                    echo "<td>
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row['IDSUPPLIER'] . "</td>";
+                                $proveedorID = $row['IDSUPPLIER'];
+                                echo "<td>" . $row['NAME'] . "</td>";
+                                echo "<td>" . $row['SOCIALID'] . "</td>";
+                                echo "<td>" . $row['PHONE'] . "</td>";
+                                echo "<td>" . $row['POC'] . "</td>";
+                                echo "<td>" . $row['EMAIL'] . "</td>";
+                                echo "<td>" . $row['ADDRESS'] . "</td>";
+                                echo "<td>
 
                                     <button type='button' class='btn btn-info btn-infoProveedor mb-2' data-bs-toggle='modal' data-bs-target='#infoProveedor' data-bs-id='$proveedorID'> 
                                     <i class='fa fa-info-circle'></i>
@@ -76,19 +87,32 @@
                                     <span>Eliminar</span></button>
                              
                                     </td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";
 
-                                }
-                                echo "</table>";
-                            }else {
-                                echo "No hay proveedores";
-                            }                            
-                            include '../../bd_disconn.php'
+                            echo "<tfoot>
+                                    <tr>
+                                        <th>Num de Proveedor</th>
+                                        <th>Nombre</th>
+                                        <th>CedJuridica</th>
+                                        <th>Telefono</th>
+                                        <th>POC</th>
+                                        <th>Email</th>
+                                        <th>Direccion</th>
+                                    </tr>
+                                </tfoot>";
+                            echo "</table>";
+                        } else {
+                            echo "No hay proveedores";
+                        }
+                        include '../../bd_disconn.php'
                             ?>
 
 
 
 
-                                <!-- <table class="table table-hover js-basic-example dataTable table-custom spacing5">
+                        <!-- <table class="table table-hover js-basic-example dataTable table-custom spacing5">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -1186,11 +1210,11 @@
                                         </tr>
                                     </tbody>
                                 </table> -->
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
+    </div>
+
+
+</div>
