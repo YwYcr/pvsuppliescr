@@ -48,7 +48,7 @@
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="footer-widgets_title">
-                                            <h6>Product</h6>
+                                            <h6>Productos</h6>
                                         </div>
                                         <div class="footer-widgets">
                                             <ul>
@@ -62,20 +62,20 @@
                                     <div class="col-lg-5">
                                         <div class="footer-widgets_info">
                                             <div class="footer-widgets_title">
-                                                <h6>About Us</h6>
+                                                <h6>Sobre nosotros</h6>
                                             </div>
                                             <div class="widgets-essential_stuff">
                                                 <ul>
                                                     <li class="hiraola-address"><i
-                                                    class="ion-ios-location"></i><span>Address:</span> The Barn,
-                                                        Ullenhall, Henley
-                                                        in
-                                                        Arden B578 5CC, England</li>
-                                                    <li class="hiraola-phone"><i class="ion-ios-telephone"></i><span>Call
-                                                    Us:</span> <a href="tel://+123123321345">+123 321 345</a>
+                                                    class="ion-ios-location"></i><span>Dirección:</span> Nos localizamos 
+                                                    en Alajuela Costa Rica. 
+                                                    Hacemos envios a todo 
+                                                    Costa Rica e internacional.</li>
+                                                    <li class="hiraola-phone"><i class="ion-ios-telephone"></i><span>Télefono
+                                                    </span> <a href="tel://+123123321345">+506 8888 8888</a>
                                                     </li>
                                                     <li class="hiraola-email"><i
-                                                    class="ion-android-mail"></i><span>Email:</span> <a href="mailto://info@yourdomain.com">info@yourdomain.com</a></li>
+                                                    class="ion-android-mail"></i><span>Correo:</span> <a href="mailto://info@yourdomain.com">info@yourdomain.com</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -83,14 +83,14 @@
                                     <div class="col-lg-4">
                                         <div class="instagram-container footer-widgets_area">
                                             <div class="footer-widgets_title">
-                                                <h6>Sign Up For Newslatter</h6>
+                                                <h6>Suscribete</h6>
                                             </div>
                                             <div class="widget-short_desc">
-                                                <p>Subscribe to our newsletters now and stay up-to-date with new collections</p>
+                                                <p>Registrate para recibir nuestras ofertas como nuevos productos, descuentos y mucho mas.</p>
                                             </div>
                                             <div class="newsletter-form_wrap">
                                                 <form class="subscribe-form" id="mc-form" action="#">
-                                                    <input class="newsletter-input" id="mc-email" type="email" autocomplete="off" name="Enter Your Email" value="Enter Your Email" onblur="if(this.value==''){this.value='Enter Your Email'}" onfocus="if(this.value=='Enter Your Email'){this.value=''}">
+                                                    <input class="newsletter-input" id="mc-email" type="email" autocomplete="off" name="Enter Your Email" value="Correo Electronico" onblur="if(this.value==''){this.value='Enter Your Email'}" onfocus="if(this.value=='Enter Your Email'){this.value=''}">
                                                     <button class="newsletter-btn" id="mc-submit">
                                                         <i class="ion-android-mail"></i>
                                                     </button>
