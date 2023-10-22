@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -42,8 +42,9 @@
 <body class="template-color-1">
 
 <?php
+session_start();
 include 'header.php'
-?>
+    ?>
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
@@ -76,7 +77,7 @@ include 'header.php'
                                             <label>price : </label>
                                             <input type="text" id="amount" name="price" placeholder="Add Your Price" />
                                         </div>
-                                        <!-- <button type="button">Filter</button> -->
+                                        <!--<button type="button">Filter</button>-->
                                     </div>
                                 </div>
                             </div>
@@ -199,1154 +200,104 @@ include 'header.php'
                                 </div>
                             </div>
                         </div>
-                        <div class="shop-product-wrap grid gridview-3 row">
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker-2">Sale</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Global Knives:
-                                                        Profession...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£60.25</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Global Knives:
-                                                        Profession...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£60.25</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-4.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£76.44</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-4.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Ipoly and Bark Eames
-                                                        Style...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker-2">Sale</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Work Lamp Silver
-                                                        Proin
-                                                        he...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£35.20</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£54.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker">New</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Global Knives:
-                                                        Profession...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£60.25</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-1.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£40.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£77.44</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£98.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-4.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a>
-                                                    </li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Utensils and Knives
-                                                        Block...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£50.43</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Pendant, Made of
-                                                        White...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker">New</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">JWDA Penant Lamp Brshed
-                                                        S...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£602.00</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-4.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Pendant, Made of
-                                                        White Pl...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker">New</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Light Inverted Pendant
-                                                        Qu...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£110.00</span>
-                                                    <span class="old-price">£110.00</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Pendant, Made of
-                                                        White Pl...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-1.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker-2">Sale</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Vitra Sunburst Clock
-                                                        pret...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£1199.60</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-4.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Pendant, Made of
-                                                        White Pl...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker">New</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Work Lamp Silver Proin
-                                                        he...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£135.20</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Pendant, Made of
-                                                        White Pl...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker">New</span>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Suspensions Aplomb Large
-                                                        ...</a></h6>
-                                                <div class="price-box">
-                                                    <span class="new-price">£602.00</span>
-                                                </div>
-                                                <div class="additional-add_action">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="single-product.php">
-                                                <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                                <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="single-product.php">Flash Furniture
-                                                        Alonza Se...</a></h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">£90.36</span>
-                                                </div>
-                                                <div class="product-short_desc">
-                                                    <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                        considered that gold possessed an energy that brought warm, soothing
-                                                        vibrations to the body to aid healing, for when the body relaxes and the
-                                                        blood vessels in the cells aren't as constricted, blood can move through
-                                                        the tissue spaces more easily.</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="cart.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                    <li><a class="hiraola-add_compare" href="compare.php" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i
-                                                        class="ion-ios-shuffle-strong"></i></a></li>
-                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i
-                                                        class="ion-eye"></i></a></li>
-                                                    <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i
-                                                        class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
+
+
+                    
+                        <div class='shop-product-wrap grid gridview-3 row'>
+                        <?php
+                        
+                            include 'bd_conn.php';
+
+                            $consulta = "SELECT * FROM PRODUCT";
+                            $result = $con->query($consulta);   
+                             
+
+                            if ($result->num_rows > 0) {
+                                
+
+                                while( $row = $result->fetch_assoc()){
+
+                                  $productID = $row['IDPRODUCT'];
+
+                                       
+                        echo"<div class='col-lg-4'>";
+                        
+                        echo"<div class='slide-item'>";
+                        
+                        echo"<div class='single_product'>";
+                            echo"<div class='product-img'>";
+                            
+                            echo"<a href='single-product.php'>";
+                            
+                            echo"<img class='primary-img' src= '{$row['IMAGE']}' alt='Imagen del Producto'/>";
+                            echo"<img class='secondary-img' src='{$row['IMAGE']}' alt='Imagen del Producto'/>";
+                            echo"</a>";
+
+                            echo"<div class='add-actions'>";
+                            echo"<ul>";
+                            echo"<li><a class='hiraola-add_cart' href='cart.php' data-bs-toggle='tooltip' data-placement='top' title='Add To Cart'><i class='ion-bag'></i></a>
+                              </li>";
+                            echo"<li><a class='hiraola-add_compare' href='compare.php' data-bs-toggle='tooltip' data-placement='top' title='Compare This Product'><i class='ion-ios-shuffle-strong'></i></a>
+                            </li>";
+                            echo"<li class='quick-view-btn' data-bs-toggle='modal' data-bs-target='#exampleModalCenter'><a href='javascript:void(0)' data-bs-toggle='tooltip' data-placement='top' title='Quick View'><i
+                               class='ion-eye'></i></a></li>";
+                            echo"</ul>";
+                        echo"</div>";
+
+
+                        echo"<div class='hiraola-product_content'>";
+                            echo"<div class='product-desc_info'>";
+                                echo"<h6><a class='product-name' href='single-product.php'>{$row['NAME']}</a></h6>";
+                                    echo" <div class='price-box'>";
+                                        echo" <span class='new-price'>₡{$row['PRICE']}</span>";
+                                    echo" </div>";
+                                    echo" <div class='additional-add_action'>";
+                                        echo" <ul>";
+
+
+                                        echo "<form method='post' action='wishlist.php'>";
+// echo "<input type='hidden' name='IDPRODUCT' value='{$productID}'>";
+// echo "<button type='submit' name='add_to_wishlist' class='hiraola-add_compare' data-bs-toggle='tooltip' data-bs-id='$productID' data-placement='top' title='Agregar a Favoritos'>";
+// echo "<i class='ion-android-favorite-outline'></i>";
+// echo "</button>";
+// echo "</form>";
+
+
+                                            echo"<li><a class='hiraola-add_compare' href='wishlist.php' data-bs-toggle='tooltip' data-placement='top' data-bs-id='$productID' title='Add To Wishlist'>
+                                                 <i class='ion-android-favorite-outline'></i></a>";
+                                            echo" </li>";
+                                        echo" </ul>";
+                                    echo"</div>";
+                                    echo"<div class='rating-box'>";
+                                        echo" <ul>";
+                                             echo"<li><i class='fa fa-star-of-david'></i></li>";
+                                             echo"<li><i class='fa fa-star-of-david'></i></li>";
+                                             echo"<li><i class='fa fa-star-of-david'></i></li>";
+                                             echo"<li><i class='fa fa-star-of-david'></i></li>";
+                                             echo"<li class='silver-color'><i class='fa fa-star-of-david'></i></li>";
+                                        echo" </ul>";
+                                    echo" </div>";
+                            echo"  </div>";
+                        echo" </div>";    
+
+                        echo"</div>";
+                        echo"</div>";
+                        echo"</div>";
+                        echo"</div>";
+                        
+
+
+                                }
+                            }else{
+                                echo "No hay productos";
+                            }
+                                  
+
+                        include 'bd_disconn.php'
+                        ?>
+
+         
+                       <div class="row">
                             <div class="col-lg-12">
                                 <div class="hiraola-paginatoin-area">
                                     <div class="row">
@@ -1380,7 +331,7 @@ include 'header.php'
 
 <?php
 include 'footer.php'
-?>
+    ?>
 
 
 </div>

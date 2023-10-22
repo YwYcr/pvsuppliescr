@@ -93,7 +93,7 @@
 
                             echo "</tbody>";
                             echo "<tfoot>
-                <tr>
+                 <tr>
                     <th>Num de Contacto</th>
                     <th>Nombre</th>
                     <th>Email</th>

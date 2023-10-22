@@ -45,7 +45,19 @@
 
         <!-- Begin Hiraola's Header Main Area -->
         <?php
-include 'header.php'
+        session_start();
+include 'header.php';
+
+if (isset($_SESSION['wishlist']) && is_array($_SESSION['wishlist'])) {
+    echo "<ul>";
+    foreach ($_SESSION['wishlist'] as $productID) {
+        // Aquí puedes realizar una consulta a la base de datos o usar los IDs para mostrar los productos en la lista de deseos
+        echo "<li>Producto con ID $productID</li>";
+    } echo "</ul>";
+} else {
+    echo "Tu lista de deseos está vacía.";
+}
+
 ?>
         <!-- Hiraola's Header Main Area End Here -->
 
@@ -78,6 +90,10 @@ include 'header.php'
                                 <button class="btn btn-primary" onclick="searchProduct()">Buscar</button>
                             </div>
                         </div>
+
+
+
+
                                 <table class="table">
                                     <thead>
                                         <tr>

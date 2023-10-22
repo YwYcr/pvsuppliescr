@@ -953,21 +953,22 @@
     </script>
 
     <!-- Script para borrar usuarios -->
+    <!-- Script para borrar usuarios -->
     <script>
-        $(document).ready(function () {
-            $(document).on("click", ".btn-borrarUser", function () {
-                var userID = $(this).data("bs-id");
+    $(document).ready(function() {
+        $(document).on("click", ".btn-borrarUser", function(){
+            var userID = $(this).data("bs-id");
 
-                $.ajax({
-                    type: "POST",
-                    url: "../../borrarUsuario.php",
-                    data: { userID: userID },
-                    success: function (response) {
-                        console.log("Usuario eliminado: " + userID);
-                    },
-                    error: functior) on(xhr, status, err{
-                        console.error(error);
-                    }
+            $.ajax({
+            type: "POST",
+            url: "../../borrarUsuario.php", 
+            data: { userID: userID },
+            success: function(response) {
+                console.log("Usuario eliminado: " + userID);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
             });
         });
     });
