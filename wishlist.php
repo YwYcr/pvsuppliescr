@@ -53,10 +53,10 @@ include 'header.php'
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Other</h2>
+                    <h2>Lista de Favoritos</h2>
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active">Wishlist</li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li class="active">Favoritos</li>
                     </ul>
                 </div>
             </div>
@@ -69,15 +69,24 @@ include 'header.php'
                     <div class="col-12">
                         <form action="javascript:void(0)">
                             <div class="table-content table-responsive">
+                            <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="searchProductInput"
+                                    placeholder="Ingrese el nombre del producto">
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <button class="btn btn-primary" onclick="searchProduct()">Buscar</button>
+                            </div>
+                        </div>
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="hiraola-product_remove">remove</th>
-                                            <th class="hiraola-product-thumbnail">images</th>
-                                            <th class="cart-product-name">Product</th>
-                                            <th class="hiraola-product-price">Unit Price</th>
-                                            <th class="hiraola-product-stock-status">Stock Status</th>
-                                            <th class="hiraola-cart_btn">add to cart</th>
+                                            <th class="hiraola-product_remove">Remover</th>
+                                            <th class="hiraola-product-thumbnail">Imagen</th>
+                                            <th class="cart-product-name">Producto</th>
+                                            <th class="hiraola-product-price">Precio</th>
+                                            <th class="hiraola-product-stock-status">Estado del Stock</th>
+                                            <th class="hiraola-cart_btn">Añadir al carrito</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -88,8 +97,8 @@ include 'header.php'
                                             </td>
                                             <td class="hiraola-product-name"><a href="javascript:void(0)">Juma rema pola</a></td>
                                             <td class="hiraola-product-price"><span class="amount">£23.39</span></td>
-                                            <td class="hiraola-product-stock-status"><span class="in-stock">in stock</span></td>
-                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">add to cart</a></td>
+                                            <td class="hiraola-product-stock-status"><span class="in-stock">En stock</span></td>
+                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
                                         </tr>
                                         <tr>
                                             <td class="hiraola-product_remove"><a href="javascript:void(0)"><i class="fa fa-trash"
@@ -98,8 +107,8 @@ include 'header.php'
                                             </td>
                                             <td class="hiraola-product-name"><a href="javascript:void(0)">Suretin mipen ruma</a></td>
                                             <td class="hiraola-product-price"><span class="amount">£30.50</span></td>
-                                            <td class="hiraola-product-stock-status"><span class="in-stock">in stock</span></td>
-                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">add to cart</a></td>
+                                            <td class="hiraola-product-stock-status"><span class="in-stock">En stock</span></td>
+                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
                                         </tr>
                                         <tr>
                                             <td class="hiraola-product_remove"><a href="javascript:void(0)"><i class="fa fa-trash"
@@ -108,8 +117,8 @@ include 'header.php'
                                             </td>
                                             <td class="hiraola-product-name"><a href="javascript:void(0)">Bag Goodscol model</a></td>
                                             <td class="hiraola-product-price"><span class="amount">£40.19</span></td>
-                                            <td class="hiraola-product-stock-status"><span class="out-stock">out stock</span></td>
-                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">add to cart</a></td>
+                                            <td class="hiraola-product-stock-status"><span class="out-stock">Fuera de stock</span></td>
+                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -120,6 +129,7 @@ include 'header.php'
             </div>
         </div>
         <!-- Hiraola's Wishlist Area End Here -->
+        
         <!-- Begin Hiraola's Footer Area -->
         <?php
 include 'footer.php'

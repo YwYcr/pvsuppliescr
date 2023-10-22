@@ -53,10 +53,10 @@ include 'header.php'
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Other</h2>
+                    <h2>Detalle de Carrito de compras</h2>
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active">Cart</li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li class="active">Carrito de compras</li>
                     </ul>
                 </div>
             </div>
@@ -72,11 +72,11 @@ include 'header.php'
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="hiraola-product-remove">remove</th>
-                                            <th class="hiraola-product-thumbnail">images</th>
-                                            <th class="cart-product-name">Product</th>
-                                            <th class="hiraola-product-price">Unit Price</th>
-                                            <th class="hiraola-product-quantity">Quantity</th>
+                                            <th class="hiraola-product-remove">Remover</th>
+                                            <th class="hiraola-product-thumbnail">Imagen</th>
+                                            <th class="cart-product-name">Producto</th>
+                                            <th class="hiraola-product-price">Precio</th>
+                                            <th class="hiraola-product-quantity">Cantidad</th>
                                             <th class="hiraola-product-subtotal">Total</th>
                                         </tr>
                                     </thead>
@@ -88,7 +88,7 @@ include 'header.php'
                                             <td class="hiraola-product-name"><a href="javascript:void(0)">Juma rema pola</a></td>
                                             <td class="hiraola-product-price"><span class="amount">$46.80</span></td>
                                             <td class="quantity">
-                                                <label>Quantity</label>
+                                                <label>Cantidad</label>
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" value="1" type="text">
                                                     <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
@@ -104,7 +104,7 @@ include 'header.php'
                                             <td class="hiraola-product-name"><a href="javascript:void(0)">Bag Goodscol model</a></td>
                                             <td class="hiraola-product-price"><span class="amount">$71.80</span></td>
                                             <td class="quantity">
-                                                <label>Quantity</label>
+                                                <label>Cantidad</label>
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" value="1" type="text">
                                                     <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
@@ -120,11 +120,11 @@ include 'header.php'
                                 <div class="col-12">
                                     <div class="coupon-all">
                                         <div class="coupon">
-                                            <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
-                                            <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
+                                            <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Código del cupón" type="text">
+                                            <input class="button" name="apply_coupon" value="Aplicar Cupón" type="submit">
                                         </div>
                                         <div class="coupon2">
-                                            <input class="button" name="update_cart" value="Update cart" type="submit">
+                                            <input class="button" name="update_cart" value="Actualizar carrito" type="submit">
                                         </div>
                                     </div>
                                 </div>
@@ -132,12 +132,12 @@ include 'header.php'
                             <div class="row">
                                 <div class="col-md-5 ml-auto">
                                     <div class="cart-page-total">
-                                        <h2>Cart totals</h2>
+                                        <h2>Total a pagar</h2>
                                         <ul>
                                             <li>Subtotal <span>$118.60</span></li>
                                             <li>Total <span>$118.60</span></li>
                                         </ul>
-                                        <a href="javascript:void(0)">Proceed to checkout</a>
+                                        <a href="javascript:void(0)">Proceder a la compra</a>
                                     </div>
                                 </div>
                             </div>

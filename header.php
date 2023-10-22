@@ -181,7 +181,7 @@
                     <a href="#" class="btn-close"><i class="ion-android-close"></i></a>
                     <div class="minicart-content">
                         <div class="minicart-heading">
-                            <h4>Shopping Cart</h4>
+                            <h4>Carrito de Compras</h4>
                         </div>
                         <ul class="minicart-list">
                             <li class="minicart-product">
@@ -221,10 +221,10 @@
                         <span class="ammount">$360.00</span>
                     </div>
                     <div class="minicart-btn_area">
-                        <a href="cart.php" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Minicart</a>
+                        <a href="cart.php" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Detalle del Carrito</a>
                     </div>
                     <div class="minicart-btn_area">
-                        <a href="checkout.php" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Checkout</a>
+                        <a href="checkout.php" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Proceder a la compra</a>
                     </div>
                 </div>
             </div>
