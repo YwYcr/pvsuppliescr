@@ -235,12 +235,12 @@ include 'header.php'
 
                             echo"<div class='add-actions'>";
                             echo"<ul>";
-                            echo"<li><a class='hiraola-add_cart' href='cart.php' data-bs-toggle='tooltip' data-placement='top' title='Add To Cart'><i class='ion-bag'></i></a>
+                            echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito'><i class='ion-bag'></i></a>
                               </li>";
-                            echo"<li><a class='hiraola-add_compare' href='compare.php' data-bs-toggle='tooltip' data-placement='top' title='Compare This Product'><i class='ion-ios-shuffle-strong'></i></a>
-                            </li>";
-                            echo"<li class='quick-view-btn' data-bs-toggle='modal' data-bs-target='#exampleModalCenter'><a href='javascript:void(0)' data-bs-toggle='tooltip' data-placement='top' title='Quick View'><i
-                               class='ion-eye'></i></a></li>";
+                            // echo"<li><a class='hiraola-add_compare' href='compare.php' data-bs-toggle='tooltip' data-placement='top' title='Compare This Product'><i class='ion-ios-shuffle-strong'></i></a>
+                            // </li>";
+                            // echo"<li class='quick-view-btn' data-bs-toggle='modal' data-bs-target='#exampleModalCenter'><a href='javascript:void(0)' data-bs-toggle='tooltip' data-placement='top' title='Quick View'><i
+                            //    class='ion-eye'></i></a></li>";
                             echo"</ul>";
                         echo"</div>";
 

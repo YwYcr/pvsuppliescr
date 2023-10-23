@@ -166,7 +166,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                        <a href="cart.php" class="minicart-btn">
                                             <i class="ion-bag"></i>
                                         </a>
                                     </li>
@@ -176,7 +176,7 @@
                     </div>
                 </div>
             </div>
-            <div class="offcanvas-minicart_wrapper" id="miniCart">
+            <!-- <div class="offcanvas-minicart_wrapper" id="miniCart">
                 <div class="offcanvas-menu-inner">
                     <a href="#" class="btn-close"><i class="ion-android-close"></i></a>
                     <div class="minicart-content">
@@ -227,7 +227,7 @@
                         <a href="checkout.php" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Proceder a la compra</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="mobile-menu_wrapper" id="mobileMenu">
                 <div class="offcanvas-menu-inner">
                     <div class="container">

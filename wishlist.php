@@ -95,21 +95,35 @@ include 'header.php';
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="hiraola-product_remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-
-                                                <?php
+                                               <?php
                                                 
                                                 include 'bd_conn.php';
                                                 if (isset($_GET['idprod'])) {
                                                 $productID = $_GET['idprod'];
-                                                  $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                                  $result = $con->query($sql); 
-                                                  $row = $result->fetch_assoc(); 
-                                                  echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}'/> ";
-                                                  echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
-                                                  echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";
-                                                  echo"<td class='hiraola-cart_btn'><a href='javascript:void(0)'>Añadir al carrito</a></td> ";  
+                                                if (!isset($_SESSION['listaFavoritos'])){
+                                                    $_SESSION['listaFavoritos'] = array();
+                                                }
+                                                if (!in_array($productID, $_SESSION['listaFavoritos'])){
+                                                    $_SESSION['listaFavoritos'][] = $productID;
+                                                }
+                                            }
+
+                                                if(isset($_SESSION['listaFavoritos']) && !empty($_SESSION['listaFavoritos'])){
+                                                    foreach ($_SESSION['listaFavoritos'] as $productID){
+                                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                                    $result = $con->query($sql); 
+                                                    $row = $result->fetch_assoc(); 
+                                                    echo"<tr>";
+                                                    echo"<td class='hiraola-product_remove'><a href='borrarFavorito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
+                                                    title='Eliminar'></i></a></td>";
+                                                    echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
+                                                    echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
+                                                    echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";
+                                                    echo"<td class='hiraola-cart_btn'><a href='javascript:void(0)'>Añadir al carrito</a></td> "; 
+                                                    echo"</tr>";
+
+
+                                                    }
 
                                                 } else {
                                                   echo "No hay productos";
@@ -118,24 +132,7 @@ include 'header.php';
                                                     include 'bd_disconn.php';
                                                 ?>    
                                         </tr>
-                                        <tr>
-                                            <td class="hiraola-product_remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-                                            <td class="hiraola-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/2-2.jpg" alt="Hiraola's Wishlist Thumbnail"></a>
-                                            </td>
-                                            <td class="hiraola-product-name"><a href="javascript:void(0)">Suretin mipen ruma</a></td>
-                                            <td class="hiraola-product-price"><span class="amount">£30.50</span></td>
-                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="hiraola-product_remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-                                            <td class="hiraola-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/2-3.jpg" alt="Hiraola's Wishlist Thumbnail"></a>
-                                            </td>
-                                            <td class="hiraola-product-name"><a href="javascript:void(0)">Bag Goodscol model</a></td>
-                                            <td class="hiraola-product-price"><span class="amount">£40.19</span></td>
-                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>

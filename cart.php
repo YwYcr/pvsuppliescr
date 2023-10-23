@@ -45,6 +45,7 @@
 
         <!-- Begin Hiraola's Header Main Area -->
         <?php
+        session_start();
 include 'header.php'
 ?>
         <!-- Hiraola's Header Main Area End Here -->
@@ -82,37 +83,51 @@ include 'header.php'
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="hiraola-product-remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-                                            <td class="hiraola-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/2-1.jpg" alt="Hiraola's Cart Thumbnail"></a></td>
-                                            <td class="hiraola-product-name"><a href="javascript:void(0)">Juma rema pola</a></td>
-                                            <td class="hiraola-product-price"><span class="amount">$46.80</span></td>
-                                            <td class="quantity">
-                                                <label>Cantidad</label>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal"><span class="amount">$46.80</span></td>
+
+                                        <?php
+                                                
+                                                include 'bd_conn.php';
+                                                if (isset($_GET['idprod'])) {
+                                                $productID = $_GET['idprod'];
+                                                if (!isset($_SESSION['listaCarrito'])){
+                                                    $_SESSION['listaCarrito'] = array();
+                                                }
+                                                if (!in_array($productID, $_SESSION['listaCarrito'])){
+                                                    $_SESSION['listaCarrito'][] = $productID;
+                                                }
+                                            }
+
+                                                if(isset($_SESSION['listaCarrito']) && !empty($_SESSION['listaCarrito'])){
+                                                    foreach ($_SESSION['listaCarrito'] as $productID){
+                                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                                    $result = $con->query($sql); 
+                                                    $row = $result->fetch_assoc(); 
+                                                    echo"<tr>";
+                                                    echo"<td class='hiraola-product_remove'><a href='borrarCarrito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
+                                                    title='Eliminar'></i></a></td>";
+                                                    echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
+                                                    echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
+                                                    echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";  
+                                                    echo"<td class='quantity'><div class='cart-plus-minus'>  
+                                                    <input class='cart-plus-minus-box' value='1' type='text'> 
+                                                    <div class='dec qtybutton'><i class='fa fa-angle-down'></i></div>
+                                                    <div class='inc qtybutton'><i class='fa fa-angle-up'></i></div></div></td> ";
+                                                    echo "<td class='product-subtotal'><span class='amount'>₡{$row['PRICE']}</span></td>";
+
+                                                    echo"</tr>";
+
+
+                                                    }
+
+                                                } else {
+                                                  echo "No hay productos";
+                                                            }
+
+                                                    include 'bd_disconn.php';
+                                                ?> 
+                               
                                         </tr>
-                                        <tr>
-                                            <td class="hiraola-product-remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-                                            <td class="hiraola-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/2-2.jpg" alt="Hiraola's Cart Thumbnail"></a></td>
-                                            <td class="hiraola-product-name"><a href="javascript:void(0)">Bag Goodscol model</a></td>
-                                            <td class="hiraola-product-price"><span class="amount">$71.80</span></td>
-                                            <td class="quantity">
-                                                <label>Cantidad</label>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal"><span class="amount">$71.80</span></td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -124,7 +139,7 @@ include 'header.php'
                                             <input class="button" name="apply_coupon" value="Aplicar Cupón" type="submit">
                                         </div>
                                         <div class="coupon2">
-                                            <input class="button" name="update_cart" value="Actualizar carrito" type="submit">
+                                            <input class="button" href="limpiarCarrito.php" value="Limpiar carrito" type="submit">
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +152,7 @@ include 'header.php'
                                             <li>Subtotal <span>$118.60</span></li>
                                             <li>Total <span>$118.60</span></li>
                                         </ul>
-                                        <a href="javascript:void(0)">Proceder a la compra</a>
+                                        <a href="limpiarCarrito.php">Proceder a la compra</a>
                                     </div>
                                 </div>
                             </div>
