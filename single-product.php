@@ -69,7 +69,29 @@ include 'header.php'
                         <div class="col-lg-5 col-md-5">
                             <div class="sp-img_area">
                                 <div class="zoompro-border">
-                                    <img class="zoompro" src="assets/images/single-product/large-size/1.jpg" data-zoom-image="assets/images/single-product/large-size/1.jpg" alt="Hiraola's Product Image" />
+                                
+                                
+                                
+                                
+                                
+                                <?php
+                                include 'bd_conn.php';
+                                if (isset($_GET['idprod'])) {
+                                    $productID = $_GET['idprod'];
+                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                    $result = $con->query($sql); 
+                                    $row = $result->fetch_assoc(); 
+                                    // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
+                                    echo"<img class='zoompro' src= '{$row['IMAGE']}' alt='Imagen del Producto'/>";                                 
+                                } else {
+                                    echo "No hay productos";
+                                }
+                                include 'bd_disconn.php'
+                                ?>
+
+
+
+                                     
                                 </div>
                                 <div id="gallery" class="sp-img_slider">
                                     <a class="active" data-image="assets/images/single-product/large-size/1.jpg" data-zoom-image="assets/images/single-product/large-size/1.jpg">
@@ -96,9 +118,23 @@ include 'header.php'
                         <div class="col-lg-7 col-md-7">
                             <div class="sp-content">
                                 <div class="sp-heading">
-                                    <h5><a href="#">JWDA Penant Lamp Brshed Steel</a></h5>
-                                </div>
-                                <span class="reference">Reference: demo_1</span>
+                                <?php
+                                include 'bd_conn.php';
+                                if (isset($_GET['idprod'])) {
+                                    $productID = $_GET['idprod'];
+                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                    $result = $con->query($sql); 
+                                    $row = $result->fetch_assoc(); 
+                                    // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
+                                    
+                                    echo"<h5> {$row['NAME']}</a></h6>";    
+                                                               
+                                } else {
+                                    echo "No hay productos";
+                                }
+                                include 'bd_disconn.php'
+                                ?>                              
+                            </div>
                                 <div class="rating-box">
                                     <ul>
                                         <li><i class="fa fa-star-of-david"></i></li>
@@ -110,14 +146,29 @@ include 'header.php'
                                 </div>
                                 <div class="sp-essential_stuff">
                                     <ul>
-                                        <li>EX Tax: <a href="javascript:void(0)"><span>£453.35</span></a></li>
-                                        <li>Brands <a href="javascript:void(0)">Buxton</a></li>
-                                        <li>Product Code: <a href="javascript:void(0)">Product 16</a></li>
-                                        <li>Reward Points: <a href="javascript:void(0)">600</a></li>
-                                        <li>Availability: <a href="javascript:void(0)">In Stock</a></li>
+                                    <?php
+                                     include 'bd_conn.php';
+                                     
+                                        if (isset($_GET['idprod'])) {
+                                          $productID = $_GET['idprod'];
+                                          $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                          $result = $con->query($sql); 
+                                          $row = $result->fetch_assoc(); 
+                                      // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
+                                                                        
+                                       echo"<li>Precio: ₡{$row['PRICE']} </li>";
+                                       echo"<li>Marca: {$row['BRAND']} </li>";     
+                                                               
+                                          } else {
+                                            echo "No hay productos";
+                                         }
+                                         include 'bd_disconn.php'
+                                         ?>
+                                        
+                                        <li>Disponibilidad: <a href="javascript:void(0)">In Stock</a></li>
                                     </ul>
                                 </div>
-                                <div class="product-size_box">
+                                <!-- <div class="product-size_box">
                                     <span>Size</span>
                                     <select class="myniceselect nice-select">
                                         <option value="1">S</option>
@@ -125,7 +176,7 @@ include 'header.php'
                                         <option value="3">L</option>
                                         <option value="4">XL</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <div class="quantity">
                                     <label>Quantity</label>
                                     <div class="cart-plus-minus">
@@ -141,12 +192,12 @@ include 'header.php'
                                         <li><a class="qty-compare_btn" href="compare.php" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="hiraola-tag-line">
+                                <!-- <div class="hiraola-tag-line">
                                     <h6>Tags:</h6>
                                     <a href="javascript:void(0)">Ring</a>,
                                     <a href="javascript:void(0)">Necklaces</a>,
                                     <a href="javascript:void(0)">Braid</a>
-                                </div>
+                                </div> -->
                                 <div class="hiraola-social_link">
                                     <ul>
                                         <li class="facebook">
@@ -194,15 +245,36 @@ include 'header.php'
                                 <ul class="nav product-menu">
                                     <li><a class="active" data-bs-toggle="tab" href="#description"><span>Description</span></a>
                                     </li>
-                                    <li><a data-bs-toggle="tab" href="#specification"><span>Specification</span></a></li>
-                                    <li><a data-bs-toggle="tab" href="#reviews"><span>Reviews (1)</span></a></li>
+                                    <!-- <li><a data-bs-toggle="tab" href="#specification"><span>Specification</span></a></li>
+                                    <li><a data-bs-toggle="tab" href="#reviews"><span>Reviews (1)</span></a></li> -->
                                 </ul>
                             </div>
+
                             <div class="tab-content hiraola-tab_content">
                                 <div id="description" class="tab-pane active show" role="tabpanel">
                                     <div class="product-description">
                                         <ul>
-                                            <li>
+                                        <?php
+                                         include 'bd_conn.php';
+                                     
+                                        if (isset($_GET['idprod'])) {
+                                          $productID = $_GET['idprod'];
+                                          $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                          $result = $con->query($sql); 
+                                          $row = $result->fetch_assoc(); 
+                                      // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
+                                                                        
+                                       echo"<li><strong> {$row['NAME']}</strong> </li>";
+                                       echo"<span> {$row['DESCRIPTION']}</span>";     
+                                                               
+                                          } else {
+                                            echo "No hay productos";
+                                         }
+                                         include 'bd_disconn.php'
+                                         ?>
+
+
+                                            <!-- <li>
                                                 <strong>Karat Gold</strong>
                                                 <span>24K gold is called pure gold or fine gold. (99.99% pure) The color of fine
                                             gold is a bright yellow with a bit of orange. Some say it is too soft for
@@ -233,12 +305,14 @@ include 'header.php'
                                             prices overall, and these will be discussed in separate tutorial. Many
                                             people enjoy diamonds in the near colorless range G-J, as they find a
                                             balance of size, clarity, and price to meet their needs.</span>
-                                            </li>
+                                            </li> -->
 
                                         </ul>
                                     </div>
-                                </div>
-                                <div id="specification" class="tab-pane" role="tabpanel">
+                                </div> 
+
+
+                                <!-- <div id="specification" class="tab-pane" role="tabpanel">
                                     <table class="table table-bordered specification-inner_stuff">
                                         <tbody>
                                             <tr>
@@ -327,7 +401,7 @@ include 'header.php'
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

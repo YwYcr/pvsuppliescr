@@ -47,17 +47,6 @@
         <?php
         session_start();
 include 'header.php';
-
-if (isset($_SESSION['wishlist']) && is_array($_SESSION['wishlist'])) {
-    echo "<ul>";
-    foreach ($_SESSION['wishlist'] as $productID) {
-        // Aquí puedes realizar una consulta a la base de datos o usar los IDs para mostrar los productos en la lista de deseos
-        echo "<li>Producto con ID $productID</li>";
-    } echo "</ul>";
-} else {
-    echo "Tu lista de deseos está vacía.";
-}
-
 ?>
         <!-- Hiraola's Header Main Area End Here -->
 
@@ -99,9 +88,8 @@ if (isset($_SESSION['wishlist']) && is_array($_SESSION['wishlist'])) {
                                         <tr>
                                             <th class="hiraola-product_remove">Remover</th>
                                             <th class="hiraola-product-thumbnail">Imagen</th>
-                                            <th class="cart-product-name">Producto</th>
+                                            <th class="cart-product-name">Nombre</th>
                                             <th class="hiraola-product-price">Precio</th>
-                                            <th class="hiraola-product-stock-status">Estado del Stock</th>
                                             <th class="hiraola-cart_btn">Añadir al carrito</th>
                                         </tr>
                                     </thead>
@@ -109,12 +97,26 @@ if (isset($_SESSION['wishlist']) && is_array($_SESSION['wishlist'])) {
                                         <tr>
                                             <td class="hiraola-product_remove"><a href="javascript:void(0)"><i class="fa fa-trash"
                                                 title="Remove"></i></a></td>
-                                            <td class="hiraola-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/2-1.jpg" alt="Hiraola's Wishlist Thumbnail"></a>
-                                            </td>
-                                            <td class="hiraola-product-name"><a href="javascript:void(0)">Juma rema pola</a></td>
-                                            <td class="hiraola-product-price"><span class="amount">£23.39</span></td>
-                                            <td class="hiraola-product-stock-status"><span class="in-stock">En stock</span></td>
-                                            <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
+
+                                                <?php
+                                                
+                                                include 'bd_conn.php';
+                                                if (isset($_GET['idprod'])) {
+                                                $productID = $_GET['idprod'];
+                                                  $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                                  $result = $con->query($sql); 
+                                                  $row = $result->fetch_assoc(); 
+                                                  echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}'/> ";
+                                                  echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
+                                                  echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";
+                                                  echo"<td class='hiraola-cart_btn'><a href='javascript:void(0)'>Añadir al carrito</a></td> ";  
+
+                                                } else {
+                                                  echo "No hay productos";
+                                                            }
+
+                                                    include 'bd_disconn.php';
+                                                ?>    
                                         </tr>
                                         <tr>
                                             <td class="hiraola-product_remove"><a href="javascript:void(0)"><i class="fa fa-trash"
@@ -123,7 +125,6 @@ if (isset($_SESSION['wishlist']) && is_array($_SESSION['wishlist'])) {
                                             </td>
                                             <td class="hiraola-product-name"><a href="javascript:void(0)">Suretin mipen ruma</a></td>
                                             <td class="hiraola-product-price"><span class="amount">£30.50</span></td>
-                                            <td class="hiraola-product-stock-status"><span class="in-stock">En stock</span></td>
                                             <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
                                         </tr>
                                         <tr>
@@ -133,7 +134,6 @@ if (isset($_SESSION['wishlist']) && is_array($_SESSION['wishlist'])) {
                                             </td>
                                             <td class="hiraola-product-name"><a href="javascript:void(0)">Bag Goodscol model</a></td>
                                             <td class="hiraola-product-price"><span class="amount">£40.19</span></td>
-                                            <td class="hiraola-product-stock-status"><span class="out-stock">Fuera de stock</span></td>
                                             <td class="hiraola-cart_btn"><a href="javascript:void(0)">Añadir al carrito</a></td>
                                         </tr>
                                     </tbody>

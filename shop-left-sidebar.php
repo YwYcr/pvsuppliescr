@@ -227,7 +227,7 @@ include 'header.php'
                         echo"<div class='single_product'>";
                             echo"<div class='product-img'>";
                             
-                            echo"<a href='single-product.php'>";
+                            echo"<a href='single-product.php?idprod={$row['IDPRODUCT']}'/>";
                             
                             echo"<img class='primary-img' src= '{$row['IMAGE']}' alt='Imagen del Producto'/>";
                             echo"<img class='secondary-img' src='{$row['IMAGE']}' alt='Imagen del Producto'/>";
@@ -255,15 +255,15 @@ include 'header.php'
                                         echo" <ul>";
 
 
-                                        echo "<form method='post' action='wishlist.php'>";
-// echo "<input type='hidden' name='IDPRODUCT' value='{$productID}'>";
-// echo "<button type='submit' name='add_to_wishlist' class='hiraola-add_compare' data-bs-toggle='tooltip' data-bs-id='$productID' data-placement='top' title='Agregar a Favoritos'>";
-// echo "<i class='ion-android-favorite-outline'></i>";
-// echo "</button>";
-// echo "</form>";
+                                        // echo "<form method='post' action='favoritos.php'>";
+                                        // echo "<input type='hidden' name='IDPRODUCT' value='{$productID}'>";
+                                        // echo "<button type='submit' name='agregarFavoritos' class='hiraola-add_compare' data-bs-toggle='tooltip' data-bs-id='$productID' data-placement='top' title='Agregar a Favoritos'>";
+                                        // echo "<i class='ion-android-favorite-outline'></i>";
+                                        // echo "</button>";
+                                        // echo "</form>";
 
 
-                                            echo"<li><a class='hiraola-add_compare' href='wishlist.php' data-bs-toggle='tooltip' data-placement='top' data-bs-id='$productID' title='Add To Wishlist'>
+                                            echo"<li><a class='hiraola-add_compare' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar a Favoritos'>
                                                  <i class='ion-android-favorite-outline'></i></a>";
                                             echo" </li>";
                                         echo" </ul>";
