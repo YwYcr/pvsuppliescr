@@ -201,7 +201,7 @@ function loadContent(targetPage) {
 
   // Carga el contenido
   const mainContent = document.getElementById("main-content");
-  fetch(targetPage + ".php")
+  fetch("admin" + targetPage + "/" + targetPage+ ".php")
     .then((response) => response.text())
     .then((data) => {
       mainContent.innerHTML = data;
