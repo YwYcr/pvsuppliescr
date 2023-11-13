@@ -1,3 +1,6 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src= "../../assets/js/FormRegistro.js"></script>
+
 <!-- Begin Hiraola's Header Main Area -->
 <header class="header-main_area">
             <div class="header-top_area">
@@ -21,8 +24,8 @@
                                     <ul>
                                         <li style="border-left: 1px solid #e5e5e5"><a href="my-account.php">Mi Cuenta<i class="fa fa-chevron-down"></i></a>
                                             <ul class="ht-dropdown ht-my_account">
-                                                <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasRight">Login</a></li>
-                                                <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="offcanvasRight">Register</a></li>
+                                                <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasRight">Iniciar Sesion</a></li>
+                                                <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="offcanvasRight">Registro</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -74,36 +77,36 @@
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegister" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
-                    <h5 id="offcanvasRightLabel">Register</h5>
+                    <h5 id="offcanvasRightLabel">Registro</h5>
                     <button type="button" class="btn-close text-reset btn-regis-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
                 </div>
                 <div class="offcanvas-body">
-                <form action="#">
+                <form action="#" id="register-form">
                             <div class="login-form">
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb--20">
-                                        <label for="registerUserName" class="form-label">First Name</label>
-                                        <input type="text" class="form-control" id="registerUserName" name="registerUserName" required placeholder="First Name">
+                                    <label>Nombre:</label>
+                                        <input type="text" id="name" name="name" placeholder="Nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}">
                                     </div>
                                     <div class="col-md-6 col-12 mb--20">
-                                        <label>Last Name</label>
-                                        <input type="text" placeholder="Last Name">
+                                        <label>Apellido:</label>
+                                        <input type="text" id="flastname" name="flastname" placeholder="Apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}">
                                     </div>
                                     <div class="col-md-12">
-                                        <label>Email Address*</label>
-                                        <input type="email" placeholder="Email Address">
+                                        <label>Correo electrónico:</label>
+                                        <input type="email" id="email" placeholder="Correo electronico" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Password</label>
-                                        <input type="password" placeholder="Password">
+                                        <label>Contraseña:</label>
+                                        <input type="password" id="password" placeholder="Password" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Confirm Password</label>
-                                        <input type="password" placeholder="Confirm Password">
+                                        <label>Confirme Contraseña</label>
+                                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
                                     </div>
                                     <br>
                                     <div class="col-12">
-                                        <button class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Register</button>
+                                        <button class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registro</button>
                                     </div>
                                 </div>
                             </div>
@@ -602,5 +605,8 @@
                     </div>
                 </div>
             </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>
+            
         </header>
         <!-- Hiraola's Header Main Area End Here -->

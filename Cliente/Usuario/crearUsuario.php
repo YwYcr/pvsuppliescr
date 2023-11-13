@@ -1,5 +1,5 @@
 <?php
-include 'bd_conn.php';
+include '../tools/bd_conn.php';
 
 
 
@@ -9,19 +9,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $primerApellido = $_POST['primerApellido'];
     $segundoApellido = $_POST['segundoApellido'];
-    $password = $_POST['password'];
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // Hash the password
 
-    $sql = "INSERT INTO USERS (EMAIL, NAME, FLASTNAME, SLASTNAME, PASSWORD) 
-    VALUES ('$email', '$nombre', '$primerApellido', '$segundoApellido', '$password')";
-    
-    if ($con->query($sql) === TRUE) {
-        echo "Usuario creado exitosamente.";
-    } else {
-        echo "Error al crear el usuario: " . $con->error;
-    }
+    // Validacion de email
+    $checkEmailQuery = "SELECT * FROM USERS WHERE EMAIL = '$email'";
+    $result = $con->query($checkEmailQuery);
 
-    include 'bd_disconn.php';
-}else{
-    echo "acceso no autorizado";
-}
+    if ($result->num_rows > 0) {
+            // Correo en uso
+            echo "El correo electrónico ya está en uso. Por favor, utilice otro correo.";
+        } else {
+            // Correo nuevo, se procede con registro
+            $sql = "INSERT INTO USERS (NAME, FLASTNAME, EMAIL, PASSWORD) 
+            VALUES ('$nombre', '$primerApellido', '$email', '$hashedPassword')";
+            
+            if ($con->query($sql) === TRUE) {
+                echo "Registro exitoso.";
+            } else {
+                echo "Error al registrar: " . $con->error;
+            }
+        }
+
+            include 'bd_disconn.php';
+        } else {
+            echo "Acceso no autorizado";
+        }
 ?>
