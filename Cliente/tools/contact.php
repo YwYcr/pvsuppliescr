@@ -46,12 +46,13 @@ include 'header.php'
 ?>
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
+        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1KyntguLpdaXZ_T2RhOG7ViUqtb9cJlMY" alt="Contacto">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Other</h2>
+                    <h2>Contactanos</h2>
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active">Contact</li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li class="active">Contacto</li>
                     </ul>
                 </div>
             </div>
