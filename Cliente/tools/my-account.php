@@ -51,12 +51,13 @@ include 'header.php'
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
+        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1CiuSuHY1RYrHAfZH4xliz8EPnGsES6K8" alt="Perfil1">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Other</h2>
+                    <h2>Mi Perfil</h2>
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active">My Account</li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li class="active">Mi Cuenta</li>
                     </ul>
                 </div>
             </div>

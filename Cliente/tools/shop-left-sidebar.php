@@ -48,6 +48,7 @@ include 'header.php'
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
+        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1_3flLnN5iN1XnirK9sXlF48xu2TrD3Oz" alt="Sobre Noso">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Catalogo</h2>

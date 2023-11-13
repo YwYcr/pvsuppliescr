@@ -47,6 +47,7 @@ include 'header.php'
 
         <!-- Begin Puerto Viejo Supplies Breadcrumb Area -->
         <div class="breadcrumb-area">
+        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1lIV5T9YQCsTRzArxObGfvvq2r3Bwmvbr" alt="Sobre Noso">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Acerca de Nosotros</h2>
@@ -71,14 +72,14 @@ include 'header.php'
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nulla veniam? Magni aliquid
                                 asperiores magnam. Veniam ex tenetur.</p>
                             <div class="hiraola-about-us_btn-area">
-                                <a class="about-us_btn" href="shop-left-sidebar.html">Shop Now</a>
+                                <a class="about-us_btn" href="shop-left-sidebar.html">Comprar Ahora</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
                         <div class="overview-img text-center img-hover_effect">
                             <a href="#">
-                                <img class="img-full" src="../../assets/images/about-us/1.jpg" alt="Puerto Viejo Supplies About Us Image">
+                                <img class="img-full" src="https://drive.google.com/uc?export=download&id=1ZI_uVHhqnbCP2ZUJDiDA_8UGBub35g1V" alt="Sobre Noso">
                             </a>
                         </div>
                     </div>
@@ -98,7 +99,7 @@ include 'header.php'
                             </div>
                             <div class="count-title">
                                 <h2 class="count">2169</h2>
-                                <span>Project Done</span>
+                                <span>Proyectos Terminados</span>
                             </div>
                         </div>
                     </div>
@@ -109,7 +110,7 @@ include 'header.php'
                             </div>
                             <div class="count-title">
                                 <h2 class="count">869</h2>
-                                <span>Awards Winned</span>
+                                <span>Premios Ganados</span>
                             </div>
                         </div>
                     </div>
@@ -120,7 +121,7 @@ include 'header.php'
                             </div>
                             <div class="count-title">
                                 <h2 class="count">689</h2>
-                                <span>Hours Worked</span>
+                                <span>Horas Trabajadas</span>
                             </div>
                         </div>
                     </div>
@@ -131,7 +132,7 @@ include 'header.php'
                             </div>
                             <div class="count-title">
                                 <h2 class="count">2169</h2>
-                                <span>Happy Customer</span>
+                                <span>Compradores Felices</span>
                             </div>
                         </div>
                     </div>
@@ -146,7 +147,7 @@ include 'header.php'
                 <div class="row">
                     <div class="col-12">
                         <div class="section_title-2">
-                            <h4>Our Team</h4>
+                            <h4>Nuestro Equipo</h4>
                         </div>
                     </div>
                 </div> <!-- section title end -->
@@ -155,55 +156,12 @@ include 'header.php'
                         <div class="team-member">
                             <div class="team-thumb img-hover_effect">
                                 <a href="#">
-                                    <img src="../../assets/images/about-us/team/1.jpg" alt="Our Team Member">
-                                </a>
-                            </div>
-                            <div class="team-content text-center">
-                                <h3>Timothy Beck</h3>
-                                <p>IT Expert</p>
-                                <a href="#">info@example.com</a>
-                                <div class="hiraola-social_link">
-                                    <ul>
-                                        <li class="facebook">
-                                            <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank" title="Facebook">
-                                                <i class="fab fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="twitter">
-                                            <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank" title="Twitter">
-                                                <i class="fab fa-twitter-square"></i>
-                                            </a>
-                                        </li>
-                                        <li class="youtube">
-                                            <a href="https://www.youtube.com" data-bs-toggle="tooltip" target="_blank" title="Youtube">
-                                                <i class="fab fa-youtube"></i>
-                                            </a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
-                                                <i class="fab fa-google-plus"></i>
-                                            </a>
-                                        </li>
-                                        <li class="instagram">
-                                            <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank" title="Instagram">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end single team member -->
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-member">
-                            <div class="team-thumb img-hover_effect">
-                                <a href="#">
-                                    <img src="../../assets/images/about-us/team/2.jpg" alt="Our Team Member">
+                                    <img src="https://drive.google.com/uc?export=download&id=1zgt8mmMJqGXhUo91WhJ3iqdPgHXvS-YD" alt="Miembro del Equipo">
                                 </a>
                             </div>
                             <div class="team-content text-center">
                                 <h3>Sarah Sanchez</h3>
-                                <p>Web Designer</p>
+                                <p>Experto de TI</p>
                                 <a href="#">info@example.com</a>
                                 <div class="hiraola-social_link">
                                     <ul>
@@ -241,12 +199,55 @@ include 'header.php'
                         <div class="team-member">
                             <div class="team-thumb img-hover_effect">
                                 <a href="#">
-                                    <img src="../../assets/images/about-us/team/3.jpg" alt="Our Team Member">
+                                <img src="https://drive.google.com/uc?export=download&id=1uIjYmS94_ih5ijpEVy_-3uQKNJlV6B8b" alt="Miembro del Equipo">
+                                </a>
+                            </div>
+                            <div class="team-content text-center">
+                                <h3>Diego Brenes</h3>
+                                <p>Diseñador Web</p>
+                                <a href="#">info@example.com</a>
+                                <div class="hiraola-social_link">
+                                    <ul>
+                                        <li class="facebook">
+                                            <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank" title="Facebook">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="twitter">
+                                            <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank" title="Twitter">
+                                                <i class="fab fa-twitter-square"></i>
+                                            </a>
+                                        </li>
+                                        <li class="youtube">
+                                            <a href="https://www.youtube.com" data-bs-toggle="tooltip" target="_blank" title="Youtube">
+                                                <i class="fab fa-youtube"></i>
+                                            </a>
+                                        </li>
+                                        <li class="google-plus">
+                                            <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
+                                                <i class="fab fa-google-plus"></i>
+                                            </a>
+                                        </li>
+                                        <li class="instagram">
+                                            <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank" title="Instagram">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end single team member -->
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="team-member">
+                            <div class="team-thumb img-hover_effect">
+                                <a href="#">
+                                <img src="https://drive.google.com/uc?export=download&id=1769SkEZCT0xb27ZC-NKbLBAtKTrAwZVD" alt="Miembro del Equipo">
                                 </a>
                             </div>
                             <div class="team-content text-center">
                                 <h3>Edwin Adams</h3>
-                                <p>Content Writer</p>
+                                <p>Recursos Humanos</p>
                                 <a href="javascript:void(0)">info@example.com</a>
                                 <div class="hiraola-social_link">
                                     <ul>
@@ -284,12 +285,12 @@ include 'header.php'
                         <div class="team-member">
                             <div class="team-thumb img-hover_effect">
                                 <a href="#">
-                                    <img src="../../assets/images/about-us/team/4.jpg" alt="Our Team Member">
+                                <img src="https://drive.google.com/uc?export=download&id=1FnLaVqR0qaINselkNWudOTUYs_c7vUgI" alt="Miembro del Equipo">
                                 </a>
                             </div>
                             <div class="team-content text-center">
                                 <h3>Anny Adams</h3>
-                                <p>Marketing officer</p>
+                                <p>Marketing</p>
                                 <a href="#">info@example.com</a>
                                 <div class="hiraola-social_link">
                                     <ul>
