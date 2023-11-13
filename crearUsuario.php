@@ -1,6 +1,8 @@
 <?php
 include 'bd_conn.php';
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtén los datos del formulario
     $email = $_POST['email'];

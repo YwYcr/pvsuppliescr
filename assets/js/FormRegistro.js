@@ -65,14 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("VAR DATA:", data);
 
-        // Hash clave con bcrypt.js -- TODO
-        // const saltRounds = 10;
-        // bcrypt.hash(password, saltRounds, function (err, hash) {
-        //     if (err) {
-        //         console.error("Error hashing password");
-        //         return;
-        //     }
-
         // AJAX para guardar datos
         $.ajax({
             type: "POST",
