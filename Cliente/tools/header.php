@@ -1,5 +1,5 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src= "../../assets/js/FormRegistro.js"></script>
+<script src= "../../Cliente/FormRegistro.js"></script>
 
 <!-- Begin Hiraola's Header Main Area -->
 <header class="header-main_area">
@@ -106,7 +106,7 @@
                                     </div>
                                     <br>
                                     <div class="col-12">
-                                        <button class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registro</button>
+                                        <button id="registrarUsuarioButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registro</button>
                                     </div>
                                 </div>
                             </div>

@@ -68,11 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // AJAX para guardar datos
         $.ajax({
             type: "POST",
-            url: "Cliente/Usuario/crearUsuario.php",
+            url: "../Usuario/crearUsuario.php",
+            //Usuario/crearUsuario.php
             data: data,
             success: function(response) {
                 // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
                 alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                registerForm.reset();
             },
             error: function(xhr, status, error) {
                 // Manejar errores de la solicitud AJAX

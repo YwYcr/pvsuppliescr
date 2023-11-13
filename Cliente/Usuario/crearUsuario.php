@@ -5,10 +5,10 @@ include '../tools/bd_conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtén los datos del formulario
-    $email = $_POST['email'];
     $nombre = $_POST['nombre'];
     $primerApellido = $_POST['primerApellido'];
-    $segundoApellido = $_POST['segundoApellido'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // Hash the password
 
     // Validacion de email
@@ -24,13 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$nombre', '$primerApellido', '$email', '$hashedPassword')";
             
             if ($con->query($sql) === TRUE) {
-                echo "Registro exitoso.";
+                echo "Registro exitoso. Revisa tu correo para confirmar tu cuenta";
+                
             } else {
                 echo "Error al registrar: " . $con->error;
             }
         }
 
-            include 'bd_disconn.php';
+        include '../tools/bd_conn.php';
         } else {
             echo "Acceso no autorizado";
         }
