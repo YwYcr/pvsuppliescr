@@ -1,7 +1,7 @@
 <script src= "../../Cliente/FormRegistro.js"></script>
 
 <!-- Recaptcha -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b" async defer></script>
 <!-- Recaptcha -->
 
 <!-- Recaptcha -->
