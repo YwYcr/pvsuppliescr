@@ -1,5 +1,6 @@
 console.log("Hello, world!");
 
+
 //JS para validar los datos del form y hacer el envio a la BD usando AJAX
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,36 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
 
-        // Funciones de validaciones
-        // function isValidEmail(email) {
-        //     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        // }
-
-        // function isValidName(name) {
-        //     return /^[A-Za-z]+$/.test(name);
-        // }
+        var recaptcha_response = document.getElementById("recaptchaResponse").value;
 
         function isValidPassword(password) {
             // Clave 8 caracteres minimo, minimo 1 # y 1 mayuscula
             const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
             return regex.test(password);
         }
-
-        // Perform validations
-        // if (!isValidName(firstName)) {
-        //     alert("Nombre Invalido. Utilice solamente letras.");
-        //     return;
-        // }
-
-        // if (!isValidName(lastName)) {
-        //     alert("Apellido Invalido. Utilice solamente letras.");
-        //     return;
-        // }
-
-        // if (!isValidEmail(email)) {
-        //     alert("Formato de correo incorrecto.");
-        //     return;
-        // }
 
 
         if (password !== confirmPassword) {
@@ -60,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
             nombre: firstName,
             primerApellido: lastName,
             email: email,
-            password: password
+            password: password,
+            recaptcha_response: recaptcha_response
         };
 
         console.log("VAR DATA:", data);
@@ -74,11 +53,25 @@ document.addEventListener("DOMContentLoaded", function () {
             success: function(response) {
                 // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
                 alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                
+                // Get and log the reCAPTCHA score
+                if (typeof grecaptcha !== 'undefined') {
+                    var recaptchaScore = grecaptcha.getResponse(); // Assuming grecaptcha.getResponse() returns the score
+                    console.log("reCAPTCHA Score:", recaptchaScore);
+                } else {
+                    console.error("reCAPTCHA client is not available");
+                }
+                
                 registerForm.reset();
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b').then(function(token) {
+                    document.getElementById("recaptchaResponse").value = token;
+                    });
+                });
             },
             error: function(xhr, status, error) {
                 // Manejar errores de la solicitud AJAX
-                console.error(error);
+                console.error(error);               
             }            
         });
 

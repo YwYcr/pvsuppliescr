@@ -447,8 +447,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-1.jpg" alt="Hiraola's Product Image">
+                                            <img class="primary-img" src="../../assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
+                                            <img class="secondary-img" src="../../assets/images/product/medium-size/1-1.jpg" alt="Hiraola's Product Image">
                                         </a>
                                         <span class="sticker-2">Sale</span>
                                         <div class="add-actions">
@@ -495,8 +495,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
+                                            <img class="primary-img" src="../../assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
+                                            <img class="secondary-img" src="../../assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
                                         </a>
                                         <span class="sticker">New</span>
                                         <div class="add-actions">
@@ -544,8 +544,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
+                                            <img class="primary-img" src="../../assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
+                                            <img class="secondary-img" src="../../assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
                                         </a>
                                         <span class="sticker">New</span>
                                         <div class="add-actions">
@@ -592,8 +592,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
+                                            <img class="primary-img" src="../../assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
+                                            <img class="secondary-img" src="../../assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
                                         </a>
                                         <span class="sticker">New</span>
                                         <div class="add-actions">

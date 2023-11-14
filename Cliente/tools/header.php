@@ -1,5 +1,18 @@
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src= "../../Cliente/FormRegistro.js"></script>
+
+<!-- Recaptcha -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b"></script>
+<!-- Recaptcha -->
+
+<!-- Recaptcha -->
+<script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b').then(function(token) {
+            document.getElementById("recaptchaResponse").value = token;
+            });
+        });
+    </script>  
+<!-- Recaptcha -->
 
 <!-- Begin Hiraola's Header Main Area -->
 <header class="header-main_area">
@@ -47,11 +60,11 @@
                                 <div class="row">
                                     <div class="col-md-12 col-12">
                                         <label>Correo Electrónico</label>
-                                        <input type="email" placeholder="Email Address">
+                                        <input type="email" placeholder="Email Address" id="loginMail">
                                     </div>
                                     <div class="col-12 mb--20">
                                         <label>Contraseña</label>
-                                        <input type="password" placeholder="Password">
+                                        <input type="password" placeholder="Password" id="passLogin">
                                     </div>
                                     <div class="col-md-12 col-12">
                                         <div class="check-box">
@@ -74,7 +87,6 @@
                         </form>
                 </div>
             </div>
-
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegister" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <h5 id="offcanvasRightLabel">Registro</h5>
@@ -82,19 +94,19 @@
                 </div>
                 <div class="offcanvas-body">
                 <form action="#" id="register-form">
-                            <div class="login-form">
+                            <div class="login-form">                            
                                 <div class="row">
-                                    <div class="col-md-6 col-12 mb--20">
+                                    <div class="col-md-6 col-12 mb--20">                                
                                     <label>Nombre:</label>
-                                        <input type="text" id="name" name="name" placeholder="Nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}">
+                                        <input type="text" id="name" name="name" placeholder="Nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}" maxlength="100">
                                     </div>
                                     <div class="col-md-6 col-12 mb--20">
                                         <label>Apellido:</label>
-                                        <input type="text" id="flastname" name="flastname" placeholder="Apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}">
+                                        <input type="text" id="flastname" name="flastname" placeholder="Apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{1,55}" maxlength="100">
                                     </div>
                                     <div class="col-md-12">
                                         <label>Correo electrónico:</label>
-                                        <input type="email" id="email" placeholder="Correo electronico" required>
+                                        <input type="email" id="email" placeholder="Correo electronico" required maxlength="200">
                                     </div>
                                     <div class="col-md-6">
                                         <label>Contraseña:</label>
@@ -104,11 +116,12 @@
                                         <label>Confirme Contraseña</label>
                                         <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
                                     </div>
+                                    <input type="hidden" id="recaptchaResponse" name="recaptcha_response" />
                                     <br>
                                     <div class="col-12">
-                                        <button id="registrarUsuarioButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registro</button>
+                                        <button type="submit" id="registrarUsuarioButton" name="registerButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registro</button>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </form>
                 </div>
@@ -128,7 +141,7 @@
                             <div class="hm-form_area">
                                 <form action="#" class="hm-searchbox">
                                     
-                                    <input type="text" placeholder="Enter your search key ...">
+                                    <input type="text" placeholder="Enter your search key ..." id="searchbox">
                                     <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                                 </form>
                             </div>
@@ -237,7 +250,7 @@
                         <a href="#" class="btn-close"><i class="ion-android-close"></i></a>
                         <div class="offcanvas-inner_search">
                             <form action="#" class="hm-searchbox">
-                                <input type="text" placeholder="Search for item...">
+                                <input type="text" placeholder="Search for item..." id="searchItem">
                                 <button class="search_btn" type="submit"><i class="ion-ios-search-strong"></i></button>
                             </form>
                         </div>
@@ -607,6 +620,6 @@
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>
-            
+
         </header>
         <!-- Hiraola's Header Main Area End Here -->

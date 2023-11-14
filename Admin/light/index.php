@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
     <title>PVSupplies | Administrador</title>
     <meta charset="utf-8">
@@ -747,10 +748,6 @@
             });
         });
     </script>
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
 
     <!-- <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script> -->
 
