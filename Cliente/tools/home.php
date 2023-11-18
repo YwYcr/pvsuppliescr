@@ -6,7 +6,7 @@
                     <div class="col grid-half order-md-2 order-lg-1">
                         <div class="category-menu">
                             <div class="category-heading">
-                                <h2 class="categories-toggle"><span>Shop by categories</span></h2>
+                                <h2 class="categories-toggle"><span>Compra por categorías</span></h2>
                             </div>
                             <div id="cate-toggle" class="category-menu-list">
                                 <ul>
