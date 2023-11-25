@@ -1,5 +1,4 @@
         <!-- Hiraola's Header Main Area End Here -->
-
         <div class="slider-with-category_menu">
             <div class="container-fluid">
                 <div class="row">

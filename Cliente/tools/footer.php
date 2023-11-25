@@ -279,12 +279,12 @@
                                         </div>
                                     </div>
                                     <div class="quantity">
-                                        <label>Quantity</label>
+                                        <label>Quantity
                                         <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" value="1" type="text">
+                                            <input id="cart_plus_minus" class="cart-plus-minus-box" value="1" type="text">
                                             <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                             <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                        </div>
+                                        </div> </label>
                                     </div>
                                     <div class="hiraola-group_btn">
                                         <ul>
