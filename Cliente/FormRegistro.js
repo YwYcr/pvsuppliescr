@@ -1,9 +1,20 @@
 console.log("Hello, world!");
 
-//JS para validar los datos del form y hacer el envio a la BD usando AJAX
+// Function to execute reCAPTCHA
+function executeRecaptcha() {
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b', { action: 'submit' }).then(function(token) {
+            document.getElementById("recaptchaResponse").value = token;
+        });
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("register-form");
+    const messageContainer = document.getElementById("message-container");
+
+    // Initial execution of reCAPTCHA
+    executeRecaptcha();
 
     registerForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -11,16 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var lastName = document.getElementById("flastname").value;
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("confirmPassword").value;
-
-        // Funciones de validaciones
-        // function isValidEmail(email) {
-        //     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        // }
-
-        // function isValidName(name) {
-        //     return /^[A-Za-z]+$/.test(name);
-        // }
+        var confirmPassword = document.getElementById("confirmPassword").value; 
+        var js_recaptcha_response = document.getElementById("recaptchaResponse").value;
 
         function isValidPassword(password) {
             // Clave 8 caracteres minimo, minimo 1 # y 1 mayuscula
@@ -28,60 +31,58 @@ document.addEventListener("DOMContentLoaded", function () {
             return regex.test(password);
         }
 
-        // Perform validations
-        // if (!isValidName(firstName)) {
-        //     alert("Nombre Invalido. Utilice solamente letras.");
-        //     return;
-        // }
-
-        // if (!isValidName(lastName)) {
-        //     alert("Apellido Invalido. Utilice solamente letras.");
-        //     return;
-        // }
-
-        // if (!isValidEmail(email)) {
-        //     alert("Formato de correo incorrecto.");
-        //     return;
-        // }
-
-
         if (password !== confirmPassword) {
-            alert("Las claves son diferentes. Intente de nuevo");
+            displayMessage("Las claves son diferentes. Intente de nuevo", "error");
+            
             return;
         }
 
         // Validate the password
         if (!isValidPassword(password)) {
-            alert("La clave debe ser al menos 8 caracteres. Debe contener al menos 1 número y una letra mayúscula.");
+            displayMessage("La clave debe ser al menos 8 caracteres. Debe contener al menos 1 número y una letra mayúscula.", "error");
+            
             return;
         }
 
+
+        // Include reCAPTCHA response in the form data
         var data = {
             nombre: firstName,
             primerApellido: lastName,
             email: email,
-            password: password
+            password: password,
+            recaptcha_response: js_recaptcha_response  // Use the reCAPTCHA token
         };
 
         console.log("VAR DATA:", data);
 
-        // AJAX para guardar datos
+        // AJAX to save data
         $.ajax({
             type: "POST",
             url: "../Usuario/crearUsuario.php",
-            //Usuario/crearUsuario.php
             data: data,
             success: function(response) {
-                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                displayMessage(response, "success");
                 registerForm.reset();
+                executeRecaptcha(); // Refresh reCAPTCHA after a successful submission
             },
             error: function(xhr, status, error) {
-                // Manejar errores de la solicitud AJAX
+                displayMessage("Error en la solicitud AJAX. Por favor, inténtelo de nuevo.", "error");
+                registerForm.reset();
+                executeRecaptcha(); // Refresh reCAPTCHA after a successful submission
                 console.error(error);
-            }            
+            }
         });
 
-        // alert("Registro exitoso! Revise su correo para confirmar su cuenta.");
     });
+
+    function displayMessage(message, type) {
+        var messageDiv = document.createElement("div");
+        messageDiv.className = "message " + type;
+        messageDiv.textContent = message;
+
+        messageContainer.innerHTML = "";
+
+        messageContainer.appendChild(messageDiv);
+    }
 });

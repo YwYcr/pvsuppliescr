@@ -1,5 +1,4 @@
         <!-- Hiraola's Header Main Area End Here -->
-
         <div class="slider-with-category_menu">
             <div class="container-fluid">
                 <div class="row">
@@ -450,8 +449,10 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
+
                                         <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1LhaCxQ3WkwSe_IdxR5BjGjrNhQrrcP13" alt="Espejo1">
                                         <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1KJBllj5FmuCQV_uFaQIr5rSzEKKEuxKY" alt="Espejo2">
+
                                         </a>
                                         <span class="sticker-2">Oferta</span>
                                         <div class="add-actions">
@@ -498,8 +499,10 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
+
                                         <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1XYS7Vd-fU8gyJt2NYswYJN1yW1KKeeQV" alt="Hamaca1">
                                         <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1vGjbmwYNPio4gWWaHgJoEd3I-akuL__N" alt="Hamaca2">
+
                                         </a>
                                         <span class="sticker">Nuevo</span>
                                         <div class="add-actions">
@@ -547,8 +550,10 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
+
                                         <img class="primary-img" src="https://drive.google.com/uc?export=download&id=14q-XohdteGj7rUiXCUmbyG6vFaZogKkJ" alt="Hamaca1">
                                         <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1CroMB79ND0_irvIqa5ThpOsWb1aRxJJD" alt="Hamaca2">
+
                                         </a>
                                         <span class="sticker">Nuevo</span>
                                         <div class="add-actions">
@@ -571,7 +576,9 @@
                                             </div>
                                             <div class="additional-add_action">
                                                 <ul>
+
                                                     <li><a class="hiraola-add_compare" href="wishlist.php" data-bs-toggle="tooltip" data-placement="top" title="Añadir a la lista de Deseos"><i
+
                                                         class="ion-android-favorite-outline"></i></a>
                                                     </li>
                                                 </ul>
