@@ -146,7 +146,9 @@
                             <div class="hm-form_area">
                                 <form action="#" class="hm-searchbox">
                                     
-                                    <input type="text" placeholder="Enter your search key ..." id="searchbox">
+
+                                    <input type="text" placeholder="Introduce tu búsqueda aquí ...">
+
                                     <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                                 </form>
                             </div>

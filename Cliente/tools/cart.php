@@ -52,6 +52,7 @@ include 'header.php'
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
+        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1CdIbHV4Sdvjis6gKxHJPwDpoPmmuGzCX" alt="Carrito1">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Detalle de Carrito de compras</h2>

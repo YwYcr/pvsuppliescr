@@ -142,7 +142,7 @@
                             <div class="col-lg-12">
                                 <div class="payment">
                                     <a href="#">
-                                        <img src="../../assets/images/footer/payment/1.png" alt="Hiraola's Payment Method">
+                                    <img src="../../assets/images/footer/logo/1.png" alt="Logo">
                                     </a>
                                 </div>
                             </div>
