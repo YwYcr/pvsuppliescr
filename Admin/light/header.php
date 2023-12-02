@@ -197,7 +197,7 @@
                             <!-- class="active" -->
                             <li class="header">Menú</li>
                             <li data-page="usuarios"><a href="#" data-page="usuarios" id="usuarios-link"><i class="icon-users" data-page="usuarios"></i><span data-page="usuarios">Usuarios</span></a></li>
-                            <li data-page="calendario"><a href="#" data-page="calendario"><i class="icon-calendar" data-page="calendario"></i><span data-page="calendario">Calendario</span></a></li>
+                            <!-- <li data-page="calendario"><a href="#" data-page="calendario"><i class="icon-calendar" data-page="calendario"></i><span data-page="calendario">Calendario</span></a></li> -->
                             <li data-page="contactos"><a href="#" data-page="contactos"><i class="icon-book-open" data-page="contactos"></i><span data-page="contactos">Contactos</span></a></li>
                             <li data-page="proveedores"><a href="#" data-page="proveedores"><i class="icon-book-open" data-page="proveedores"></i><span data-page="proveedores">Proveedores</span></a></li>
                             <!-- <li data-page="proyectos"><a href="#" data-page="proyectos"><i class="icon-pin" data-page="proyectos"></i><span data-page="proyectos">Proyectos y Tareas</span></a></li> -->

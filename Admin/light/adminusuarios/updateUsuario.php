@@ -10,10 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $primerApellido = $_POST['primerApellido'];
     $segundoApellido = $_POST['segundoApellido'];
     $password = $_POST['password'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $suscription = $_POST['suscription'];
+    $rol = $_POST['rol'];
 
     // Realiza la inserción en la base de datos (asegúrate de escapar y validar los datos)
-    $sql = "UPDATE USERS SET EMAIL = '$email', NAME = '$nombre', FLASTNAME = '$primerApellido', SLASTNAME = '$segundoApellido', PASSWORD = '$password' WHERE IDUSER = '$userID'";
-    // $sql = "INSERT INTO USERS (EMAIL, NAME, FLASTNAME, SLASTNAME, PASSWORD) VALUES ('$email', '$nombre', '$primerApellido', '$segundoApellido', '$password')";
+    $sql = "UPDATE USERS 
+    SET EMAIL = '$email', 
+    NAME = '$nombre', 
+    FLASTNAME = '$primerApellido', 
+    SLASTNAME = '$segundoApellido', 
+    PASSWORD = '$password',
+    PHONE = '$phone',
+    ADDRESS = '$address',
+    SUSCRIPTION = '$suscription',
+    IDROL = '$rol'
+    WHERE IDUSER = '$userID'";
 
     if ($con->query($sql) === TRUE) {
         echo "Usuario creado exitosamente.";

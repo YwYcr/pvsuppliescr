@@ -18,6 +18,13 @@
                         $("#infoUserFLASTNAME").val(response.FLASTNAME);
                         $("#infoUserSLASTNAME").val(response.SLASTNAME);
                         $("#infoUserPassword").val(response.PASSWORD);
+                        $("#infoUserPhone").val(response.PHONE);
+                        $("#infoUserAddress").val(response.ADDRESS);
+                        $("#infoUserCreation").val(response.CREATEDATE);
+                        $("#infoUserSuscrito").val(response.SUSCRIPTION);
+                        $("#infoUserRol").val(response.IDROL);
+                        
+                        
                         // $("#info").modal("show");
 
                         // console.log("Email: " + response.EMAIL);
@@ -39,19 +46,22 @@
                 var primerApellido = $("#createUserFLASTNAME").val();
                 var segundoApellido = $("#createUserSLASTNAME").val();
                 var password = $("#createUserPassword").val();
-
-                // console.log("Email: " + email);
-                // console.log("Nombre: " + nombre);
-                // console.log("Primer Apellido: " + primerApellido);
-                // console.log("Segundo Apellido: " + segundoApellido);
-                // console.log("Contraseña: " + password);
-
+                var phone = $("#createUserPhone").val();
+                var address = $("#createUserAddress").val();
+                var suscription = $("#createUserSuscrito").val();
+                var rol = $("#createUserRol").val();
+                
                 var data = {
                     email: email,
                     nombre: nombre,
                     primerApellido: primerApellido,
                     segundoApellido: segundoApellido,
-                    password: password
+                    password: password,
+                    phone: phone,
+                    address: address,
+                    suscription:suscription,
+                    rol:rol
+
                 };
 
                 $.ajax({
@@ -61,6 +71,12 @@
                     success: function (response) {
                         // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
                         alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                        fetch('adminusuarios/refreshUsuario.php')
+                        .then(response => response.text())                   
+                        .then(data => {
+                            document.getElementById('userTableBody').innerHTML = data;
+                        });
+                        
                     },
                     error: function (xhr, status, error) {
                         // Manejar errores de la solicitud AJAX
@@ -89,7 +105,12 @@
                         $("#editUserFLASTNAME").val(response.FLASTNAME);
                         $("#editUserSLASTNAME").val(response.SLASTNAME);
                         $("#editUserPassword").val(response.PASSWORD);
-                        // $("#info").modal("show");
+                        $("#editUserPhone").val(response.PHONE);
+                        $("#editUserAddress").val(response.ADDRESS);
+                        $("#editUserCreation").val(response.CREATEDATE);
+                        $("#editUserSuscrito").val(response.SUSCRIPTION);
+                        $("#editUserRol").val(response.IDROL);
+                        
 
                         console.log("Email: " + response.EMAIL);
                         console.log("ID a modificar: " + response.IDUSER);
@@ -116,6 +137,10 @@
                 var primerApellido = $("#editUserFLASTNAME").val();
                 var segundoApellido = $("#editUserSLASTNAME").val();
                 var password = $("#editUserPassword").val();
+                var phone = $("#editUserPhone").val();
+                var address = $("#editUserAddress").val();
+                var suscription = $("#editUserSuscrito").val();
+                var rol = $("#editUserRol").val();
 
                 var data = {
                     userID: userID,
@@ -123,7 +148,11 @@
                     nombre: nombre,
                     primerApellido: primerApellido,
                     segundoApellido: segundoApellido,
-                    password: password
+                    password: password,
+                    phone:phone,
+                    address:address,
+                    suscription:suscription,
+                    rol:rol
                 };
 
 
@@ -134,16 +163,26 @@
                     success: function (response) {
                         // window.location.href = "usuarios.php";
                         // href="#" data-page="usuarios";
-                        $("#usuarios-link").click();
+                        
                         console.log("Email enviado: " + email);
                         console.log("ID enviado: " + userID);
+                        alert('Usuario modificado con éxito');
+                        fetch('adminusuarios/refreshUsuario.php')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('userTableBody').innerHTML = data;
+                        });
+
 
                     },
                     error: function (xhr, status, error) {
                         console.error(error);
                     }
                 });
+                // location.reload();
+                // window.location.href = '/adminusuarios/usuarios.php';
             });
+            // location.reload();
         });
  
 
@@ -159,6 +198,12 @@
             url: "adminusuarios/borrarUsuario.php", 
             data: { userID: userID },
             success: function(response) {
+                alert('Usuario eliminado con éxito');
+                fetch('adminusuarios/refreshUsuario.php')
+                .then(response => response.text())                   
+                .then(data => {
+                    document.getElementById('userTableBody').innerHTML = data;
+                });
                 console.log("Usuario eliminado: " + userID);
             },
             error: function(xhr, status, error) {

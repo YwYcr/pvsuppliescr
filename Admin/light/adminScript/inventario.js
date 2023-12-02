@@ -17,6 +17,8 @@
                     $("#infoProductCantidad").val(response.QUANTITY);
                     $("#infoProductPrecio").val(response.PRICE);
                     $("#infoProductCategoria").val(response.IDCATEGORY);
+                    $("#infoProductImagen").val(response.IMAGE);
+                    $("#infoProductSize").val(response.IDSIZE);
 
                 },
                 error: function (xhr, status, error) {
@@ -36,6 +38,8 @@
             var cantidad = $("#createProductCantidad").val();
             var precio = $("#createProductPrecio").val();
             var categoria = $("#createProductCategoria").val();
+            var imagen = $("#createProductImagen").val();
+            var size = $("#createProductSize").val();
 
             var data = {
 
@@ -44,7 +48,9 @@
                 marca: marca,
                 cantidad: cantidad,
                 precio: precio,
-                categoria: categoria
+                categoria: categoria,
+                imagen: imagen,
+                size:size
             };
 
             $.ajax({
@@ -52,8 +58,14 @@
                 url: "admininventario/crearProducto.php",
                 data: data,
                 success: function (response) {
+                alert('Producto creado con éxito');
+                fetch('admininventario/refreshProducto.php')
+                .then(response => response.text())                   
+                .then(data => {
+                    document.getElementById('productTableBody').innerHTML = data;
+                });
                     // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                    alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                    // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
                 },
                 error: function (xhr, status, error) {
                     // Manejar errores de la solicitud AJAX
@@ -83,8 +95,14 @@
                 url: "admininventario/crearCategoria.php",
                 data: data,
                 success: function (response) {
+                alert('Categoria creada con éxito');
+                fetch('admininventario/refreshProducto.php')
+                .then(response => response.text())                   
+                .then(data => {
+                    document.getElementById('productoTableBody').innerHTML = data;
+                });
                     // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                    alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                    // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
                 },
                 error: function (xhr, status, error) {
                     // Manejar errores de la solicitud AJAX
@@ -115,6 +133,8 @@
                     $("#editProductCantidad").val(response.QUANTITY);
                     $("#editProductPrecio").val(response.PRICE);
                     $("#editProductCategoria").val(response.IDCATEGORY);
+                    $("#editProductImagen").val(response.IMAGE);
+                    $("#editProductSize").val(response.IDSIZE);
 
 
                 },
@@ -139,6 +159,8 @@
             var cantidad = $("#editProductCantidad").val();
             var precio = $("#editProductPrecio").val();
             var categoria = $("#editProductCategoria").val();
+            var imagen = $("#editProductImagen").val();
+            var size = $("#editProductSize").val();
 
             var data = {
                 productID: productID,
@@ -147,7 +169,9 @@
                 marca: marca,
                 cantidad: cantidad,
                 precio: precio,
-                categoria: categoria
+                categoria: categoria,
+                imagen:imagen,
+                size:size
             };
 
 
@@ -156,6 +180,12 @@
                 url: "admininventario/updateProducto.php",
                 data: data,
                 success: function (response) {
+                alert('Producto modificado con éxito');
+                fetch('admininventario/refreshProducto.php')
+                .then(response => response.text())                   
+                .then(data => {
+                    document.getElementById('productTableBody').innerHTML = data;
+                });
 
                 },
                 error: function (xhr, status, error) {
@@ -175,7 +205,13 @@
                 url: "admininventario/borrarProducto.php",
                 data: { productID: productID },
                 success: function (response) {
-                    console.log("Producto eliminado: " + userID);
+                alert('Producto eliminado con éxito');    
+                fetch('admininventario/refreshProducto.php')
+                .then(response => response.text())                   
+                .then(data => {
+                    document.getElementById('productTableBody').innerHTML = data;
+                });
+                    console.log("Producto eliminado: " + productID);
                 },
                 error: function (xhr, status, error) {
                     console.error(error);

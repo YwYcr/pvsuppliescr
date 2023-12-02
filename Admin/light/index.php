@@ -111,6 +111,29 @@
                                 <input type="password" class="form-control" id="infoUserPassword"
                                     name="infoUserPassword" autocomplete="on" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="infoUserPhone" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="infoUserPhone" name="infoUserPhone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoUserAddress" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" id="infoUserAddress" name="infoUserAddress" rows="3">
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoUserCreation" class="form-label">Ingresado el</label>
+                                <input type="text" class="form-control" id="infoUserCreation" name="infoUserCreation">
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoUserSuscrito" class="form-label">Suscripcion</label>
+                                <input type="text" class="form-control" id="infoUserSuscrito" name="infoUserSuscrito">
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoUserRol" class="form-label">Rol</label>
+                                <input type="text" class="form-control" id="infoUserRol" name="infoUserRol">
+                            </div>
+
+                        
+                            
                         </form>
 
                     </div>
@@ -160,12 +183,32 @@
                                 <input type="password" class="form-control" id="editUserPassword"
                                     name="editUserPassword" autocomplete="on" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="editUserPhone" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="editUserPhone" name="editUserPhone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUserAddress" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" id="editUserAddress" name="editUserAddress" rows="3">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUserCreation" class="form-label">Ingresado el</label>
+                                <input type="text" class="form-control" id="editUserCreation" name="editUserCreation">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUserSuscrito" class="form-label">Suscripcion</label>
+                                <input type="text" class="form-control" id="editUserSuscrito" name="editUserSuscrito">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUserRol" class="form-label">Rol</label>
+                                <input type="text" class="form-control" id="editUserRol" name="editUserRol">
+                            </div>
                         </form>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar Orden</button>
-                        <button class="btn btn-actualizarUser btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-actualizarUser btn-primary " data-bs-dismiss="modal"
                             data-type="success">Modificar</button>
 
                     </div>
@@ -209,13 +252,30 @@
                                 <input type="password" class="form-control" id="createUserPassword"
                                     name="createUserPassword" autocomplete="on" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="createUserPhone" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="createUserPhone" name="createUserPhone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserAddress" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" id="createUserAddress" name="createUserAddress" rows="3">
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserSuscrito" class="form-label">Suscripcion</label>
+                                <input type="text" class="form-control" id="createUserSuscrito" name="createUserSuscrito">
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserRol" class="form-label">Rol</label>
+                                <input type="text" class="form-control" id="createUserRol" name="createUserRol">
+                            </div>
+                            
 
                         </form>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="crearUsuarioButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button id="crearUsuarioButton" class="btn btn-primary" data-bs-dismiss="modal"
                             data-type="success">Agregar</button>
 
                     </div>
@@ -318,7 +378,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="createProveedorButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button id="createProveedorButton" class="btn btn-primary" data-bs-dismiss="modal"
                             data-type="success">Agregar</button>
 
                     </div>
@@ -373,8 +433,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar Orden</button>
-                        <button class="btn btn-actualizarProveedor btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-actualizarProveedor btn-primary " data-bs-dismiss="modal"
                             data-type="success">Modificar</button>
 
                     </div>
@@ -448,7 +508,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="createContactoButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button id="createContactoButton" class="btn btn-primary " data-bs-dismiss="modal"
                             data-type="success">Agregar</button>
 
                     </div>
@@ -490,7 +550,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar Orden</button>
-                        <button class="btn btn-actualizarContacto btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button class="btn btn-actualizarContacto btn-primary " data-bs-dismiss="modal"
                             data-type="success">Modificar</button>
 
                     </div>
@@ -518,32 +578,44 @@
                             <div class="mb-3">
                                 <label for="infoProductName" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" id="infoProductName" name="infoProductName"
-                                    required>
+                                    required readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductDescription" class="form-label">Descripcion</label>
+                                <!-- <textarea class="form-control" id="infoProductDescription"
+                                    name="infoProductDescription" required> -->
                                 <input type="text" class="form-control" id="infoProductDescription"
-                                    name="infoProductDescription" required>
+                                    name="infoProductDescription" style="height: 100px; resize: none;" required readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductMarca" class="form-label"> Marca </label>
                                 <input type="text" class="form-control" id="infoProductMarca" name="infoProductMarca"
-                                    required>
+                                    required readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductCantidad" class="form-label"> Cantidad </label>
                                 <input type="text" class="form-control" id="infoProductCantidad"
-                                    name="infoProductCantidad" required>
+                                    name="infoProductCantidad" required readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductPrecio" class="form-label">Precio</label>
                                 <input type="text" class="form-control" id="infoProductPrecio" name="infoProductPrecio"
-                                    required>
+                                    required readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductCategoria" class="form-label">Categoria</label>
                                 <input type="text" class="form-control" id="infoProductCategoria"
-                                    name="infoProductCategoria" required>
+                                    name="infoProductCategoria" required readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductImagen" class="form-label">Imagen</label>
+                                <input type="text" class="form-control" id="infoProductImagen"
+                                    name="infoProductImagen" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductSize" class="form-label">Tamano</label>
+                                <input type="text" class="form-control" id="infoProductSize"
+                                    name="infoProductSize" readonly>
                             </div>
                         </form>
 
@@ -600,13 +672,23 @@
                                 <label for="editProductCategoria" class="form-label">Categoria</label>
                                 <input type="text" class="form-control" id="editProductCategoria"
                                     name="editProductCategoria" required>
+                            </div>                          
+                            <div class="mb-3">
+                                <label for="editProductImagen" class="form-label">Imagen</label>
+                                <input type="text" class="form-control" id="editProductImagen"
+                                    name="editProductImagen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductSize" class="form-label">Tamano</label>
+                                <input type="text" class="form-control" id="editProductSize"
+                                    name="editProductSize">
                             </div>
                         </form>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar Orden</button>
-                        <button class="btn btn-actualizarProducto btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-actualizarProducto btn-primary" data-bs-dismiss="modal"
                             data-type="success">Modificar</button>
 
                     </div>
@@ -655,12 +737,22 @@
                                 <input type="text" class="form-control" id="createProductCategoria"
                                     name="createProductCategoria" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="createProductImagen" class="form-label">Imagen</label>
+                                <input type="file" class="form-control" id="createProductImagen"
+                                    name="createProductImagen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProductSize" class="form-label">Tamano</label>
+                                <input type="text" class="form-control" id="createProductSize"
+                                    name="createProductSize">
+                            </div>
                         </form>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="crearProductoButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button id="crearProductoButton" class="btn btn-primary " data-bs-dismiss="modal"
                             data-type="success">Agregar</button>
 
                     </div>
@@ -694,7 +786,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="crearCategoriaButton" class="btn btn-primary js-sweetalert" data-bs-dismiss="modal"
+                        <button id="crearCategoriaButton" class="btn btn-primary " data-bs-dismiss="modal"
                             data-type="success">Agregar</button>
 
                     </div>
