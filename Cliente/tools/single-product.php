@@ -49,12 +49,13 @@ include 'header.php'
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
+        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1_3flLnN5iN1XnirK9sXlF48xu2TrD3Oz" alt="Single Product">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Single Product Type</h2>
+                    <h2>Detalle de producto</h2>
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active">Single Product</li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li class="active">Detalle Producto</li>
                     </ul>
                 </div>
             </div>
@@ -69,29 +70,38 @@ include 'header.php'
                         <div class="col-lg-5 col-md-5">
                             <div class="sp-img_area">
                                 <div class="zoompro-border">
-                                
-                                
-                                
-                                
-                                
+ 
                                 <?php
                                 include 'bd_conn.php';
                                 if (isset($_GET['idprod'])) {
                                     $productID = $_GET['idprod'];
-                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                    $result = $con->query($sql); 
-                                    $row = $result->fetch_assoc(); 
-                                    // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
-                                    echo"<img class='zoompro' src= '{$row['IMAGE']}' alt='Imagen del Producto'/>";                                 
-                                } else {
-                                    echo "No hay productos";
+                                    /********* OLD CODE ***********/
+                                    // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                    // $result = $con->query($sql); 
+                                    // $row = $result->fetch_assoc(); 
+
+
+                                    /****WITH STORED PROCEDURE****/
+                                    // Llama al procedimiento almacenado para obtener el producto por ID
+                                    $stmt = $con->prepare("CALL GetProductByID(?)");
+                                    $stmt->bind_param("i", $productID);
+
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+
+                                    if ($result->num_rows == 1) {
+                                        $row = $result->fetch_assoc();
+                                        // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
+                                        echo"<img class='zoompro' src= '{$row['IMAGE']}' alt='Imagen del Producto'/>";                                 
+                                    } else {
+                                        echo "No hay productos";
+                                    }
+
+                                    $stmt->close();
                                 }
                                 include 'bd_disconn.php'
                                 ?>
-
-
-
-                                     
+   
                                 </div>
  
                             </div>
@@ -99,22 +109,38 @@ include 'header.php'
                         <div class="col-lg-7 col-md-7">
                             <div class="sp-content">
                                 <div class="sp-heading">
+
                                 <?php
                                 include 'bd_conn.php';
                                 if (isset($_GET['idprod'])) {
                                     $productID = $_GET['idprod'];
-                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                    $result = $con->query($sql); 
-                                    $row = $result->fetch_assoc(); 
-                                    // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
-                                    
-                                    echo"<h5> {$row['NAME']}</a></h6>";    
-                                                               
-                                } else {
-                                    echo "No hay productos";
+                                    /********* OLD CODE ***********/
+                                    // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                    // $result = $con->query($sql); 
+                                    // $row = $result->fetch_assoc(); 
+
+
+                                    /****WITH STORED PROCEDURE****/
+                                    // Llama al procedimiento almacenado para obtener el producto por ID
+                                    $stmt = $con->prepare("CALL GetProductByID(?)");
+                                    $stmt->bind_param("i", $productID);
+
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+
+                                    if ($result->num_rows == 1) {
+                                        $row = $result->fetch_assoc();
+                                        // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
+                                        echo"<h5> {$row['NAME']}</a></h6>";                       
+                                    } else {
+                                        echo "No hay productos";
+                                    }
+
+                                    $stmt->close();
                                 }
                                 include 'bd_disconn.php'
-                                ?>                              
+                                ?>  
+
                             </div>
                                 <div class="rating-box">
                                     <ul>
@@ -128,23 +154,37 @@ include 'header.php'
                                 <div class="sp-essential_stuff">
                                     <ul>
                                     <?php
-                                     include 'bd_conn.php';
+                                        include 'bd_conn.php';
                                      
                                         if (isset($_GET['idprod'])) {
-                                          $productID = $_GET['idprod'];
-                                          $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                          $result = $con->query($sql); 
-                                          $row = $result->fetch_assoc(); 
-                                      // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
-                                                                        
-                                       echo"<li>Precio: ₡{$row['PRICE']} </li>";
-                                       echo"<li>Marca: {$row['BRAND']} </li>";     
-                                                               
-                                          } else {
-                                            echo "No hay productos";
-                                         }
-                                         include 'bd_disconn.php'
-                                         ?>
+                                            $productID = $_GET['idprod'];
+                                            /********* OLD CODE ***********/
+                                            // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                            // $result = $con->query($sql); 
+                                            // $row = $result->fetch_assoc(); 
+
+
+                                            /****WITH STORED PROCEDURE****/
+                                            // Llama al procedimiento almacenado para obtener el producto por ID
+                                            $stmt = $con->prepare("CALL GetProductByID(?)");
+                                            $stmt->bind_param("i", $productID);
+
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+
+                                            if ($result->num_rows == 1) {
+                                                $row = $result->fetch_assoc();
+                                                // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                              
+                                                echo"<li>Precio: ₡{$row['PRICE']} </li>";
+                                                echo"<li>Marca: {$row['BRAND']} </li>";              
+                                            } else {
+                                                echo "No hay productos";
+                                            }
+
+                                            $stmt->close();
+                                        }
+                                        include 'bd_disconn.php'
+                                    ?>
                                         
                                         <li>Disponibilidad: <a href="javascript:void(0)">In Stock</a></li>
                                     </ul>
@@ -220,26 +260,40 @@ include 'header.php'
                                 <div id="description" class="tab-pane active show" role="tabpanel">
                                     <div class="product-description">
                                         <ul>
+
                                         <?php
-                                         include 'bd_conn.php';
+                                            include 'bd_conn.php';
                                      
-                                        if (isset($_GET['idprod'])) {
-                                          $productID = $_GET['idprod'];
-                                          $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                          $result = $con->query($sql); 
-                                          $row = $result->fetch_assoc(); 
-                                      // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
-                                                                        
-                                       echo"<li><strong> {$row['NAME']}</strong> </li>";
-                                       echo"<span> {$row['DESCRIPTION']}</span>";
-                                       echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito'><i class='ion-bag'></i></a>
-                              </li>";     
-                                                               
-                                          } else {
-                                            echo "No hay productos";
-                                         }
-                                         include 'bd_disconn.php'
-                                         ?>
+                                            if (isset($_GET['idprod'])) {
+                                                $productID = $_GET['idprod'];
+                                                /********* OLD CODE ***********/
+                                                // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                                // $result = $con->query($sql); 
+                                                // $row = $result->fetch_assoc(); 
+
+
+                                                /****WITH STORED PROCEDURE****/
+                                                // Llama al procedimiento almacenado para obtener el producto por ID
+                                                $stmt = $con->prepare("CALL GetProductByID(?)");
+                                                $stmt->bind_param("i", $productID);
+                                                $stmt->execute();
+                                                $result = $stmt->get_result();
+
+                                                if ($result->num_rows == 1) {
+                                                    $row = $result->fetch_assoc();
+                                                    // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                          
+                                                    echo"<li><strong> {$row['NAME']}</strong> </li>";
+                                                    echo"<span> {$row['DESCRIPTION']}</span>";
+                                                    echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito'><i class='ion-bag'></i></a></li>";     
+                                                                    
+                                                } else {
+                                                    echo "No hay productos";
+                                                }
+
+                                                $stmt->close();
+                                            }
+                                            include 'bd_disconn.php'
+                                        ?>
 
 
                                             

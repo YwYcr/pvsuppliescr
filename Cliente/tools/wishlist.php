@@ -96,42 +96,56 @@ include 'header.php';
                                     </thead>
                                     <tbody>
                                         <tr>
-                                               <?php
-                                                
+                                            <?php
                                                 include 'bd_conn.php';
+                                                
                                                 if (isset($_GET['idprod'])) {
-                                                $productID = $_GET['idprod'];
-                                                if (!isset($_SESSION['listaFavoritos'])){
-                                                    $_SESSION['listaFavoritos'] = array();
+                                                    $productID = $_GET['idprod'];
+                                                    if (!isset($_SESSION['listaFavoritos'])){
+                                                        $_SESSION['listaFavoritos'] = array();
+                                                    }
+                                                    if (!in_array($productID, $_SESSION['listaFavoritos'])){
+                                                        $_SESSION['listaFavoritos'][] = $productID;
+                                                    }
                                                 }
-                                                if (!in_array($productID, $_SESSION['listaFavoritos'])){
-                                                    $_SESSION['listaFavoritos'][] = $productID;
-                                                }
-                                            }
 
                                                 if(isset($_SESSION['listaFavoritos']) && !empty($_SESSION['listaFavoritos'])){
                                                     foreach ($_SESSION['listaFavoritos'] as $productID){
-                                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                                    $result = $con->query($sql); 
-                                                    $row = $result->fetch_assoc(); 
-                                                    echo"<tr>";
-                                                    echo"<td class='hiraola-product_remove'><a href='../Favorito/borrarFavorito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
-                                                    title='Eliminar'></i></a></td>";
-                                                    echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
-                                                    echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
-                                                    echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";
-                                                    echo"<td class='hiraola-cart_btn'><a href='javascript:void(0)'>Añadir al carrito</a></td> "; 
-                                                    echo"</tr>";
+
+                                                        /********* OLD CODE ***********/
+                                                        // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                                        // $result = $con->query($sql); 
+                                                        // $row = $result->fetch_assoc(); 
 
 
+                                                        /****WITH STORED PROCEDURE****/
+                                                        // Llama al procedimiento almacenado para obtener el producto por ID
+                                                        $stmt = $con->prepare("CALL GetProductByID(?)");
+                                                        $stmt->bind_param("i", $productID);
+                                                        $stmt->execute();
+                                                        $result = $stmt->get_result();
+
+                                                        if ($result->num_rows == 1) {
+                                                            $row = $result->fetch_assoc();
+                                                            echo"<tr>";
+                                                            echo"<td class='hiraola-product_remove'><a href='../Favorito/borrarFavorito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
+                                                            title='Eliminar'></i></a></td>";
+                                                            echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
+                                                            echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
+                                                            echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";
+                                                            echo"<td class='hiraola-cart_btn'><a href='javascript:void(0)'>Añadir al carrito</a></td> "; 
+                                                            echo"</tr>";
+                                                        } 
+                                                                                                            
+                                                        $stmt->close();
                                                     }
 
                                                 } else {
                                                   echo "No hay productos";
-                                                            }
+                                                }
 
-                                                    include 'bd_disconn.php';
-                                                ?>    
+                                                include 'bd_disconn.php';
+                                            ?>    
                                         </tr>
                                         
                                     </tbody>

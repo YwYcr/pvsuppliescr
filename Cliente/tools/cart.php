@@ -100,24 +100,38 @@ include 'header.php'
 
                                                 if(isset($_SESSION['listaCarrito']) && !empty($_SESSION['listaCarrito'])){
                                                     foreach ($_SESSION['listaCarrito'] as $productID){
-                                                    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                                    $result = $con->query($sql); 
-                                                    $row = $result->fetch_assoc(); 
-                                                    echo"<tr>";
-                                                    echo"<td class='hiraola-product_remove'><a href='../Carrito/borrarCarrito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
-                                                    title='Eliminar'></i></a></td>";
-                                                    echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
-                                                    echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
-                                                    echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";  
-                                                    echo"<td class='quantity'><div class='cart-plus-minus'>  
-                                                    <input class='cart-plus-minus-box' value='1' type='text'> 
-                                                    <div class='dec qtybutton'><i class='fa fa-angle-down'></i></div>
-                                                    <div class='inc qtybutton'><i class='fa fa-angle-up'></i></div></div></td> ";
-                                                    echo "<td class='product-subtotal'><span class='amount'>₡{$row['PRICE']}</span></td>";
+                                                    /********* OLD CODE ***********/
+                                                    // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                                    // $result = $con->query($sql); 
+                                                    // $row = $result->fetch_assoc(); 
 
-                                                    echo"</tr>";
+                                                    
+                                                    /****WITH STORED PROCEDURE****/
+                                                    // Llama al procedimiento almacenado para obtener el producto por ID
+                                                    $stmt = $con->prepare("CALL GetProductByID(?)");
+                                                    $stmt->bind_param("i", $productID);
+                                                    $stmt->execute();
 
+                                                    $result = $stmt->get_result();
 
+                                                    if ($result->num_rows == 1) {
+                                                        $row = $result->fetch_assoc();
+                                                        echo"<tr>";
+                                                        echo"<td class='hiraola-product_remove'><a href='../Carrito/borrarCarrito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
+                                                        title='Eliminar'></i></a></td>";
+                                                        echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
+                                                        echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
+                                                        echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";  
+                                                        echo"<td class='quantity'><div class='cart-plus-minus'>  
+                                                        <input class='cart-plus-minus-box' value='1' type='text'> 
+                                                        <div class='dec qtybutton'><i class='fa fa-angle-down'></i></div>
+                                                        <div class='inc qtybutton'><i class='fa fa-angle-up'></i></div></div></td> ";
+                                                        echo "<td class='product-subtotal'><span class='amount'>₡{$row['PRICE']}</span></td>";
+                                                        echo"</tr>";
+                                                    }    
+
+                                                    $stmt->close();
+                                                    
                                                     }
 
                                                 } else {

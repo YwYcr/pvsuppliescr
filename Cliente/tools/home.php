@@ -286,7 +286,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -294,7 +294,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -342,7 +342,7 @@
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -382,7 +382,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -390,7 +390,7 @@
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -430,7 +430,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -438,7 +438,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -480,7 +480,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -488,7 +488,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -531,7 +531,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -539,7 +539,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -583,7 +583,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -591,7 +591,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
