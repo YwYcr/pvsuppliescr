@@ -99,7 +99,44 @@ include 'header.php'
 
                                     $stmt->close();
                                 }
+
                                 include 'bd_disconn.php'
+                                ?>
+
+                                <?php
+                                    include 'bd_conn.php';
+                                    if (isset($_GET['idprod'])) {
+                                        $productID = $_GET['idprod'];
+                                        /********* OLD CODE ***********/
+                                        // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                        // $result = $con->query($sql); 
+                                        // $row = $result->fetch_assoc(); 
+
+
+                                        /****WITH STORED PROCEDURE****/
+                                        // Llama al procedimiento almacenado para obtener el producto por ID
+                                        $stmt = $con->prepare("CALL GetAllImagesProduct(?)");
+                                        $stmt->bind_param("i", $productID);
+
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo"<div id='gallery' class='sp-img_slider'>";
+                                            echo"    <a data-image='{$row['IMAGE']}' data-zoom-image='{$row['IMAGE']}'>";
+                                            echo"        <img src='{$row['IMAGE']}' alt='Product Image'>";
+                                            echo"    </a>";
+                                            echo"</div>"; 
+                                            }
+                                        } else {
+                                            echo json_encode(array('error' => 'No hay IMAGENES disponibles'));
+                                        }
+
+                                        $stmt->close();
+                                    }
+
+                                    include 'bd_disconn.php'
                                 ?>
    
                                 </div>
