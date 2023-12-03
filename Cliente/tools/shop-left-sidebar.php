@@ -311,10 +311,9 @@
                                 echo '            </div>';
                                 echo '            <div class="add-actions">';
                                 echo '                <ul>';
-                                echo '                    <li><a class="hiraola-add_cart" href="cart.php?idprod=' . $row['IDPRODUCT'] . '" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>';
-                                echo '                    <li><a class="hiraola-add_compare" href="compare.php?idprod=' . $row['IDPRODUCT'] . '" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>';
-                                echo '                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-eye"></i></a></li>';
-                                echo '                    <li><a class="hiraola-add_compare" href="wishlist.php?idprod=' . $row['IDPRODUCT'] . '" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>';
+                                echo '                    <li><a class="hiraola-add_cart" href="cart.php?idprod=' . $row['IDPRODUCT'] . '" data-bs-toggle="tooltip" data-placement="top" title="Añadir al carrito">Añadir al carrito</a></li>';
+                                echo '                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Ver"><i class="ion-eye"></i></a></li>';
+                                echo '                    <li><a class="hiraola-add_compare" href="wishlist.php?idprod=' . $row['IDPRODUCT'] . '" data-bs-toggle="tooltip" data-placement="top" title="Añadir a favoritos"><i class="ion-android-favorite-outline"></i></a></li>';
                                 echo '                </ul>';
                                 echo '            </div>';
                                 echo '        </div>';
