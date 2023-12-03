@@ -122,17 +122,18 @@ include 'header.php'
                                         $result = $stmt->get_result();
 
                                         if ($result->num_rows > 0) {
+                                            echo"<div id='gallery' class='sp-img_slider'>";
                                             while ($row = $result->fetch_assoc()) {
-                                                echo"<div id='gallery' class='sp-img_slider'>";
-                                            echo"    <a data-image='{$row['IMAGE']}' data-zoom-image='{$row['IMAGE']}'>";
-                                            echo"        <img src='{$row['IMAGE']}' alt='Product Image'>";
-                                            echo"    </a>";
-                                            echo"</div>"; 
+                                                echo"    <a data-image='{$row['IMAGE']}' data-zoom-image='{$row['IMAGE']}'>";
+                                                echo"        <img src='{$row['IMAGE']}' alt='Product Image'>";
+                                                echo"    </a>";
                                             }
+                                            echo"</div>";
+                                            
                                         } else {
                                             echo json_encode(array('error' => 'No hay IMAGENES disponibles'));
                                         }
-
+                                        
                                         $stmt->close();
                                     }
 
