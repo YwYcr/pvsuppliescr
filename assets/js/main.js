@@ -145,10 +145,10 @@
     /*----------------------------------------*/
     /*  Category Menu
 /*----------------------------------------*/
-    $('.rx-parent').on('click', function () {
-        $('.rx-child').slideToggle();
-        $(this).toggleClass('rx-change');
-    });
+    // $('.rx-parent').on('click', function () {
+    //     $('.rx-child').slideToggle();
+    //     $(this).toggleClass('rx-change');
+    // });
     //    category heading
     $('.category-heading').on('click', function () {
         $('.category-menu-list').slideToggle(900);
@@ -1181,23 +1181,26 @@
 -------------------------------- */
     var sliderrange = $('#slider-range');
     var amountprice = $('#amount');
+
     $(function () {
         sliderrange.slider({
             range: true,
-            min: 20,
-            max: 100,
-            values: [0, 100],
+            min: 0,
+            max: 999999,
+            values: [0, 500000],
             slide: function (event, ui) {
-                amountprice.val('$' + ui.values[0] + ' - $' + ui.values[1]);
+                amountprice.val('₡' + ui.values[0].toLocaleString() + ' - ₡' + ui.values[1].toLocaleString());
             },
         });
+
         amountprice.val(
-            '$' +
-                sliderrange.slider('values', 0) +
-                ' - $' +
-                sliderrange.slider('values', 1)
+            '₡' +
+            sliderrange.slider('values', 0).toLocaleString() +
+            ' - ₡' +
+            sliderrange.slider('values', 1).toLocaleString()
         );
     });
+
     /*----------------------------------------*/
     /*  Hiraola's Slick Carousel
  /*----------------------------------------*/

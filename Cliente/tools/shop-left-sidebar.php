@@ -69,13 +69,13 @@
                     <div class="hiraola-sidebar-catagories_area">
                         <div class="hiraola-sidebar_categories">
                             <div class="hiraola-categories_title">
-                                <h5>Price</h5>
+                                <h5>Precio</h5>
                             </div>
                             <div class="price-filter">
                                 <div id="slider-range"></div>
                                 <div class="price-slider-amount">
                                     <div class="label-input">
-                                        <label>price : </label>
+                                        <label>Precio : </label>
                                         <input type="text" id="amount" name="price" placeholder="Add Your Price" />
                                     </div>
                                     <button type="button">Filter</button>
@@ -84,21 +84,31 @@
                         </div>
                         <div class="hiraola-sidebar_categories">
                             <div class="hiraola-categories_title">
-                                <h5>Brand</h5>
+                                <h5>Marca</h5>
                             </div>
                             <ul class="sidebar-checkbox_list">
-                                <li>
-                                    <a href="javascript:void(0)">Brand 1(15)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Brand 2(16)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Brand 3(16)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Brand 4(17)</a>
-                                </li>
+                                <?php
+
+                                    include '../tools/bd_conn.php';
+
+                                    // Llama al procedimiento almacenado para obtener el proveedor por ID
+                                    $stmt = $con->prepare("CALL GetAllBrandsWProducts()");
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<li>";
+                                            echo "    <a href='javascript:void(0)'>{$row['BRAND']} ({$row['COUNT']})</a>";
+                                            echo "</li>";
+                                        }
+                                    } else {
+                                        echo json_encode(array('error' => 'No hay Marcas disponibles'));
+                                    }
+                                    $stmt->close();
+                                    include '../tools/bd_disconn.php';
+                                ?>
+                                
                             </ul>
                         </div>
                         <!-- <div class="hiraola-sidebar_categories">
@@ -141,30 +151,33 @@
                         </div> -->
                         <div class="category-module hiraola-sidebar_categories">
                             <div class="category-module_heading">
-                                <h5>Categories</h5>
+                                <h5>Categorías</h5>
                             </div>
                             <div class="module-body">
                                 <ul class="module-list_item">
                                     <li>
-                                        <a href="javascript:void(0)">Hand Harness (18)</a>
-                                        <ul class="module-sub-list_item">
-                                            <li>
-                                                <a href="javascript:void(0)">Maang Tika (18)</a>
-                                                <a href="javascript:void(0)">Toe Rings (18)</a>
-                                                <a href="javascript:void(0)">Traditional Earrings (18)</a>
-                                                <a href="javascript:void(0)">Kada Cum Bracelet (18)</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Exquisite Rings (18)</a>
-                                        <a href="javascript:void(0)">Necklaces (18)</a>
-                                        <a href="javascript:void(0)">Foot Harness (18)</a>
-                                        <a href="javascript:void(0)">Braid Jewels (18)</a>
-                                        <a href="javascript:void(0)">Anklet (18)</a>
-                                        <a href="javascript:void(0)">Graceful Armlet (18)</a>
-                                        <a href="javascript:void(0)">Magna Pellentesq (18)</a>
-                                        <a href="javascript:void(0)">Molestie Tortor (18)</a>
+                                        <?php
+
+                                            include '../tools/bd_conn.php';
+
+                                            // Llama al procedimiento almacenado para obtener el proveedor por ID
+                                            $stmt = $con->prepare("CALL GetAllCategoriesWProducts()");
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+
+                                            if ($result->num_rows > 0) {
+                                                while ($row = $result->fetch_assoc()) {
+                                                    echo "<a href='javascript:void(0)'>{$row['NAME']} ({$row['COUNT']})</a>";
+                                                }
+                                            } else {
+                                                echo json_encode(array('error' => 'No hay Categorias disponibles'));
+                                            }
+
+                                            $stmt->close();
+
+                                            include '../tools/bd_disconn.php';
+
+                                        ?>
                                     </li>
                                 </ul>
                             </div>
@@ -186,17 +199,12 @@
                         </div>
                         <div class="product-item-selection_area">
                             <div class="product-short">
-                                <label class="select-label">Short By:</label>
+                                <label class="select-label">Ordenar por:</label>
                                 <select class="nice-select">
-                                    <option value="1">Relevance</option>
-                                    <option value="2">Name, A to Z</option>
-                                    <option value="3">Name, Z to A</option>
-                                    <option value="4">Price, low to high</option>
-                                    <option value="5">Price, high to low</option>
-                                    <option value="5">Rating (Highest)</option>
-                                    <option value="5">Rating (Lowest)</option>
-                                    <option value="5">Model (A - Z)</option>
-                                    <option value="5">Model (Z - A)</option>
+                                    <option value="2">Nombre, A a Z</option>
+                                    <option value="3">Nombre, Z a A</option>
+                                    <option value="4">Precio, Más Bajo al Más Alto</option>
+                                    <option value="5">Precio, Más Alto to Más Bajo</option>
                                 </select>
                             </div>
                         </div>
@@ -275,15 +283,6 @@
                                 echo " </li>";
                                 echo " </ul>";
                                 echo "</div>";
-                                echo "<div class='rating-box'>";
-                                echo " <ul>";
-                                echo "<li><i class='fa fa-star-of-david'></i></li>";
-                                echo "<li><i class='fa fa-star-of-david'></i></li>";
-                                echo "<li><i class='fa fa-star-of-david'></i></li>";
-                                echo "<li><i class='fa fa-star-of-david'></i></li>";
-                                echo "<li class='silver-color'><i class='fa fa-star-of-david'></i></li>";
-                                echo " </ul>";
-                                echo " </div>";
                                 echo "  </div>";
                                 echo " </div>";
 
@@ -303,15 +302,6 @@
                                 echo '        <div class="hiraola-product_content">';
                                 echo '            <div class="product-desc_info">';
                                 echo '                <h6><a class="product-name" href="single-product.php?idprod=' . $row['IDPRODUCT'] . '">' . $row['NAME'] . '</a></h6>';
-                                echo '                <div class="rating-box">';
-                                echo '                    <ul>';
-                                echo '                        <li><i class="fa fa-star-of-david"></i></li>';
-                                echo '                        <li><i class="fa fa-star-of-david"></i></li>';
-                                echo '                        <li><i class="fa fa-star-of-david"></i></li>';
-                                echo '                        <li><i class="fa fa-star-of-david"></i></li>';
-                                echo '                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>';
-                                echo '                    </ul>';
-                                echo '                </div>';
                                 echo '                <div class="price-box">';
                                 echo '                    <span class="new-price">₡' . $row['PRICE'] . '</span>';
                                 echo '                </div>';
