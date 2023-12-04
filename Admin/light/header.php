@@ -4,7 +4,7 @@
             <div class="navbar-left">
                 <div class="navbar-brand">
                     <a class="small_menu_btn" href="javascript:void(0);"><i class="fa fa-align-left"></i></a>
-                    <a href="index.php"><img src="/PVSupplies/assets/images/menu/logo/1.png" style="height: 2rem;"></a>                    
+                    <a href="index.php"><img src="/pvsuppliescr/assets/images/menu/logo/1.png" style="height: 2rem;"></a>                    
                 </div>                
                 <form id="navbar-search" class="navbar-form search-form">
                     <input value="" class="form-control" placeholder="Buscar aquí.." type="text">
@@ -128,7 +128,7 @@
                         <!-- <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-comments"></i><span class="notification-dot bg-pink"></span></a></li> -->
                         
                         
-                <li><a href="/PVSupplies/index.php" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                <li><a href="/pvsuppliescr/index.php" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
                     </ul>
                 </div>
             </div>

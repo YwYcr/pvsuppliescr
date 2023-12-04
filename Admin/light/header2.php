@@ -6,7 +6,7 @@
         <div class="navbar-left">
             <div class="navbar-brand">
                 <a class="small_menu_btn" href="javascript:void(0);"><i class="fa fa-align-left"></i></a>
-                <a href="\PVSupplies\Admin\light\index2.php"><img src="/PVSupplies/assets/images/menu/logo/1.png" style="height: 2rem;"></a>
+                <a href="\pvsuppliescr\Admin\light\index2.php"><img src="/pvsuppliescr/assets/images/menu/logo/1.png" style="height: 2rem;"></a>
                 <span>Puerto Viejo Supplies</span>
             </div>
             <!-- <form id="navbar-search" class="navbar-form search-form">
@@ -18,7 +18,7 @@
         <div class="navbar-right">
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="\PVSupplies\Cliente\tools\index.php" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                    <li><a href="\pvsuppliescr\Cliente\tools\index.php" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -44,12 +44,12 @@
                 <div class="tab-pane active" id="Home-icon">
                     <nav class="sidebar-nav sidebar-scroll">
                         <ul class="metismenu">
-                            <li class="active"><a href="\PVSupplies\Admin\light\index2.php"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
+                            <li class="active"><a href="\pvsuppliescr\Admin\light\index2.php"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
                             <li class="header"><span>Mantenimiento</span></li>
-                            <li><a href="\PVSupplies\Admin\light\adminusuarios\usuarios2.php"><i class="icon-users"></i><span>Usuarios</span></a></li>
-                            <li><a href="\PVSupplies\Admin\light\admincontactos\contactos2.php"><i class="icon-notebook"></i><span>Cantactos</span></a></li>
-                            <li><a href="\PVSupplies\Admin\light\adminproveedores\proveedores2.php"><i class="icon-briefcase"></i><span>Proveedores</span></a></li>
-                            <li><a href="\PVSupplies\Admin\light\admininventario\inventario2.php"><i class="icon-tag"></i><span>Inventario</span></a></li>
+                            <li><a href="\pvsuppliescr\Admin\light\adminusuarios\usuarios2.php"><i class="icon-users"></i><span>Usuarios</span></a></li>
+                            <li><a href="\pvsuppliescr\Admin\light\admincontactos\contactos2.php"><i class="icon-notebook"></i><span>Cantactos</span></a></li>
+                            <li><a href="\pvsuppliescr\Admin\light\adminproveedores\proveedores2.php"><i class="icon-briefcase"></i><span>Proveedores</span></a></li>
+                            <li><a href="\pvsuppliescr\Admin\light\admininventario\inventario2.php"><i class="icon-tag"></i><span>Inventario</span></a></li>
                             <li><a href="#"><i class="icon-bag"></i><span>Ordenes</span></a></li>
                             <!-- <li><a href="page-timeline.html"><i class="icon-list"></i><span>Cupones</span></a></li> -->
 
