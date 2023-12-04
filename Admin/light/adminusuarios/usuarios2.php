@@ -254,8 +254,8 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-md-6 col-sm-12 text-right hidden-xs" data-bs-toggle="modal" data-bs-target="#createUser">
-                        <a href="javascript:void(0);" class="btn btn-sm btn-primary" title=""><i class="icon-user-follow"></i><span>
+                    <div class="col-md-6 col-sm-12 text-right hidden-xs">
+                        <a href="javascript:void(0);" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createUser" title=""><i class="icon-user-follow"></i><span>
                                 Agregar usuario</span></a>
                     </div>
                 </div>

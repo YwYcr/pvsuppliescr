@@ -47,7 +47,7 @@
                             <li class="active"><a href="\PVSupplies\Admin\light\index2.php"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
                             <li class="header"><span>Mantenimiento</span></li>
                             <li><a href="\PVSupplies\Admin\light\adminusuarios\usuarios2.php"><i class="icon-users"></i><span>Usuarios</span></a></li>
-                            <li><a href="app-chat.html"><i class="icon-notebook"></i><span>Cantactos</span></a></li>
+                            <li><a href="\PVSupplies\Admin\light\admincontactos\contactos2.php"><i class="icon-notebook"></i><span>Cantactos</span></a></li>
                             <li><a href="app-calendar.html"><i class="icon-briefcase"></i><span>Proveedores</span></a></li>
                             <li><a href="app-contact.html"><i class="icon-tag"></i><span>Inventario</span></a></li>
                             <li><a href="app-todo.html"><i class="icon-graph"></i><span>Reportes</span></a></li>
