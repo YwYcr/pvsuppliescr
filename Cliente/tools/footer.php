@@ -13,30 +13,26 @@
                                 </div>
 
                                 <div class="widget-short_desc">
-                                    <p>We are a team of designers and developers that create high quality HTML Template &
-                                        Woocommerce, Shopify Theme.
+                                    <p>Puerto Viejo Supplies, Mejor imposible 
+                                        <br> 
+                                        Venta de Colchones y ropa de cama de la mejor calidad
                                     </p>
                                 </div>
                                 <div class="hiraola-social_link">
                                     <ul>
                                         <li class="facebook">
-                                            <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank" title="Facebook">
+                                            <a href="https://www.facebook.com/dormicentroPV/" data-bs-toggle="tooltip" target="_blank" title="Facebook">
                                                 <i class="fab fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="twitter">
-                                            <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank" title="Twitter">
-                                                <i class="fab fa-twitter-square"></i>
-                                            </a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
-                                                <i class="fab fa-google-plus"></i>
                                             </a>
                                         </li>
                                         <li class="instagram">
                                             <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank" title="Instagram">
                                                 <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="instagram">
+                                            <a href="https://wa.me/17076839025" data-bs-toggle="tooltip" target="_blank" title="Whatsapp">
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -67,15 +63,12 @@
                                             <div class="widgets-essential_stuff">
                                                 <ul>
                                                     <li class="hiraola-address"><i
-                                                    class="ion-ios-location"></i><span>Dirección:</span> Nos localizamos 
-                                                    en Alajuela Costa Rica. 
-                                                    Hacemos envios a todo 
-                                                    Costa Rica e internacional.</li>
+                                                    class="ion-ios-location"></i><span>Dirección:</span> Entrada Olé Caribe, Punta Cocles 70403 Puerto Viejo, Limón Province, Costa Rica</li>
                                                     <li class="hiraola-phone"><i class="ion-ios-telephone"></i><span>Télefono
-                                                    </span> <a href="tel://+123123321345">+506 8888 8888</a>
+                                                    </span> <a href="https://wa.me/17076839025" target="_blank">+1 (707) 683-90-25</a>
                                                     </li>
                                                     <li class="hiraola-email"><i
-                                                    class="ion-android-mail"></i><span>Correo:</span> <a href="mailto://info@yourdomain.com">info@yourdomain.com</a></li>
+                                                    class="ion-android-mail"></i><span>Correo:</span> <a href="mailto://sales@dormicentropuertoviejo.com">sales@dormicentropuertoviejo.com</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -114,7 +107,7 @@
                 <div class="container">
                     <div class="footer-bottom_nav">
                         <div class="row">
-                            <div class="col-lg-12">
+                            <!-- <div class="col-lg-12">
                                 <div class="footer-links">
                                     <ul>
                                         <li><a href="#">Online Shopping</a></li>
@@ -138,14 +131,14 @@
                                         <li><a href="#">Policy Shipping</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="col-lg-12">
                                 <div class="payment">
                                     <a href="#">
                                     <img src="../../assets/images/footer/logo/1.png" alt="Logo">
                                     </a>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-lg-12">
                                 <div class="copyright">
                                     <span>Copyright &copy; 2022 <a href="index.php">PVSupplies.</a> All rights reserved.</span>

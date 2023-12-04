@@ -9,140 +9,11 @@
                             </div>
                             <div id="cate-toggle" class="category-menu-list">
                                 <ul>
-                                    <li class="right-menu"><a href="#">Hand Harness</a>
-                                        <ul class="cat-mega-menu">
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Habitant Morbi</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Habitant Morbi</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Office chair</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Purus Lacus</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Sagittis Blandit</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Purus Lacus</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Magna Pellentesq</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Molestie Tortor</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Vehicula Element</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Volutpat Diam</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Office chair</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Bibendum Cursus</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Dignissim Turpis</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Dining room</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Egestas Ultricies</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="right-menu"><a href="#">Maang Tika</a>
-                                        <ul class="cat-mega-menu cat-mega-menu-2">
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Cameras</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Cords and Cables</a></li>
-                                                    <li><a href="shop-left-sidebar.php">gps accessories</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Microphones</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Wireless Transmitters</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Audio</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Other Accessories</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Portable Audio</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Satellite Radio</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Visual Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Cell Phones</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Xail</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Chamcham Galaxy</a></li>
-                                                    <li><a href="shop-left-sidebar.php">SIM Cards</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Prepaid Cell Phones</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">TV & Video</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">4K Ultra HDTVs</a></li>
-                                                    <li><a href="shop-left-sidebar.php">All TVs</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Refurbished TVs</a></li>
-                                                    <li><a href="shop-left-sidebar.php">TV Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="right-menu"><a href="#">Toe Rings</a>
-                                        <ul class="cat-mega-menu cat-mega-menu-3">
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Sagittis Blandit</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">adipiscing elit</a></li>
-                                                    <li><a href="shop-left-sidebar.php">consectetur adip</a></li>
-                                                    <li><a href="shop-left-sidebar.php">erat et est</a></li>
-                                                    <li><a href="shop-left-sidebar.php">molestie velit</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Accessories</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Habitant Morbi</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Office chair</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Purus Lacus</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Sagittis Blandit</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="right-menu"><a href="#">Traditional Earrings</a>
-                                        <ul class="cat-mega-menu">
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Accessories</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Habitant Morbi</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Office chair</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Purus Lacus</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Sagittis Blandit</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Purus Lacus</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Magna Pellentesq</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Molestie Tortor</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Vehicula Element</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Volutpat Diam</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Office chair</a>
-                                                <ul>
-                                                    <li><a href="shop-left-sidebar.php">Bibendum Cursus</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Dignissim Turpis</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Dining room</a></li>
-                                                    <li><a href="shop-left-sidebar.php">Egestas Ultricies</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Kada Cum Bracelet</a></li>
-                                    <li><a href="#">Exquisite Rings</a></li>
-                                    <li><a href="#">Necklaces</a></li>
-                                    <li><a href="#">Foot Harness</a></li>
-                                    <li><a href="#">Braid Jewels</a></li>
-                                    <li class="rx-child"><a href="#">Anklet – Epitome Of Culture</a></li>
-                                    <li class="rx-child"><a href="#">Graceful Armlet</a></li>
+                                    <?php 
+                                          include '..\Categoria\getCategoria.php';
+                                    ?>
                                     <li class="rx-parent">
-                                        <a class="rx-default">More Categories</a>
-                                        <a class="rx-show">Collapse</a>
+                                        <a class="rx-default" href="shop-left-sidebar.php">Más Categorias</a>
                                     </li>
                                 </ul>
                             </div>
@@ -286,7 +157,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -294,7 +165,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -334,7 +205,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -342,7 +213,7 @@
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -382,7 +253,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -390,7 +261,7 @@
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -430,7 +301,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -438,7 +309,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -480,7 +351,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -488,7 +359,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -531,7 +402,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -539,7 +410,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -583,7 +454,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="rating-box">
+                                            <!-- <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -591,7 +462,7 @@
                                                     <li><i class="fa fa-star-of-david"></i></li>
                                                     <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
