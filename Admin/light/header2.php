@@ -18,7 +18,7 @@
         <div class="navbar-right">
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="page-login.html" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                    <li><a href="\PVSupplies\Cliente\tools\index.php" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
                 </ul>
             </div>
         </div>
