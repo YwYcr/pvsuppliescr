@@ -52,26 +52,38 @@
         include '../header2.php';
         ?>
 
-        <!-- Modal info Contactos-->
-        <div class="modal fade" id="infoContacto" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- Modal info PROVEEDORES-->
+        <div class="modal fade" id="infoProveedor" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del contacto</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del proveedor</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="infoContactoForm">
+                        <form id="infoProveedorForm">
                             <div class="mb-3">
-                                <input type="hidden" class="form-control" id="infoContactoID" name="infoContactoID" required>
+                                <input type="hidden" class="form-control" id="infoProveedorID" name="infoProveedorID" required>
                             </div>
                             <div class="mb-3">
-                                <label for="infoContactoName" class="form-label">Nombre Contacto</label>
-                                <input type="text" class="form-control" id="infoContactoName" name="infoContactoName" required>
+                                <label for="infoProveedorName" class="form-label">Nombre Proveedor</label>
+                                <input type="text" class="form-control" id="infoProveedorName" name="infoProveedorName" required>
                             </div>
                             <div class="mb-3">
-                                <label for="infoContactoEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="infoContactoEmail" name="infoContactoEmail" required>
+                                <label for="infoProveedorEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="infoProveedorEmail" name="infoProveedorEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorTelefono" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="infoProveedorTelefono" name="infoProveedorTelefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorPOC" class="form-label">POC</label>
+                                <input type="text" class="form-control" id="infoProveedorPOC" name="infoProveedorPOC" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProveedorCedJuridica" class="form-label">Ced. Juridica</label>
+                                <input type="text" class="form-control" id="infoProveedorCedJuridica" name="infoProveedorCedJuridica" required>
                             </div>
                         </form>
 
@@ -83,23 +95,35 @@
             </div>
         </div>
 
-        <!-- Modal Create Contactos -->
-        <div class="modal fade" id="createContacto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- Modal Create Proveedor -->
+        <div class="modal fade" id="createProveedor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Agregar contacto</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Agregar Proveedor</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="createContactoForm">
+                        <form id="createProveedorForm">
                             <div class="mb-3">
-                                <label for="createContactoName" class="form-label">Nombre Contacto</label>
-                                <input type="text" class="form-control" id="createContactoName" name="createContactoName" required>
+                                <label for="createProveedorName" class="form-label">Nombre Proveedor</label>
+                                <input type="text" class="form-control" id="createProveedorName" name="createProveedorName" required>
                             </div>
                             <div class="mb-3">
-                                <label for="createContactoEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="createContactoEmail" name="createContactoEmail" required>
+                                <label for="createProveedorEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="createProveedorEmail" name="createProveedorEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProveedorTelefono" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="createProveedorTelefono" name="createProveedorTelefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProveedorPOC" class="form-label">POC</label>
+                                <input type="text" class="form-control" id="createProveedorPOC" name="createProveedorPOC" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProveedorCedJuridica" class="form-label">Ced. Juridica</label>
+                                <input type="text" class="form-control" id="createProveedorCedJuridica" name="createProveedorCedJuridica" required>
                             </div>
 
                         </form>
@@ -107,42 +131,53 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="createContactoButton" class="btn btn-primary " data-bs-dismiss="modal" data-type="success">Agregar</button>
+                        <button id="createProveedorButton" class="btn btn-primary" data-bs-dismiss="modal" data-type="success">Agregar</button>
 
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal Edit Contactos -->
-        <div class="modal fade" id="editContacto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- Modal Edit Proveedor -->
+        <div class="modal fade" id="editProveedor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modificar Contacto</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Modificar Proveedor</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="editContactoForm">
+                        <form id="editProveedorForm">
                             <div class="mb-3">
-                                <input type="hidden" class="form-control" id="editContactoID" name="editContactoID" required>
+                                <input type="hidden" class="form-control" id="editProveedorID" name="editProveedorID" required>
                             </div>
                             <div class="mb-3">
-                                <label for="editContactoName" class="form-label">Nombre Contacto</label>
-                                <input type="text" class="form-control" id="editContactoName" name="editContactoName" required>
+                                <label for="editProveedorName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editProveedorName" name="editProveedorName" required>
                             </div>
                             <div class="mb-3">
-                                <label for="editContactoEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="editContactoEmail" name="editContactoEmail" required>
+                                <label for="editProveedorEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="editProveedorEmail" name="editProveedorEmail" required>
                             </div>
 
-
+                            <div class="mb-3">
+                                <label for="editProveedorTelefono" class="form-label"> Telefono </label>
+                                <input type="text" class="form-control" id="editProveedorTelefono" name="editProveedorTelefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProveedorPOC" class="form-label"> POC </label>
+                                <input type="text" class="form-control" id="editProveedorPOC" name="editProveedorPOC" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProveedorCedJuridica" class="form-label">Ced. Juridica</label>
+                                <input type="text" class="form-control" id="editProveedorCedJuridica" name="editProveedorCedJuridica" autocomplete="on" required>
+                            </div>
                         </form>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar Orden</button>
-                        <button class="btn btn-actualizarContacto btn-primary " data-bs-dismiss="modal" data-type="success">Modificar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-actualizarProveedor btn-primary " data-bs-dismiss="modal" data-type="success">Modificar</button>
 
                     </div>
                 </div>
@@ -153,17 +188,17 @@
             <div class="block-header">
                 <div class="row clearfix">
                     <div class="col-md-6 col-sm-12">
-                        <h1>Control de Contactos</h1>
+                        <h1>Control de Proveedores</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="\PVSupplies\Admin\light\index2.php"><img src="\PVSupplies\Admin\light\bedicon.svg" alt="Bed Icon" style="height: 1rem;"></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Contactos</li>
+                                <li class="breadcrumb-item active" aria-current="page">Proveedores</li>
                             </ol>
                         </nav>
                     </div>
                     <div class="col-md-6 col-sm-12 text-right hidden-xs">
-                        <a href="javascript:void(0);" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createContacto" title=""><i class="icon-user-follow"></i><span>
-                                Agregar Contacto</span></a>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createProveedor" title=""><i class="icon-user-follow"></i><span>
+                                Agregar Proveedor</span></a>
                     </div>
                 </div>
             </div>
@@ -174,7 +209,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="header">
-                                <h2>Información de contactos
+                                <h2>Información de Proveedores
                                 </h2>
                                 <ul class="header-dropdown dropdown">
                                     <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
@@ -185,57 +220,59 @@
                                     <?php
                                         include '../adminTool/bd_conn.php';
 
-                                        $consulta = "SELECT * FROM CONTACT";
+                                        $consulta = "SELECT * FROM SUPPLIER";
                                         $result = $con->query($consulta);
 
 
                                         if ($result->num_rows > 0) {
-                                            echo "<table id='contactTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
-                                            echo "<thead><tr><th>ID</th><th>Nombre</th><th>Email</th><th>Asunto</th><th>Mensaje</th><th>Acciones</th></tr></thead>";
-                                            echo "<tbody id='contactTableBody'>";
+                                            echo "<table id='supplierTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
+                                            echo "<thead><tr><th>ID</th><th>Nombre</th><th>CedJuridica</th><th>Teléfono</th><th>POC</th><th>Email</th><th>Direccion</th><th>Acciones</th></tr></thead>";
+                                            echo "<tbody id='supplierTableBody'>";
 
                                             while ($row = $result->fetch_assoc()) {
                                                 echo "<tr>";
-                                                echo "<td>" . $row['IDCONTACT'] . "</td>";
-                                                $contactID = $row['IDCONTACT'];
+                                                echo "<td>" . $row['IDSUPPLIER'] . "</td>";
+                                                $proveedorID = $row['IDSUPPLIER'];
                                                 echo "<td>" . $row['NAME'] . "</td>";
+                                                echo "<td>" . $row['SOCIALID'] . "</td>";
+                                                echo "<td>" . $row['PHONE'] . "</td>";
+                                                echo "<td>" . $row['POC'] . "</td>";
                                                 echo "<td>" . $row['EMAIL'] . "</td>";
-                                                echo "<td>" . $row['SUBJECT'] . "</td>";
-                                                echo "<td>" . $row['MESSAGE'] . "</td>";
-
+                                                echo "<td>" . $row['ADDRESS'] . "</td>";
                                                 echo "<td>
 
-                                                <button type='button' class='btn btn-info btn-infoContacto mb-2' data-bs-toggle='modal' data-bs-target='#infoContacto' data-bs-id='$contactID'> 
+                                                <button type='button' class='btn btn-info btn-infoProveedor mb-2' data-bs-toggle='modal' data-bs-target='#infoProveedor' data-bs-id='$proveedorID'> 
                                                 <i class='fa fa-info-circle'></i>
                                                 <span>Ver</span></button>
                                                 
-                                                <button type='button' class='btn btn-editar btn-editarContacto btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$contactID' data-bs-target='#editContacto' >
+                                                <button type='button' class='btn btn-editarProveedor btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$proveedorID' data-bs-target='#editProveedor' >
                                                 <i class='fa fa-pencil'></i>
                                                 <span>Editar</span></button>
                                             
-                                                <button type='button' class='btn btn-borrar btn-borrarContacto btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$contactID'>
+                                                <button type='button' class='btn btn-borrarProveedor btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$proveedorID'>
                                                 <i class='fa fa-trash-o'></i> 
                                                 <span>Eliminar</span></button>
                                         
                                                 </td>";
-
                                                 echo "</tr>";
                                             }
-
                                             echo "</tbody>";
+
                                             echo "<tfoot>
                                                     <tr>
-                                                        <th>ID</th>
-                                                        <th>Nombre</th>
-                                                        <th>Email</th>
-                                                        <th>Asunto</th>
-                                                        <th>Mensaje</th>
-                                                        <th>Acciones</th>
-                                                    </tr>
+                                                    <th>ID</th>
+                                                    <th>Nombre</th>
+                                                    <th>CedJuridica</th>
+                                                    <th>Teléfono</th>
+                                                    <th>POC</th>
+                                                    <th>Email</th>
+                                                    <th>Direccion</th>
+                                                    <th>Acciones</th>
+                                                        </tr>
                                                 </tfoot>";
                                             echo "</table>";
                                         } else {
-                                            echo "No hay contactos";
+                                            echo "No hay proveedores";
                                         }
                                         include '../adminTool/bd_disconn.php'
                                     ?>
@@ -272,7 +309,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-    <script src="\PVSupplies\Admin\light\adminScript\contactos2.js"></script>
+    <script src="\PVSupplies\Admin\light\adminScript\proveedores2.js"></script>
 </body>
 
 </html>

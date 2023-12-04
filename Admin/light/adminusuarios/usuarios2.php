@@ -256,7 +256,7 @@
                     </div>
                     <div class="col-md-6 col-sm-12 text-right hidden-xs">
                         <a href="javascript:void(0);" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createUser" title=""><i class="icon-user-follow"></i><span>
-                                Agregar usuario</span></a>
+                                Agregar Usuario</span></a>
                     </div>
                 </div>
             </div>
@@ -285,12 +285,12 @@
                                         if ($result->num_rows > 0) {
                                             echo "<table id='userTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
                                             echo "<thead><tr>
-                                            <th>Num de Usuario</th>
+                                            <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Primer Apellido</th>
                                             <th>Segundo Apellido</th>
                                             <th>Email</th>
-                                            <th>Telefono</th> 
+                                            <th>Teléfono</th> 
                                             <th>Acciones</th>
                                             </tr></thead>";
                                             echo "<tbody id='userTableBody'>";
@@ -327,12 +327,12 @@
                                             echo "</tbody>";
                                             echo "<tfoot>
                                                 <tr>
-                                                <th>Num de Usuario</th>
+                                                <th>ID</th>
                                                 <th>Nombre</th>
                                                 <th>Primer Apellido</th>
                                                 <th>Segundo Apellido</th>
                                                 <th>Email</th>
-                                                <th>Telefono</th> 
+                                                <th>Teléfono</th> 
                                                 <th>Acciones</th>
                                                 </tr>
                                             </tfoot>";
