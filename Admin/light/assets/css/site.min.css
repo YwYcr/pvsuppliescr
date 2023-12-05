@@ -1871,7 +1871,8 @@ a:focus {
     top: 1px;
     width: 28px;
     line-height: 28px;
-    text-align: center
+    text-align: center;
+    margin-left: 7px;
 }
 
 .metismenu li.header {
@@ -1887,7 +1888,8 @@ a:focus {
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-    display: block;
+    display: flex;
+    align-items: center;
     vertical-align: middle;
     *vertical-align: auto;
     *zoom: 1;
@@ -2140,7 +2142,7 @@ a:focus {
 
 @media screen and (max-width: 1200px) {
     #main-content {
-        width: calc(100% - 45px);
+        width: calc(100% - 8px);
         padding: 0
     }
 }
@@ -2170,11 +2172,11 @@ html.fullscreen-bg #wrapper {
 }
 
 .small_menu #left-sidebar {
-    width: 45px
+    width: 69px
 }
 
 .small_menu #main-content {
-    width: calc(100% - 45px)
+    width: calc(100% - 69px)
 }
 
 .small_menu .sidebar_list {
@@ -2183,6 +2185,10 @@ html.fullscreen-bg #wrapper {
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    display: block
+}
+
+.small_menu .sidebar_list span{
     display: none
 }
 
@@ -2191,6 +2197,10 @@ html.fullscreen-bg #wrapper {
         -moz-box-shadow: 0px 2px 10px 0px rgba(45, 53, 65, 0.2);
         -webkit-box-shadow: 0px 2px 10px 0px rgba(45, 53, 65, 0.2);
         box-shadow: 0px 2px 10px 0px rgba(45, 53, 65, 0.2);
+        display: block
+    }
+
+    .small_menu .sidebar_list span{
         display: block
     }
 }
@@ -2767,7 +2777,7 @@ html.fullscreen-bg #wrapper {
 
 @media screen and (max-width: 1200px) {
     #left-sidebar {
-        width: 45px
+        width: 0px
     }
 }
 
@@ -2820,10 +2830,14 @@ html.fullscreen-bg #wrapper {
 @media screen and (max-width: 1200px) {
     .sidebar_list {
         position: fixed;
-        left: 45px;
+        /* left: 45px; */
         background: #fff;
         width: 250px;
         display: none
+    }
+
+    .small_menu #left-sidebar {
+        width: 0px;
     }
 }
 

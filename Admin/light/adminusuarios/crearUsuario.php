@@ -8,9 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $primerApellido = $_POST['primerApellido'];
     $segundoApellido = $_POST['segundoApellido'];
     $password = $_POST['password'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $suscription = $_POST['suscription'];
+    $rol = $_POST['rol'];
 
-    $sql = "INSERT INTO USERS (EMAIL, NAME, FLASTNAME, SLASTNAME, PASSWORD) 
-    VALUES ('$email', '$nombre', '$primerApellido', '$segundoApellido', '$password')";
+
+    $sql = "INSERT INTO USERS (EMAIL, NAME, FLASTNAME, SLASTNAME, PASSWORD, PHONE, ADDRESS, SUSCRIPTION, IDROL) 
+    VALUES ('$email', '$nombre', '$primerApellido', '$segundoApellido', '$password', '$phone', '$address', '$suscription', '$rol')";
     
     if ($con->query($sql) === TRUE) {
         echo "Usuario creado exitosamente.";

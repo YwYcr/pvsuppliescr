@@ -29,7 +29,7 @@
                      </h2>
                      <ul class="header-dropdown dropdown">
 
-                         <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
+                         <!-- <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li> -->
                          <!-- <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                                     <ul class="dropdown-menu">
@@ -50,14 +50,23 @@
 
                             if ($result->num_rows>0){
                                 echo "<table  class='table table-hover js-basic-example dataTable table-custom spacing5>'";
-                                echo "<tr><th>Product ID</th><th>Nombre</th><th>Descripcion</th><th>Marca</th><th>Cantidad</th><th>Precio</th><th>Categoria</th><th>Acciones</th></tr>";
+                                echo "<tr>
+                                <th>Product ID</th>
+                                <th>Nombre</th>
+                                <th style='max-height: 100px;'>Descripcion</th>
+                                <th>Marca</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Categoria</th>
+                                <th>Acciones</th></tr>";
+                                echo "<tbody id='productTableBody'>";
 
                                 while ($row = $result->fetch_assoc()){
                                     echo "<tr>";
                                     echo "<td>" . $row['IDPRODUCT'] . "</td>";
                                     $productID = $row['IDPRODUCT'];
                                     echo "<td>" . $row['NAME'] . "</td>";
-                                    echo "<td>" . $row['DESCRIPTION'] . "</td>";
+                                    echo "<td style='max-width: 300px;  overflow: auto; text-overflow: auto;'>" . $row['DESCRIPTION'] . "</td>";
                                     echo "<td>" . $row['BRAND'] . "</td>";
                                     echo "<td>" . $row['QUANTITY'] . "</td>";
                                     echo "<td>" . $row['PRICE'] . "</td>";

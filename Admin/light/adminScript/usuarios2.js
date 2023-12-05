@@ -8,7 +8,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "adminusuarios/getUsuario.php",
+                    url: "getUsuario.php",
                     data: { userID: userID },
                     dataType: "json",
                     success: function (response) {
@@ -25,7 +25,7 @@
                         $("#infoUserRol").val(response.IDROL);
                         
                         
-                        // $("#info").modal("show");
+                        // $("#infoUser").modal("show");
 
                         // console.log("Email: " + response.EMAIL);
                     },
@@ -66,12 +66,13 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "adminusuarios/crearUsuario.php",
+                    url: "crearUsuario.php",
                     data: data,
                     success: function (response) {
                         // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                        alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
-                        fetch('adminusuarios/refreshUsuario.php')
+                        swal("Agregado!", "Se agrego el usuario con éxito!", "success");
+                        // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                        fetch('refreshUsuario.php')
                         .then(response => response.text())                   
                         .then(data => {
                             document.getElementById('userTableBody').innerHTML = data;
@@ -95,7 +96,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "adminusuarios/getUsuario.php",
+                    url: "getUsuario.php",
                     data: { userID: userID },
                     dataType: "json",
                     success: function (response) {
@@ -158,7 +159,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "adminusuarios/updateUsuario.php",
+                    url: "updateUsuario.php",
                     data: data,
                     success: function (response) {
                         // window.location.href = "usuarios.php";
@@ -166,8 +167,9 @@
                         
                         console.log("Email enviado: " + email);
                         console.log("ID enviado: " + userID);
-                        alert('Usuario modificado con éxito');
-                        fetch('adminusuarios/refreshUsuario.php')
+                        swal("Modificado!", "Usuario modificado con éxito!", "success");
+                        // alert('Usuario modificado con éxito');
+                        fetch('refreshUsuario.php')
                         .then(response => response.text())
                         .then(data => {
                             document.getElementById('userTableBody').innerHTML = data;
@@ -195,16 +197,27 @@
 
             $.ajax({
             type: "POST",
-            url: "adminusuarios/borrarUsuario.php", 
+            url: "borrarUsuario.php", 
             data: { userID: userID },
             success: function(response) {
-                alert('Usuario eliminado con éxito');
-                fetch('adminusuarios/refreshUsuario.php')
-                .then(response => response.text())                   
-                .then(data => {
-                    document.getElementById('userTableBody').innerHTML = data;
+                swal({
+                    title: "Seguro que quieres eliminarlo?",
+                    text: "Una vez eliminado no podras volver a recuperar este usuario!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#dc3545",
+                    confirmButtonText: "Si, Eliminalo!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Eliminado!", "Usuario eliminado con éxito", "success");
+                    // alert('Usuario eliminado con éxito');
+                    fetch('refreshUsuario.php')
+                    .then(response => response.text())                   
+                    .then(data => {
+                        document.getElementById('userTableBody').innerHTML = data;
                 });
                 console.log("Usuario eliminado: " + userID);
+                });
             },
             error: function(xhr, status, error) {
                 console.error(error);
@@ -222,7 +235,7 @@
 
             // Realizar la petición AJAX
             $.ajax({
-                url: 'adminusuarios/getUsuario.php',
+                url: 'getUsuario.php',
                 method: 'GET',
                 data: { searchTerm: searchTerm },
                 dataType: 'json',

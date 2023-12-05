@@ -11,10 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cantidad = $_POST['cantidad'];
     $precio = $_POST['precio'];
     $categoria = $_POST['categoria'];
+    $imagen = $_POST['imagen'];
+    $size = $_POST['size'];
 
     // Realiza la inserción en la base de datos (asegúrate de escapar y validar los datos)
-    $sql = "UPDATE PRODUCT SET NAME = '$nombre', DESCRIPTION = '$descripcion', BRAND = '$marca', QUANTITY = '$cantidad', PRICE = '$precio', IDCATEGORY = '$categoria' WHERE IDPRODUCT = '$productID'";
-    // $sql = "INSERT INTO USERS (EMAIL, NAME, FLASTNAME, SLASTNAME, PASSWORD) VALUES ('$email', '$nombre', '$primerApellido', '$segundoApellido', '$password')";
+    $sql = "UPDATE PRODUCT SET NAME = '$nombre', DESCRIPTION = '$descripcion', BRAND = '$marca', QUANTITY = '$cantidad', PRICE = '$precio', 
+    IDCATEGORY = '$categoria', 
+    IMAGE = '$imagen',
+    IDSIZE = '$size'
+    WHERE IDPRODUCT = '$productID'";
 
     if ($con->query($sql) === TRUE) {
         echo "PRODUCTO MODIFICADO exitosamente.";

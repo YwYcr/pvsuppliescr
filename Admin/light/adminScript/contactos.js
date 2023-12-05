@@ -45,8 +45,15 @@
                     url: "admincontactos/crearContactoModal.php",
                     data: data,
                     success: function (response) {
+
+                        alert('Contacto creado con éxito');    
+                fetch('admincontactos/refreshContacto.php')
+                .then(response => response.text())                   
+                .then(data => {
+                    document.getElementById('contactTableBody').innerHTML = data;
+                });
                         // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                        alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                        // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
 
                     },
                     error: function (xhr, status, error) {
@@ -78,6 +85,8 @@
 
                         console.log("Email: " + response.EMAIL);
                         console.log("ID a modificar: " + response.IDCONTACT);
+
+                        
 
                     },
                     error: function (xhr, status, error) {
@@ -116,6 +125,13 @@
                         console.log("Email enviado: " + email);
                         console.log("ID enviado: " + contactID);
 
+                        alert('Contacto modificado con éxito');    
+                        fetch('admincontactos/refreshContacto.php')
+                        .then(response => response.text())                   
+                        .then(data => {
+                            document.getElementById('contactTableBody').innerHTML = data;
+                        });
+
                     },
                     error: function (xhr, status, error) {
                         console.error(error);
@@ -142,6 +158,12 @@
                     url: "admincontactos/borrarContacto.php",
                     data: { contactID: contactID },
                     success: function (response) {
+                        alert('Contacto eliminado con éxito');    
+                        fetch('admincontactos/refreshContacto.php')
+                        .then(response => response.text())                   
+                        .then(data => {
+                            document.getElementById('contactTableBody').innerHTML = data;
+                        });
                         console.log("contacto eliminado: " + contactID);
                     },
                     error: function (xhr, status, error) {

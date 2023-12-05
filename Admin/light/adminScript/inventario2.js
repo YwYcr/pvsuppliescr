@@ -6,7 +6,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "admininventario/getProducto.php",
+                url: "getProducto.php",
                 data: { productID: productID },
                 dataType: "json",
                 success: function (response) {
@@ -55,11 +55,11 @@
 
             $.ajax({
                 type: "POST",
-                url: "admininventario/crearProducto.php",
+                url: "crearProducto.php",
                 data: data,
                 success: function (response) {
                 alert('Producto creado con éxito');
-                fetch('admininventario/refreshProducto.php')
+                fetch('refreshProducto.php')
                 .then(response => response.text())                   
                 .then(data => {
                     document.getElementById('productTableBody').innerHTML = data;
@@ -92,11 +92,11 @@
 
             $.ajax({
                 type: "POST",
-                url: "admininventario/crearCategoria.php",
+                url: "crearCategoria.php",
                 data: data,
                 success: function (response) {
                 alert('Categoria creada con éxito');
-                fetch('admininventario/refreshProducto.php')
+                fetch('refreshProducto.php')
                 .then(response => response.text())                   
                 .then(data => {
                     document.getElementById('productoTableBody').innerHTML = data;
@@ -121,7 +121,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "admininventario/getProducto.php",
+                url: "getProducto.php",
                 data: { productID: productID },
                 dataType: "json",
                 success: function (response) {
@@ -177,11 +177,11 @@
 
             $.ajax({
                 type: "POST",
-                url: "admininventario/updateProducto.php",
+                url: "updateProducto.php",
                 data: data,
                 success: function (response) {
                 alert('Producto modificado con éxito');
-                fetch('admininventario/refreshProducto.php')
+                fetch('refreshProducto.php')
                 .then(response => response.text())                   
                 .then(data => {
                     document.getElementById('productTableBody').innerHTML = data;
@@ -202,11 +202,11 @@
 
             $.ajax({
                 type: "POST",
-                url: "admininventario/borrarProducto.php",
+                url: "borrarProducto.php",
                 data: { productID: productID },
                 success: function (response) {
                 alert('Producto eliminado con éxito');    
-                fetch('admininventario/refreshProducto.php')
+                fetch('refreshProducto.php')
                 .then(response => response.text())                   
                 .then(data => {
                     document.getElementById('productTableBody').innerHTML = data;

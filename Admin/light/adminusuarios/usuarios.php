@@ -59,7 +59,15 @@
 
                         if ($result->num_rows > 0) {
                             echo "<table id='userTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
-                            echo "<thead><tr><th>Num de Usuario</th><th>Nombre</th><th>Email</th><th>Acciones</th></tr></thead>";
+                            echo "<thead><tr>
+                            <th>Num de Usuario</th>
+                            <th>Nombre</th>
+                            <th>Primer Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Email</th>
+                            <th>Telefono</th> 
+                            <th>Acciones</th>
+                            </tr></thead>";
                             echo "<tbody id='userTableBody'>";
 
                             while ($row = $result->fetch_assoc()) {
@@ -67,7 +75,11 @@
                                 echo "<td>" . $row['IDUSER'] . "</td>";
                                 $userId = $row['IDUSER'];
                                 echo "<td>" . $row['NAME'] . "</td>";
+                                echo "<td>" . $row['FLASTNAME'] . "</td>";
+                                echo "<td>" . $row['SLASTNAME'] . "</td>";
                                 echo "<td>" . $row['EMAIL'] . "</td>";
+                                echo "<td>" . $row['PHONE'] . "</td>";
+                                
                                 echo "<td>
 
                                     <button type='button' class='btn btn-info btn-infoUsuarios  mb-2' data-bs-toggle='modal' data-bs-target='#infoUser' data-bs-id='$userId'> 
@@ -90,10 +102,13 @@
                             echo "</tbody>";
                             echo "<tfoot>
                     <tr>
-                        <th>Num de Usuario</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Acciones</th>
+                    <th>Num de Usuario</th>
+                    <th>Nombre</th>
+                    <th>Primer Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Email</th>
+                    <th>Telefono</th> 
+                    <th>Acciones</th>
                     </tr>
                 </tfoot>";
                             echo "</table>";

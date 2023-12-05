@@ -9,9 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cantidad = $_POST['cantidad'];
     $precio = $_POST['precio'];
     $categoria = $_POST['categoria'];
+    $imagen = $_POST['imagen'];
+    $size = $_POST['size'];
 
-    $sql = "INSERT INTO PRODUCT (NAME, DESCRIPTION, BRAND, QUANTITY, PRICE, IDCATEGORY) 
-    VALUES ('$nombre', '$descripcion', '$marca', '$cantidad', '$precio', '$categoria')";
+    $sql = "INSERT INTO PRODUCT (NAME, DESCRIPTION, BRAND, QUANTITY, PRICE, IDCATEGORY, IMAGE, IDSIZE) 
+    VALUES ('$nombre', '$descripcion', '$marca', '$cantidad', '$precio', '$categoria', '$imagen', '$size')";
     
     if ($con->query($sql) === TRUE) {
         echo "Producto creado exitosamente.";

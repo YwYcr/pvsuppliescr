@@ -65,8 +65,13 @@
                 url: "adminproveedores/crearProveedor.php",
                 data: data,
                 success: function (response) {
-                    // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                    alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+                alert('Proveedor creado con éxito');
+                fetch('adminproveedores/refreshProveedor.php')
+                .then(response => response.text())                   
+                .then(data => {
+                    document.getElementById('supplierTableBody').innerHTML = data;
+                });
+  
                 },
                 error: function (xhr, status, error) {
                     // Manejar errores de la solicitud AJAX
@@ -138,7 +143,12 @@
                 data: data,
                 success: function (response) {
 
-                    console.log("ID enviado: " + proveedorID);
+                    alert('Proveedor modificado con éxito');
+                    fetch('adminproveedores/refreshProveedor.php')
+                    .then(response => response.text())                   
+                    .then(data => {
+                        document.getElementById('supplierTableBody').innerHTML = data;
+                    });
 
                 },
                 error: function (xhr, status, error) {
@@ -162,7 +172,12 @@
                 url: "adminproveedores/borrarProveedor.php",
                 data: { proveedorID: proveedorID },
                 success: function (response) {
-                    console.log("Proveedor eliminado: " + proveedorID);
+                    alert('Proveedor eliminado con éxito');
+                    fetch('adminproveedores/refreshProveedor.php')
+                    .then(response => response.text())                   
+                    .then(data => {
+                        document.getElementById('supplierTableBody').innerHTML = data;
+                    });
                 },
                 error: function (xhr, status, error) {
                     console.error(error);
