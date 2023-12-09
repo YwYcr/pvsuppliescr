@@ -403,26 +403,6 @@ echo "</tr>";
                                             <?php
 
                                             ?>
-
-<!-- Formulario de carga -->
-<form id="uploadForm">
-    <input type="file" id="fileInput" />
-    <button type="button" onclick="uploadImage()">Subir Imagen</button>
-</form>
-
-<!-- Formulario de actualización -->
-<form id="updateForm">
-    <input type="file" id="updateFileInput" />
-    <button type="button" onclick="updateImage()">Actualizar Imagen</button>
-</form>
-
-<!-- Formulario de eliminación -->
-<form id="deleteForm">
-    <input type="text" id="deleteKey" placeholder="Clave de la imagen a eliminar" />
-    <button type="button" onclick="deleteImage()">Eliminar Imagen</button>
-</form>
-
-
                                         </div>
                                     </div>
 
