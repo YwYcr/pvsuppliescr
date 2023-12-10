@@ -220,6 +220,14 @@
         });
     });
 
+    $(document).ready(function () {
+        // Maneja el evento click en las filas de la tabla
+        $('#prodTable tbody').on('click', 'tr', function () {
+            // Desmarca todas las filas y luego marca la fila clicada
+            $('#prodTable tbody tr').removeClass('selected');
+            $(this).addClass('selected');
+        });
+    });
 
     // Imagenes!!
 
@@ -257,7 +265,7 @@ $('#crearImagen').on('click', function() {
         $('#createImagen').modal('show');
     } else {
         // Mostrar un mensaje de error o realizar otra acción si no hay un productID seleccionado
-        swal("Atención!", "Primero debes seleccionar un producto de la lista", "info");
+        swal("Atención!", "Primero debes seleccionar un producto de la lista", "error");
     }
 });
 
@@ -282,9 +290,6 @@ $('#createImagenUrl').on('change', function() {
 
 // <!-- Script para Cargar Imagen y guardar en BD -->       
 $('#crearImagenButton').on('click', function() {
-    // Aquí puedes realizar la lógica para enviar los datos a tu servidor, incluida la URL de la imagen
-
-    // Por ejemplo, podrías utilizar AJAX para enviar los datos al servidor PHP
     var formData = new FormData($('#createImagenForm')[0]);
 
     $.ajax({
@@ -294,13 +299,19 @@ $('#crearImagenButton').on('click', function() {
         contentType: false,
         processData: false,
         success: function(response) {
-            swal("Agregado!", "Se agrego la imagen con éxito!", "success");
+            // Verificar si la respuesta contiene la cadena 'Error'
+            if (response.includes('Error')) {
+                swal("Error!", "La imagen que intentas subir está duplicada. Intenta con otra imagen o cambia el nombre.", "error");
+            } else {
+                swal("Agregado!", "Se agregó la imagen con éxito!", "success");
+            }
         },
         error: function(error) {
-            // console.error('Error en la solicitud AJAX:', error);
+            swal("Error!", "Ocurrió un error al procesar la solicitud. Por favor, inténtalo nuevamente.", "error");
         }
     });
 });
+
 
     
     

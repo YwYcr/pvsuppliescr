@@ -10370,3 +10370,11 @@ hr {
     display: inline-block;
     width: 7rem;
 }
+
+#prodTable tbody tr.selected {
+    background-color: #cce5ff; /* Cambia el color de fondo según tus preferencias */
+}
+
+#prodTable tbody tr:hover {
+    cursor: pointer; /* Cambia el cursor cuando el mouse está encima de la fila */
+}
