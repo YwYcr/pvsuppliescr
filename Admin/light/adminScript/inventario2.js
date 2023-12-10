@@ -220,3 +220,90 @@
         });
     });
 
+
+    // Imagenes!!
+
+// Declarar una variable global para almacenar el productID
+var selectedProductID = "";
+
+// Abre el model de crear imagen nueva    
+$(document).ready(function() {
+    // Manejar el clic en una fila de la primera tabla
+    $('#prodTable tbody').on('click', 'tr', function() {
+        // Obtener el ID del producto de la fila clicada
+        selectedProductID = $(this).find('td:first-child').text();
+        // Realizar una solicitud AJAX al servidor para obtener datos para la segunda tabla
+        $.ajax({
+            url: 'getImages.php',
+            method: 'POST',
+            data: { productID: selectedProductID },
+            success: function(data) {
+                $('#imageTable').html(data);
+            },
+            error: function() {
+                console.error('Error al cargar los datos');
+            }
+        });
+    });
+
+// Manejar el clic en el botón de crear imagen
+$('#crearImagen').on('click', function() {
+    // Verificar si hay un productID seleccionado
+    if (selectedProductID !== "") {
+        // Realizar alguna acción con el productID, por ejemplo, enviarlo a otra parte del servidor
+        $('#createProductID').val(selectedProductID).prop('readonly', true);
+        
+        // Mostrar el modal solo si hay un productID seleccionado
+        $('#createImagen').modal('show');
+    } else {
+        // Mostrar un mensaje de error o realizar otra acción si no hay un productID seleccionado
+        swal("Atención!", "Primero debes seleccionar un producto de la lista", "info");
+    }
+});
+
+});
+
+// <!-- le asigna el nombre de la imagen con el archivo que se selecciona -->    
+$('#createImagenUrl').on('change', function() {
+    var fileName = $(this).val().split('\\').pop();
+    $('#createImagenName').val(fileName);
+});
+
+
+// <!-- Script para Descargar Imagen -->    
+	function downloadFile(url) {
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = url.substring(url.lastIndexOf('/') + 1);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        }
+
+// <!-- Script para Cargar Imagen y guardar en BD -->       
+$('#crearImagenButton').on('click', function() {
+    // Aquí puedes realizar la lógica para enviar los datos a tu servidor, incluida la URL de la imagen
+
+    // Por ejemplo, podrías utilizar AJAX para enviar los datos al servidor PHP
+    var formData = new FormData($('#createImagenForm')[0]);
+
+    $.ajax({
+        url: 'crearImagen.php',
+        type: 'post',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            swal("Agregado!", "Se agrego la imagen con éxito!", "success");
+        },
+        error: function(error) {
+            // console.error('Error en la solicitud AJAX:', error);
+        }
+    });
+});
+
+    
+    
+    
+    
+    

@@ -219,8 +219,52 @@
             </div>
         </div>
 
-        <!-- Modal Create Categoria -->
-        <div class="modal fade" id="createCategoria" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- Modal Imagen producto -->
+        <div class="modal fade" id="createImagen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Agregar Imagen</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createImagenForm">
+                            <div class="mb-3">
+                                <label for="createProductID" class="form-label">Producto Número</label>
+                                <input type="text" class="form-control" id="createProductID" name="createProductID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createImagenName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="createImagenName" name="createImagenName" required readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createImagenUrl" class="form-label">Seleccionar Imagen</label>
+                                <input type="file" class="form-control" id="createImagenUrl" name="createImagenUrl" accept="image/*" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createImagenPrincipal" class="form-label">Imagen principal?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="createImagenPrincipal" id="createImagenPrincipalSi" value="1">
+                                    <label class="form-check-label" for="createImagenPrincipalSi">Sí</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="createImagenPrincipal" id="createImagenPrincipalNo" value="0" checked>
+                                    <label class="form-check-label" for="createImagenPrincipalNo">No</label>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button id="crearImagenButton" class="btn btn-primary " data-bs-dismiss="modal" data-type="success">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Create categoria -->
+        <div class="modal fade" id="createImagen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -293,15 +337,15 @@
                                     <div class="body">
                                         <div class="table-responsive">
                                             <?php
- include '../adminTool/bd_conn.php';
+                                            include '../adminTool/bd_conn.php';
 
- $consulta = "SELECT * FROM PRODUCT";
- $result = $con->query($consulta);
+                                            $consulta = "SELECT * FROM PRODUCT";
+                                            $result = $con->query($consulta);
 
 
- if ($result->num_rows>0){
-    echo "<table id='userTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
-    echo "<thead><tr>
+                                            if ($result->num_rows > 0) {
+                                                echo "<table id='userTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
+                                                echo "<thead><tr>
      <th>Product ID</th>
      <th>Nombre</th>
      <th>Marca</th>
@@ -311,19 +355,19 @@
      <th>Imagen</th>
      <th>Acciones</th>
      </tr></thead>";
-     echo "<tbody id='productTableBody'>";
+                                                echo "<tbody id='productTableBody'>";
 
-     while ($row = $result->fetch_assoc()){
-         echo "<tr>";
-         echo "<td>" . $row['IDPRODUCT'] . "</td>";
-         $productID = $row['IDPRODUCT'];
-         echo "<td>" . $row['NAME'] . "</td>";
-         echo "<td>" . $row['BRAND'] . "</td>";
-         echo "<td>" . $row['QUANTITY'] . "</td>";
-         echo "<td>" . $row['PRICE'] . "</td>";
-         echo "<td>" . $row['IDCATEGORY'] . "</td>";                                  
-         echo "<td><img src='" . $row['IMAGE'] . "' alt='IMGPRODUCT' style='height: 7rem;'></td>";                                  
-         echo "<td>
+                                                while ($row = $result->fetch_assoc()) {
+                                                    echo "<tr>";
+                                                    echo "<td>" . $row['IDPRODUCT'] . "</td>";
+                                                    $productID = $row['IDPRODUCT'];
+                                                    echo "<td>" . $row['NAME'] . "</td>";
+                                                    echo "<td>" . $row['BRAND'] . "</td>";
+                                                    echo "<td>" . $row['QUANTITY'] . "</td>";
+                                                    echo "<td>" . $row['PRICE'] . "</td>";
+                                                    echo "<td>" . $row['IDCATEGORY'] . "</td>";
+                                                    echo "<td><img src='" . $row['IMAGE'] . "' alt='IMGPRODUCT' style='height: 7rem;'></td>";
+                                                    echo "<td>
 
          <button type='button' class='btn btn-info btn-infoProducto  mb-2' data-bs-toggle='modal' data-bs-target='#infoProducto' data-bs-id='$productID'> 
          <i class='fa fa-info-circle'></i>
@@ -338,11 +382,11 @@
          <span>Eliminar</span></button>
   
          </td>";
-echo "</tr>";
-     }
+                                                    echo "</tr>";
+                                                }
 
-     echo "</tbody>";
-    echo "<tfoot>
+                                                echo "</tbody>";
+                                                echo "<tfoot>
         <tr>
         <th>Product ID</th>
      <th>Nombre</th>
@@ -354,21 +398,20 @@ echo "</tr>";
      <th>Acciones</th>
         </tr>
     </tfoot>";
-    echo "</table>";
-     
- }else {
-     echo "No hay productos";
- }                            
- include '../adminTool/bd_disconn.php'
- ?>
-                                           
+                                                echo "</table>";
+                                            } else {
+                                                echo "No hay productos";
+                                            }
+                                            include '../adminTool/bd_disconn.php'
+                                            ?>
+
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="tab-pane" id="categoryTab">
 
-                                <div class="header">
+                                    <div class="header">
                                         <h2>Listado de Categorias
                                         </h2>
                                         <ul class="header-dropdown dropdown">
@@ -391,23 +434,94 @@ echo "</tr>";
                                 </div>
                                 <div class="tab-pane" id="imgTab">
 
-                                <div class="header">
+                                    <div class="header">
                                         <h2>Imagenes
                                         </h2>
                                         <ul class="header-dropdown dropdown">
                                             <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
                                         </ul>
+                                        
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 text-right hidden-xs">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-primary" id="crearImagen" title=""><i class="icon-plus"></i><span> Agregar Imagen</span></a>
                                     </div>
                                     <div class="body">
-                                        <div class="table-responsive">
-                                            <?php
+                                        <div class="imgbody">
+                                            <div class="col-xl-5 col-lg-12">
+                                                <div class="table-responsive">
+                                                    <?php
+                                                    include '../adminTool/bd_conn.php';
 
-                                            ?>
+                                                    $consulta = "SELECT * FROM PRODUCT";
+                                                    $result = $con->query($consulta);
+
+
+                                                    if ($result->num_rows > 0) {
+                                                        echo "<table id='prodTable' class='table table-hover js-basic-example table-custom spacing5'>";
+                                                        echo "<thead><tr>
+                                                            <th>Product ID</th>
+                                                            <th>Nombre</th>
+                                                            <th>Marca</th>
+                                                            </tr></thead>";
+                                                        echo "<tbody id='productTableBody'>";
+
+                                                        while ($row = $result->fetch_assoc()) {
+                                                            echo "<tr>";
+                                                            echo "<td>" . $row['IDPRODUCT'] . "</td>";
+                                                            $productID = $row['IDPRODUCT'];
+                                                            echo "<td>" . $row['NAME'] . "</td>";
+                                                            echo "<td>" . $row['BRAND'] . "</td>";
+                                                            echo "</tr>";
+                                                        }
+
+                                                        echo "</tbody>";
+                                                        echo "<tfoot>
+                                                            <tr>
+                                                            <th>Product ID</th>
+                                                            <th>Nombre</th>
+                                                            <th>Marca</th>
+                                                            </tr>
+                                                        </tfoot>";
+                                                        echo "</table>";
+                                                    } else {
+                                                        echo "No hay productos";
+                                                    }
+                                                    include '../adminTool/bd_disconn.php'
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-7 col-lg-12">
+                                            
+                                                <div class="table-responsive">
+                                                    <table id='imageTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>
+                                                        <thead><tr>
+                                                            <th>Nombre</th>
+                                                            <th>Image</th>
+                                                            <th>Principal</th>
+                                                            </tr></thead>
+                                                        <tbody id='imageTableBody'>
+                                                            <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                            <th>Nombre</th>
+                                                            <th>Image</th>
+                                                            <th>Principal</th>
+                                                            </tr>
+                                                        </tfoot>
+                                                        </table>
+                                                </div>
+                                            </div>
                                         </div>
+
                                     </div>
 
                                 </div>
-                            
+
 
                             </div>
                         </div>
@@ -442,6 +556,7 @@ echo "</tr>";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
     <script src="\pvsuppliescr\Admin\light\adminScript\inventario2.js"></script>
+
 </body>
 
 </html>

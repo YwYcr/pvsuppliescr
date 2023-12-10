@@ -10359,3 +10359,14 @@ hr {
 .theme-blush .navbar-nav .dropdown-menu li.header {
     background: #e25985
 }
+
+.imgbody {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgbody div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: 7rem;
+}
