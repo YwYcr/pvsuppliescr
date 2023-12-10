@@ -10,9 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
 
-    <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b"></script>
-    <!-- Recaptcha -->
+    
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon.ico">

@@ -1,6 +1,10 @@
 
 <script src= "../../Cliente/FormRegistro.js"></script>
 
+<!-- Recaptcha -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b"></script>
+    <!-- Recaptcha -->
+    
 <!-- Begin Hiraola's Header Main Area -->
 <header class="header-main_area">
             <div class="header-top_area">
