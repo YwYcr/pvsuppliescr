@@ -114,6 +114,7 @@
                                     </div>
                                     <div id="message-container"></div>
                                     <input type="hidden" id="recaptchaResponse" name="recaptcha_response" />
+                                    <input type="hidden" id="codigo_act" name="codigo_act" />
                                     <br>
                                     <div class="col-12">
                                         <button type="submit" id="registrarUsuarioButton" name="registerButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registro</button>
