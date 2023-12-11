@@ -14,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // Hash the password
     $codigo_act = $_POST['codigo_act'];
 
+    // echo "Valor de codigo_act: " . $codigo_act;
+
     // Validate email
     $stmtCheckEmail = $con->prepare("CALL CheckEmailExists(?, @exists)");
     $stmtCheckEmail->bind_param("s", $email);
@@ -58,21 +60,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
             die('Error while verifying reCAPTCHA');
         }
 
-        // Decode the JSON response from the reCAPTCHA verification
+        // Decodificar la respuesta JSON de reCAPTCHA
         $recaptcha_data = json_decode($recaptcha_result);
 
-        // Checking Score
-        $recaptcha_score = $recaptcha_data->score;
-        echo "reCAPTCHA Score: $recaptcha_score";
+        // Propiedad score
+        if (isset($recaptcha_data->score)) {
+            $recaptcha_score = $recaptcha_data->score;
+            // echo "reCAPTCHA Score: $recaptcha_score";
+        }
 
         // Check if the reCAPTCHA verification was successful
-        if ($recaptcha_data->success && $recaptcha_score >= 0.5) {
+        if ($recaptcha_data->success && $recaptcha_score >= 0.1) {
             // reCAPTCHA verification passed
             // Continue with user registration logic
 
             // Procedimiento almacenado para insertar un nuevo usuario
             $stmtInsertUser = $con->prepare("CALL InsertUser(?, ?, ?, ?, ?, @success)");
-            $stmtInsertUser->bind_param("ssss", $nombre, $primerApellido, $email, $hashedPassword, $codigo_act);
+            $stmtInsertUser->bind_param("sssss", $nombre, $primerApellido, $email, $hashedPassword, $codigo_act);
             $stmtInsertUser->execute();
             $stmtInsertUser->close();
 

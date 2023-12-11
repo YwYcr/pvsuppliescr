@@ -1,10 +1,14 @@
 <?php
 // enviarcorreo.php
 
-// require 'vendor/autoload.php';  Ajusta la ruta según tu estructura de archivos
 
-use PHPMailer\src\PHPMailer;
-use PHPMailer\src\Exception;
+require 'PHPmailer/src/PHPMailer.php';
+require 'PHPmailer/src/SMTP.php';
+require 'PHPmailer/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 function correo_activacion($email, $nombre, $primerApellido, $codigo_act) {
     $mail = new PHPMailer(true);
@@ -25,8 +29,11 @@ function correo_activacion($email, $nombre, $primerApellido, $codigo_act) {
         $mail->Subject = 'Activa tu cuenta en PV Supplies';
 
         // Cuerpo del correo con los campos del formulario
-        $mail->Body = 'Hola ' . $nombre . ' ' . $primerApellido . ',<br><br>';
-        $mail->Body .= 'Haz click en el siguiente link para activar tu cuenta: ' . $_SERVER['HTTP_HOST'] . '/activate.php?email=' . $email . '&code=' . $codigo_act;
+        // $mail->Body = 'Hola ' . $nombre . ' ' . $primerApellido . '<br><br>';
+        // $mail->Body .= 'Haz click en el siguiente link para activar tu cuenta: ' . $_SERVER['HTTP_HOST'] . 'Cliente/tools/activate.php?email=' . $email . '&code=' . $codigo_act;
+        $mail->Body = 'Hola ' . $nombre . ' ' . $primerApellido . '<br><br>';
+        $mail->Body .= 'Haz click en el siguiente link para activar tu cuenta: ' . $_SERVER['HTTP_HOST'] . '/fromGit/pvsuppliescr/activate.php?email=' . $email . '&code=' . $codigo_act;
+
 
         // Envío del correo
         $mail->send();

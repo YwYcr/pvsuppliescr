@@ -22,11 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     registerForm.addEventListener("submit", function (e) {
         e.preventDefault();
-
-        // Codigo de activacion de la cuenta
-        var jscodigo_activacion = bin2hex(crypto.getRandomValues(new Uint8Array(16))); // 16 bytes para obtener 32 caracteres hexadecimales
-        //
-
+        
         var firstName = document.getElementById("name").value;
         var lastName = document.getElementById("flastname").value;
         var email = document.getElementById("email").value;
@@ -34,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var confirmPassword = document.getElementById("confirmPassword").value; 
         var js_recaptcha_response = document.getElementById("recaptchaResponse").value;
         
+        // Codigo de activacion de la cuenta
+        var jscodigo_activacion = bin2hex(crypto.getRandomValues(new Uint8Array(16))); // 16 bytes para obtener 32 caracteres hexadecimales
+        //
+
         // Asignar el código de activación al campo oculto
         codigoActInput.value = jscodigo_activacion;
 
@@ -55,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
             
             return;
         }
-
-
         
 
         // Include reCAPTCHA response in the form data

@@ -1,7 +1,7 @@
 <?php
 // activate.php
 
-include 'tools/bd_conn.php'; // Ajusta la ruta según tu estructura de archivos
+include 'Cliente/tools/bd_conn.php'; // Ajusta la ruta según tu estructura de archivos
 
 if (isset($_GET['email']) && isset($_GET['code'])) {
     $email = $_GET['email'];
@@ -20,7 +20,7 @@ if (isset($_GET['email']) && isset($_GET['code'])) {
         $stmtActivate->execute();
         $stmtActivate->close();
 
-        echo '¡Tu cuenta ha sido activada con éxito! <a href="my-account.php">Click aquí</a> para ir a tu perfil.';
+        echo '¡Tu cuenta ha sido activada con éxito! <a href="Cliente/tools/my-account.php">Click aquí</a> para ir a tu perfil.';
     } else {
         echo 'La activación no pudo ser completada. Por favor, verifica tu enlace de activación.';
     }
@@ -30,5 +30,5 @@ if (isset($_GET['email']) && isset($_GET['code'])) {
     echo 'Parámetros incompletos. Por favor, verifica tu enlace de activación.';
 }
 
-include 'tools/bd_conn.php'; // Ajusta la ruta según tu estructura de archivos
+include 'Cliente/tools/bd_conn.php'; // Ajusta la ruta según tu estructura de archivos
 ?>
