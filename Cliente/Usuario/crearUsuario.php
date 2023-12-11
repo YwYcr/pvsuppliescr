@@ -1,6 +1,7 @@
 <?php
 
 include '../tools/bd_conn.php';
+include '../tools/enviarcorreo.php';
 
 // Check if it's a POST request and if 'recaptcha_response' is set
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response'])) {
@@ -11,6 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
     $email = $_POST['email'];
     $password = $_POST['password'];
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT); // Hash the password
+    $codigo_act = $_POST['codigo_act'];
+
+    // echo "Valor de codigo_act: " . $codigo_act;
 
     // Validate email
     $stmtCheckEmail = $con->prepare("CALL CheckEmailExists(?, @exists)");
@@ -56,21 +60,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
             die('Error while verifying reCAPTCHA');
         }
 
-        // Decode the JSON response from the reCAPTCHA verification
+        // Decodificar la respuesta JSON de reCAPTCHA
         $recaptcha_data = json_decode($recaptcha_result);
 
-        // Checking Score
-        $recaptcha_score = $recaptcha_data->score;
-        echo "reCAPTCHA Score: $recaptcha_score";
+        // Propiedad score
+        if (isset($recaptcha_data->score)) {
+            $recaptcha_score = $recaptcha_data->score;
+            // echo "reCAPTCHA Score: $recaptcha_score";
+        }
 
         // Check if the reCAPTCHA verification was successful
-        if ($recaptcha_data->success && $recaptcha_score >= 0.5) {
+        if ($recaptcha_data->success && $recaptcha_score >= 0.1) {
             // reCAPTCHA verification passed
             // Continue with user registration logic
 
             // Procedimiento almacenado para insertar un nuevo usuario
-            $stmtInsertUser = $con->prepare("CALL InsertUser(?, ?, ?, ?, @success)");
-            $stmtInsertUser->bind_param("ssss", $nombre, $primerApellido, $email, $hashedPassword);
+            $stmtInsertUser = $con->prepare("CALL InsertUser(?, ?, ?, ?, ?, @success)");
+            $stmtInsertUser->bind_param("sssss", $nombre, $primerApellido, $email, $hashedPassword, $codigo_act);
             $stmtInsertUser->execute();
             $stmtInsertUser->close();
 
@@ -81,7 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
 
             // Check if the insertion was successful
             if ($insertion_success == 1) {
+
+                correo_activacion($email, $nombre, $primerApellido, $codigo_act);
                 echo "Registro exitoso. Revisa tu correo para confirmar tu cuenta";
+
             } else {
                 echo "Error al registrar: El correo electrónico ya está en uso.";
             }

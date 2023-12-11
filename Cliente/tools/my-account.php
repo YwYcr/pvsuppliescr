@@ -1,3 +1,5 @@
+<?php include 'bd_conn.php'; ?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -72,19 +74,19 @@ include 'header.php'
                         <div class="col-lg-3">
                             <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab" href="#account-dashboard" role="tab" aria-controls="account-dashboard" aria-selected="true">Dashboard</a>
+                                    <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab" href="#account-dashboard" role="tab" aria-controls="account-dashboard" aria-selected="true">Panel</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders" role="tab" aria-controls="account-orders" aria-selected="false">Orders</a>
+                                    <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders" role="tab" aria-controls="account-orders" aria-selected="false">Ordenes</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-address-tab" data-bs-toggle="tab" href="#account-address" role="tab" aria-controls="account-address" aria-selected="false">Addresses</a>
+                                    <a class="nav-link" id="account-address-tab" data-bs-toggle="tab" href="#account-address" role="tab" aria-controls="account-address" aria-selected="false">Direcciones</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Account Details</a>
+                                    <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Detalles de la cuenta</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-logout-tab" href="index.php" role="tab" aria-selected="false">Logout</a>
+                                    <a class="nav-link" id="account-logout-tab" href="index.php" role="tab" aria-selected="false">Cerrar sesion</a>
                                 </li>
                             </ul>
                         </div>
@@ -92,23 +94,22 @@ include 'header.php'
                             <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                                 <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
                                     <div class="myaccount-dashboard">
-                                        <p>Hello <b>Edwin Adams</b> (not Edwin Adams? <a href="index.php">Sign
-                                                out</a>)</p>
-                                        <p>From your account dashboard you can view your recent orders, manage your shipping and
-                                            billing addresses and <a href="javascript:void(0)">edit your password and account
-                                                details</a>.</p>
+                                        <p>Hola <b>$nombre</b> (No es $nombre? <a href="index.php">Cerrar Sesion</a>)</p>
+                                        <p>Desde el panel de su cuenta puede ver sus pedidos recientes, administrar su envío y
+                                         direcciones de facturación y <a href="javascript:void(0)">editar su contraseña y los
+                                            detalles de su cuenta.</a>.</p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
                                     <div class="myaccount-orders">
-                                        <h4 class="small-title">MY ORDERS</h4>
+                                        <h4 class="small-title">MIS ORDENES</h4>
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-hover">
                                                 <tbody>
                                                     <tr>
-                                                        <th>ORDER</th>
-                                                        <th>DATE</th>
-                                                        <th>STATUS</th>
+                                                        <th>ORDENES</th>
+                                                        <th>FECHAS</th>
+                                                        <th>ESTADOS</th>
                                                         <th>TOTAL</th>
                                                         <th></th>
                                                     </tr>
@@ -251,3 +252,5 @@ include 'footer.php'
 </body>
 
 </html>
+
+<?php include 'bd_conn.php'; ?>

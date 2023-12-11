@@ -1,5 +1,3 @@
-console.log("Hello, world!");
-
 // Function to execute reCAPTCHA
 function executeRecaptcha() {
     grecaptcha.ready(function() {
@@ -9,21 +7,35 @@ function executeRecaptcha() {
     });
 }
 
+//Funcion bin2hex para creacion de codigo activacion
+function bin2hex(buffer) {
+    return Array.prototype.map.call(new Uint8Array(buffer), x => ('00' + x.toString(16)).slice(-2)).join('');
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("register-form");
     const messageContainer = document.getElementById("message-container");
+    const codigoActInput = document.getElementById("codigo_act");
 
     // Initial execution of reCAPTCHA
     executeRecaptcha();
 
     registerForm.addEventListener("submit", function (e) {
         e.preventDefault();
+        
         var firstName = document.getElementById("name").value;
         var lastName = document.getElementById("flastname").value;
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value; 
         var js_recaptcha_response = document.getElementById("recaptchaResponse").value;
+        
+        // Codigo de activacion de la cuenta
+        var jscodigo_activacion = bin2hex(crypto.getRandomValues(new Uint8Array(16))); // 16 bytes para obtener 32 caracteres hexadecimales
+        //
+
+        // Asignar el código de activación al campo oculto
+        codigoActInput.value = jscodigo_activacion;
 
         function isValidPassword(password) {
             // Clave 8 caracteres minimo, minimo 1 # y 1 mayuscula
@@ -43,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             return;
         }
-
+        
 
         // Include reCAPTCHA response in the form data
         var data = {
@@ -51,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
             primerApellido: lastName,
             email: email,
             password: password,
-            recaptcha_response: js_recaptcha_response  // Use the reCAPTCHA token
+            recaptcha_response: js_recaptcha_response,  // Use the reCAPTCHA token
+            codigo_act: jscodigo_activacion //cargar codigo de activacion en DB
         };
 
         console.log("VAR DATA:", data);
