@@ -91,8 +91,9 @@ include 'header.php'
 
                                     if ($result->num_rows == 1) {
                                         $row = $result->fetch_assoc();
+                                        $imageUrl = ($row['IMAGE'] !== null) ? $row['IMAGE'] : '../../assets/images/menu/logo/1.png';
                                         // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
-                                        echo"<img class='zoompro' src= '{$row['IMAGE']}' alt='Imagen del Producto'/>";                                 
+                                        echo "<img class='zoompro' src='$imageUrl' alt='Imagen del Producto'/>";                                
                                     } else {
                                         echo "No hay productos";
                                     }
@@ -124,14 +125,17 @@ include 'header.php'
                                         if ($result->num_rows > 0) {
                                             echo"<div id='gallery' class='sp-img_slider'>";
                                             while ($row = $result->fetch_assoc()) {
-                                                echo"    <a data-image='{$row['IMAGE']}' data-zoom-image='{$row['IMAGE']}'>";
-                                                echo"        <img src='{$row['IMAGE']}' alt='Product Image'>";
-                                                echo"    </a>";
+                                                $row = $result->fetch_assoc();
+                                                $imageUrl = ($row['IMAGE'] !== null) ? $row['IMAGE'] : '../../assets/images/menu/logo/1.png';
+
+                                                echo "<a data-image='{$imageUrl}' data-zoom-image='{$imageUrl}'>";
+                                                echo "    <img src='$imageUrl' alt='Product Image'>";
+                                                echo "</a>";
                                             }
                                             echo"</div>";
                                             
                                         } else {
-                                            echo json_encode(array('error' => 'No hay IMAGENES disponibles'));
+                                            // echo json_encode(array('error' => 'No hay IMAGENES disponibles'));
                                         }
                                         
                                         $stmt->close();
@@ -403,6 +407,7 @@ include 'footer.php'
 
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>
+    <script src="../busqueda.js"></script>
     <!-- <script src="assets/js/main.min.js"></script> -->
 
 </body>

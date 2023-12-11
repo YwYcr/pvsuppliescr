@@ -164,6 +164,7 @@ include 'footer.php'
 
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>
+    <script src="../busqueda.js"></script>
     <!-- <script src="assets/js/main.min.js"></script> -->
     <!-- Begin Hiraola's Google Map Area -->
     <script src="https://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry&amp;v=3.22&amp;key=AIzaSyChs2QWiAhnzz0a4OEhzqCXwx_qA9ST_lE"></script>

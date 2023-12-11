@@ -24,7 +24,7 @@
                             <div class="main-slider">
                                 <!-- Begin Single Slide Area -->
                                 <div class="single-slide animation-style-01 bg-1">
-                                <img class="single-slide animation-style-01 bg-1" src="https://drive.google.com/uc?export=download&id=19Iq9N8t5gxXJXLpq4j06nv9tJRs2Wr78" alt="Cama1">
+                                <img class="single-slide animation-style-01 bg-1" style="object-fit:cover;" src="https://drive.google.com/uc?export=download&id=19Iq9N8t5gxXJXLpq4j06nv9tJRs2Wr78" alt="Cama1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>Viernes Negro</span> Esta Semana</h5>
@@ -41,7 +41,7 @@
                                 <!-- Single Slide Area End Here -->
                                 <!-- Begin Single Slide Area -->
                                 <div class="single-slide animation-style-02 bg-2">
-                                <img class="single-slide animation-style-01 bg-2" src="https://drive.google.com/uc?export=download&id=1Qty_y0kDzYgsyMtg6XNXaJmKwFr-nAND" alt="Mesa1">
+                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="https://drive.google.com/uc?export=download&id=1Qty_y0kDzYgsyMtg6XNXaJmKwFr-nAND" alt="Mesa1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>-50% de descuento</span> Esta semana</h5>
@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                                 <div class="single-slide animation-style-02 bg-3">
-                                <img class="single-slide animation-style-01 bg-2" src="https://drive.google.com/uc?export=download&id=1uXHq0rWFbDoF3Jcp65ZXa8VLQDjwJpVT" alt="Librero1">
+                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="https://drive.google.com/uc?export=download&id=1uXHq0rWFbDoF3Jcp65ZXa8VLQDjwJpVT" alt="Librero1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>Viernes Negro</span> Esta Semana</h5>

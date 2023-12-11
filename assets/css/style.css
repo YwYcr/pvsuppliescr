@@ -4906,6 +4906,7 @@ button.li-btn:hover {
   background-size: cover;
   min-height: 225px;
   position: relative;
+  object-fit: cover;
 }
 @media (max-width: 575px) {
   .breadcrumb-area {
@@ -6118,7 +6119,9 @@ button.li-btn:hover {
 }
 .shop-product-wrap.grid .slide-item .single_product .product-img img {
   width: 100%;
+  height: 200px; /*Modificada por Joshua o.*/
 }
+
 .shop-product-wrap.grid.gridview-2 > [class*=col-] {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 50%;
