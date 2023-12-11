@@ -10359,3 +10359,22 @@ hr {
 .theme-blush .navbar-nav .dropdown-menu li.header {
     background: #e25985
 }
+
+.imgbody {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.imgbody div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: 7rem;
+}
+
+#prodTable tbody tr.selected {
+    background-color: #cce5ff; /* Cambia el color de fondo según tus preferencias */
+}
+
+#prodTable tbody tr:hover {
+    cursor: pointer; /* Cambia el cursor cuando el mouse está encima de la fila */
+}

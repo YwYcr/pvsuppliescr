@@ -66,6 +66,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 order-2 order-lg-1">
+
+                <!-- Filters Area START -->
                     <div class="hiraola-sidebar-catagories_area">
                         <div class="hiraola-sidebar_categories">
                             <div class="hiraola-categories_title">
@@ -88,67 +90,52 @@
                             </div>
                             <ul class="sidebar-checkbox_list">
                                 <?php
-
                                     include '../tools/bd_conn.php';
 
-                                    // Llama al procedimiento almacenado para obtener el proveedor por ID
+                                    // Llama al procedimiento almacenado para obtener las marcas con sus productos
                                     $stmt = $con->prepare("CALL GetAllBrandsWProducts()");
                                     $stmt->execute();
                                     $result = $stmt->get_result();
 
                                     if ($result->num_rows > 0) {
+                                        $brands = []; // Array para almacenar las marcas y contar el total
+                                        $totalCount = 0;
+
                                         while ($row = $result->fetch_assoc()) {
+                                            $brandName = $row['BRAND'];
+                                            $brandCount = $row['COUNT'];
+
+                                            // Almacena cada marca en el array
+                                            $brands[] = [
+                                                'name' => $brandName,
+                                                'count' => $brandCount,
+                                            ];
+
+                                            // Incrementa el total
+                                            $totalCount += $brandCount;
+                                        }
+
+                                        // Muestra el enlace "Todos" con el total
+                                        echo "<li>";
+                                        echo "    <a href='javascript:void(0)'>Todos ({$totalCount})</a>";
+                                        echo "</li>";
+
+                                        // Muestra enlaces individuales para cada marca
+                                        foreach ($brands as $brand) {
                                             echo "<li>";
-                                            echo "    <a href='javascript:void(0)'>{$row['BRAND']} ({$row['COUNT']})</a>";
+                                            echo "    <a href='javascript:void(0)'>{$brand['name']} ({$brand['count']})</a>";
                                             echo "</li>";
                                         }
+
                                     } else {
                                         echo json_encode(array('error' => 'No hay Marcas disponibles'));
                                     }
+
                                     $stmt->close();
                                     include '../tools/bd_disconn.php';
                                 ?>
-                                
                             </ul>
                         </div>
-                        <!-- <div class="hiraola-sidebar_categories">
-                            <div class="hiraola-categories_title">
-                                <h5>Size</h5>
-                            </div>
-                            <ul class="sidebar-checkbox_list">
-                                <li>
-                                    <a href="javascript:void(0)">Size 1(17)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Size 2(16)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Size 3(17)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Size 4(17)</a>
-                                </li>
-                            </ul>
-                        </div> 
-                        <div class="hiraola-sidebar_categories">
-                            <div class="hiraola-categories_title">
-                                <h5>Weight</h5>
-                            </div>
-                            <ul class="sidebar-checkbox_list">
-                                <li>
-                                    <a href="javascript:void(0)">Weight 1(16)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Weight 2(17)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Weight 3(17)</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Weight 4(17)</a>
-                                </li>
-                            </ul>
-                        </div> -->
                         <div class="category-module hiraola-sidebar_categories">
                             <div class="category-module_heading">
                                 <h5>Categorías</h5>
@@ -157,32 +144,54 @@
                                 <ul class="module-list_item">
                                     <li>
                                         <?php
-
                                             include '../tools/bd_conn.php';
 
-                                            // Llama al procedimiento almacenado para obtener el proveedor por ID
+                                            // Llama al procedimiento almacenado para obtener las categorías con sus productos
                                             $stmt = $con->prepare("CALL GetAllCategoriesWProducts()");
                                             $stmt->execute();
                                             $result = $stmt->get_result();
 
                                             if ($result->num_rows > 0) {
+                                                $categories = []; // Array para almacenar las categorías y contar el total
+                                                $totalCount = 0;
+
                                                 while ($row = $result->fetch_assoc()) {
-                                                    echo "<a href='javascript:void(0)'>{$row['NAME']} ({$row['COUNT']})</a>";
+                                                    $categoryName = $row['NAME'];
+                                                    $categoryCount = $row['COUNT'];
+
+                                                    // Almacena cada categoría en el array
+                                                    $categories[] = [
+                                                        'name' => $categoryName,
+                                                        'count' => $categoryCount,
+                                                    ];
+
+                                                    // Incrementa el total
+                                                    $totalCount += $categoryCount;
                                                 }
+
+                                                // Muestra el enlace "Todos" con el total
+                                                echo "<a href='javascript:void(0)'>Todos ({$totalCount})</a>";
+
+                                                // Muestra enlaces individuales para cada categoría
+                                                foreach ($categories as $category) {
+                                                    echo "<a href='javascript:void(0)'>{$category['name']} ({$category['count']})</a>";
+                                                }
+
                                             } else {
                                                 echo json_encode(array('error' => 'No hay Categorias disponibles'));
                                             }
 
                                             $stmt->close();
-
                                             include '../tools/bd_disconn.php';
-
                                         ?>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                <!-- Filters Area END -->
+
+
                     <div class="sidebar-banner_area">
                         <div class="banner-item img-hover_effect">
                             <a href="javascript:void(0)">
@@ -197,21 +206,26 @@
                             <a class="active grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
                             <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a>
                         </div>
+
+                <!-- Sort of the products START-->
                         <div class="product-item-selection_area">
                             <div class="product-short">
                                 <label class="select-label">Ordenar por:</label>
                                 <select class="nice-select">
-                                    <option value="2">Nombre, A a Z</option>
-                                    <option value="3">Nombre, Z a A</option>
-                                    <option value="4">Precio, Más Bajo al Más Alto</option>
-                                    <option value="5">Precio, Más Alto to Más Bajo</option>
+                                    <option value="1">Nombre, A a Z</option>
+                                    <option value="2">Nombre, Z a A</option>
+                                    <option value="3">Precio, Más Bajo al Más Alto</option>
+                                    <option value="4">Precio, Más Alto to Más Bajo</option>
                                 </select>
                             </div>
                         </div>
+                <!-- Sort of the products ENDS -->
+
+
                     </div>
 
 
-
+                <!-- List of the products START -->
                     <div class='shop-product-wrap grid gridview-3 row'>
 
                         <?php
@@ -332,7 +346,7 @@
                         ?>
 
                     </div>
-
+                <!-- List of the products END -->
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="hiraola-paginatoin-area">
