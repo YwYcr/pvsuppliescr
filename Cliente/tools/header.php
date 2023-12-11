@@ -143,7 +143,7 @@
                         <div class="col-lg-3">
                             <div class="header-logo">
                                 <a href="index.php">
-                                    <img src="../../assets/images/menu/logo/1.png" alt="Hiraola's Header Logo">
+                                <img src="../../assets/images/menu/logo/1.png" alt="Puerto Viejo Logo">
                                 </a>
                             </div>
                         </div>
@@ -164,7 +164,7 @@
                         <div class="col-md-4 col-sm-4 d-lg-none d-block">
                             <div class="header-logo">
                                 <a href="index.php">
-                                    <img src="../../assets/images/menu/logo/2.png" alt="Hiraola's Header Logo">
+                                <img src="../../assets/images/menu/logo/1.png" alt="Puerto Viejo Logo">
                                 </a>
                             </div>
                         </div>
