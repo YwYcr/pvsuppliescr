@@ -219,7 +219,7 @@
             </div>
         </div>
 
-        <!-- Modal Imagen producto -->
+        <!-- Modal Create Imagen producto -->
         <div class="modal fade" id="createImagen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -258,6 +258,51 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button id="crearImagenButton" class="btn btn-primary " data-bs-dismiss="modal" data-type="success">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Edit Imagen producto -->
+        <div class="modal fade" id="editImagen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Editar Imagen</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editImagenForm">
+                            <div class="mb-3">
+                                <label for="editImageProdID" class="form-label">Producto Número</label>
+                                <input type="text" class="form-control" id="editImageProdID" name="editImageProdID" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editImagenName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editImagenName" name="editImagenName" readonly>
+                                <input type="text" class="form-control" id="editImagenNameoriginal" name="editImagenNameoriginal" readonly hidden>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editImagenUrl" class="form-label">Seleccionar Imagen</label>
+                                <input type="file" class="form-control" id="editImagenUrl" name="editImagenUrl" accept="image/*" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editImagenPrincipal" class="form-label">Imagen principal?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="editImagenPrincipal" id="editImagenPrincipalSi" value="1">
+                                    <label class="form-check-label" for="editImagenPrincipalSi">Sí</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="editImagenPrincipal" id="editImagenPrincipalNo" value="0" checked>
+                                    <label class="form-check-label" for="editImagenPrincipalNo">No</label>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button id="editImagenButton" class="btn btn-primary " data-bs-dismiss="modal" data-type="success">Editar</button>
                     </div>
                 </div>
             </div>
@@ -463,7 +508,7 @@
                                                             <th>Nombre</th>
                                                             <th>Marca</th>
                                                             </tr></thead>";
-                                                        echo "<tbody id='productTableBody'>";
+                                                        echo "<tbody id='prodTableBody'>";
 
                                                         while ($row = $result->fetch_assoc()) {
                                                             echo "<tr>";

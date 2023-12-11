@@ -10362,7 +10362,7 @@ hr {
 
 .imgbody {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 
 .imgbody div.dataTables_wrapper div.dataTables_filter input {

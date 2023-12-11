@@ -22,21 +22,21 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $row['IDIMAGE'] . "</td>";
-        $contactID = $row['IDIMAGE'];
+        $imageID = $row['IDIMAGE'];
         echo "<td><img src='" . $row['IMGURL'] . "' style='height:8rem'></td>";
-        echo "<td>" . $row['IMGMAIN'] . "</td>";
+        echo "<td>" . ($row['IMGMAIN'] == 1 ? 'Sí' : 'No') . "</td>";
 
         echo "<td>
                 <div style='display:flex; flex-direction:column'>
                 <button class='btn btn-info mb-2' onclick=\"downloadFile('" . $row['IMGURL'] . "')\">
-                <i class='fa fa-info-circle'></i>
+                <i class='fa fa-download'></i>
                 <span>Descargar</span></button>
                 
-                <button type='button' class='btn btn-editar btn-editarImagen btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$contactID' data-bs-target='#editImagen' >
+                <button type='button' class='btn btn-editar btn-editarImagen btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$imageID' data-bs-target='#editImagen' >
                 <i class='fa fa-pencil'></i>
                 <span>Editar</span></button>
               
-                <button type='button' class='btn btn-borrar btn-borrarImagen btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$contactID'>
+                <button type='button' class='btn btn-borrar btn-borrarImagen btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$imageID'>
                 <i class='fa fa-trash-o'></i> 
                 <span>Eliminar</span></button>
             </div>
@@ -66,3 +66,5 @@ if ($result->num_rows > 0) {
 // }
 
 include '../adminTool/bd_disconn.php';
+
+?>
