@@ -1,5 +1,5 @@
 <?php
-include 'bd_conn.php';
+include '../adminTool/bd_conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtén los datos del formulario
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error al crear el Categoria: " . $con->error;
     }
 
-    include 'bd_disconn.php';
+    include '../adminTool/bd_disconn.php';
 }else{
     echo "acceso no autorizado";
 }

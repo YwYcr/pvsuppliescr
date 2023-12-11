@@ -96,10 +96,10 @@
                 data: data,
                 success: function (response) {
                 alert('Categoria creada con éxito');
-                fetch('refreshProducto.php')
+                fetch('refreshCategoria.php')
                 .then(response => response.text())                   
                 .then(data => {
-                    document.getElementById('productoTableBody').innerHTML = data;
+                    document.getElementById('categoryTableBody').innerHTML = data;
                 });
                     // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
                     // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
@@ -112,6 +112,110 @@
         });
     });
 
+// <!-- Script para Ver categorias  -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-infoCategoria", function () {
+        var categoryID = $(this).data("bs-id");
+
+        $.ajax({
+            type: "GET",
+            url: "getCategoria.php",
+            data: { categoryID: categoryID },
+            dataType: "json",
+            success: function (response) {
+                $("#infoCategoryID").val(response.IDPRODUCT);
+                $("#infoCategoryName").val(response.NAME);
+                $("#infoCategoryDescription").val(response.DESCRIPTION);
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
+
+// <!-- Script para traer 1 categoria a modificar  -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-editarCategoria", function () {
+        var categoryID = $(this).data("bs-id");
+
+        $.ajax({
+            type: "GET",
+            url: "getCategoria.php",
+            data: { categoryID: categoryID },
+            dataType: "json",
+            success: function (response) {
+
+                $("#editCategoryID").val(response.IDCATEGORY);
+                $("#editCategoryName").val(response.NAME);
+                $("#editCategoryDescription").val(response.DESCRIPTION);
+    
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
+// <!-- Script para actualizar categorias  -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-actualizarCategoria", function () {
+
+        var categoryID = $("#editCategoryID").val();
+        var nombre = $("#editCategoryName").val();
+        var descripcion = $("#editCategoryDescription").val();
+
+
+        var data = {
+            categoryID: categoryID,
+            nombre: nombre,
+            descripcion: descripcion
+        };
+
+
+        $.ajax({
+            type: "POST",
+            url: "updateCategoria.php",
+            data: data,
+            success: function (response) {
+            alert('Catgegoria modificada con éxito');
+            fetch('refreshCategoria.php')
+            .then(response => response.text())                   
+            .then(data => {
+                document.getElementById('categoryTableBody').innerHTML = data;
+            });
+
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});    
+// <!-- Script para borrar categoria -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-borrarCategoria", function () {
+        var categoryID = $(this).data("bs-id");
+
+        $.ajax({
+            type: "POST",
+            url: "borrarCategoria.php",
+            data: { categoryID: categoryID },
+            success: function (response) {
+            alert('Categoria eliminada con éxito');    
+            fetch('refreshCategoria.php')
+            .then(response => response.text())                   
+            .then(data => {
+                document.getElementById('categoryTableBody').innerHTML = data;
+            });
+                console.log("Categoria eliminado: " + productID);
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
 
 
 // <!-- Script para traer 1 producto a modificar  -->

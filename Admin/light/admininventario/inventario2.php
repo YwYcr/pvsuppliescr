@@ -248,6 +248,71 @@
                 </div>
             </div>
         </div>
+        <!-- Modal info Categoria -->
+        <div class="modal fade" id="infoCategoria" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Informacion de la Categoria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="infoCategoriaForm">
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" id="infoCategoryID" name="infoCategoryID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoCategoryName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="infoCategoryName" name="infoCategoryName" required readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoCategoryDescription" class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="infoCategoryDescription" name="infoCategoryDescription" style="height: 100px; resize: none;" required readonly>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-type="success">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Edit Categoria -->
+        <div class="modal fade" id="editCategoria" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modificar Categoria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editCategoriaForm">
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" id="editCategoryID" name="editCategoryID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editCategoryName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editCategoryName" name="editCategoryName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editCategoryDescription" class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="editCategoryDescription" name="editCategoryDescription" required>
+                            </div>                      
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-actualizarCategoria btn-primary" data-bs-dismiss="modal" data-type="success">Modificar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <div id="main-content">
             <div class="block-header">
@@ -383,6 +448,61 @@ echo "</tr>";
                                     <div class="body">
                                         <div class="table-responsive">
                                             <?php
+                                             include '../adminTool/bd_conn.php';
+
+$consulta = "SELECT * FROM CATEGORY";
+$result = $con->query($consulta);
+
+
+if ($result->num_rows>0){
+   echo "<table id='categoryTableBody' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
+   echo "<thead><tr>
+    <th>Category ID</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Acciones</th>
+    </tr></thead>";
+    echo "<tbody id='categoryTableBody'>";
+
+    while ($row = $result->fetch_assoc()){
+        echo "<tr>";
+        echo "<td>" . $row['IDCATEGORY'] . "</td>";
+        $categoryID = $row['IDCATEGORY'];
+        echo "<td>" . $row['NAME'] . "</td>";
+        echo "<td>" . $row['DESCRIPTION'] . "</td>";                                                                      
+        echo "<td>
+
+        <button type='button' class='btn btn-info btn-infoCategoria  mb-2' data-bs-toggle='modal' data-bs-target='#infoCategoria' data-bs-id='$categoryID'> 
+        <i class='fa fa-info-circle'></i>
+        <span>Ver</span></button>
+        
+        <button type='button' class='btn btn-editar btn-editarCategoria btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$categoryID' data-bs-target='#editCategoria' >
+        <i class='fa fa-pencil'></i>
+        <span>Editar</span></button>
+      
+        <button type='button' class='btn btn-borrar btn-borrarCategoria btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$categoryID'>
+        <i class='fa fa-trash-o'></i> 
+        <span>Eliminar</span></button>
+ 
+        </td>";
+echo "</tr>";
+    }
+
+    echo "</tbody>";
+   echo "<tfoot>
+       <tr>
+       <th>Category ID</th>
+       <th>Nombre</th>
+       <th>Descripcion</th>
+       <th>Acciones</th>
+       </tr>
+   </tfoot>";
+   echo "</table>";
+    
+}else {
+    echo "No hay productos";
+}                            
+include '../adminTool/bd_disconn.php'
 
                                             ?>
                                         </div>
