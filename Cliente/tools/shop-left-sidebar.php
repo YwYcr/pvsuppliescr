@@ -228,126 +228,10 @@
                 <!-- List of the products START -->
                     <div class='shop-product-wrap grid gridview-3 row'>
 
-                        <?php
-                        include 'bd_conn.php';
-
-                        /********* OLD CODE ***********/
-                        // $consulta = "SELECT * FROM PRODUCT";
-                        // $result = $con->query($consulta);   
-
-
-                        /****WITH STORED PROCEDURE****/
-                        // Llama al procedimiento almacenado para obtener todos los productos
-                        $stmt = $con->prepare("CALL GetAllProducts()");
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-
-                                $productID = $row['IDPRODUCT'];
-
-
-                                echo "<div class='col-lg-4'>";
-
-                                echo "<div class='slide-item'>";
-
-                                echo "<div class='single_product'>";
-                                echo "<div class='product-img'>";
-
-                                echo "<a href='single-product.php?idprod={$row['IDPRODUCT']}'/>";
-
-                                echo "<img class='primary-img' src= '{$row['IMAGE']}' alt='Imagen del Producto'/>";
-                                echo "<img class='secondary-img' src='{$row['IMGURL']}' alt='Imagen del Producto'/>";
-
-                                echo "</a>";
-
-                                echo "<div class='add-actions'>";
-                                echo "<ul>";
-                                echo "<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito'><i class='ion-bag'></i></a>
-                                            </li>";
-                                // echo"<li><a class='hiraola-add_compare' href='compare.php' data-bs-toggle='tooltip' data-placement='top' title='Compare This Product'><i class='ion-ios-shuffle-strong'></i></a>
-                                // </li>";
-                                // echo"<li class='quick-view-btn' data-bs-toggle='modal' data-bs-target='#exampleModalCenter'><a href='javascript:void(0)' data-bs-toggle='tooltip' data-placement='top' title='Quick View'><i
-                                //    class='ion-eye'></i></a></li>";
-                                echo "</ul>";
-                                echo "</div>";
-
-
-                                echo "<div class='hiraola-product_content'>";
-                                echo "<div class='product-desc_info'>";
-                                echo "<h6><a class='product-name' href='single-product.php'>{$row['NAME']}</a></h6>";
-                                echo " <div class='price-box'>";
-                                echo " <span class='new-price'>₡{$row['PRICE']}</span>";
-                                echo " </div>";
-                                echo " <div class='additional-add_action'>";
-                                echo " <ul>";
-
-
-                                // echo "<form method='post' action='favoritos.php'>";
-                                // echo "<input type='hidden' name='IDPRODUCT' value='{$productID}'>";
-                                // echo "<button type='submit' name='agregarFavoritos' class='hiraola-add_compare' data-bs-toggle='tooltip' data-bs-id='$productID' data-placement='top' title='Agregar a Favoritos'>";
-                                // echo "<i class='ion-android-favorite-outline'></i>";
-                                // echo "</button>";
-                                // echo "</form>";
-
-
-                                echo "<li><a class='hiraola-add_compare' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar a Favoritos'>
-                                                                <i class='ion-android-favorite-outline'></i></a>";
-                                echo " </li>";
-                                echo " </ul>";
-                                echo "</div>";
-                                echo "  </div>";
-                                echo " </div>";
-
-                                echo "</div>";
-                                echo "</div>";
-                                echo "</div>";
-
-
-                                echo '<div class="list-slide_item">';
-                                echo '    <div class="single_product">';
-                                echo '        <div class="product-img">';
-                                echo '            <a href="single-product.php?idprod=' . $row['IDPRODUCT'] . '">';
-                                echo '                <img class="primary-img" src="' . $row['IMAGE'] . '" alt="Hiraola\'s Product Image">';
-                                echo '                <img class="secondary-img" src="' . $row['IMGURL'] . '" alt="Hiraola\'s Product Image">';
-                                echo '            </a>';
-                                echo '        </div>';
-                                echo '        <div class="hiraola-product_content">';
-                                echo '            <div class="product-desc_info">';
-                                echo '                <h6><a class="product-name" href="single-product.php?idprod=' . $row['IDPRODUCT'] . '">' . $row['NAME'] . '</a></h6>';
-                                echo '                <div class="price-box">';
-                                echo '                    <span class="new-price">₡' . $row['PRICE'] . '</span>';
-                                echo '                </div>';
-                                echo '                <div class="product-short_desc">';
-                                echo '                    <p>' . $row['DESCRIPTION'] . '</p>';
-                                echo '                </div>';
-                                echo '            </div>';
-                                echo '            <div class="add-actions">';
-                                echo '                <ul>';
-                                echo '                    <li><a class="hiraola-add_cart" href="cart.php?idprod=' . $row['IDPRODUCT'] . '" data-bs-toggle="tooltip" data-placement="top" title="Añadir al carrito">Añadir al carrito</a></li>';
-                                echo '                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Ver"><i class="ion-eye"></i></a></li>';
-                                echo '                    <li><a class="hiraola-add_compare" href="wishlist.php?idprod=' . $row['IDPRODUCT'] . '" data-bs-toggle="tooltip" data-placement="top" title="Añadir a favoritos"><i class="ion-android-favorite-outline"></i></a></li>';
-                                echo '                </ul>';
-                                echo '            </div>';
-                                echo '        </div>';
-                                echo '    </div>';
-                                echo '</div>';
-
-                                echo "</div>";
-                            }
-                        } else {
-                            echo "No hay productos";
-                        }
-
-                        $stmt->close();
-
-                        include 'bd_disconn.php'
-                        ?>
 
                     </div>
                 <!-- List of the products END -->
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-lg-12">
                             <div class="hiraola-paginatoin-area">
                                 <div class="row">
@@ -370,7 +254,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -384,6 +268,8 @@
 
 
     </div>
+
+    
 
     <!-- JS
 ============================================ -->
@@ -424,7 +310,10 @@
     <script src="../../assets/js/plugins/mailchimp-ajax.js"></script>
 
     <!-- Main JS -->
+    
     <script src="../../assets/js/main.js"></script>
+    <script src="../catalogo.js"></script>
+    <script src="../busqueda.js"></script>
     <!-- <script src="assets/js/main.min.js"></script> -->
 
 </body>

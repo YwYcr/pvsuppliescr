@@ -127,10 +127,12 @@ include 'header.php';
 
                                                         if ($result->num_rows == 1) {
                                                             $row = $result->fetch_assoc();
+                                                            $imageUrl = ($row['IMAGE'] !== null) ? $row['IMAGE'] : '../../assets/images/menu/logo/1.png';
+
                                                             echo"<tr>";
                                                             echo"<td class='hiraola-product_remove'><a href='../Favorito/borrarFavorito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
                                                             title='Eliminar'></i></a></td>";
-                                                            echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
+                                                            echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '$imageUrl' width='160' height='140'/> ";
                                                             echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
                                                             echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";
                                                             echo"<td class='hiraola-cart_btn'><a href='javascript:void(0)'>Añadir al carrito</a></td> "; 
@@ -206,6 +208,7 @@ include 'footer.php'
 
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>
+    <script src="../busqueda.js"></script>
     <!-- <script src="assets/js/main.min.js"></script> -->
 
 </body>
