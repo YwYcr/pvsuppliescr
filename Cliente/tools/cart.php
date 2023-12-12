@@ -86,6 +86,7 @@ include 'header.php'
                                         <tr>
 
                                         <?php
+                                        
                                                 
                                                 include 'bd_conn.php';
                                                 if (isset($_GET['idprod'])) {
@@ -116,23 +117,39 @@ include 'header.php'
 
                                                     if ($result->num_rows == 1) {
                                                         $row = $result->fetch_assoc();
+                                                        $quantity = isset($_SESSION['cantidad'][$productID]) ? $_SESSION['cantidad'][$productID] : 1;
                                                         echo"<tr>";
                                                         echo"<td class='hiraola-product_remove'><a href='../Carrito/borrarCarrito.php?idprod={$row['IDPRODUCT']}'><i class='fa fa-trash'
                                                         title='Eliminar'></i></a></td>";
                                                         echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '{$row['IMAGE']}' width='160' height='140'/> ";
                                                         echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
                                                         echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";  
-                                                        echo"<td class='quantity'><div class='cart-plus-minus'>  
-                                                        <input class='cart-plus-minus-box' value='1' type='text'> 
-                                                        <div class='dec qtybutton'><i class='fa fa-angle-down'></i></div>
-                                                        <div class='inc qtybutton'><i class='fa fa-angle-up'></i></div></div></td> ";
-                                                        echo "<td class='product-subtotal'><span class='amount'>₡{$row['PRICE']}</span></td>";
+                                                        echo "<td class='quantity'>";
+                                                        echo "<div class='quantity-wrapper'>";
+                                                        echo "<i class='fa fa-arrow-up' onclick='changeQuantity({$row['IDPRODUCT']}, 1)'></i>";
+                                                        echo "<span id='quantity{$row['IDPRODUCT']}'>{$quantity}</span>";
+                                                        echo "<i class='fa fa-arrow-down' onclick='changeQuantity({$row['IDPRODUCT']}, -1)'></i>";
+                                                        echo "</div>";
+                                                        echo "</td>";
+                                                      $totalConImpuesto=0;
+                                                      $total=0;
+                                                      $subtotal = $row['PRICE'] * $quantity;
+                                                      $total = $subtotal;
+                                                      $totalConImpuesto = $total * 1.13;
+
+                                                      
+                                                      
+                                                        echo "<td class='product-subtotal' id='subtotal{$row['IDPRODUCT']}'><span class='amount'>₡{$subtotal}</span></td>";
+
+
                                                         echo"</tr>";
                                                     }    
 
                                                     $stmt->close();
                                                     
                                                     }
+                                                                                                        
+                                                    echo "<tr><td colspan='5' align='right'>Total IVA (13%):</td><td id='totalWithTax' class='product-subtotal'><span class='amount'>₡{$totalConImpuesto}</span></td></tr>";
 
                                                 } else {
                                                   echo "No hay productos";
@@ -146,31 +163,23 @@ include 'header.php'
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="coupon-all">
-                                        <div class="coupon">
-                                            <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Código del cupón" type="text">
-                                            <input class="button" name="apply_coupon" value="Aplicar Cupón" type="submit">
-                                        </div>
-                                        <div class="coupon2">
-                                            <input class="button" href="limpiarCarrito.php" value="Limpiar carrito" type="submit">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-5 ml-auto">
-                                    <div class="cart-page-total">
-                                        <h2>Total a pagar</h2>
-                                        <ul>
-                                            <li>Subtotal <span>$118.60</span></li>
-                                            <li>Total <span>$118.60</span></li>
-                                        </ul>
-                                        <a href="limpiarCarrito.php">Proceder a la compra</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                            
+                            echo "<div class='row'>";
+                            echo "<div class='col-12'>";
+                            echo " <div class='coupon-all'>";
+                            echo "   <div class='coupon2'>";
+                            echo "         <a href='../Carrito/limpiarCarrito.php' class='btn btn-light'>Confirmar Compra</a>";
+                            echo "       </div>";
+                            echo "    <div class='coupon2'>";
+                            echo "       <a href='../Carrito/limpiarCarrito.php' class='btn btn-danger'>Limpiar carrito</a>";
+                            echo "    </div>";
+
+                            echo "   </div>";
+                            echo "  </div>";
+                            echo "  </div>";
+                            ?>
+                            
                         </form>
                     </div>
                 </div>
@@ -185,6 +194,7 @@ include 'footer.php'
 
     </div>
 
+
     <!-- JS
 ============================================ -->
 
@@ -195,6 +205,31 @@ include 'footer.php'
     <script src="../../assets/js/vendor/modernizr-3.11.2.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="../../assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+function changeQuantity(productId, change) {
+    var quantityElement = document.getElementById('quantity' + productId);
+    var currentQuantity = parseInt(quantityElement.innerHTML);
+    var newQuantity = currentQuantity + change;
+
+    if (newQuantity >= 1) {
+        var price = <?php echo $row['PRICE']; ?>;
+        var newSubtotal = price * newQuantity;
+        document.getElementById('subtotal' + productId).innerHTML = "<span class='amount'>₡" + newSubtotal + "</span>";
+
+        var currentTotalWithTax = parseFloat(document.getElementById('totalWithTax').innerText.replace('₡', ''));
+        var originalSubtotal = <?php echo $subtotal; ?>;
+        
+        var newTotalWithTax = currentTotalWithTax - originalSubtotal + newSubtotal;
+        document.getElementById('totalWithTax').innerHTML = "<span class='amount'>₡" + newTotalWithTax + "</span>";
+
+        quantityElement.innerHTML = newQuantity;
+
+    }
+}
+</script>
+
 
     <!-- Slick Slider JS -->
     <script src="../../assets/js/plugins/slick.min.js"></script>
@@ -227,6 +262,8 @@ include 'footer.php'
     <script src="../../assets/js/main.js"></script>
     <script src="../busqueda.js"></script>
     <!-- <script src="assets/js/main.min.js"></script> -->
+
+    
 
 </body>
 

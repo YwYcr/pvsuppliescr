@@ -135,7 +135,7 @@ include 'header.php';
                                                             echo"<td class='hiraola-product-thumbnail'><a href='single-product.php?idprod={$row['IDPRODUCT']}'> <img src= '$imageUrl' width='160' height='140'/> ";
                                                             echo"<td class='hiraola-product-name'><a href='single-product.php?idprod={$row['IDPRODUCT']}'>{$row['NAME']} </a></td> ";  
                                                             echo"<td class='hiraola-product-price'><span class='amount'>₡{$row['PRICE']}</td> ";
-                                                            echo"<td class='hiraola-cart_btn'><a href='javascript:void(0)'>Añadir al carrito</a></td> "; 
+                                                            echo"<td class='hiraola-cart_btn'><a href='cart.php?idprod=$productID'>Añadir al carrito</a></td> "; 
                                                             echo"</tr>";
                                                         } 
                                                                                                             

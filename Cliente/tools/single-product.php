@@ -250,31 +250,11 @@ include 'header.php'
                                 </div>
                                 <div class="qty-btn_area">
                                     <ul>
-                                        <li><a class="qty-cart_btn" href="cart.php">Add To Cart</a></li>
-                                        <li><a class="qty-wishlist_btn" href="wishlist.php" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
-                                        <li><a class="qty-compare_btn" href="compare.php" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                    <li><a class="hiraola-add_cart" href="cart.php?idprod=<?php echo $productID; ?>" data-bs-toggle='tooltip' data-placement="top" title="Agregar al Carrito"><i class="ion-bag"></i></a></li>
+                                    <li><a class="qty-wishlist_btn" data-bs-id="$productID" href="wishlist.php?idprod=<?php echo $productID; ?>"><i class="ion-android-favorite-outline"></i></a></li>
+                                                     
                                     </ul>
-                                </div>
-
-                                <div class="hiraola-social_link">
-                                    <ul>
-                                        <li class="facebook">
-                                            <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank" title="Facebook">
-                                                <i class="fab fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
-                                                <i class="fab fa-google-plus"></i>
-                                            </a>
-                                        </li>
-                                        <li class="instagram">
-                                            <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank" title="Instagram">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                </div>                           
                             </div>
                         </div>
                     </div>
@@ -320,13 +300,15 @@ include 'header.php'
                                                 $stmt->bind_param("i", $productID);
                                                 $stmt->execute();
                                                 $result = $stmt->get_result();
+                                                $productID = $row['IDPRODUCT'];
 
                                                 if ($result->num_rows == 1) {
                                                     $row = $result->fetch_assoc();
                                                     // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                          
                                                     echo"<li><strong> {$row['NAME']}</strong> </li>";
                                                     echo"<span> {$row['DESCRIPTION']}</span>";
-                                                    echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito'><i class='ion-bag'></i></a></li>";     
+                                                    echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito' data-bs-id='$productID'><i class='ion-bag'></i></a></li>";
+                                                    echo"<li><a class='qty-wishlist_btn' data-bs-id='$productID' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-id='$productID'></a><i class='ion-android-favorite-outline'></i></li>" ;   
                                                                     
                                                 } else {
                                                     echo "No hay productos";
