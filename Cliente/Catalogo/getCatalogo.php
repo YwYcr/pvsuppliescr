@@ -2,7 +2,17 @@
 
 include '../tools/bd_conn.php';
 
-$stmt = $con->prepare("CALL GetAllProducts('')");
+// Obtener los parámetros de paginación
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$perPage = isset($_GET['perPage']) ? intval($_GET['perPage']) : 9; // Cambia 5 por el número deseado de productos por página
+
+// Calcular el índice de inicio y la cantidad de productos a obtener
+$param = '7vjLvjUJ9c2TX0I2KqfTyKTV5jb4XC12bPlAjtZsHMGT5jPnFL';
+$startIndex = ($page - 1) * $perPage;
+$endIndex = $startIndex + $perPage;
+
+$stmt = $con->prepare("CALL GetAllProductsPagination(?, ?, ?)");
+$stmt->bind_param('sii', $param, $startIndex, $endIndex);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -39,4 +49,3 @@ $stmt->close();
 include '../tools/bd_disconn.php';
 
 ?>
-
