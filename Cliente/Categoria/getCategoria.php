@@ -3,7 +3,7 @@
 include '../tools/bd_conn.php';
 
 // Llama al procedimiento almacenado para obtener el proveedor por ID
-$stmt = $con->prepare("CALL GetAllCategories()");
+$stmt = $con->prepare("CALL GetAllCategorias()");
 $stmt->execute();
 $result = $stmt->get_result();
 
