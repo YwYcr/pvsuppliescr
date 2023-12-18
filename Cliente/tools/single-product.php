@@ -202,7 +202,7 @@
                                             // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                              
                                             echo "<li>Precio: ₡{$row['PRICE']} </li>";
                                             echo "<li>Marca: {$row['BRAND']} </li>";
-                                            if ($row['BRAND'] > 0){
+                                            if ($row['QUANTITY'] > 0){
                                                 echo "<li>Disponibilidad: <a href='javascript:void(0)'>In Stock</a></li>";
                                             } else {
                                                 echo "<li>Disponibilidad: <a href='javascript:void(0)'>Out of Stock</a></li>";
@@ -297,8 +297,8 @@
                                                     // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                          
                                                     echo"<li><strong> {$row['NAME']}</strong> </li>";
                                                     echo"<span> {$row['DESCRIPTION']}</span>";
-                                                    echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito' data-bs-id='$productID'><i class='ion-bag'></i></a></li>";
-                                                    echo"<li><a class='qty-wishlist_btn' data-bs-id='$productID' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-id='$productID'></a><i class='ion-android-favorite-outline'></i></li>" ;   
+                                                    // echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito' data-bs-id='$productID'><i class='ion-bag'></i></a></li>";
+                                                    // echo"<li><a class='qty-wishlist_btn' data-bs-id='$productID' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-id='$productID'></a><i class='ion-android-favorite-outline'></i></li>" ;   
                                                                     
                                                 } else {
                                                     echo "No hay productos";
@@ -306,9 +306,7 @@
 
                                                 $stmt->close();
                                             }
-
-                                            $stmt->close();
-                                        }
+                                        
                                         include 'bd_disconn.php'
                                         ?>
 
