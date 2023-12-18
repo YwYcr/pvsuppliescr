@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     url: "../Usuario/login.php",
                     data: login_data,
                     success: function(response) {
-                        console.log(response);
+                        // console.log(response);
                         //
                         window.location.href = "../tools/my-account.php";
                     },

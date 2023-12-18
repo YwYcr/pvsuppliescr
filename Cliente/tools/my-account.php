@@ -50,6 +50,7 @@ if (!isset($_SESSION["email"])) {
 <body class="template-color-1">
 
     <h2>Bienvenido, <?php echo $_SESSION["email"]; ?>!</h2>
+    <h2>Nombre <?php echo $_SESSION["currentuser"]; ?>!</h2>
     <p>Esta es una pagina segura.</p>
     <a href="../Usuario/logout.php">Logout</a>
 
@@ -96,7 +97,7 @@ include 'header.php'
                                     <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Detalles de la cuenta</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-logout-tab" href="index.php" role="tab" aria-selected="false">Cerrar sesion</a>
+                                    <a class="nav-link" id="account-logout-tab" href="../Usuario/logout.php" role="tab" aria-selected="false">Cerrar sesion</a>
                                 </li>
                             </ul>
                         </div>
@@ -104,7 +105,7 @@ include 'header.php'
                             <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                                 <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
                                     <div class="myaccount-dashboard">
-                                        <p>Hola <?php echo $_SESSION["name"];?> (No es su usted? <a href="../Usuario/logout.php">Cerrar Sesion</a>)</p>
+                                        <p>Bienvenido <?php echo $_SESSION["currentuser"];?> (No es su nombre? <a href="../Usuario/logout.php">Cerrar Sesion</a>)</p>
                                         <p>Desde el panel de su cuenta puede ver sus pedidos recientes, administrar su envío y
                                          direcciones de facturación y <a href="javascript:void(0)">editar su contraseña y los
                                             detalles de su cuenta.</a>.</p>

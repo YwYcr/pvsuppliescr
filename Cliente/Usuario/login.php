@@ -17,21 +17,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $con->connect_error);
     }
     
-    $query = "SELECT PASSWORD FROM PVSUPPLIES_DB.USERS WHERE email = ?";
+    $query = "SELECT PASSWORD, NAME FROM PVSUPPLIES_DB.USERS WHERE email = ?";
     $stmt = $con->prepare($query);
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->bind_result($storedHashedPassword);
+    $stmt->bind_result($storedHashedPassword, $storedName);
     $stmt->fetch();
     $stmt->close();
-
     $con->close();
 
     if ($storedHashedPassword !== null && password_verify($password, $storedHashedPassword)) {
         // Authentication successful
         session_start();
         $_SESSION["email"] = $email;
-        $_SESSION["name"] = $name;
+        $_SESSION["currentuser"] = $storedName;
         // Redireccionamiento por login correcto
         header("Location: ../tools/my-account.php");
 
