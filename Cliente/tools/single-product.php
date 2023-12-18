@@ -228,39 +228,22 @@
                                         <option value="4">XL</option>
                                     </select>
                                 </div> -->
-                            <div class="quantity">
-                                <label>Cantidad</label>
-                                <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                </div>
-                            </div>
-                            <div class="qty-btn_area">
-                                <ul>
-                                    <li><a class="qty-cart_btn" href="cart.php">Añadir al carrito</a></li>
-                                    <li><a class="qty-wishlist_btn" href="wishlist.php" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
-                                </ul>
-                            </div>
 
-                            <div class="hiraola-social_link">
-                                <ul>
-                                    <li class="facebook">
-                                        <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank" title="Facebook">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="google-plus">
-                                        <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
-                                            <i class="fab fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li class="instagram">
-                                        <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank" title="Instagram">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <div class="quantity">
+                                    <label>Cantidad</label>
+                                    <div class="cart-plus-minus">
+                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                    </div>
+                                </div>
+                                <div class="qty-btn_area">
+                                    <ul>
+                                    <li><a class="hiraola-add_cart" href="cart.php?idprod=<?php echo $productID; ?>" data-bs-toggle='tooltip' data-placement="top" title="Agregar al Carrito"><i class="ion-bag"></i></a></li>
+                                    <li><a class="qty-wishlist_btn" data-bs-id="$productID" href="wishlist.php?idprod=<?php echo $productID; ?>"><i class="ion-android-favorite-outline"></i></a></li>
+                                                     
+                                    </ul>
+                                </div>                           
                             </div>
                         </div>
                     </div>
@@ -291,31 +274,37 @@
                                     <ul>
 
                                         <?php
-                                        include 'bd_conn.php';
+                                            include 'bd_conn.php';
+                                     
+                                            if (isset($_GET['idprod'])) {
+                                                $productID = $_GET['idprod'];
+                                                /********* OLD CODE ***********/
+                                                // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                                // $result = $con->query($sql); 
+                                                // $row = $result->fetch_assoc(); 
 
-                                        if (isset($_GET['idprod'])) {
-                                            $productID = $_GET['idprod'];
-                                            /********* OLD CODE ***********/
-                                            // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                            // $result = $con->query($sql); 
-                                            // $row = $result->fetch_assoc(); 
 
+                                                /****WITH STORED PROCEDURE****/
+                                                // Llama al procedimiento almacenado para obtener el producto por ID
+                                                $stmt = $con->prepare("CALL GetProductByID(?)");
+                                                $stmt->bind_param("i", $productID);
+                                                $stmt->execute();
+                                                $result = $stmt->get_result();
+                                                $productID = $row['IDPRODUCT'];
 
-                                            /****WITH STORED PROCEDURE****/
-                                            // Llama al procedimiento almacenado para obtener el producto por ID
-                                            $stmt = $con->prepare("CALL GetProductByID(?)");
-                                            $stmt->bind_param("i", $productID);
-                                            $stmt->execute();
-                                            $result = $stmt->get_result();
+                                                if ($result->num_rows == 1) {
+                                                    $row = $result->fetch_assoc();
+                                                    // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                          
+                                                    echo"<li><strong> {$row['NAME']}</strong> </li>";
+                                                    echo"<span> {$row['DESCRIPTION']}</span>";
+                                                    echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito' data-bs-id='$productID'><i class='ion-bag'></i></a></li>";
+                                                    echo"<li><a class='qty-wishlist_btn' data-bs-id='$productID' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-id='$productID'></a><i class='ion-android-favorite-outline'></i></li>" ;   
+                                                                    
+                                                } else {
+                                                    echo "No hay productos";
+                                                }
 
-                                            if ($result->num_rows == 1) {
-                                                $row = $result->fetch_assoc();
-                                                // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                          
-                                                echo "<li><strong> {$row['NAME']}</strong> </li>";
-                                                echo "<span> {$row['DESCRIPTION']}</span>";
-                                                echo "<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito'><i class='ion-bag'></i></a></li>";
-                                            } else {
-                                                echo "No hay productos";
+                                                $stmt->close();
                                             }
 
                                             $stmt->close();
