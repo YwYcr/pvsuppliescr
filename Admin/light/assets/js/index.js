@@ -77,36 +77,36 @@ $(function() {
         },
     });
 
-    // Order_status
-    var chart = c3.generate({
-        bindto: '#Order_status', // id of chart wrapper
-        data: {
-            columns: [
-                // each columns data
-                ['data1', 63],
-                ['data2', 37]
-                ],
-                type: 'donut', // default type of chart
-                colors: {
-                    'data1': '#5CB65F',
-                    'data2': '#395bb6',
-                },
-                names: {
-                    // name of each serie
-                    'data1': 'This Month',
-                    'data2': 'Last Month'
-                }
-            },
-            axis: {
-            },
-            legend: {
-                show: false, //hide legend
-            },
-            padding: {
-                bottom: 20,
-                top: 0
-            },
-    });
+    // // Order_status
+    // var chart = c3.generate({
+    //     bindto: '#Order_status', // id of chart wrapper
+    //     data: {
+    //         columns: [
+    //             // each columns data
+    //             ['data1', 63],
+    //             ['data2', 37]
+    //             ],
+    //             type: 'donut', // default type of chart
+    //             colors: {
+    //                 'data1': '#5CB65F',
+    //                 'data2': '#395bb6',
+    //             },
+    //             names: {
+    //                 // name of each serie
+    //                 'data1': 'This Month',
+    //                 'data2': 'Last Month'
+    //             }
+    //         },
+    //         axis: {
+    //         },
+    //         legend: {
+    //             show: false, //hide legend
+    //         },
+    //         padding: {
+    //             bottom: 20,
+    //             top: 0
+    //         },
+    // });
 
     // Product Valuation 
     var chart = c3.generate({
