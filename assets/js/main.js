@@ -1176,30 +1176,7 @@
     $(function () {
         $('[data-bs-toggle="tooltip"]').tooltip();
     });
-    /*--------------------------------
-    Price Slider Active
--------------------------------- */
-    var sliderrange = $('#slider-range');
-    var amountprice = $('#amount');
 
-    $(function () {
-        sliderrange.slider({
-            range: true,
-            min: 0,
-            max: 999999,
-            values: [0, 500000],
-            slide: function (event, ui) {
-                amountprice.val('₡' + ui.values[0].toLocaleString() + ' - ₡' + ui.values[1].toLocaleString());
-            },
-        });
-
-        amountprice.val(
-            '₡' +
-            sliderrange.slider('values', 0).toLocaleString() +
-            ' - ₡' +
-            sliderrange.slider('values', 1).toLocaleString()
-        );
-    });
 
     /*----------------------------------------*/
     /*  Hiraola's Slick Carousel

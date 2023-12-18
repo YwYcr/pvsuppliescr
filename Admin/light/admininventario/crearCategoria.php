@@ -6,18 +6,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
 
-
-    $sql = "INSERT INTO CATEGORY (NAME, DESCRIPTION) 
-    VALUES ('$nombre', '$descripcion')";
+    // Llama al stored procedure
+    $stmt = $con->prepare("CALL InsertCategory(?, ?)");
+    $stmt->bind_param('ss', $nombre, $descripcion);
+    $stmt->execute();
     
-    if ($con->query($sql) === TRUE) {
-        echo "Categoria creado exitosamente.";
-    } else {
-        echo "Error al crear el Categoria: " . $con->error;
-    }
+    echo "Categoría creada exitosamente.";
 
+    $stmt->close();
     include '../adminTool/bd_disconn.php';
-}else{
-    echo "acceso no autorizado";
+} else {
+    echo "Acceso no autorizado.";
 }
 ?>

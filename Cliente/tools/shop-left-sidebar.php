@@ -80,7 +80,7 @@
                                         <label>Precio : </label>
                                         <input type="text" id="amount" name="price" placeholder="Add Your Price" />
                                     </div>
-                                    <button type="button">Filter</button>
+                                    <button id="filterButton" type="button">Filtrar</button>
                                 </div>
                             </div>
                         </div>
@@ -117,13 +117,13 @@
 
                                         // Muestra el enlace "Todos" con el total
                                         echo "<li>";
-                                        echo "    <a href='javascript:void(0)'>Todos ({$totalCount})</a>";
+                                        echo "    <a href='../tools/shop-left-sidebar.php'>Todos ({$totalCount})</a>";
                                         echo "</li>";
 
                                         // Muestra enlaces individuales para cada marca
                                         foreach ($brands as $brand) {
                                             echo "<li>";
-                                            echo "    <a href='javascript:void(0)'>{$brand['name']} ({$brand['count']})</a>";
+                                            echo "    <a href='javascript:void(0)' class='brand-link' data-value='{$brand['name']}'>{$brand['name']} ({$brand['count']})</a>";
                                             echo "</li>";
                                         }
 
@@ -170,11 +170,11 @@
                                                 }
 
                                                 // Muestra el enlace "Todos" con el total
-                                                echo "<a href='javascript:void(0)'>Todos ({$totalCount})</a>";
+                                                echo "<a href='../tools/shop-left-sidebar.php' >Todos ({$totalCount})</a>";
 
                                                 // Muestra enlaces individuales para cada categoría
                                                 foreach ($categories as $category) {
-                                                    echo "<a href='javascript:void(0)'>{$category['name']} ({$category['count']})</a>";
+                                                    echo "<a href='javascript:void(0)' class='category-link' data-value='{$category['name']}'>{$category['name']} ({$category['count']})</a>";
                                                 }
 
                                             } else {
@@ -208,7 +208,7 @@
                         </div>
 
                 <!-- Sort of the products START-->
-                        <div class="product-item-selection_area">
+                        <!-- <div class="product-item-selection_area">
                             <div class="product-short">
                                 <label class="select-label">Ordenar por:</label>
                                 <select class="nice-select">
@@ -218,7 +218,7 @@
                                     <option value="4">Precio, Más Alto to Más Bajo</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                 <!-- Sort of the products ENDS -->
 
 
@@ -231,30 +231,6 @@
 
                     </div>
                 <!-- List of the products END -->
-                    <!-- <div class="row">
-                        <div class="col-lg-12">
-                            <div class="hiraola-paginatoin-area">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <ul class="hiraola-pagination-box">
-                                            <li class="active"><a href="javascript:void(0)">1</a></li>
-                                            <li><a href="javascript:void(0)">2</a></li>
-                                            <li><a href="javascript:void(0)">3</a></li>
-                                            <li><a class="Next" href="javascript:void(0)"><i class="ion-ios-arrow-right"></i></a></li>
-                                            <li><a class="Next" href="javascript:void(0)">>|</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="product-select-box">
-                                            <div class="product-short">
-                                                <p>Showing 1 to 12 of 18 (2 Pages)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
             </div>
