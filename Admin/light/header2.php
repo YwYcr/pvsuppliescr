@@ -54,7 +54,7 @@
                             <!-- <li><a href="page-timeline.html"><i class="icon-list"></i><span>Cupones</span></a></li> -->
 
                             <li class="header"><span>Administrador</span></li>
-                            <li><a href="#"><i class="icon-graph"></i><span>Reportes</span></a></li>
+                            <li><a href="\pvsuppliescr\Admin\light\adminreportes\reportes.php"><i class="icon-graph"></i><span>Reportes</span></a></li>
                             <li><a href="#"><i class="icon-user"></i><span>Mi Perfil</span></a></li>
                         </ul>
                     </nav>
