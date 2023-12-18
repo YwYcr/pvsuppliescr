@@ -9,9 +9,11 @@
                             </div>
                             <div id="cate-toggle" class="category-menu-list">
                                 <ul>
-                                    <?php 
-                                          include '..\Categoria\getCategoria.php';
-                                    ?>
+                                    
+                                <?php 
+                                    include '..\Categoria\getCategoria.php';
+                                ?>
+
                                     <li class="rx-parent">
                                         <a class="rx-default" href="shop-left-sidebar.php">Más Categorias</a>
                                     </li>

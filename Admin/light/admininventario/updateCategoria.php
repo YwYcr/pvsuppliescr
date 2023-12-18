@@ -6,16 +6,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
 
+    // Llamada al procedimiento almacenado
+    $stmt = $con->prepare("CALL UpdateCategory(?, ?, ?)");
+    $stmt->bind_param("iss", $categoryID, $nombre, $descripcion);
+    $stmt->execute();
 
-    $sql = "UPDATE CATEGORY SET NAME = '$nombre', DESCRIPTION = '$descripcion'
-    WHERE IDCATEGORY = '$categoryID'";
-
-    if ($con->query($sql) === TRUE) {
-        echo "Categoria MODIFICADa exitosamente.";
+    // Verificar si se ejecutó correctamente
+    if ($stmt->error) {
+        echo "Error al modificar la categoría: " . $stmt->error;
     } else {
-        echo "Error al modificar la categoria: " . $con->error;
+        echo "Categoría modificada exitosamente.";
     }
 
+    $stmt->close();
     include '../adminTool/bd_disconn.php';
 } else {
     echo "Acceso no autorizado.";

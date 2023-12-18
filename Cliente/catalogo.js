@@ -1,7 +1,105 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Obtener todos los enlaces con la clase 'brand-link'
+    var brandLinks = document.querySelectorAll('.brand-link');
+
+    // Manejar el clic en cada enlace
+    brandLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            // Obtener el valor del atributo 'data-value' que contiene la categoría
+            var brandValue = this.getAttribute('data-value');
+
+            // Redirigir a la página de catálogo con el parámetro de búsqueda
+            window.location.href = '../tools/shop-left-sidebar.php?brand=' + encodeURIComponent(brandValue);
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtener todos los enlaces con la clase 'category-link'
+    var categoryLinks = document.querySelectorAll('.category-link');
+
+    // Manejar el clic en cada enlace
+    categoryLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            // Obtener el valor del atributo 'data-value' que contiene la categoría
+            var categoryValue = this.getAttribute('data-value');
+
+            // Redirigir a la página de catálogo con el parámetro de búsqueda
+            window.location.href = '../tools/shop-left-sidebar.php?category=' + encodeURIComponent(categoryValue);
+        });
+    });
+});
+
+/*----- Price Slider Active --------------- */
+document.addEventListener('DOMContentLoaded', function () {
+    var sliderrange = $('#slider-range');
+    var amountprice = $('#amount');
+
+    // Función para obtener parámetros de la URL por nombre
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Realiza la petición AJAX para obtener los valores mínimo y máximo
+    $.ajax({
+        type: 'GET',
+        url: '../Catalogo/getPriceRange.php',
+        dataType: 'json',
+        success: function (data) {
+            // Inicializa el slider con los valores obtenidos
+            sliderrange.slider({
+                range: true,
+                min: data.min,
+                max: data.max + 1000,
+                step: 1000,
+                values: [
+                    getParameterByName('minPrice') || data.min, // Usa el valor proporcionado o el mínimo predeterminado
+                    getParameterByName('maxPrice') || data.max, // Usa el valor proporcionado o el máximo predeterminado
+                ],
+                slide: function (event, ui) {
+                    amountprice.val('₡' + ui.values[0].toLocaleString() + ' - ₡' + ui.values[1].toLocaleString());
+                },
+            });
+
+            amountprice.val(
+                '₡' +
+                sliderrange.slider('values', 0).toLocaleString() +
+                ' - ₡' +
+                sliderrange.slider('values', 1).toLocaleString()
+            );
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        },
+    });
+
+    // Manejar el clic en el botón Filter
+    $('#filterButton').on('click', function () {
+        // Obtener los valores del rango de precios seleccionado
+        var minPrice = sliderrange.slider('values', 0);
+        var maxPrice = sliderrange.slider('values', 1);
+
+        // Redirigir a la página de catálogo con los parámetros de búsqueda
+        window.location.href = '../tools/shop-left-sidebar.php?minPrice=' + encodeURIComponent(minPrice) +
+            '&maxPrice=' + encodeURIComponent(maxPrice);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
     var contenedor = document.querySelector('.shop-product-wrap');
     var urlParams = new URLSearchParams(window.location.search);
     var parametroBusqueda = urlParams.get('search');
+    var parametroMarca = urlParams.get('brand');
+    var parametroCategoria = urlParams.get('category');
+    var parametroPrecioMin = urlParams.get('minPrice');
+    var parametroPrecioMax = urlParams.get('maxPrice');
     var url;
     var page = 1; // Número de página inicial
     var perPage = 9; // Número de productos por página
@@ -15,9 +113,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         loading = true;
 
-        url = (!parametroBusqueda)
-            ? `../Catalogo/getCatalogo.php?page=${page}&perPage=${perPage}`
-            : `../Catalogo/getCatalogoBusqueda.php?search=${encodeURIComponent(parametroBusqueda)}&page=${page}&perPage=${perPage}`;
+        // Modificar la URL según los parámetros de filtro disponibles
+        if (parametroBusqueda) {
+            url = `../Catalogo/getCatalogoBusqueda.php?search=${encodeURIComponent(parametroBusqueda)}&page=${page}&perPage=${perPage}`;
+        } else if (parametroMarca) {
+            url = `../Catalogo/getProductsByBrand.php?brand=${encodeURIComponent(parametroMarca)}&page=${page}&perPage=${perPage}`;
+        } else if (parametroCategoria) {
+            url = `../Catalogo/getProductsByCategory.php?category=${encodeURIComponent(parametroCategoria)}&page=${page}&perPage=${perPage}`;
+        } else if (parametroPrecioMin && parametroPrecioMax) {
+            url = `../Catalogo/getProductsByPriceRange.php?minPrice=${encodeURIComponent(parametroPrecioMin)}&maxPrice=${encodeURIComponent(parametroPrecioMax)}&page=${page}&perPage=${perPage}`;
+        } else {
+            url = `../Catalogo/getCatalogo.php?page=${page}&perPage=${perPage}`;
+        }
 
         fetch(url)
             .then(response => {
@@ -29,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(resultados => {
                 if (resultados.length > 0) {
                     resultados.forEach(producto => {
+                        
                         var imageUrl = (producto.IMAGE !== null) ? producto.IMAGE : '../../assets/images/menu/logo/1.png';
                         var imgUrl = (producto.IMGURL !== null) ? producto.IMGURL : '../../assets/images/menu/logo/1.png';
 
@@ -130,7 +238,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(error => {
+                // console.log(resultados);
                 console.error('Error al procesar la respuesta JSON:', error);
+
             })
             .finally(() => {
                 loading = false;

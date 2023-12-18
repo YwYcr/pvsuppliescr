@@ -8,21 +8,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $marca = $_POST['marca'];
     $cantidad = $_POST['cantidad'];
     $precio = $_POST['precio'];
+    $descuento = $_POST['descuento'];  // Ajustado para reflejar el nuevo nombre del campo
     $categoria = $_POST['categoria'];
-    $imagen = $_POST['imagen'];
-    $size = $_POST['size'];
+    $valid = $_POST['valid'];
 
-    $sql = "INSERT INTO PRODUCT (NAME, DESCRIPTION, BRAND, QUANTITY, PRICE, IDCATEGORY, IMAGE, IDSIZE) 
-    VALUES ('$nombre', '$descripcion', '$marca', '$cantidad', '$precio', '$categoria', '$imagen', '$size')";
-    
-    if ($con->query($sql) === TRUE) {
+    // Llamar al stored procedure
+    $stmt = $con->prepare("CALL InsertProduct(?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssiidis", $nombre, $descripcion, $marca, $cantidad, $precio, $descuento, $categoria, $valid);
+
+    if ($stmt->execute()) {
         echo "Producto creado exitosamente.";
     } else {
-        echo "Error al crear el Producto: " . $con->error;
+        echo "Error al crear el Producto: " . $stmt->error;
     }
 
+    // Cerrar el statement
+    $stmt->close();
+    
     include '../adminTool/bd_disconn.php';
-}else{
-    echo "acceso no autorizado";
+} else {
+    echo "Acceso no autorizado";
 }
 ?>

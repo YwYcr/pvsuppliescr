@@ -1,15 +1,15 @@
 <?php
 include '../adminTool/bd_conn.php';
 
-
 $productID = $_POST['productID'];
 
-$sql = "SELECT * FROM PRODUCT_IMAGE WHERE IDPRODUCT = $productID";
-
-$result = $con->query($sql);
+// Llama al stored procedure
+$stmt = $con->prepare("CALL GetProductImages(?)");
+$stmt->bind_param("i", $productID);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-
     echo "<table id='imageTable' class='table table-hover js-basic-example table-custom spacing5'>";
     echo "<thead><tr>
             <th>Nombre</th>
@@ -57,14 +57,10 @@ if ($result->num_rows > 0) {
     echo "</table>";
 } else {
     echo '<script>';
-    echo 'swal("Atención!", "Este producto no tiene imagenes asociadas", "info");';
+    echo 'swal("Atención!", "Este producto no tiene imágenes asociadas", "info");';
     echo '</script>';
 }
-// } else {
-//     // No se proporcionó un ID de usuario válido
-//     echo json_encode(array('error' => 'ID de usuario no válido'));
-// }
 
+$stmt->close();
 include '../adminTool/bd_disconn.php';
-
 ?>
