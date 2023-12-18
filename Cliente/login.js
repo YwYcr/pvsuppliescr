@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     success: function(response) {
                         console.log(response);
                         //
-                        
+                        window.location.href = "../tools/my-account.php";
                     },
                     error: function(xhr, status, error) {
                         console.log("Error en la solicitud AJAX. Por favor, inténtelo de nuevo.", "error");                

@@ -1,8 +1,5 @@
-<?php include 'bd_conn.php'; ?>
-
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,7 +12,6 @@
 
     <!-- CSS
 	============================================ -->
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <!-- Fontawesome -->
@@ -41,7 +37,21 @@
 
 </head>
 
+<?php include 'bd_conn.php'; 
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["email"])) {
+    header("Location: index.php"); // Redirect to login page if not logged in
+    exit();
+}
+?>
+
 <body class="template-color-1">
+
+    <h2>Bienvenido, <?php echo $_SESSION["email"]; ?>!</h2>
+    <p>Esta es una pagina segura.</p>
+    <a href="../Usuario/logout.php">Logout</a>
 
     <div class="main-wrapper">
 
@@ -94,7 +104,7 @@ include 'header.php'
                             <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                                 <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
                                     <div class="myaccount-dashboard">
-                                        <p>Hola <b>$nombre</b> (No es $nombre? <a href="index.php">Cerrar Sesion</a>)</p>
+                                        <p>Hola <?php echo $_SESSION["name"];?> (No es su usted? <a href="../Usuario/logout.php">Cerrar Sesion</a>)</p>
                                         <p>Desde el panel de su cuenta puede ver sus pedidos recientes, administrar su envío y
                                          direcciones de facturación y <a href="javascript:void(0)">editar su contraseña y los
                                             detalles de su cuenta.</a>.</p>
@@ -251,7 +261,4 @@ include 'footer.php'
     <!-- <script src="assets/js/main.min.js"></script> -->
 
 </body>
-
 </html>
-
-<?php include 'bd_conn.php'; ?>

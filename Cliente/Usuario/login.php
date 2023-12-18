@@ -2,9 +2,8 @@
 
 include '../tools/bd_conn.php';
 
-echo "Login.php loaded!";
-
-session_start();
+// session_start();
+// echo "session_start();";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -30,12 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($storedHashedPassword !== null && password_verify($password, $storedHashedPassword)) {
         // Authentication successful
+        session_start();
         $_SESSION["email"] = $email;
+        $_SESSION["name"] = $name;
+        // Redireccionamiento por login correcto
+        header("Location: ../tools/my-account.php");
 
         // Redirect to a secure page or send a success message
         echo "Inicio sesion correcto!";
-        // Redireccionamiento por login correcto
-        //  header("Location: ../tools/index.php");
+        
 
         // Optionally, set a cookie for "Remember Me" functionality
         // if ($rememberMe) {
