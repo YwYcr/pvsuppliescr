@@ -1,24 +1,29 @@
 <?php
 include '../adminTool/bd_conn.php';
 
+// Verifica que se proporcionó el parámetro productID en la URL
+if (isset($_GET['productID'])) {
+    $productID = intval($_GET['productID']);
 
-    $productID = $_GET['productID'];
+    // Prepara y ejecuta la llamada al procedimiento almacenado
+    $stmt = $con->prepare("CALL GetProductByIDAdmin(?)");
+    $stmt->bind_param("i", $productID);
+    $stmt->execute();
     
-
-    $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+    // Obtiene los resultados
+    $result = $stmt->get_result();
     
-    $result = $con->query($sql);
-
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         echo json_encode($row);
     } else {
         echo json_encode(array('error' => 'Producto no encontrado'));
     }
-// } else {
-//     // No se proporcionó un ID de usuario válido
-//     echo json_encode(array('error' => 'ID de usuario no válido'));
-// }
 
-include '../adminTool/bd_disconn.php';
+    // Cierra la conexión y la declaración
+    $stmt->close();
+    include '../adminTool/bd_disconn.php';
+} else {
+    echo json_encode(array('error' => 'Falta el parámetro productID'));
+}
 ?>

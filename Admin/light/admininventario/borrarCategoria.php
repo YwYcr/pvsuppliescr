@@ -2,19 +2,19 @@
 include '../adminTool/bd_conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtén los datos del formulario
+    $categoryID = $_POST['categoryID'];
 
-    $categoryID=$_POST['categoryID'];
-
-    $sql = "DELETE FROM CATEGORY WHERE IDCATEGORY = '$categoryID'";
+    // Llama al stored procedure
+    $stmt = $con->prepare("CALL DeleteCategory(?)");
+    $stmt->bind_param('i', $categoryID);
+    $stmt->execute();
     
-    if ($con->query($sql) === TRUE) {
-        echo "Categoria BORRADa exitosamente.";
-    } else {
-        echo "Error al borrar la Categoria: " . $con->error;
-    }
+    // echo "Categoría borrada exitosamente.";
 
+    $stmt->close();
     include '../adminTool/bd_disconn.php';
-}else{
-    echo "acceso no autorizado";
+} else {
+    echo "Acceso no autorizado.";
 }
 ?>

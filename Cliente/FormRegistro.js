@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             codigo_act: jscodigo_activacion //cargar codigo de activacion en DB
         };
 
-        console.log("VAR DATA:", data);
+        //console.log("VAR DATA:", data);
 
         // AJAX to save data
         $.ajax({

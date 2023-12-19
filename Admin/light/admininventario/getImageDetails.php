@@ -1,14 +1,12 @@
 <?php
 include '../adminTool/bd_conn.php';
-
 header('Content-Type: application/json');
 
 if (isset($_GET['imageID'])) {
     $imageID = $_GET['imageID'];
 
-    $sql = "SELECT * FROM PRODUCT_IMAGE WHERE IDIMAGE = ?";
-    
-    $stmt = $con->prepare($sql);
+    // Llama al stored procedure
+    $stmt = $con->prepare("CALL GetProductImageDetails(?)");
     $stmt->bind_param('s', $imageID);
     $stmt->execute();
     

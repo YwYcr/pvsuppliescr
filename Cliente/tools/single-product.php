@@ -43,13 +43,13 @@
 
     <div class="main-wrapper">
 
-    <?php
-include 'header.php'
-?>
+        <?php
+        include 'header.php'
+        ?>
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
-        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1_3flLnN5iN1XnirK9sXlF48xu2TrD3Oz" alt="Single Product">
+            <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1_3flLnN5iN1XnirK9sXlF48xu2TrD3Oz" alt="Single Product">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Detalle de producto</h2>
@@ -70,41 +70,41 @@ include 'header.php'
                         <div class="col-lg-5 col-md-5">
                             <div class="sp-img_area">
                                 <div class="zoompro-border">
- 
-                                <?php
-                                include 'bd_conn.php';
-                                if (isset($_GET['idprod'])) {
-                                    $productID = $_GET['idprod'];
-                                    /********* OLD CODE ***********/
-                                    // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                    // $result = $con->query($sql); 
-                                    // $row = $result->fetch_assoc(); 
+                                    <?php
+                                    include 'bd_conn.php';
+                                    if (isset($_GET['idprod'])) {
+                                        $productID = $_GET['idprod'];
+                                        /********* OLD CODE ***********/
+                                        // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                        // $result = $con->query($sql); 
+                                        // $row = $result->fetch_assoc(); 
 
 
-                                    /****WITH STORED PROCEDURE****/
-                                    // Llama al procedimiento almacenado para obtener el producto por ID
-                                    $stmt = $con->prepare("CALL GetProductByID(?)");
-                                    $stmt->bind_param("i", $productID);
+                                        /****WITH STORED PROCEDURE****/
+                                        // Llama al procedimiento almacenado para obtener el producto por ID
+                                        $stmt = $con->prepare("CALL GetProductByID(?)");
+                                        $stmt->bind_param("i", $productID);
 
-                                    $stmt->execute();
-                                    $result = $stmt->get_result();
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
 
-                                    if ($result->num_rows == 1) {
-                                        $row = $result->fetch_assoc();
-                                        $imageUrl = ($row['IMAGE'] !== null) ? $row['IMAGE'] : '../../assets/images/menu/logo/1.png';
-                                        // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
-                                        echo "<img class='zoompro' src='$imageUrl' alt='Imagen del Producto'/>";                                
-                                    } else {
-                                        echo "No hay productos";
+                                        if ($result->num_rows == 1) {
+                                            $row = $result->fetch_assoc();
+                                            $imageUrl = ($row['IMAGE'] !== null) ? $row['IMAGE'] : '../../assets/images/menu/logo/1.png';
+                                            // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
+                                            echo "<img class='zoompro' src='$imageUrl' alt='Imagen del Producto'/>";
+                                        } else {
+                                            echo "No hay productos";
+                                        }
+
+                                        $stmt->close();
                                     }
 
-                                    $stmt->close();
-                                }
-
-                                include 'bd_disconn.php'
-                                ?>
-
-                                <?php
+                                    include 'bd_disconn.php'
+                                    ?>
+                                </div>
+                                <div id="gallery" class="sp-img_slider">
+                                    <?php
                                     include 'bd_conn.php';
                                     if (isset($_GET['idprod'])) {
                                         $productID = $_GET['idprod'];
@@ -123,34 +123,26 @@ include 'header.php'
                                         $result = $stmt->get_result();
 
                                         if ($result->num_rows > 0) {
-                                            echo"<div id='gallery' class='sp-img_slider'>";
                                             while ($row = $result->fetch_assoc()) {
-                                                $row = $result->fetch_assoc();
                                                 $imageUrl = ($row['IMAGE'] !== null) ? $row['IMAGE'] : '../../assets/images/menu/logo/1.png';
 
                                                 echo "<a data-image='{$imageUrl}' data-zoom-image='{$imageUrl}'>";
                                                 echo "    <img src='$imageUrl' alt='Product Image'>";
                                                 echo "</a>";
                                             }
-                                            echo"</div>";
-                                            
-                                        } else {
-                                            // echo json_encode(array('error' => 'No hay IMAGENES disponibles'));
-                                        }
-                                        
+                                        } 
+
                                         $stmt->close();
                                     }
 
                                     include 'bd_disconn.php'
-                                ?>
-   
+                                    ?>
                                 </div>
- 
                             </div>
                         </div>
-                        <div class="col-lg-7 col-md-7">
-                            <div class="sp-content">
-                                <div class="sp-heading">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="sp-content">
+                            <div class="sp-heading">
 
                                 <?php
                                 include 'bd_conn.php';
@@ -173,7 +165,7 @@ include 'header.php'
                                     if ($result->num_rows == 1) {
                                         $row = $result->fetch_assoc();
                                         // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod
-                                        echo"<h5> {$row['NAME']}</a></h6>";                       
+                                        echo "<h5> {$row['NAME']}</a></h6>";
                                     } else {
                                         echo "No hay productos";
                                     }
@@ -181,57 +173,53 @@ include 'header.php'
                                     $stmt->close();
                                 }
                                 include 'bd_disconn.php'
-                                ?>  
+                                ?>
 
                             </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="sp-essential_stuff">
-                                    <ul>
+                            <div class="sp-essential_stuff">
+                                <ul>
                                     <?php
-                                        include 'bd_conn.php';
-                                     
-                                        if (isset($_GET['idprod'])) {
-                                            $productID = $_GET['idprod'];
-                                            /********* OLD CODE ***********/
-                                            // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
-                                            // $result = $con->query($sql); 
-                                            // $row = $result->fetch_assoc(); 
+                                    include 'bd_conn.php';
+
+                                    if (isset($_GET['idprod'])) {
+                                        $productID = $_GET['idprod'];
+                                        /********* OLD CODE ***********/
+                                        // $sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT = $productID";
+                                        // $result = $con->query($sql); 
+                                        // $row = $result->fetch_assoc(); 
 
 
-                                            /****WITH STORED PROCEDURE****/
-                                            // Llama al procedimiento almacenado para obtener el producto por ID
-                                            $stmt = $con->prepare("CALL GetProductByID(?)");
-                                            $stmt->bind_param("i", $productID);
+                                        /****WITH STORED PROCEDURE****/
+                                        // Llama al procedimiento almacenado para obtener el producto por ID
+                                        $stmt = $con->prepare("CALL GetProductByID(?)");
+                                        $stmt->bind_param("i", $productID);
 
-                                            $stmt->execute();
-                                            $result = $stmt->get_result();
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
 
-                                            if ($result->num_rows == 1) {
-                                                $row = $result->fetch_assoc();
-                                                // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                              
-                                                echo"<li>Precio: ₡{$row['PRICE']} </li>";
-                                                echo"<li>Marca: {$row['BRAND']} </li>";              
+                                        if ($result->num_rows == 1) {
+                                            $row = $result->fetch_assoc();
+                                            // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                              
+                                            echo "<li>Precio: ₡{$row['PRICE']} </li>";
+                                            echo "<li>Marca: {$row['BRAND']} </li>";
+                                            if ($row['QUANTITY'] > 0){
+                                                echo "<li>Disponibilidad: <a href='javascript:void(0)'>In Stock</a></li>";
                                             } else {
-                                                echo "No hay productos";
+                                                echo "<li>Disponibilidad: <a href='javascript:void(0)'>Out of Stock</a></li>";
                                             }
-
-                                            $stmt->close();
+                                        } else {
+                                            echo "No hay productos";
                                         }
-                                        include 'bd_disconn.php'
+
+                                        $stmt->close();
+                                    }
+                                    include 'bd_disconn.php'
                                     ?>
-                                        
-                                        <li>Disponibilidad: <a href="javascript:void(0)">In Stock</a></li>
-                                    </ul>
-                                </div>
-                                <!-- <div class="product-size_box">
+
+                                    
+                                </ul>
+                            </div>
+                            <!-- <div class="product-size_box">
                                     <span>Size</span>
                                     <select class="myniceselect nice-select">
                                         <option value="1">S</option>
@@ -240,8 +228,9 @@ include 'header.php'
                                         <option value="4">XL</option>
                                     </select>
                                 </div> -->
+
                                 <div class="quantity">
-                                    <label>Quantity</label>
+                                    <label>Cantidad</label>
                                     <div class="cart-plus-minus">
                                         <input class="cart-plus-minus-box" value="1" type="text">
                                         <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
@@ -261,27 +250,28 @@ include 'header.php'
                 </div>
             </div>
         </div>
-        <!-- Hiraola's Single Product Area End Here -->
+    </div>
+    <!-- Hiraola's Single Product Area End Here -->
 
-        <!-- Begin Hiraola's Single Product Tab Area -->
-        <div class="hiraola-product-tab_area-2 sp-product-tab_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="sp-product-tab_nav ">
-                            <div class="product-tab">
-                                <ul class="nav product-menu">
-                                    <li><a class="active" data-bs-toggle="tab" href="#description"><span>Description</span></a>
-                                    </li>
-                                    <!-- <li><a data-bs-toggle="tab" href="#specification"><span>Specification</span></a></li>
+    <!-- Begin Hiraola's Single Product Tab Area -->
+    <div class="hiraola-product-tab_area-2 sp-product-tab_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sp-product-tab_nav ">
+                        <div class="product-tab">
+                            <ul class="nav product-menu">
+                                <li><a class="active" data-bs-toggle="tab" href="#description"><span>Description</span></a>
+                                </li>
+                                <!-- <li><a data-bs-toggle="tab" href="#specification"><span>Specification</span></a></li>
                                     <li><a data-bs-toggle="tab" href="#reviews"><span>Reviews (1)</span></a></li> -->
-                                </ul>
-                            </div>
+                            </ul>
+                        </div>
 
-                            <div class="tab-content hiraola-tab_content">
-                                <div id="description" class="tab-pane active show" role="tabpanel">
-                                    <div class="product-description">
-                                        <ul>
+                        <div class="tab-content hiraola-tab_content">
+                            <div id="description" class="tab-pane active show" role="tabpanel">
+                                <div class="product-description">
+                                    <ul>
 
                                         <?php
                                             include 'bd_conn.php';
@@ -307,8 +297,8 @@ include 'header.php'
                                                     // Consulta la base de datos o realiza la lógica necesaria para mostrar el producto con $idprod                          
                                                     echo"<li><strong> {$row['NAME']}</strong> </li>";
                                                     echo"<span> {$row['DESCRIPTION']}</span>";
-                                                    echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito' data-bs-id='$productID'><i class='ion-bag'></i></a></li>";
-                                                    echo"<li><a class='qty-wishlist_btn' data-bs-id='$productID' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-id='$productID'></a><i class='ion-android-favorite-outline'></i></li>" ;   
+                                                    // echo"<li><a class='hiraola-add_cart' href='cart.php?idprod={$row['IDPRODUCT']}' data-bs-toggle='tooltip' data-placement='top' title='Agregar al Carrito' data-bs-id='$productID'><i class='ion-bag'></i></a></li>";
+                                                    // echo"<li><a class='qty-wishlist_btn' data-bs-id='$productID' href='wishlist.php?idprod={$row['IDPRODUCT']}' data-bs-id='$productID'></a><i class='ion-android-favorite-outline'></i></li>" ;   
                                                                     
                                                 } else {
                                                     echo "No hay productos";
@@ -316,35 +306,36 @@ include 'header.php'
 
                                                 $stmt->close();
                                             }
-                                            include 'bd_disconn.php'
+                                        
+                                        include 'bd_disconn.php'
                                         ?>
 
 
-                                            
-
-                                        </ul>
-                                    </div>
-                                </div> 
 
 
-                               
+                                    </ul>
+                                </div>
                             </div>
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Hiraola's Single Product Tab Area End Here -->
+    </div>
+    <!-- Hiraola's Single Product Tab Area End Here -->
 
 
 
 
 
-        <!-- Begin Hiraola's Footer Area -->
-        <?php
-include 'footer.php'
-?>
-        <!-- Hiraola's Footer Area End Here -->
+    <!-- Begin Hiraola's Footer Area -->
+    <?php
+    include 'footer.php'
+    ?>
+    <!-- Hiraola's Footer Area End Here -->
 
 
     </div>

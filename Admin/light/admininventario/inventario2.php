@@ -71,8 +71,6 @@
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductDescription" class="form-label">Descripcion</label>
-                                <!-- <textarea class="form-control" id="infoProductDescription"
-                                    name="infoProductDescription" required> -->
                                 <input type="text" class="form-control" id="infoProductDescription" name="infoProductDescription" style="height: 100px; resize: none;" required readonly>
                             </div>
                             <div class="mb-3">
@@ -81,23 +79,30 @@
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductCantidad" class="form-label"> Cantidad </label>
-                                <input type="text" class="form-control" id="infoProductCantidad" name="infoProductCantidad" required readonly>
+                                <input type="number" class="form-control" id="infoProductCantidad" name="infoProductCantidad" required readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductPrecio" class="form-label">Precio</label>
-                                <input type="text" class="form-control" id="infoProductPrecio" name="infoProductPrecio" required readonly>
+                                <input type="number" class="form-control" id="infoProductPrecio" name="infoProductPrecio" required readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoProductDescuento" class="form-label">Descuento (%)</label>
+                                <input type="number" class="form-control" id="infoProductDescuento" name="infoProductDescuento" required readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoProductCategoria" class="form-label">Categoria</label>
-                                <input type="text" class="form-control" id="infoProductCategoria" name="infoProductCategoria" required readonly>
+                                <select class="form-select" id="infoProductCategoria" name="infoProductCategoria" required></select>
                             </div>
                             <div class="mb-3">
-                                <label for="infoProductImagen" class="form-label">Imagen</label>
-                                <input type="text" class="form-control" id="infoProductImagen" name="infoProductImagen" readonly>
-                            </div>
-                            <div class="mb-3">
-                                <label for="infoProductSize" class="form-label">Tamano</label>
-                                <input type="text" class="form-control" id="infoProductSize" name="infoProductSize" readonly>
+                                <label for="infoproductoValido" class="form-label">Mostrar producto?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="infoproductoValido" id="infoproductoValidoSi" value="1" readonly>
+                                    <label class="form-check-label" for="infoproductoValidoSi">Sí</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="infoproductoValido" id="infoproductoValidoNo" value="0" readonly>
+                                    <label class="form-check-label" for="infoproductoValidoNo">No</label>
+                                </div>
                             </div>
                         </form>
 
@@ -111,14 +116,14 @@
         <!-- Modal Edit Producto -->
         <div class="modal fade" id="editProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+            <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modificar Producto</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Editar producto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="editProductoForm">
-                            <div class="mb-3">
+                        <div class="mb-3">
                                 <input type="hidden" class="form-control" id="editProductID" name="editProductID" required>
                             </div>
                             <div class="mb-3">
@@ -135,29 +140,35 @@
                             </div>
                             <div class="mb-3">
                                 <label for="editProductCantidad" class="form-label"> Cantidad </label>
-                                <input type="text" class="form-control" id="editProductCantidad" name="editProductCantidad" required>
+                                <input type="number" class="form-control" id="editProductCantidad" name="editProductCantidad" required value="1">
                             </div>
                             <div class="mb-3">
                                 <label for="editProductPrecio" class="form-label">Precio</label>
-                                <input type="text" class="form-control" id="editProductPrecio" name="editProductPrecio" required>
+                                <input type="number" class="form-control" id="editProductPrecio" name="editProductPrecio" required value="0">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductDescuento" class="form-label">Descuento (%)</label>
+                                <input type="number" class="form-control" id="editProductDescuento" name="editProductDescuento" required value="0">
                             </div>
                             <div class="mb-3">
                                 <label for="editProductCategoria" class="form-label">Categoria</label>
-                                <input type="text" class="form-control" id="editProductCategoria" name="editProductCategoria" required>
+                                <select class="form-select" id="editProductCategoria" name="editProductCategoria" required></select>
                             </div>
                             <div class="mb-3">
-                                <label for="editProductImagen" class="form-label">Imagen</label>
-                                <input type="text" class="form-control" id="editProductImagen" name="editProductImagen">
-                            </div>
-                            <div class="mb-3">
-                                <label for="editProductSize" class="form-label">Tamano</label>
-                                <input type="text" class="form-control" id="editProductSize" name="editProductSize">
+                                <label for="editproductoValido" class="form-label">Mostrar producto?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="editproductoValido" id="editproductoValidoSi" value="1" checked>
+                                    <label class="form-check-label" for="editproductoValidoSi">Sí</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="editproductoValido" id="editproductoValidoNo" value="0" >
+                                    <label class="form-check-label" for="editproductoValidoNo">No</label>
+                                </div>
                             </div>
                         </form>
-
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button class="btn btn-actualizarProducto btn-primary" data-bs-dismiss="modal" data-type="success">Modificar</button>
 
                     </div>
@@ -189,26 +200,32 @@
                             </div>
                             <div class="mb-3">
                                 <label for="createProductCantidad" class="form-label"> Cantidad </label>
-                                <input type="text" class="form-control" id="createProductCantidad" name="createProductCantidad" required>
+                                <input type="number" class="form-control" id="createProductCantidad" name="createProductCantidad" required value="1">
                             </div>
                             <div class="mb-3">
                                 <label for="createProductPrecio" class="form-label">Precio</label>
-                                <input type="text" class="form-control" id="createProductPrecio" name="createProductPrecio" required>
+                                <input type="number" class="form-control" id="createProductPrecio" name="createProductPrecio" required value="0">
+                            </div>
+                            <div class="mb-3">
+                                <label for="createProductDescuento" class="form-label">Descuento (%)</label>
+                                <input type="number" class="form-control" id="createProductDescuento" name="createProductDescuento" required value="0">
                             </div>
                             <div class="mb-3">
                                 <label for="createProductCategoria" class="form-label">Categoria</label>
-                                <input type="text" class="form-control" id="createProductCategoria" name="createProductCategoria" required>
+                                <select class="form-select" id="createProductCategoria" name="createProductCategoria" required></select>
                             </div>
                             <div class="mb-3">
-                                <label for="createProductImagen" class="form-label">Imagen</label>
-                                <input type="file" class="form-control" id="createProductImagen" name="createProductImagen">
-                            </div>
-                            <div class="mb-3">
-                                <label for="createProductSize" class="form-label">Tamano</label>
-                                <input type="text" class="form-control" id="createProductSize" name="createProductSize">
+                                <label for="createproductoValido" class="form-label">Mostrar producto?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="createproductoValido" id="createproductoValidoSi" value="1" checked>
+                                    <label class="form-check-label" for="createproductoValidoSi">Sí</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="createproductoValido" id="createproductoValidoNo" value="0" >
+                                    <label class="form-check-label" for="createproductoValidoNo">No</label>
+                                </div>
                             </div>
                         </form>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -309,7 +326,7 @@
         </div>
 
         <!-- Modal Create categoria -->
-        <div class="modal fade" id="createImagen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="createCategoria" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -445,77 +462,7 @@
                                     </div>
 
                                     <div class="body">
-                                        <div class="table-responsive">
-                                            <?php
-                                            include '../adminTool/bd_conn.php';
-
-                                            $consulta = "SELECT * FROM PRODUCT";
-                                            $result = $con->query($consulta);
-
-
-                                            if ($result->num_rows > 0) {
-                                                echo "<table id='userTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
-                                                echo "<thead><tr>
-     <th>Product ID</th>
-     <th>Nombre</th>
-     <th>Marca</th>
-     <th>Cantidad</th>
-     <th>Precio</th>
-     <th>Categoria</th>
-     <th>Imagen</th>
-     <th>Acciones</th>
-     </tr></thead>";
-                                                echo "<tbody id='productTableBody'>";
-
-                                                while ($row = $result->fetch_assoc()) {
-                                                    echo "<tr>";
-                                                    echo "<td>" . $row['IDPRODUCT'] . "</td>";
-                                                    $productID = $row['IDPRODUCT'];
-                                                    echo "<td>" . $row['NAME'] . "</td>";
-                                                    echo "<td>" . $row['BRAND'] . "</td>";
-                                                    echo "<td>" . $row['QUANTITY'] . "</td>";
-                                                    echo "<td>" . $row['PRICE'] . "</td>";
-                                                    echo "<td>" . $row['IDCATEGORY'] . "</td>";
-                                                    echo "<td><img src='" . $row['IMAGE'] . "' alt='IMGPRODUCT' style='height: 7rem;'></td>";
-                                                    echo "<td>
-
-         <button type='button' class='btn btn-info btn-infoProducto  mb-2' data-bs-toggle='modal' data-bs-target='#infoProducto' data-bs-id='$productID'> 
-         <i class='fa fa-info-circle'></i>
-         <span>Ver</span></button>
-         
-         <button type='button' class='btn btn-editar btn-editarProducto btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$productID' data-bs-target='#editProducto' >
-         <i class='fa fa-pencil'></i>
-         <span>Editar</span></button>
-       
-         <button type='button' class='btn btn-borrar btn-borrarProducto btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$productID'>
-         <i class='fa fa-trash-o'></i> 
-         <span>Eliminar</span></button>
-  
-         </td>";
-                                                    echo "</tr>";
-                                                }
-
-                                                echo "</tbody>";
-                                                echo "<tfoot>
-        <tr>
-        <th>Product ID</th>
-     <th>Nombre</th>
-     <th>Marca</th>
-     <th>Cantidad</th>
-     <th>Precio</th>
-     <th>Categoria</th>
-     <th>Imagen</th>
-     <th>Acciones</th>
-        </tr>
-    </tfoot>";
-                                                echo "</table>";
-                                            } else {
-                                                echo "No hay productos";
-                                            }
-                                            include '../adminTool/bd_disconn.php'
-                                            ?>
-
-                                        </div>
+                                    
                                     </div>
 
                                 </div>
@@ -534,66 +481,7 @@
                                     </div>
 
                                     <div class="body">
-                                        <div class="table-responsive">
-                                            <?php
-                                             include '../adminTool/bd_conn.php';
-
-$consulta = "SELECT * FROM CATEGORY";
-$result = $con->query($consulta);
-
-
-if ($result->num_rows>0){
-   echo "<table id='categoryTableBody' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
-   echo "<thead><tr>
-    <th>Category ID</th>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th>Acciones</th>
-    </tr></thead>";
-    echo "<tbody id='categoryTableBody'>";
-
-    while ($row = $result->fetch_assoc()){
-        echo "<tr>";
-        echo "<td>" . $row['IDCATEGORY'] . "</td>";
-        $categoryID = $row['IDCATEGORY'];
-        echo "<td>" . $row['NAME'] . "</td>";
-        echo "<td>" . $row['DESCRIPTION'] . "</td>";                                                                      
-        echo "<td>
-
-        <button type='button' class='btn btn-info btn-infoCategoria  mb-2' data-bs-toggle='modal' data-bs-target='#infoCategoria' data-bs-id='$categoryID'> 
-        <i class='fa fa-info-circle'></i>
-        <span>Ver</span></button>
-        
-        <button type='button' class='btn btn-editar btn-editarCategoria btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$categoryID' data-bs-target='#editCategoria' >
-        <i class='fa fa-pencil'></i>
-        <span>Editar</span></button>
-      
-        <button type='button' class='btn btn-borrar btn-borrarCategoria btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$categoryID'>
-        <i class='fa fa-trash-o'></i> 
-        <span>Eliminar</span></button>
- 
-        </td>";
-echo "</tr>";
-    }
-
-    echo "</tbody>";
-   echo "<tfoot>
-       <tr>
-       <th>Category ID</th>
-       <th>Nombre</th>
-       <th>Descripcion</th>
-       <th>Acciones</th>
-       </tr>
-   </tfoot>";
-   echo "</table>";
-    
-}else {
-    echo "No hay productos";
-}                            
-include '../adminTool/bd_disconn.php'
-
-                                            ?>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>
@@ -611,77 +499,7 @@ include '../adminTool/bd_disconn.php'
                                         <a href="javascript:void(0);" class="btn btn-sm btn-primary" id="crearImagen" title=""><i class="icon-plus"></i><span> Agregar Imagen</span></a>
                                     </div>
                                     <div class="body">
-                                        <div class="imgbody">
-                                            <div class="col-xl-5 col-lg-12">
-                                                <div class="table-responsive">
-                                                    <?php
-                                                    include '../adminTool/bd_conn.php';
-
-                                                    $consulta = "SELECT * FROM PRODUCT";
-                                                    $result = $con->query($consulta);
-
-
-                                                    if ($result->num_rows > 0) {
-                                                        echo "<table id='prodTable' class='table table-hover js-basic-example table-custom spacing5'>";
-                                                        echo "<thead><tr>
-                                                            <th>Product ID</th>
-                                                            <th>Nombre</th>
-                                                            <th>Marca</th>
-                                                            </tr></thead>";
-                                                        echo "<tbody id='prodTableBody'>";
-
-                                                        while ($row = $result->fetch_assoc()) {
-                                                            echo "<tr>";
-                                                            echo "<td>" . $row['IDPRODUCT'] . "</td>";
-                                                            $productID = $row['IDPRODUCT'];
-                                                            echo "<td>" . $row['NAME'] . "</td>";
-                                                            echo "<td>" . $row['BRAND'] . "</td>";
-                                                            echo "</tr>";
-                                                        }
-
-                                                        echo "</tbody>";
-                                                        echo "<tfoot>
-                                                            <tr>
-                                                            <th>Product ID</th>
-                                                            <th>Nombre</th>
-                                                            <th>Marca</th>
-                                                            </tr>
-                                                        </tfoot>";
-                                                        echo "</table>";
-                                                    } else {
-                                                        echo "No hay productos";
-                                                    }
-                                                    include '../adminTool/bd_disconn.php'
-                                                    ?>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-7 col-lg-12">
-                                            
-                                                <div class="table-responsive">
-                                                    <table id='imageTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>
-                                                        <thead><tr>
-                                                            <th>Nombre</th>
-                                                            <th>Image</th>
-                                                            <th>Principal</th>
-                                                            </tr></thead>
-                                                        <tbody id='imageTableBody'>
-                                                            <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                            <th>Nombre</th>
-                                                            <th>Image</th>
-                                                            <th>Principal</th>
-                                                            </tr>
-                                                        </tfoot>
-                                                        </table>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    
 
                                     </div>
 

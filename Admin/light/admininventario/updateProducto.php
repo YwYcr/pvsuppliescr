@@ -10,21 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $marca = $_POST['marca'];
     $cantidad = $_POST['cantidad'];
     $precio = $_POST['precio'];
+    $descuento = $_POST['descuento'];
     $categoria = $_POST['categoria'];
-    $imagen = $_POST['imagen'];
-    $size = $_POST['size'];
+    $valid = $_POST['valid'];
 
-    // Realiza la inserción en la base de datos (asegúrate de escapar y validar los datos)
-    $sql = "UPDATE PRODUCT SET NAME = '$nombre', DESCRIPTION = '$descripcion', BRAND = '$marca', QUANTITY = '$cantidad', PRICE = '$precio', 
-    IDCATEGORY = '$categoria', 
-    IMAGE = '$imagen',
-    IDSIZE = '$size'
-    WHERE IDPRODUCT = '$productID'";
+    // Utiliza consultas preparadas para evitar la inyección de SQL
+    $stmt = $con->prepare("CALL UpdateProductByID(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("isssiidis", $productID, $nombre, $descripcion, $marca, $cantidad, $precio, $descuento, $categoria, $valid);
 
-    if ($con->query($sql) === TRUE) {
+    // Ejecuta la consulta
+    if ($stmt->execute()) {
         echo "PRODUCTO MODIFICADO exitosamente.";
     } else {
-        echo "Error al modificar el producto: " . $con->error;
+        echo "Error al modificar el producto: " . $stmt->error;
     }
 
     // Cierra la conexión a la base de datos

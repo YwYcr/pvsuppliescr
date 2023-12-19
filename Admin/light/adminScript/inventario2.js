@@ -1,116 +1,460 @@
+// Control de cargas del tab 
+$(document).ready(function () {
+    // Detectar cambio de pestaña
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var targetTab = $(e.target).attr("href"); // Pestaña activa
+        loadTabContent(targetTab);
+    });
+
+    // Función para cargar el contenido de la pestaña
+    function loadTabContent(tabId) {
+        if (tabId === "#productTab") {
+            // Cargar contenido de la pestaña de productos
+            $.ajax({
+                url: 'cargarContProducto.php', // Reemplaza 'cargarProductos.php' con el nombre de tu archivo PHP para cargar productos
+                type: 'GET',
+                success: function (data) {
+                    $('#productTab .body').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        } else if (tabId === "#categoryTab") {
+            // Cargar contenido de la pestaña de categorías
+            $.ajax({
+                url: 'cargarContCategoria.php', // Reemplaza 'cargarCategorias.php' con el nombre de tu archivo PHP para cargar categorías
+                type: 'GET',
+                success: function (data) {
+                    $('#categoryTab .body').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        } else if (tabId === "#imgTab") {
+            // Cargar contenido de la pestaña de imágenes
+            $.ajax({
+                url: 'cargarContImagenes.php', // Reemplaza 'cargarImagenes.php' con el nombre de tu archivo PHP para cargar imágenes
+                type: 'GET',
+                success: function (data) {
+                    $('#imgTab .body').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+    }
+
+    // Cargar contenido de la pestaña inicial al cargar la página
+    loadTabContent($('.nav-tabs .active').attr("href"));
+});
+
+
 // <!-- Productos del inventario -->
-// <!-- Script para ver productos -->
-    $(document).ready(function () {
-        $(document).on("click", ".btn-infoProducto", function () {
-            var productID = $(this).data("bs-id");
 
-            $.ajax({
-                type: "GET",
-                url: "getProducto.php",
-                data: { productID: productID },
-                dataType: "json",
-                success: function (response) {
-                    $("#infoProductID").val(response.IDPRODUCT);
-                    $("#infoProductName").val(response.NAME);
-                    $("#infoProductDescription").val(response.DESCRIPTION);
-                    $("#infoProductMarca").val(response.BRAND);
-                    $("#infoProductCantidad").val(response.QUANTITY);
-                    $("#infoProductPrecio").val(response.PRICE);
-                    $("#infoProductCategoria").val(response.IDCATEGORY);
-                    $("#infoProductImagen").val(response.IMAGE);
-                    $("#infoProductSize").val(response.IDSIZE);
+// Función para llenar las opciones de categoría en el select
+function llenarOpcionesCategoria1() {
+    var selectCategoria = $("#createProductCategoria");
 
-                },
-                error: function (xhr, status, error) {
-                    console.error(error);
-                }
+    // Limpiar opciones existentes
+    selectCategoria.empty();
+
+    // Hacer una solicitud AJAX para obtener las categorías desde el servidor
+    $.ajax({
+        url: 'getAllCategorias.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            // Llenar el select con las opciones de categoría
+            data.forEach(function (categoria) {
+                selectCategoria.append('<option value="' + categoria.idcategory + '">' + categoria.name + '</option>');
             });
-        });
+        },
+        error: function (error) {
+            console.error('Error al obtener las categorías:', error);
+        }
     });
+}
 
-// <!-- Script para crear productos nuevos -->
-    $(document).ready(function () {
-        $("#crearProductoButton").click(function () {
+// Función que devuelve una promesa que se resuelve cuando las opciones de categoría están llenas
+function llenarOpcionesCategoria2() {
+    return new Promise(function (resolve, reject) {
+        var selectCategoria = $("#editProductCategoria");
 
-            var nombre = $("#createProductName").val();
-            var descripcion = $("#createProductDescription").val();
-            var marca = $("#createProductMarca").val();
-            var cantidad = $("#createProductCantidad").val();
-            var precio = $("#createProductPrecio").val();
-            var categoria = $("#createProductCategoria").val();
-            var imagen = $("#createProductImagen").val();
-            var size = $("#createProductSize").val();
+        // Limpiar opciones existentes
+        selectCategoria.empty();
 
-            var data = {
-
-                nombre: nombre,
-                descripcion: descripcion,
-                marca: marca,
-                cantidad: cantidad,
-                precio: precio,
-                categoria: categoria,
-                imagen: imagen,
-                size:size
-            };
-
-            $.ajax({
-                type: "POST",
-                url: "crearProducto.php",
-                data: data,
-                success: function (response) {
-                alert('Producto creado con éxito');
-                fetch('refreshProducto.php')
-                .then(response => response.text())                   
-                .then(data => {
-                    document.getElementById('productTableBody').innerHTML = data;
+        // Hacer una solicitud AJAX para obtener las categorías desde el servidor
+        $.ajax({
+            url: 'getAllCategorias.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // Llenar el select con las opciones de categoría
+                data.forEach(function (categoria) {
+                    selectCategoria.append('<option value="' + categoria.idcategory + '">' + categoria.name + '</option>');
                 });
-                    // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                    // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
-                },
-                error: function (xhr, status, error) {
-                    // Manejar errores de la solicitud AJAX
-                    console.error(error);
-                }
-            });
+
+                // Resolver la promesa
+                resolve();
+            },
+            error: function (error) {
+                console.error('Error al obtener las categorías:', error);
+
+                // Rechazar la promesa en caso de error
+                reject(error);
+            }
         });
     });
+}
+
+function llenarOpcionesCategoria3() {
+    return new Promise(function (resolve, reject) {
+        var selectCategoria = $("#infoProductCategoria");
+
+        // Limpiar opciones existentes
+        selectCategoria.empty();
+
+        // Hacer una solicitud AJAX para obtener las categorías desde el servidor
+        $.ajax({
+            url: 'getAllCategorias.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // Llenar el select con las opciones de categoría
+                data.forEach(function (categoria) {
+                    selectCategoria.append('<option value="' + categoria.idcategory + '">' + categoria.name + '</option>');
+                });
+
+                // Resolver la promesa
+                resolve();
+            },
+            error: function (error) {
+                console.error('Error al obtener las categorías:', error);
+
+                // Rechazar la promesa en caso de error
+                reject(error);
+            }
+        });
+    });
+}
+
+
+// Función que se ejecutará cuando el modal se muestre
+$('#createProducto').on('show.bs.modal', function (e) {
+    // Llamar a la función para llenar las opciones de categoría
+    llenarOpcionesCategoria1();
+});
+
+
+// Funcion para limpiar el form de creacion de la imagen
+function clearFormProduct() {
+    $('#createProductName').val('');
+    $('#createProductDescription').val('');
+    $('#createProductMarca').val('');
+    $('#createProductCantidad').val('1');
+    $('#createProductPrecio').val('0');
+    $('#createProductDescuento').val('0');
+    $('#createProductCategoria').val('');
+    $('#createproductoValidoSi').prop('checked', true);
+    $('#createproductoValidoNo').prop('checked', false);
+}
+
+function clearFormCategoria() {
+    $("#createCategoriaName").val('');
+    $("#createCategoriaDescription").val('');
+}
+
+// Script para crear productos nuevos
+$(document).ready(function () {
+    $("#crearProductoButton").click(function () {
+        var nombre = $("#createProductName").val();
+        var descripcion = $("#createProductDescription").val();
+        var marca = $("#createProductMarca").val();
+        var cantidad = $("#createProductCantidad").val();
+        var precio = $("#createProductPrecio").val();
+        var categoria = $("#createProductCategoria").val();
+        var descuento = $("#createProductDescuento").val();  // Obtener el valor del campo de descuento
+        var valid = ($("#createproductoValidoSi").prop("checked")) ? $("#createproductoValidoSi").val() : $("#createproductoValidoNo").val();
+
+        // Verificar si el valor es nulo o vacío y establecerlo en 0
+        if (!cantidad || cantidad.trim() === "") {
+            cantidad = 1;
+        }
+        if (!precio || precio.trim() === "") {
+            precio = 0;
+        }
+        if (!descuento || descuento.trim() === "") {
+            descuento = 0;
+        }
+
+        var data = {
+            nombre: nombre,
+            descripcion: descripcion,
+            marca: marca,
+            cantidad: cantidad,
+            precio: precio,
+            categoria: categoria,
+            descuento: descuento,  // Incluir el valor del descuento en el objeto 'data'
+            valid: valid
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "crearProducto.php",
+            data: data,
+            success: function (response) {
+                swal("Agregado!", "Se agrego el producto con éxito!", "success");
+                clearFormProduct();
+                $.ajax({
+                    url: 'cargarContProducto.php', // Reemplaza 'cargarProductos.php' con el nombre de tu archivo PHP para cargar productos
+                    type: 'GET',
+                    success: function (data) {
+                        $('#productTab .body').html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+
+
+
+    });
+});
+
+// <!-- Script para ver productos -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-infoProducto", function () {
+        var productID = $(this).data("bs-id");
+
+        // Llama a llenarOpcionesCategoria2 antes de iniciar la petición AJAX
+        llenarOpcionesCategoria3().then(function () {
+        $.ajax({
+            type: "GET",
+            url: "getProducto.php",
+            data: { productID: productID },
+            dataType: "json",
+            success: function (response) {
+                $("#infoProductID").val(response.IDPRODUCT);
+                $("#infoProductName").val(response.NAME);
+                $("#infoProductDescription").val(response.DESCRIPTION);
+                $("#infoProductMarca").val(response.BRAND);
+                $("#infoProductCantidad").val(response.QUANTITY);
+                $("#infoProductPrecio").val(response.PRICE);
+                $("#infoProductCategoria").val(response.IDCATEGORY); 
+                $("#infoProductDescuento").val(response.DISCOUNT);
+                // console.log("Valor de VALID:", response.VALID);
+
+                if (response.VALID === 1) {
+                    $("#infoproductoValidoSi").prop("checked", true);
+                    $("#infoproductoValidoNo").prop("checked", false);
+                } else {
+                    $("#infoproductoValidoSi").prop("checked", false);
+                    $("#infoproductoValidoNo").prop("checked", true);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
+});
+
+// <!-- Script para traer 1 producto a modificar  -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-editarProducto", function () {
+        var productID = $(this).data("bs-id");
+
+        // Llama a llenarOpcionesCategoria2 antes de iniciar la petición AJAX
+        llenarOpcionesCategoria2().then(function () {
+        $.ajax({
+            type: "GET",
+            url: "getProducto.php",
+            data: { productID: productID },
+            dataType: "json",
+            success: function (response) {
+                $("#editProductID").val(response.IDPRODUCT);
+                $("#editProductName").val(response.NAME);
+                $("#editProductDescription").val(response.DESCRIPTION);
+                $("#editProductMarca").val(response.BRAND);
+                $("#editProductCantidad").val(response.QUANTITY);
+                $("#editProductPrecio").val(response.PRICE);
+                $("#editProductCategoria").val(response.IDCATEGORY); 
+                $("#editProductDescuento").val(response.DISCOUNT);
+                if (response.VALID === 1) {
+                    $("#editproductoValidoSi").prop("checked", true);
+                    $("#editproductoValidoNo").prop("checked", false);
+                } else {
+                    $("#editproductoValidoSi").prop("checked", false);
+                    $("#editproductoValidoNo").prop("checked", true);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
+});
+
+
+
+// <!-- Script para actualizar productos  -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-actualizarProducto", function () {
+        var productID = $("#editProductID").val();
+        var nombre = $("#editProductName").val();
+        var descripcion = $("#editProductDescription").val();
+        var marca = $("#editProductMarca").val();
+        var cantidad = $("#editProductCantidad").val();
+        var precio = $("#editProductPrecio").val();
+        var categoria = $("#editProductCategoria").val();
+        var descuento = $("#editProductDescuento").val();  // Obtener el valor del campo de descuento
+        var valid = ($("#editproductoValidoSi").prop("checked")) ? $("#editproductoValidoSi").val() : $("#editproductoValidoNo").val();
+
+        // Verificar si el valor es nulo o vacío y establecerlo en 0
+        if (!cantidad || cantidad.trim() === "") {
+            cantidad = 1;
+        }
+        if (!precio || precio.trim() === "") {
+            precio = 0;
+        }
+        if (!descuento || descuento.trim() === "") {
+            descuento = 0;
+        }
+
+        var data = {
+            productID: productID,
+            nombre: nombre,
+            descripcion: descripcion,
+            marca: marca,
+            cantidad: cantidad,
+            precio: precio,
+            descuento: descuento,
+            categoria: categoria,
+            valid: valid,
+        };
+
+
+        $.ajax({
+            type: "POST",
+            url: "updateProducto.php",
+            data: data,
+            success: function (response) {
+                swal("Modificado!", "Se modificó el producto con éxito!", "success");
+                $.ajax({
+                    url: 'cargarContProducto.php',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#productTab .body').html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
+
+// <!-- Script para borrar productos -->
+$(document).ready(function () {
+    $(document).on("click", ".btn-borrarProducto", function () {
+        var productID = $(this).data("bs-id");
+
+        $.ajax({
+            type: "POST",
+            url: "borrarProducto.php",
+            data: { productID: productID },
+            success: function (response) {
+                // alert('Producto eliminado con éxito');
+
+                swal({
+                    title: "Seguro que quieres eliminarlo?",
+                    text: "Una vez eliminado no podras volver a recuperar este producto!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#dc3545",
+                    confirmButtonText: "Si, Eliminalo!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Eliminado!", "Producto eliminado con éxito", "success");
+                    $.ajax({
+                        url: 'cargarContProducto.php', // Reemplaza 'cargarProductos.php' con el nombre de tu archivo PHP para cargar productos
+                        type: 'GET',
+                        success: function (data) {
+                            $('#productTab .body').html(data);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                    console.log("Producto eliminado: " + productID);
+                });
+
+
+                
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
 
 
 // <!-- Script para crear categorias nuevas -->
-    $(document).ready(function () {
-        $("#crearCategoriaButton").click(function () {
+$(document).ready(function () {
+    $("#crearCategoriaButton").click(function () {
 
-            var nombre = $("#createCategoriaName").val();
-            var descripcion = $("#createCategoriaDescription").val();
+        var nombre = $("#createCategoriaName").val();
+        var descripcion = $("#createCategoriaDescription").val();
 
 
-            var data = {
+        var data = {
 
-                nombre: nombre,
-                descripcion: descripcion
-            };
+            nombre: nombre,
+            descripcion: descripcion
+        };
 
-            $.ajax({
-                type: "POST",
-                url: "crearCategoria.php",
-                data: data,
-                success: function (response) {
-                alert('Categoria creada con éxito');
-                fetch('refreshCategoria.php')
-                .then(response => response.text())                   
-                .then(data => {
-                    document.getElementById('categoryTableBody').innerHTML = data;
+        $.ajax({
+            type: "POST",
+            url: "crearCategoria.php",
+            data: data,
+            success: function (response) {
+                swal("Agregado!", "Se agrego categoría con éxito!", "success");
+                clearFormCategoria();
+                $.ajax({
+                    url: 'cargarContCategoria.php', // Reemplaza 'cargarCategorias.php' con el nombre de tu archivo PHP para cargar categorías
+                    type: 'GET',
+                    success: function (data) {
+                        $('#categoryTab .body').html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
                 });
-                    // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
-                    // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
-                },
-                error: function (xhr, status, error) {
-                    // Manejar errores de la solicitud AJAX
-                    console.error(error);
-                }
-            });
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                // alert(response); // Puedes reemplazar esto con tu propia lógica de manejo de respuesta
+            },
+            error: function (xhr, status, error) {
+                // Manejar errores de la solicitud AJAX
+                console.error(error);
+            }
         });
     });
+});
 
 // <!-- Script para Ver categorias  -->
 $(document).ready(function () {
@@ -149,7 +493,7 @@ $(document).ready(function () {
                 $("#editCategoryID").val(response.IDCATEGORY);
                 $("#editCategoryName").val(response.NAME);
                 $("#editCategoryDescription").val(response.DESCRIPTION);
-    
+
             },
             error: function (xhr, status, error) {
                 console.error(error);
@@ -178,12 +522,17 @@ $(document).ready(function () {
             url: "updateCategoria.php",
             data: data,
             success: function (response) {
-            alert('Catgegoria modificada con éxito');
-            fetch('refreshCategoria.php')
-            .then(response => response.text())                   
-            .then(data => {
-                document.getElementById('categoryTableBody').innerHTML = data;
-            });
+                swal("Modificado!", "Se modificó la categoría con éxito!", "success");
+                $.ajax({
+                    url: 'cargarContCategoria.php', // Reemplaza 'cargarCategorias.php' con el nombre de tu archivo PHP para cargar categorías
+                    type: 'GET',
+                    success: function (data) {
+                        $('#categoryTab .body').html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
 
             },
             error: function (xhr, status, error) {
@@ -191,7 +540,7 @@ $(document).ready(function () {
             }
         });
     });
-});    
+});
 // <!-- Script para borrar categoria -->
 $(document).ready(function () {
     $(document).on("click", ".btn-borrarCategoria", function () {
@@ -202,13 +551,29 @@ $(document).ready(function () {
             url: "borrarCategoria.php",
             data: { categoryID: categoryID },
             success: function (response) {
-            alert('Categoria eliminada con éxito');    
-            fetch('refreshCategoria.php')
-            .then(response => response.text())                   
-            .then(data => {
-                document.getElementById('categoryTableBody').innerHTML = data;
-            });
-                console.log("Categoria eliminado: " + productID);
+                swal({
+                    title: "Seguro que quieres eliminarlo?",
+                    text: "Una vez eliminado no podras volver a recuperar esta categoría!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#dc3545",
+                    confirmButtonText: "Si, Eliminalo!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Eliminado!", "Categoría eliminado con éxito", "success");
+                    $.ajax({
+                        url: 'cargarContCategoria.php', // Reemplaza 'cargarCategorias.php' con el nombre de tu archivo PHP para cargar categorías
+                        type: 'GET',
+                        success: function (data) {
+                            $('#categoryTab .body').html(data);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                    console.log("Categoria eliminado: " + productID);
+                });
+                
             },
             error: function (xhr, status, error) {
                 console.error(error);
@@ -218,382 +583,11 @@ $(document).ready(function () {
 });
 
 
-// <!-- Script para traer 1 producto a modificar  -->
-    $(document).ready(function () {
-        $(document).on("click", ".btn-editarProducto", function () {
-            var productID = $(this).data("bs-id");
-
-            $.ajax({
-                type: "GET",
-                url: "getProducto.php",
-                data: { productID: productID },
-                dataType: "json",
-                success: function (response) {
-
-                    $("#editProductID").val(response.IDPRODUCT);
-                    $("#editProductName").val(response.NAME);
-                    $("#editProductDescription").val(response.DESCRIPTION);
-                    $("#editProductMarca").val(response.BRAND);
-                    $("#editProductCantidad").val(response.QUANTITY);
-                    $("#editProductPrecio").val(response.PRICE);
-                    $("#editProductCategoria").val(response.IDCATEGORY);
-                    $("#editProductImagen").val(response.IMAGE);
-                    $("#editProductSize").val(response.IDSIZE);
-
-
-                },
-                error: function (xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        });
-    });
-
-
-
-
-// <!-- Script para actualizar productos  -->
-    $(document).ready(function () {
-        $(document).on("click", ".btn-actualizarProducto", function () {
-
-            var productID = $("#editProductID").val();
-            var nombre = $("#editProductName").val();
-            var descripcion = $("#editProductDescription").val();
-            var marca = $("#editProductMarca").val();
-            var cantidad = $("#editProductCantidad").val();
-            var precio = $("#editProductPrecio").val();
-            var categoria = $("#editProductCategoria").val();
-            var imagen = $("#editProductImagen").val();
-            var size = $("#editProductSize").val();
-
-            var data = {
-                productID: productID,
-                nombre: nombre,
-                descripcion: descripcion,
-                marca: marca,
-                cantidad: cantidad,
-                precio: precio,
-                categoria: categoria,
-                imagen:imagen,
-                size:size
-            };
-
-
-            $.ajax({
-                type: "POST",
-                url: "updateProducto.php",
-                data: data,
-                success: function (response) {
-                alert('Producto modificado con éxito');
-                fetch('refreshProducto.php')
-                .then(response => response.text())                   
-                .then(data => {
-                    document.getElementById('productTableBody').innerHTML = data;
-                });
-
-                },
-                error: function (xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        });
-    });
-
-// <!-- Script para borrar productos -->
-    $(document).ready(function () {
-        $(document).on("click", ".btn-borrarProducto", function () {
-            var productID = $(this).data("bs-id");
-
-            $.ajax({
-                type: "POST",
-                url: "borrarProducto.php",
-                data: { productID: productID },
-                success: function (response) {
-                alert('Producto eliminado con éxito');    
-                fetch('refreshProducto.php')
-                .then(response => response.text())                   
-                .then(data => {
-                    document.getElementById('productTableBody').innerHTML = data;
-                });
-                    console.log("Producto eliminado: " + productID);
-                },
-                error: function (xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        });
-    });
-
-
-
-
-// Imagenes!!
-
-$(document).ready(function () {
-    // Maneja el evento click en las filas de la tabla
-    $('#prodTable tbody').on('click', 'tr', function () {
-        // Desmarca todas las filas y luego marca la fila clicada
-        $('#prodTable tbody tr').removeClass('selected');
-        $(this).addClass('selected');
-    });
-});
-
-// Variable global para almacenar el productID
-var selectedProductID = "";
-var selectedImageID = "";
-
-// Abre el model de crear imagen nueva    
-$(document).ready(function() {
-    $('#prodTable tbody').on('click', 'tr', function() {
-        selectedProductID = $(this).find('td:first-child').text();
-        $.ajax({
-            url: 'getImages.php',
-            method: 'POST',
-            data: { productID: selectedProductID },
-            success: function(data) {
-                $('#imageTable').html(data);
-            },
-            error: function() {
-                console.error('Error al cargar los datos');
-            }
-        });
-    });
-
-// Manejar el clic en el botón de crear imagen
-$('#crearImagen').on('click', function() {
-    if (selectedProductID !== "") {
-        $('#createProductID').val(selectedProductID).prop('readonly', true);
-
-        $('#createImagen').modal('show');
-    } else {
-        swal("Atención!", "Primero debes seleccionar un producto de la lista", "error");
-    }
-});
-
-});
-
-// le asigna el nombre de la imagen con el archivo que se selecciona    
-$('#createImagenUrl').on('change', function() {
-    var fileName = $(this).val().split('\\').pop();
-    $('#createImagenName').val(fileName);
-});
-
-// le asigna el nombre de la imagen con el archivo que se selecciona    
-$('#editImagenUrl').on('change', function() {
-    var fileName = $(this).val().split('\\').pop();
-    $('#editImagenName').val(fileName);
-});
-
-
-// Script para Descargar Imagen    
-	function downloadFile(url) {
-        var link = document.createElement('a');
-        link.href = url;
-        link.download = url.substring(url.lastIndexOf('/') + 1);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        }
-
-//  Script para Cargar Imagen y guardar en BD       
-$('#crearImagenButton').on('click', function() {
-
-    var productID = $('#createProductID').val();
-    var imageName = $('#createImagenName').val();
-    var isPrincipal = $("input[name='createImagenPrincipal']:checked").val();
-    var imageFile = $('#createImagenUrl').val();
-
-    // Validación de campos
-    if (productID === "" || imageName === "" || isPrincipal === undefined || imageFile === "") {
-        swal("Error!", "Todos los campos deben estar completos.", "error");
-        return;
-    }
-
-
-    var formData = new FormData($('#createImagenForm')[0]);
-
-    $.ajax({
-        url: 'crearImagen.php',
-        type: 'post',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(response) {
-            // Verificar si la respuesta contiene la cadena 'Error'
-            if (response.includes('Error')) {
-                swal("Error!", "La imagen que intentas subir está duplicada. Intenta con otra imagen o cambia el nombre.", "error");
-            } else {
-                swal("Agregado!", "Se agregó la imagen con éxito!", "success");
-                reloadTable();
-                clearForm();
-            }
-        },
-        error: function(error) {
-            swal("Error!", "Ocurrió un error al procesar la solicitud. Por favor, inténtalo nuevamente.", "error");
-        }
-    });
-});
-
-// Funcion para recargar la tabla de las imagenes.
-function reloadTable() {
-    $.ajax({
-        url: 'getImages.php',
-        method: 'POST',
-        data: { productID: selectedProductID },
-        success: function(data) {
-            $('#imageTable').html(data);
-        },
-        error: function() {
-            console.error('Error al cargar los datos');
-        }
-    });
-}
-
-// Funcion para limpiar el form de creacion de la imagen
-function clearForm() {
-    $('#createProductID').val('');
-    $('#createImagenName').val('');
-    $('#createImagenUrl').val('');
-    $('#createImagenPrincipalSi').prop('checked', false);
-    $('#createImagenPrincipalNo').prop('checked', true);
-}
-
-// Eliminar Imagen en S3 y Base de datos
-$('#imageTable').on('click', '.btn-borrarImagen', function() {
-    var imageID = $(this).data('bs-id');
-
-    swal({
-        title: "Seguro que quieres eliminarlo?",
-        text: "Una vez eliminado no podrás volver a recuperar esta imagen!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#dc3545",
-        confirmButtonText: "Sí, Elimínalo!",
-        closeOnConfirm: false
-    }, function(confirmed) {
-        if (confirmed) {
-            // El usuario confirmó la eliminación, procede con la solicitud AJAX
-            $.ajax({
-                url: 'borrarImagen.php', 
-                method: 'POST',
-                data: { imageID: imageID },
-                success: function(response) {
-                    if (response.includes('Error')) {
-                        swal("Error!", "No se pudo eliminar la imagen.", "error");
-                    } else {
-                        swal("Eliminado!", "La imagen se eliminó con éxito.", "success");
-                        reloadTable();
-                    }
-                },
-                error: function(error) {
-                    console.error('Error en la solicitud AJAX:', error);
-                }
-            });
-        } else {
-            // El usuario canceló la eliminación, puedes hacer algo si lo deseas
-            console.log("Eliminación cancelada");
-        }
-    });
-});
-
-
-
-// Carga en el modal de editImagen los valores necesarios
-$(document).ready(function () {
-    $(document).on("click", ".btn-editarImagen", function () {
-        var imageID = $(this).data("bs-id");
-
-        $.ajax({
-            type: "GET",
-            url: "getImageDetails.php",
-            data: { imageID: imageID },
-            dataType: "json",
-            success: function (response) {
-                $("#editImageProdID").val(response.IDPRODUCT);
-                $("#editImagenName").val(response.IDIMAGE);                
-                $("#editImagenNameoriginal").val(response.IDIMAGE);                
-
-                if (response.IMGMAIN == 1) {
-                    $("#editImagenPrincipalSi").prop("checked", true);
-                } else {
-                    $("#editImagenPrincipalNo").prop("checked", true);
-                }
-
-                $("#editImagenUrl").val('');
-
-                // Abre el modal
-                $("#editImagen").modal("show");
-            },
-            error: function (xhr, status, error) {
-                console.error(error);
-            }
-        });
-    });
-});
-
-// Editar Imagen
-$('#editImagenButton').on('click', function() {
-
-    var productID = $('#editImageProdID').val();
-    var imageName = $('#editImagenName').val();
-    var imageNameOriginal = $('#editImagenNameoriginal').val();
-    var isPrincipal = $("input[name='editImagenPrincipal']:checked").val();
-    var imageFile = $('#editImagenUrl').val();
-
-    // Validación de campos
-    if (productID === "" || imageName === "" || imageNameOriginal === "" || isPrincipal === undefined || imageFile === "") {
-        swal("Error!", "Todos los campos deben estar completos.", "error");
-        return;
-    }
-
-    var formData = new FormData($('#editImagenForm')[0]);
-    var originalImageName = $('#editImagenNameoriginal').val();
-
-    $.ajax({
-        url: 'updateImagen.php',
-        type: 'post',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(response) {
-            if (response.includes('Error')) {
-                swal("Error!", "No se pudo editar la imagen.", "error");
-            } else {
-                // Crear fue exitoso, ahora eliminar la imagen antigua
-                eliminarImagen(originalImageName);
-            }
-        },
-        error: function(error) {
-            swal("Error!", "Ocurrió un error al procesar la solicitud. Por favor, inténtalo nuevamente.", "error");
-        }
-    });
-});
-
-// Función para eliminar la imagen antigua
-function eliminarImagen(imageID) {
-    $.ajax({
-        url: 'borrarImagen.php',
-        type: 'post',
-        data: { imageID: imageID },
-        success: function(response) {
-            if (response.includes('Error')) {
-                swal("Error!", "No se pudo eliminar la imagen antigua.", "error");
-            } else {
-                swal("Editado!", "La imagen se editó con éxito.", "success");
-                reloadTable();
-                clearForm();
-            }
-        },
-        error: function(error) {
-            console.error('Error en la solicitud AJAX:', error);
-        }
-    });
-};
 
 
 
 
 
-    
-    
-    
+
+
+
