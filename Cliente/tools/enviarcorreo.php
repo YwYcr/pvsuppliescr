@@ -2,9 +2,9 @@
 // enviarcorreo.php
 
 
-require 'PHPmailer/src/PHPMailer.php';
-require 'PHPmailer/src/SMTP.php';
-require 'PHPmailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -32,7 +32,7 @@ function correo_activacion($email, $nombre, $primerApellido, $codigo_act) {
         // $mail->Body = 'Hola ' . $nombre . ' ' . $primerApellido . '<br><br>';
         // $mail->Body .= 'Haz click en el siguiente link para activar tu cuenta: ' . $_SERVER['HTTP_HOST'] . 'Cliente/tools/activate.php?email=' . $email . '&code=' . $codigo_act;
         $mail->Body = 'Hola ' . $nombre . ' ' . $primerApellido . '<br><br>';
-        $mail->Body .= 'Haz click en el siguiente link para activar tu cuenta: ' . $_SERVER['HTTP_HOST'] . '/fromGit/pvsuppliescr/activate.php?email=' . $email . '&code=' . $codigo_act;
+        $mail->Body .= 'Haz click en el siguiente link para activar tu cuenta: ' . $_SERVER['HTTP_HOST'] . '/pvsuppliescr/activate.php?email=' . $email . '&code=' . $codigo_act;
 
 
         // Envío del correo
