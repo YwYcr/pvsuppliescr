@@ -1,5 +1,7 @@
 
+<script src= "../../Cliente/formLogin.js"></script>
 <script src= "../../Cliente/FormRegistro.js"></script>
+
 
 <!-- Recaptcha -->
 <script src="https://www.google.com/recaptcha/api.js?render=6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b"></script>
@@ -46,15 +48,15 @@
                     <button type="button" class="btn-close text-reset btn-regis-close hiraola-btn-bondi_blue" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
                 </div>
                 <div class="offcanvas-body">
-                <form action="../../Admin\light\index2.php">
+                <form action="#" id="login-form">
                             <div class="login-form">
                                 <div class="row">
                                     <div class="col-md-12 col-12">
-                                        <label>Correo Electrónico <input type="email" placeholder="Email Address" id="loginMail"> </label>
+                                        <label>Correo Electrónico <input type="email" placeholder="Email Address" id="emailLogin" required maxlength="200" autocomplete="email"> </label>
                                         
                                     </div>
                                     <div class="col-12 mb--20">
-                                        <label>Contraseña <input type="password" placeholder="Password" id="passLogin"> </label>
+                                        <label>Contraseña <input type="password" placeholder="Password" id="passwordLogin" required autocomplete="password"> </label>
                                         
                                     </div>
                                     <div class="col-md-12 col-12">
@@ -71,7 +73,7 @@
                                     </div>
                                     <br>
                                     <div class="col-md-12">
-                                        <button class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Login</button>
+                                        <button type="submit" name="loginButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Login</button>
                                     </div>
                                 </div>
                             </div>
@@ -104,12 +106,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label>Contraseña:
-                                            <input type="password" id="password" placeholder="Password" required>
+                                            <input type="password" id="password" placeholder="Password" required autocomplete="password">
                                         </label>
                                     </div>
                                     <div class="col-md-6">
                                         <label>Confirme Contraseña
-                                            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                                            <input type="password" id="confirmPassword" placeholder="Confirm Password" required autocomplete="password">
                                         </label>
                                     </div>
                                     <div id="message-container"></div>
@@ -125,7 +127,7 @@
                             <!-- Recaptcha initialization -->
                             <script defer>
                                 grecaptcha.ready(function() {
-                                    console.log("grecaptcha is ready");
+                                    // console.log("grecaptcha is ready");
                                     // Your original script inside the grecaptcha.ready callback
                                     grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b', { action: 'submit' }).then(function(token) {
                                         document.getElementById("recaptchaResponse").value = token;
