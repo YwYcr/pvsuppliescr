@@ -15,7 +15,7 @@
                                 ?>
 
                                     <li class="rx-parent">
-                                        <a class="rx-default" href="shop-left-sidebar.php">Más Categorias</a>
+                                        <a class="rx-default" href="shop-left-sidebar.php">Más Categorías</a>
                                     </li>
                                 </ul>
                             </div>
@@ -26,7 +26,7 @@
                             <div class="main-slider">
                                 <!-- Begin Single Slide Area -->
                                 <div class="single-slide animation-style-01 bg-1">
-                                <img class="single-slide animation-style-01 bg-1" style="object-fit:cover;" src="https://drive.google.com/uc?export=download&id=19Iq9N8t5gxXJXLpq4j06nv9tJRs2Wr78" alt="Cama1">
+                                <img class="single-slide animation-style-01 bg-1" style="object-fit:cover;" src="../../assets/images/product/Cama1.png" alt="Cama1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>Viernes Negro</span> Esta Semana</h5>
@@ -43,7 +43,7 @@
                                 <!-- Single Slide Area End Here -->
                                 <!-- Begin Single Slide Area -->
                                 <div class="single-slide animation-style-02 bg-2">
-                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="https://drive.google.com/uc?export=download&id=1Qty_y0kDzYgsyMtg6XNXaJmKwFr-nAND" alt="Mesa1">
+                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="../../assets/images/product/Mesa1.png" alt="Mesa1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>-50% de descuento</span> Esta semana</h5>
@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
                                 <div class="single-slide animation-style-02 bg-3">
-                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="https://drive.google.com/uc?export=download&id=1uXHq0rWFbDoF3Jcp65ZXa8VLQDjwJpVT" alt="Librero1">
+                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="../../assets/images/product/Librero1.png" alt="Librero1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>Viernes Negro</span> Esta Semana</h5>
@@ -78,7 +78,7 @@
                     <div class="col grid-half grid-md_half order-md-2 order-lg-3">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="https://drive.google.com/uc?export=download&id=1sHo9v45Ii-dkFNn0Ual7PBib-1abcC1S" alt="Anuncio1">
+                            <img class="banner-item img-hover_effect" src="../../assets/images/banner/Anuncio1.png" alt="Anuncio1">
                             </a>
                         </div>
                     </div>
@@ -92,21 +92,21 @@
                     <div class="col-lg-4">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="https://drive.google.com/uc?export=download&id=1UZYrIcgRIDNkHDTNTrVEoLzz_tSWK-Oy" alt="Baño1">
+                            <img class="banner-item img-hover_effect" src="../../assets/images/product/Baño1.png" alt="Baño1">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="https://drive.google.com/uc?export=download&id=1pcafb8G1xA_AgFAiKoLP-wF2WgmJj5au" alt="Descanso1">
+                            <img class="banner-item img-hover_effect" src="../../assets/images/product/Descanso1.png" alt="Descanso1">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="https://drive.google.com/uc?export=download&id=1jGrVrQJGi5amglZin0TA5zv8U_qyP1xj" alt="Descanso1">
+                            <img class="banner-item img-hover_effect" src="../../assets/images/banner/Recepcion1.png" alt="Recepción1">
                             </a>
                         </div>
                     </div>
@@ -130,8 +130,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                            <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1mhHffA8swvSgwifQ07nw7DuXG2zMm4f9" alt="Lamp 1">
-                                            <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=16mqMLpia3uq9WL35CGNw0QTv-_EJqaYp" alt="Lamp 2">
+                                            <img class="primary-img" src="../../assets/images/product/Lamp1.png" alt="Lamp 1">
+                                            <img class="secondary-img" src="../../assets/images/product/Lamp2.png" alt="Lamp 2">
                                         </a>
                                         <span class="sticker">Nuevo</span>
                                         <div class="add-actions">
@@ -178,8 +178,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                            <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1rdhAxtDj6T_8k9hbCHEHIvHxdr9q75ky" alt="Almohada 1">
-                                            <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1q3UzxLJTyN5iUOvUzsl5o9jxI1tI0_K0" alt="Almohada 2">
+                                            <img class="primary-img" src="../../assets/images/product/Almohada1.png" alt="Almohada 1">
+                                            <img class="secondary-img" src="../../assets/images/product/Almohada2.png" alt="Almohada 2">
                                         </a>
                                         <span class="sticker">Nuevo</span>
                                         <div class="add-actions">
@@ -226,8 +226,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                            <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1aan8w0qtJ4uA8ZAQqSDdFanSZ_ECTVx8" alt="CubreCama1">
-                                            <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1k-OLfhnNWZHES4TRn3NVcxoESoT3RYaB" alt="CubreCama2">
+                                            <img class="primary-img" src="../../assets/images/product/CubreCama1.png" alt="CubreCama1">
+                                            <img class="secondary-img" src="../../assets/images/product/CubreCama2.png" alt="CubreCama2">
                                         </a>
                                         <span class="sticker-2">Oferta</span>
                                         <div class="add-actions">
@@ -274,8 +274,8 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.php">
-                                        <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1CyEEYm0ELHfAesZscfim2GeKovPpnD55" alt="Cafetera1">
-                                        <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1VH1cBcbtk-zsCneW1tRIjmDsT1WVbDyj" alt="Cafetera2">
+                                        <img class="primary-img" src="../../assets/images/product/Cafetera1.png" alt="Cafetera1">
+                                        <img class="secondary-img" src="../../assets/images/product/Cafetera2.png" alt="Cafetera2">
                                         </a>
                                         <span class="sticker">Nuevo</span>
                                         <div class="add-actions">
@@ -323,8 +323,8 @@
                                     <div class="product-img">
                                         <a href="single-product.php">
 
-                                        <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1LhaCxQ3WkwSe_IdxR5BjGjrNhQrrcP13" alt="Espejo1">
-                                        <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1KJBllj5FmuCQV_uFaQIr5rSzEKKEuxKY" alt="Espejo2">
+                                        <img class="primary-img" src="../../assets/images/product/Espejo1.png" alt="Espejo1">
+                                        <img class="secondary-img" src="../../assets/images/product/Espejo2.png" alt="Espejo2">
 
                                         </a>
                                         <span class="sticker-2">Oferta</span>
@@ -373,8 +373,8 @@
                                     <div class="product-img">
                                         <a href="single-product.php">
 
-                                        <img class="primary-img" src="https://drive.google.com/uc?export=download&id=1XYS7Vd-fU8gyJt2NYswYJN1yW1KKeeQV" alt="Hamaca1">
-                                        <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1vGjbmwYNPio4gWWaHgJoEd3I-akuL__N" alt="Hamaca2">
+                                        <img class="primary-img" src="../../assets/images/product/Hamaca1.png" alt="Hamaca1">
+                                        <img class="secondary-img" src="../../assets/images/product/Hamaca2.png" alt="Hamaca2">
 
                                         </a>
                                         <span class="sticker">Nuevo</span>
@@ -424,8 +424,8 @@
                                     <div class="product-img">
                                         <a href="single-product.php">
 
-                                        <img class="primary-img" src="https://drive.google.com/uc?export=download&id=14q-XohdteGj7rUiXCUmbyG6vFaZogKkJ" alt="Hamaca1">
-                                        <img class="secondary-img" src="https://drive.google.com/uc?export=download&id=1CroMB79ND0_irvIqa5ThpOsWb1aRxJJD" alt="Hamaca2">
+                                        <img class="primary-img" src="../../assets/images/product/Paño1.png" alt="Paño1">
+                                        <img class="secondary-img" src="../../assets/images/product/Paño2.png" alt="Paño2">
 
                                         </a>
                                         <span class="sticker">Nuevo</span>
@@ -482,7 +482,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="static-banner-image">
-                        <img class="static-banner-image" src="https://drive.google.com/uc?export=download&id=1Lxb2IZI08K080LGdgbAP9L1cR0ffnvLg" alt="Mesa 1">
+                        <img class="static-banner-image" src="../../assets/images/product/Mesap1.png" alt="Mesa 1">
                             <div class="static-banner-content">
                                 <p><span>-25% de descuento</span>This Week</p>
                                 <h2>Más vendido</h2>

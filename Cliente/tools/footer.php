@@ -48,10 +48,9 @@
                                         </div>
                                         <div class="footer-widgets">
                                             <ul>
-                                                <li><a href="#">Prices drop</a></li>
-                                                <li><a href="#">New products</a></li>
-                                                <li><a href="#">Best sales</a></li>
-                                                <li><a href="#">Contact us</a></li>
+                                                <li><a href="#">Nuevos Productos</a></li>
+                                                <li><a href="#">Mejores Ofertas</a></li>
+                                                <li><a href="../../Cliente/tools/contact.php">Contáctenos</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -63,8 +62,8 @@
                                             <div class="widgets-essential_stuff">
                                                 <ul>
                                                     <li class="hiraola-address"><i
-                                                    class="ion-ios-location"></i><span>Dirección:</span> Entrada Olé Caribe, Punta Cocles 70403 Puerto Viejo, Limón Province, Costa Rica</li>
-                                                    <li class="hiraola-phone"><i class="ion-ios-telephone"></i><span>Télefono
+                                                    class="ion-ios-location"></i><span>Dirección:</span> Entrada Olé Caribe, Punta Cocles 70403 Puerto Viejo, Limón, Costa Rica</li>
+                                                    <li class="hiraola-phone"><i class="ion-ios-telephone"></i><span>Teléfono
                                                     </span> <a href="https://wa.me/17076839025" target="_blank">+1 (707) 683-90-25</a>
                                                     </li>
                                                     <li class="hiraola-email"><i
@@ -76,14 +75,14 @@
                                     <div class="col-lg-4">
                                         <div class="instagram-container footer-widgets_area">
                                             <div class="footer-widgets_title">
-                                                <h6>Suscribete</h6>
+                                                <h6>Suscríbete</h6>
                                             </div>
                                             <div class="widget-short_desc">
-                                                <p>Registrate para recibir nuestras ofertas como nuevos productos, descuentos y mucho mas.</p>
+                                                <p>Regístrate para recibir nuestras ofertas como nuevos productos, descuentos y mucho más.</p>
                                             </div>
                                             <div class="newsletter-form_wrap">
                                                 <form class="subscribe-form" id="mc-form" action="#">
-                                                    <input class="newsletter-input" id="mc-email" type="email" autocomplete="off" name="Enter Your Email" value="Correo Electronico" onblur="if(this.value==''){this.value='Enter Your Email'}" onfocus="if(this.value=='Enter Your Email'){this.value=''}">
+                                                    <input class="newsletter-input" id="mc-email" type="email" autocomplete="off" name="Enter Your Email" value="Correo Electrónico" onblur="if(this.value==''){this.value='Enter Your Email'}" onfocus="if(this.value=='Enter Your Email'){this.value=''}">
                                                     <button class="newsletter-btn" id="mc-submit">
                                                         <i class="ion-android-mail"></i>
                                                     </button>

@@ -17,7 +17,7 @@
                                 <div class="header-shipping_area">
                                     <ul>
                                         <li>
-                                            <span>Telefono:</span>
+                                            <span>Teléfono:</span>
                                             <a href="callto://+123123321345">(+506) 8888 - 8888</a>
                                         </li>
                                     </ul>
@@ -31,7 +31,7 @@
                                         <li style="border-left: 1px solid #e5e5e5"><a href="my-account.php">Mi Cuenta<i class="fa fa-chevron-down"></i></a>
                                             <ul class="ht-dropdown ht-my_account">
                                                 <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasRight">Iniciar Sesion</a></li>
-                                                <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="offcanvasRight">Registro</a></li>
+                                                <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="offcanvasRight">Regístrate</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -44,7 +44,7 @@
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
-                    <h5 id="offcanvasRightLabel">Login</h5>
+                    <h5 id="offcanvasRightLabel">Iniciar Sesión</h5>
                     <button type="button" class="btn-close text-reset btn-regis-close hiraola-btn-bondi_blue" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
                 </div>
                 <div class="offcanvas-body">
@@ -52,28 +52,28 @@
                             <div class="login-form">
                                 <div class="row">
                                     <div class="col-md-12 col-12">
-                                        <label>Correo Electrónico <input type="email" placeholder="Email Address" id="emailLogin" required maxlength="200" autocomplete="email"> </label>
+                                        <label>Correo Electrónico <input type="email" placeholder="Correo Electrónico" id="emailLogin" required maxlength="200" autocomplete="email"> </label>
                                         
                                     </div>
                                     <div class="col-12 mb--20">
-                                        <label>Contraseña <input type="password" placeholder="Password" id="passwordLogin" required autocomplete="password"> </label>
+                                        <label>Contraseña <input type="password" placeholder="Contraseña" id="passwordLogin" required autocomplete="password"> </label>
                                         
                                     </div>
                                     <div class="col-md-12 col-12">
                                         <div class="check-box">
                                             <input type="checkbox" id="remember_me">
-                                            <label for="remember_me">Recuerdame</label>
+                                            <label for="remember_me">Recuérdame</label>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="col-md-12 col-12">
                                         <div class="forgotton-password_info">
-                                            <a href="#"> Olvido la contraseña?</a>
+                                            <a href="#"> ¿Olvidó la contraseña?</a>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="col-md-12">
-                                        <button type="submit" name="loginButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Login</button>
+                                        <button type="submit" name="loginButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Iniciar Sesión</button>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegister" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
-                    <h5 id="offcanvasRightLabel">Registro</h5>
+                    <h5 id="offcanvasRightLabel">Regístrate</h5>
                     <button type="button" class="btn-close text-reset btn-regis-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ion-android-close white-icon"></i></button>
                 </div>
                 <div class="offcanvas-body">
@@ -119,7 +119,7 @@
                                     <input type="hidden" id="codigo_act" name="codigo_act" />
                                     <br>
                                     <div class="col-12">
-                                        <button type="submit" id="registrarUsuarioButton" name="registerButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registro</button>
+                                        <button type="submit" id="registrarUsuarioButton" name="registerButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Registrarse</button>
                                     </div>                                    
                                 </div>                                
                             </div>
@@ -176,10 +176,10 @@
                                     <ul>
                                         <li class="dropdown-holder"><a href="index.php">Inicio</a>
                                         </li>
-                                        <li class="megamenu-holder"><a href="shop-left-sidebar.php">Catalogo</a>
+                                        <li class="megamenu-holder"><a href="shop-left-sidebar.php">Catálogo</a>
                                         </li>
                                         <li><a href="about-us.php">Nosotros</a></li>
-                                        <li><a href="contact.php">Contactenos</a></li>
+                                        <li><a href="contact.php">Contáctenos</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -267,7 +267,7 @@
                         </div>
                         <nav class="offcanvas-navigation">
                             <ul class="mobile-menu">
-                                <li class="menu-item-has-children active"><a href="#"><span class="mm-text">Home</span></a>
+                                <li class="menu-item-has-children active"><a href="#"><span class="mm-text">Inicio</span></a>
                                     <ul class="sub-menu">
                                         <li>
                                             <a href="index.php">

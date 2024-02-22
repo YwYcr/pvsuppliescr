@@ -75,7 +75,7 @@
                                 <input type="text" class="form-control" id="infoOrdenCreacion" name="infoOrdenCreacion" required>
                             </div>
                             <div class="mb-3">
-                                <label for="infoOrdenStatus" class="form-label">Status</label>
+                                <label for="infoOrdenStatus" class="form-label">Estado</label>
                                 <input type="text" class="form-control" id="infoOrdenStatus" name="infoOrdenStatus" required>
                             </div>
                             <div class="mb-3">
@@ -115,11 +115,11 @@
                                 <input type="text" class="form-control" id="createOrdenTotal" name="createOrdenTotal" required>
                             </div>
                             <div class="mb-3">
-                                <label for="createOrdenStatus" class="form-label">Status</label>
+                                <label for="createOrdenStatus" class="form-label">Estado</label>
                                 <input type="text" class="form-control" id="createOrdenStatus" name="createOrdenStatus" required>
                             </div>
                             <div class="mb-3">
-                                <label for="createOrdenAddress" class="form-label">Direccion</label>
+                                <label for="createOrdenAddress" class="form-label">Dirección</label>
                                 <input type="text" class="form-control" id="createOrdenAddress" name="createOrdenAddress" required>
                             </div>
                             <div class="mb-3">
@@ -166,11 +166,11 @@
                                 <input type="text" class="form-control" id="editOrdenCreacion" name="editOrdenCreacion" required>
                             </div>
                             <div class="mb-3">
-                                <label for="editOrdenStatus" class="form-label">Status</label>
+                                <label for="editOrdenStatus" class="form-label">Estado</label>
                                 <input type="text" class="form-control" id="editOrdenStatus" name="editOrdenStatus" required>
                             </div>
                             <div class="mb-3">
-                                <label for="editOrdenAddress" class="form-label">Direccion</label>
+                                <label for="editOrdenAddress" class="form-label">Dirección</label>
                                 <input type="text" class="form-control" id="editOrdenAddress" name="editOrdenAddress" required>
                             </div>
                             <div class="mb-3">
@@ -197,11 +197,11 @@
             <div class="block-header">
                 <div class="row clearfix">
                     <div class="col-md-6 col-sm-12">
-                        <h1>Control de Ordenes</h1>
+                        <h1>Control de Órdenes</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="\pvsuppliescr\Admin\light\index2.php"><img src="\pvsuppliescr\Admin\light\bedicon.svg" alt="Bed Icon" style="height: 1rem;"></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Ordenes</li>
+                                <li class="breadcrumb-item active" aria-current="page">Órdenes</li>
                             </ol>
                         </nav>
                     </div>
@@ -218,7 +218,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="header">
-                                <h2>Información de Ordenes
+                                <h2>Información de Órdenes
                                 </h2>
                                 <ul class="header-dropdown dropdown">
                                     <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>

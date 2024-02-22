@@ -48,13 +48,13 @@
 
     <!-- Begin Hiraola's Breadcrumb Area -->
     <div class="breadcrumb-area">
-        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1_3flLnN5iN1XnirK9sXlF48xu2TrD3Oz" alt="Sobre Noso">
+        <img class="breadcrumb-area" src="../../assets/images/banner/Catalogo2.png" alt="Catálogo">
         <div class="container">
             <div class="breadcrumb-content">
-                <h2>Catalogo</h2>
+                <h2>Catálogo</h2>
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li class="active">Catalogo</li>
+                    <li class="active">Catálogo</li>
                 </ul>
             </div>
         </div>
@@ -195,7 +195,7 @@
                     <div class="sidebar-banner_area">
                         <div class="banner-item img-hover_effect">
                             <a href="javascript:void(0)">
-                                <img src="https://drive.google.com/uc?export=download&id=1sHo9v45Ii-dkFNn0Ual7PBib-1abcC1S" alt="Hiraola's Shop Banner Image">
+                                <img src="../../assets/images/banner/Anuncio1.png" alt="Anuncio1">
                             </a>
                         </div>
                     </div>
