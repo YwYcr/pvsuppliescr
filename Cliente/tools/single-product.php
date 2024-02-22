@@ -49,7 +49,7 @@
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
-            <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1_3flLnN5iN1XnirK9sXlF48xu2TrD3Oz" alt="Single Product">
+            <img class="breadcrumb-area" src="../../assets/images/banner/Catalogo2.png" alt="Single Product">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Detalle de producto</h2>

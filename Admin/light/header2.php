@@ -44,13 +44,13 @@
                 <div class="tab-pane active" id="Home-icon">
                     <nav class="sidebar-nav sidebar-scroll">
                         <ul class="metismenu">
-                            <li class="active"><a href="\pvsuppliescr\Admin\light\index2.php"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
+                            <li class="active"><a href="\pvsuppliescr\Admin\light\index2.php"><i class="icon-speedometer"></i><span>Panel</span></a></li>
                             <li class="header"><span>Mantenimiento</span></li>
                             <li><a href="\pvsuppliescr\Admin\light\adminusuarios\usuarios2.php"><i class="icon-users"></i><span>Usuarios</span></a></li>
                             <li><a href="\pvsuppliescr\Admin\light\admincontactos\contactos2.php"><i class="icon-notebook"></i><span>Contactos</span></a></li>
                             <li><a href="\pvsuppliescr\Admin\light\adminproveedores\proveedores2.php"><i class="icon-briefcase"></i><span>Proveedores</span></a></li>
                             <li><a href="\pvsuppliescr\Admin\light\admininventario\inventario2.php"><i class="icon-tag"></i><span>Inventario</span></a></li>
-                            <li><a href="\pvsuppliescr\Admin\light\adminordenes\ordenes.php"><i class="icon-bag"></i><span>Ordenes</span></a></li>
+                            <li><a href="\pvsuppliescr\Admin\light\adminordenes\ordenes.php"><i class="icon-bag"></i><span>Órdenes</span></a></li>
                             <!-- <li><a href="page-timeline.html"><i class="icon-list"></i><span>Cupones</span></a></li> -->
 
                             <li class="header"><span>Administrador</span></li>

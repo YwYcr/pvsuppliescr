@@ -153,7 +153,7 @@
                                 <div class="tab-pane" id="proveedoresTab">
 
                                     <div class="header">
-                                        <h2>Reporte de Ordenes
+                                        <h2>Reporte de Órdenes
                                         </h2>
                                         <ul class="header-dropdown dropdown">
                                             <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>

@@ -50,11 +50,11 @@
             <div class="test">
                 <span class="popup_off"><i class="ion-android-close"></i></span>
                 <div class="subscribe_area">
-                    <h2>Suscribete</h2>
-                    <p>Registrate para recibir nuestras ofertas como nuevos productos, descuentos y mucho mas.</p>
+                    <h2>Suscríbete</h2>
+                    <p>Regístrate para recibir nuestras ofertas como nuevos productos, descuentos y mucho más.</p>
                     <div class="subscribe-form-group">
                         <form class="subscribe-form" action="#">
-                            <input autocomplete="on" type="text" name="txtEmail" id="txtEmail" placeholder="Correo Electronico">
+                            <input autocomplete="on" type="text" name="txtEmail" id="txtEmail" placeholder="Correo Electrónico">
                             <button id="btnCrearContacto" type="submit">Suscribirme</button>
                         </form>
                     </div>

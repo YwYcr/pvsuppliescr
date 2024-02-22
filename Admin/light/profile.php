@@ -414,12 +414,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" value="louis.info@yourdomain.com" placeholder="Correo Electronico">
+                                        <input type="email" class="form-control" value="louis.info@yourdomain.com" placeholder="Correo Electrónico">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Télefono">
+                                        <input type="text" class="form-control" placeholder="Teléfono">
                                     </div>
                                 </div>                                
                                 <div class="col-lg-12 col-md-12">

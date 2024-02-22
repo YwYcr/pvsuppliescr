@@ -41,11 +41,11 @@
         <div class="block-header">
             <div class="row clearfix">
                 <div class="col-md-6 col-sm-12">
-                    <h1>Dashboard</h1>
+                    <h1>Panel</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="\pvsuppliescr\Admin\light\index2.php"><img src="\pvsuppliescr\Admin\light\bedicon.svg" alt="Bed Icon" style="height: 1rem;"></a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                          <li class="breadcrumb-item active" aria-current="page">Panel</li>
                         </ol>
                     </nav>
                 </div>            
@@ -83,7 +83,7 @@
                                     $stmt->close();
                                     include 'adminTool/bd_disconn.php';
                                 ?>
-                                    <span><i class="fa fa-level-up text-success"></i> Total en Ordenes</span>
+                                    <span><i class="fa fa-level-up text-success"></i> Total en Órdenes</span>
                                 </div>
                             </div>
                         </div>
@@ -161,13 +161,13 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="card">
                         <div class="header">
-                            <h2>Productos por Categoria</h2>
+                            <h2>Productos por Categoría</h2>
                             <ul class="header-dropdown dropdown">
                                 <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
                             </ul>
                         </div>
                         <div class="body">
-                            <small class="text-muted">Gráfico de Productos por categoria</small>
+                            <small class="text-muted">Gráfico de Productos por categoría</small>
                             <div class="body text-center">
                                 <div id="Order_status" style="height: 268px"></div>
                             </div> 
@@ -178,7 +178,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="card">
                         <div class="header">
-                            <h2>Top Clientes con mas ordenes</h2>
+                            <h2>Top Clientes con más órdenes</h2>
                             <ul class="header-dropdown dropdown">
                                 <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
                             </ul>
@@ -292,7 +292,7 @@
                 <div class="col-12 col-sm-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Resumen de Ordenes</h2>
+                            <h2>Resumen de Órdenes</h2>
                             <ul class="header-dropdown dropdown">
                                 <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
                             </ul>

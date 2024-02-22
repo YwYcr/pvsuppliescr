@@ -52,7 +52,7 @@ include 'header.php';
 
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
-        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1IizondYptj-OUItgAi9MN6hbWEgY2DQf" alt="Favorito1">
+        <img class="breadcrumb-area" src="../../assets/images/banner/Favorito1.png" alt="Favorito1">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Lista de Favoritos</h2>

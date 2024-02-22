@@ -78,7 +78,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del usuario</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Información del usuario</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -107,16 +107,16 @@
                                     required>
                             </div>
                             <div class="mb-3">
-                                <label for="infoUserPassword" class="form-label">Password</label>
+                                <label for="infoUserPassword" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="infoUserPassword"
                                     name="infoUserPassword" autocomplete="on" required>
                             </div>
                             <div class="mb-3">
-                                <label for="infoUserPhone" class="form-label">Telefono</label>
+                                <label for="infoUserPhone" class="form-label">Teléfono</label>
                                 <input type="text" class="form-control" id="infoUserPhone" name="infoUserPhone">
                             </div>
                             <div class="mb-3">
-                                <label for="infoUserAddress" class="form-label">Direccion</label>
+                                <label for="infoUserAddress" class="form-label">Dirección</label>
                                 <input type="text" class="form-control" id="infoUserAddress" name="infoUserAddress" rows="3">
                             </div>
                             <div class="mb-3">
@@ -124,7 +124,7 @@
                                 <input type="text" class="form-control" id="infoUserCreation" name="infoUserCreation">
                             </div>
                             <div class="mb-3">
-                                <label for="infoUserSuscrito" class="form-label">Suscripcion</label>
+                                <label for="infoUserSuscrito" class="form-label">Suscripción</label>
                                 <input type="text" class="form-control" id="infoUserSuscrito" name="infoUserSuscrito">
                             </div>
                             <div class="mb-3">
@@ -179,16 +179,16 @@
                                     required>
                             </div>
                             <div class="mb-3">
-                                <label for="editUserPassword" class="form-label">Password</label>
+                                <label for="editUserPassword" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="editUserPassword"
                                     name="editUserPassword" autocomplete="on" required>
                             </div>
                             <div class="mb-3">
-                                <label for="editUserPhone" class="form-label">Telefono</label>
+                                <label for="editUserPhone" class="form-label">Teléfono</label>
                                 <input type="text" class="form-control" id="editUserPhone" name="editUserPhone">
                             </div>
                             <div class="mb-3">
-                                <label for="editUserAddress" class="form-label">Direccion</label>
+                                <label for="editUserAddress" class="form-label">Dirección</label>
                                 <input type="text" class="form-control" id="editUserAddress" name="editUserAddress" rows="3">
                             </div>
                             <div class="mb-3">
@@ -196,7 +196,7 @@
                                 <input type="text" class="form-control" id="editUserCreation" name="editUserCreation">
                             </div>
                             <div class="mb-3">
-                                <label for="editUserSuscrito" class="form-label">Suscripcion</label>
+                                <label for="editUserSuscrito" class="form-label">Suscripción</label>
                                 <input type="text" class="form-control" id="editUserSuscrito" name="editUserSuscrito">
                             </div>
                             <div class="mb-3">
@@ -248,20 +248,20 @@
                                     name="createUserSLASTNAME" required>
                             </div>
                             <div class="mb-3">
-                                <label for="createUserPassword" class="form-label">Password</label>
+                                <label for="createUserPassword" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="createUserPassword"
                                     name="createUserPassword" autocomplete="on" required>
                             </div>
                             <div class="mb-3">
-                                <label for="createUserPhone" class="form-label">Telefono</label>
+                                <label for="createUserPhone" class="form-label">Teléfono</label>
                                 <input type="text" class="form-control" id="createUserPhone" name="createUserPhone">
                             </div>
                             <div class="mb-3">
-                                <label for="createUserAddress" class="form-label">Direccion</label>
+                                <label for="createUserAddress" class="form-label">Dirección</label>
                                 <input type="text" class="form-control" id="createUserAddress" name="createUserAddress" rows="3">
                             </div>
                             <div class="mb-3">
-                                <label for="createUserSuscrito" class="form-label">Suscripcion</label>
+                                <label for="createUserSuscrito" class="form-label">Suscripción</label>
                                 <input type="text" class="form-control" id="createUserSuscrito" name="createUserSuscrito">
                             </div>
                             <div class="mb-3">
@@ -290,7 +290,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del proveedor</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Información del proveedor</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -310,7 +310,7 @@
                                     name="infoProveedorEmail" required>
                             </div>
                             <div class="mb-3">
-                                <label for="infoProveedorTelefono" class="form-label">Telefono</label>
+                                <label for="infoProveedorTelefono" class="form-label">Teléfono</label>
                                 <input type="text" class="form-control" id="infoProveedorTelefono"
                                     name="infoProveedorTelefono" required>
                             </div>
@@ -358,7 +358,7 @@
                                     name="createProveedorEmail" required>
                             </div>
                             <div class="mb-3">
-                                <label for="createProveedorTelefono" class="form-label">Telefono</label>
+                                <label for="createProveedorTelefono" class="form-label">Teléfono</label>
                                 <input type="text" class="form-control" id="createProveedorTelefono"
                                     name="createProveedorTelefono" required>
                             </div>
@@ -415,7 +415,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="editProveedorTelefono" class="form-label"> Telefono </label>
+                                <label for="editProveedorTelefono" class="form-label"> Teléfono </label>
                                 <input type="text" class="form-control" id="editProveedorTelefono"
                                     name="editProveedorTelefono" required>
                             </div>
@@ -450,7 +450,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del contacto</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Información del contacto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -566,7 +566,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del Producto</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Información del Producto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

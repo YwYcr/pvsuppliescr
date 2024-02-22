@@ -46,10 +46,10 @@ include 'header.php'
 ?>
         <!-- Begin Hiraola's Breadcrumb Area -->
         <div class="breadcrumb-area">
-        <img class="breadcrumb-area" src="https://drive.google.com/uc?export=download&id=1KyntguLpdaXZ_T2RhOG7ViUqtb9cJlMY" alt="Contacto">
+        <img class="breadcrumb-area" src="../../assets/images/banner/Contacto.png" alt="Contacto">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Contactanos</h2>
+                    <h2>Contáctenos</h2>
                     <ul>
                         <li><a href="index.php">Inicio</a></li>
                         <li class="active">Contacto</li>
@@ -64,17 +64,17 @@ include 'header.php'
                 <div class="row">
                     <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                         <div class="contact-page-side-content">
-                            <h3 class="contact-page-title">Contactanos</h3>
+                            <h3 class="contact-page-title">Contáctenos</h3>
                             <p class="contact-page-message">Ponte en contacto con nosotros para lo que sea que necesites, no importa si 
                                 eres un hotel 5 estrellas o estas buscando renovar la ropa de cama para tu familia. Este es el lugar indicado.
                             </p>
                             <div class="single-contact-block">
-                                <h4><i class="fa fa-fax"></i> Direccion</h4>
+                                <h4><i class="fa fa-fax"></i> Dirección</h4>
                                 <p>Nos localizamos en Alajuela - Costa Rica</p>
-                                <p>Hacemos envios a todo Costa Rica e internacional</p>
+                                <p>Hacemos envíos a todo Costa Rica e internacional</p>
                             </div>
                             <div class="single-contact-block">
-                                <h4><i class="fa fa-phone"></i> Telefono</h4>
+                                <h4><i class="fa fa-phone"></i> Teléfono</h4>
                                 <p>Linea oficial: +506 8888 8888</p>
                                 
                             </div>
@@ -86,7 +86,7 @@ include 'header.php'
                     </div>
                     <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                         <div class="contact-form-content">
-                            <h3 class="contact-page-title">Cuentanos que necesitas</h3>
+                            <h3 class="contact-page-title">Cuéntanos que necesitas</h3>
                             <div class="contact-form">
                                 <form id="contact-form" action="https://whizthemes.com/mail-php/mamunur/hiraola/hiraola.php">
                                     <div class="form-group">
@@ -94,7 +94,7 @@ include 'header.php'
                                         <input  id="txtNombre" type="text" name="txtNombre" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Correo Electronico<span class="required">*</span></label>
+                                        <label>Correo Electrónico<span class="required">*</span></label>
                                         <input  id="txtEmail" type="email" name="txtEmail" required>
                                     </div>
                                     <div class="form-group">
