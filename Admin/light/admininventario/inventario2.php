@@ -17,9 +17,8 @@
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../assets/vendor/sweetalert/sweetalert.css" />
-
-
+    <!-- <link rel="stylesheet" href="../../assets/vendor/sweetalert/sweetalert.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.css"> -->
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="../assets/css/site.min.css">
@@ -530,10 +529,10 @@
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
-    <script src="\pvsuppliescr\Admin\assets\vendor\sweetalert\sweetalert.min.js"></script><!-- SweetAlert Plugin Js -->
+    <!-- <script src="../../assets/vendor/sweetalert/sweetalert.min.js"></script>  SweetAlert Plugin Js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/pages/tables/jquery-datatable.js"></script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

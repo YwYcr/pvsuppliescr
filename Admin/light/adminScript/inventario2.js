@@ -501,6 +501,7 @@ $(document).ready(function () {
         });
     });
 });
+
 // <!-- Script para actualizar categorias  -->
 $(document).ready(function () {
     $(document).on("click", ".btn-actualizarCategoria", function () {
@@ -541,46 +542,61 @@ $(document).ready(function () {
         });
     });
 });
+
 // <!-- Script para borrar categoria -->
 $(document).ready(function () {
     $(document).on("click", ".btn-borrarCategoria", function () {
         var categoryID = $(this).data("bs-id");
 
-        $.ajax({
-            type: "POST",
-            url: "borrarCategoria.php",
-            data: { categoryID: categoryID },
-            success: function (response) {
-                swal({
-                    title: "Seguro que quieres eliminarlo?",
-                    text: "Una vez eliminado no podras volver a recuperar esta categoría!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#dc3545",
-                    confirmButtonText: "Si, Eliminalo!",
-                    closeOnConfirm: false
-                }, function () {
-                    swal("Eliminado!", "Categoría eliminado con éxito", "success");
-                    $.ajax({
-                        url: 'cargarContCategoria.php', // Reemplaza 'cargarCategorias.php' con el nombre de tu archivo PHP para cargar categorías
-                        type: 'GET',
-                        success: function (data) {
-                            $('#categoryTab .body').html(data);
-                        },
-                        error: function (xhr, status, error) {
-                            console.error(error);
+        swal({
+            title: "Seguro que quieres eliminarlo?",
+            text: "Una vez eliminado no podrás volver a recuperar esta categoría!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                // Usuario hizo clic en "Sí"
+                $.ajax({
+                    type: "POST",
+                    url: "borrarCategoria.php",
+                    data: { categoryID: categoryID },
+                    dataType: 'json', // Asegura que el resultado se interprete como JSON
+                    success: function (response) {
+                        if (response.success) {
+                            swal("Eliminado!", "Categoría eliminada con éxito", "success");
+                            // Lógica después de recargar la lista
+                            $.ajax({
+                                url: 'cargarContCategoria.php',
+                                type: 'GET',
+                                success: function (data) {
+                                    $('#categoryTab .body').html(data);
+                                    console.log("Categoría eliminada: " + categoryID);
+                                },
+                                error: function (xhr, status, error) {
+                                    console.error(error);
+                                }
+                            });
+                        } else {
+                            // Mostrar error en SweetAlert
+                            swal("Error", "Error al eliminar la categoría: " + response.error, "error");
                         }
-                    });
-                    console.log("Categoria eliminado: " + productID);
+                    },
+                    error: function (xhr, status, error) {
+                        // Mostrar error en SweetAlert
+                        swal("Error", "Error al eliminar la categoría", "error");
+                        console.error(error);
+                    }
                 });
-                
-            },
-            error: function (xhr, status, error) {
-                console.error(error);
+            } else {
+                // Usuario hizo clic en "Cancelar" o fuera del cuadro de diálogo
+                swal("Eliminar cancelado");
             }
         });
     });
 });
+
+
 
 
 
