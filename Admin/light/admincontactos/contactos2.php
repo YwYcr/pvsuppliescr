@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../assets/vendor/sweetalert/sweetalert.css" />
+    <!-- <link rel="stylesheet" href="../../assets/vendor/sweetalert/sweetalert.css" /> -->
 
 
 
@@ -57,7 +57,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Informacion del contacto</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Informacion de Contactos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -72,6 +72,14 @@
                             <div class="mb-3">
                                 <label for="infoContactoEmail" class="form-label">Email</label>
                                 <input type="text" class="form-control" id="infoContactoEmail" name="infoContactoEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoContactoAsunto" class="form-label">Asunto</label>
+                                <input type="text" class="form-control" id="infoContactoAsunto" name="infoContactoAsunto" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoContactoMensaje" class="form-label">Mensaje</label>
+                                <textarea type="text" class="form-control" id="infoContactoMensaje" name="infoContactoMensaje" rows="5" required></textarea>
                             </div>
                         </form>
 
@@ -174,7 +182,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="header">
-                                <h2>Información de contactos
+                                <h2>Información de Contactos
                                 </h2>
                                 <ul class="header-dropdown dropdown">
                                     <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
@@ -185,7 +193,7 @@
                                     <?php
                                         include '../adminTool/bd_conn.php';
 
-                                        $consulta = "SELECT * FROM CONTACT";
+                                        $consulta = "SELECT * FROM CONTACT ORDER BY IDCONTACT DESC";
                                         $result = $con->query($consulta);
 
 
@@ -198,20 +206,29 @@
                                                 echo "<tr>";
                                                 echo "<td>" . $row['IDCONTACT'] . "</td>";
                                                 $contactID = $row['IDCONTACT'];
-                                                echo "<td>" . $row['NAME'] . "</td>";
+                                                echo "<td>" . $row['NAME'] . " " . $row['FLASTNAME'] . " " . $row['SLASTNAME'] . "</td>";
                                                 echo "<td>" . $row['EMAIL'] . "</td>";
                                                 echo "<td>" . $row['SUBJECT'] . "</td>";
-                                                echo "<td>" . $row['MESSAGE'] . "</td>";
+
+                                                $message = $row['MESSAGE'];
+                                                if (strlen($message) > 50) {
+                                                    $truncatedMessage = substr($message, 0, 50) . '...';
+                                                    echo "<td>" . $truncatedMessage . "</td>";
+                                                } else {
+                                                    echo "<td>" . $message . "</td>";
+                                                }
 
                                                 echo "<td>
 
                                                 <button type='button' class='btn btn-info btn-infoContacto mb-2' data-bs-toggle='modal' data-bs-target='#infoContacto' data-bs-id='$contactID'> 
                                                 <i class='fa fa-info-circle'></i>
                                                 <span>Ver</span></button>
+
                                                 
                                                 <button type='button' class='btn btn-editar btn-editarContacto btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$contactID' data-bs-target='#editContacto' >
                                                 <i class='fa fa-pencil'></i>
                                                 <span>Editar</span></button>
+                                                
                                             
                                                 <button type='button' class='btn btn-borrar btn-borrarContacto btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$contactID'>
                                                 <i class='fa fa-trash-o'></i> 
@@ -264,7 +281,8 @@
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
-    <script src="\pvsuppliescr\Admin\assets\vendor\sweetalert\sweetalert.min.js"></script><!-- SweetAlert Plugin Js -->
+    <!-- <script src="\pvsuppliescr\Admin\assets\vendor\sweetalert\sweetalert.min.js"></script>SweetAlert Plugin Js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/pages/tables/jquery-datatable.js"></script>
 

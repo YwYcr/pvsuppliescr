@@ -1,12 +1,16 @@
 <?php
 include '../adminTool/bd_conn.php';
 
-// if (isset($_GET['userId'])) {
+if (isset($_GET['userID'])) {
     $userID = $_GET['userID'];
 
-    $sql = "SELECT * FROM USERS WHERE IDUSER = $userID";
-    // $sql = "SELECT * FROM USERS WHERE IDUSER = $userId";
-    $result = $con->query($sql);
+    // Utiliza un procedimiento almacenado para obtener la información del usuario por ID
+    $stmt = $con->prepare("CALL GetUserByID(?)");
+    $stmt->bind_param("i", $userID);
+    $stmt->execute();
+
+    // Obtiene el resultado del procedimiento almacenado
+    $result = $stmt->get_result();
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
@@ -14,10 +18,12 @@ include '../adminTool/bd_conn.php';
     } else {
         echo json_encode(array('error' => 'Usuario no encontrado'));
     }
-// } else {
-//     // No se proporcionó un ID de usuario válido
-//     echo json_encode(array('error' => 'ID de usuario no válido'));
-// }
+
+    // Cierra la conexión y la sentencia preparada
+    $stmt->close();
+} else {
+    echo json_encode(array('error' => 'ID de usuario no proporcionado'));
+}
 
 include '../adminTool/bd_disconn.php';
 ?>

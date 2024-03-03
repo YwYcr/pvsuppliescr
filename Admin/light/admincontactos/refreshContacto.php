@@ -13,21 +13,28 @@
                                 echo "<tr>";
                                 echo "<td>" . $row['IDCONTACT'] . "</td>";
                                 $contactID = $row['IDCONTACT'];
-                                echo "<td>" . $row['NAME'] . "</td>";
+                                echo "<td>" . $row['NAME'] . " " . $row['FLASTNAME'] . " " . $row['SLASTNAME'] . "</td>";
                                 echo "<td>" . $row['EMAIL'] . "</td>";
                                 echo "<td>" . $row['SUBJECT'] . "</td>";
-                                echo "<td>" . $row['MESSAGE'] . "</td>";
+
+                                $message = $row['MESSAGE'];
+                                if (strlen($message) > 50) {
+                                    $truncatedMessage = substr($message, 0, 50) . '...';
+                                    echo "<td>" . $truncatedMessage . "</td>";
+                                } else {
+                                    echo "<td>" . $message . "</td>";
+                                }
 
                                 echo "<td>
 
                                     <button type='button' class='btn btn-info btn-infoContacto mb-2' data-bs-toggle='modal' data-bs-target='#infoContacto' data-bs-id='$contactID'> 
                                     <i class='fa fa-info-circle'></i>
                                     <span>Ver</span></button>
-                                    
+                                  
                                     <button type='button' class='btn btn-editar btn-editarContacto btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$contactID' data-bs-target='#editContacto' >
                                     <i class='fa fa-pencil'></i>
                                     <span>Editar</span></button>
-                                  
+
                                     <button type='button' class='btn btn-borrar btn-borrarContacto btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$contactID'>
                                     <i class='fa fa-trash-o'></i> 
                                     <span>Eliminar</span></button>
