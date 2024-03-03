@@ -5,6 +5,7 @@ $proveedorID = $_GET['proveedorID'];
 
 // Llama al procedimiento almacenado para obtener el proveedor por ID
 $stmt = $con->prepare("CALL GetSupplierByID(?)");
+
 $stmt->bind_param("i", $proveedorID);
 $stmt->execute();
 $result = $stmt->get_result();

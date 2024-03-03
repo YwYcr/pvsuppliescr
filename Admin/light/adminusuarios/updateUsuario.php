@@ -3,40 +3,44 @@
 include '../adminTool/bd_conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtén los datos del formulario
-    $userID = $_POST['userID'];
-    $email = $_POST['email'];
-    $nombre = $_POST['nombre'];
-    $primerApellido = $_POST['primerApellido'];
-    $segundoApellido = $_POST['segundoApellido'];
-    $password = $_POST['password'];
-    $phone = $_POST['phone'];
-    $address = $_POST['address'];
-    $suscription = $_POST['suscription'];
-    $rol = $_POST['rol'];
+    try {
+        // Obtén los datos del formulario
+        $userID = mysqli_real_escape_string($con, $_POST['userID']);
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $nombre = mysqli_real_escape_string($con, $_POST['nombre']);
+        $primerApellido = mysqli_real_escape_string($con, $_POST['primerApellido']);
+        $segundoApellido = mysqli_real_escape_string($con, $_POST['segundoApellido']);
+        $phone = mysqli_real_escape_string($con, $_POST['phone']);
+        $address = mysqli_real_escape_string($con, $_POST['address']);
+        $province = mysqli_real_escape_string($con, $_POST['province']);
+        $canton = mysqli_real_escape_string($con, $_POST['canton']);
+        $district = mysqli_real_escape_string($con, $_POST['district']);
+        $suscription = mysqli_real_escape_string($con, $_POST['suscription']);
+        $rol = mysqli_real_escape_string($con, $_POST['rol']);
 
-    // Realiza la inserción en la base de datos (asegúrate de escapar y validar los datos)
-    $sql = "UPDATE USERS 
-    SET EMAIL = '$email', 
-    NAME = '$nombre', 
-    FLASTNAME = '$primerApellido', 
-    SLASTNAME = '$segundoApellido', 
-    PASSWORD = '$password',
-    PHONE = '$phone',
-    ADDRESS = '$address',
-    SUSCRIPTION = '$suscription',
-    IDROL = '$rol'
-    WHERE IDUSER = '$userID'";
+        $stmt = $con->prepare("CALL UpdateUserAdminByID(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, @p_success)");
 
-    if ($con->query($sql) === TRUE) {
-        echo "Usuario creado exitosamente.";
-    } else {
-        echo "Error al crear el usuario: " . $con->error;
+        $stmt->bind_param("sssssssssssi", $userID ,$email, $nombre, $primerApellido, $segundoApellido, $phone, $address, $province, $canton, $district, $suscription, $rol);
+        $stmt->execute();
+
+        // Obtiene el valor de la variable de usuario desde la sesión
+        $result = $con->query("SELECT @p_success AS p_success");
+        $row = $result->fetch_assoc();
+        $p_success = $row['p_success'];
+
+        if ($p_success == 1) {
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false, 'error' => 'El correo Electronico ya se encuentra asociado a un usuario.']);
+        }
+    } catch (mysqli_sql_exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    } finally {
+        // Cierre de la conexión
+        $stmt->close();
+        include '../adminTool/bd_disconn.php';
     }
-
-    // Cierra la conexión a la base de datos
-    include '../adminTool/bd_disconn.php';
 } else {
-    echo "Acceso no autorizado.";
+    echo json_encode(['success' => false, 'error' => "Acceso no autorizado"]);
 }
 ?>

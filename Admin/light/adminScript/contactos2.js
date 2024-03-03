@@ -13,8 +13,10 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
 
-                $("#infoContactoName").val(response.NAME);
+                $("#infoContactoName").val((response.NAME ?? '') + ' ' + (response.FLASTNAME ?? '') + ' ' + (response.SLASTNAME ?? ''));
                 $("#infoContactoEmail").val(response.EMAIL);
+                $("#infoContactoAsunto").val(response.SUBJECT);
+                $("#infoContactoMensaje").val(response.MESSAGE);
 
                 // $("#info").modal("show");
 
@@ -141,46 +143,50 @@ $(document).ready(function () {
 });
 
 
-
-
-
-
-
-
 // <!-- Script para borrar contactos -->
-
 $(document).ready(function () {
     $(document).on("click", ".btn-borrarContacto", function () {
         var contactID = $(this).data("bs-id");
 
-        $.ajax({
-            type: "POST",
-            url: "borrarContacto.php",
-            data: { contactID: contactID },
-            success: function (response) {
-
-                swal({
-                    title: "Seguro que quieres eliminarlo?",
-                    text: "Una vez eliminado no podras volver a recuperar este contacto!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#dc3545",
-                    confirmButtonText: "Si, Eliminalo!",
-                    closeOnConfirm: false
-                }, function () {
-                    swal("Eliminado!", "Contacto eliminado con éxito", "success");
-                    // alert('Contacto eliminado con éxito');
-                    fetch('refreshContacto.php')
-                        .then(response => response.text())
-                        .then(data => {
-                            document.getElementById('contactTableBody').innerHTML = data;
-                        });
-                    console.log("contacto eliminado: " + contactID);
+        swal({
+            title: "Seguro que quieres eliminarlo?",
+            text: "Una vez eliminado no podrás volver a recuperar este contacto!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                // Usuario hizo clic en "Sí"
+                $.ajax({
+                    type: "POST",
+                    url: "borrarContacto.php",
+                    data: { contactID: contactID },
+                    dataType: 'json', // Asegura que el resultado se interprete como JSON
+                    success: function (response) {
+                        if (response.success) {
+                            swal("Eliminado!", "Contacto eliminado con éxito", "success");
+                            // Lógica después de recargar la lista
+                            fetch('refreshContacto.php')
+                                .then(response => response.text())
+                                .then(data => {
+                                    document.getElementById('contactTableBody').innerHTML = data;
+                                    console.log("Contacto eliminado: " + contactID);
+                                })
+                                .catch(error => console.error(error));
+                        } else {
+                            // Mostrar error en SweetAlert
+                            swal("Error", "Error al eliminar el contacto: " + response.error, "error");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Mostrar error en SweetAlert
+                        swal("Error", "Error al eliminar el contacto: " + error, "error");
+                        console.error(error);
+                    }
                 });
-
-            },
-            error: function (xhr, status, error) {
-                console.error(error);
+            } else {
+                // Usuario hizo clic en "Cancelar" o fuera del cuadro de diálogo
+                swal("Eliminar cancelado");
             }
         });
     });
