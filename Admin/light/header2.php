@@ -18,7 +18,7 @@
         <div class="navbar-right">
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="\pvsuppliescr\Cliente\tools\index.php" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                    <li><a href="\..\pvsuppliescr\Cliente\tools\cerrarSesion.php" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -55,7 +55,7 @@
 
                             <li class="header"><span>Administrador</span></li>
                             <li><a href="\pvsuppliescr\Admin\light\adminreportes\reportes.php"><i class="icon-graph"></i><span>Reportes</span></a></li>
-                            <li><a href="#"><i class="icon-user"></i><span>Mi Perfil</span></a></li>
+                            <li><a href="\pvsuppliescr\Admin\light\profile.php"><i class="icon-user"></i><span>Mi Perfil</span></a></li>
                         </ul>
                     </nav>
                 </div>

@@ -4,7 +4,7 @@ function redirectUser($rol) {
         $response = array("redirect" => "../../Admin/light/index2.php");
         // header("Location: ../../Admin/light/index2.php");
     } else {
-        $response = array("redirect" => "index.php");
+        $response = array("redirect" => "my-account.php");
         // header("Location: index.php");
         exit;
     }

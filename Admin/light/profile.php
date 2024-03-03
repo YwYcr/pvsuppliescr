@@ -1,4 +1,38 @@
-        <div class="block-header">
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>PVSupplies | Administrador</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="\pvsuppliescr\Admin\light\favicon.ico" type="image/x-icon">
+<!-- VENDOR CSS -->
+<link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../assets/vendor/animate-css/vivify.min.css">
+
+<link rel="stylesheet" href="../assets/vendor/c3/c3.min.css"/>
+<link rel="stylesheet" href="../assets/vendor/chartist/css/chartist.min.css">
+<link rel="stylesheet" href="../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="assets/css/site.min.css">
+
+</head>
+<body class="theme-blue">     
+     <!-- Page Loader -->
+     <?php
+    include 'pageLoader.php';
+    ?>
+    <div class="overlay"></div>
+
+    <?php
+    session_start();
+        include 'header2.php';
+    ?>
+       
+       <div class="block-header">
             <div class="row clearfix">
                 <div class="col-md-6 col-sm-12">
                     <h2>Perfil del Administrador</h2>
@@ -15,7 +49,7 @@
 
         <div class="container-fluid">
             <div class="row clearfix">              
-                <div class="col-xl-3 col-lg-4 col-md-5">
+                <div class="col-xl-8 col-lg-5 col-md-5" style="margin-left: auto; margin-right: auto;">
                     <div class="card">
                         <div class="header">
                             <h2>Información</h2>
@@ -23,34 +57,39 @@
                                 <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another Action</a></li>
-                                        <li><a href="javascript:void(0);">Something else</a></li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
                         <div class="body">
+                            <small class="text-muted">Nombre: </small>
+                            <p> <?php echo $_SESSION['nombre']; ?></p>
+                            <hr>
+                            <small class="text-muted">Apellido: </small>
+                            <p> <?php echo $_SESSION['primerApellido']; ?></p>
+                            <hr>
                             <small class="text-muted">Correo: </small>
-                            <p>louispierce@example.com</p>                            
+                            <p> <?php echo $_SESSION['emailID']; ?></p>                            
                             <hr>
                             <small class="text-muted">Teléfono: </small>
-                            <p>+ 202-222-2121</p>
+                            <p> <?php echo $_SESSION['telefono']; ?></p>
                             <hr>
-                            <small class="text-muted">Año de nacimiento: </small>
-                            <p class="m-b-0">October 17th, 93</p>
+                            <small class="text-muted">Cuenta creada: </small>
+                            <p> <?php echo $_SESSION['cuentaCreada']; ?> </p>
                             <hr>
+                            <small class="text-muted">Direccion: </small>
+                            <p> <?php echo $_SESSION['Direccion']; ?> </p>
+                            <hr>
+                            
                             <small class="text-muted">Redes Sociales: </small>
-                            <p><i class="fa fa-twitter m-r-5"></i> twitter.com/example</p>
-                            <p><i class="fa fa-facebook  m-r-5"></i> facebook.com/example</p>
-                            <p><i class="fa fa-github m-r-5"></i> github.com/example</p>
-                            <p><i class="fa fa-instagram m-r-5"></i> instagram.com/example</p>
+                            <p><i class="fa fa-twitter m-r-5"></i> twitter.com/pvsuppliescr</p>
+                            <p><i class="fa fa-facebook  m-r-5"></i> facebook.com/pvsuppliescr</p>
+                            <p><i class="fa fa-github m-r-5"></i> github.com/pvsuppliescr</p>
+                            <p><i class="fa fa-instagram m-r-5"></i> instagram.com/pvsuppliescr</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-9 col-lg-8 col-md-7">
+                <!-- <div class="col-xl-9 col-lg-8 col-md-7">
                     <div class="card">
                         <div class="header">
                             <h2>Información Básica</h2>
@@ -440,7 +479,27 @@
                             <button type="button" class="btn btn-round btn-default">Cancelar</button>
                         </div>
                     </div>                  
-                </div>
+                </div> -->
             </div>
-        </div>
+        </div> 
 
+
+<!-- Javascript -->
+<!-- Latest jQuery -->
+<script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+
+<!-- Bootstrap 4x JS  -->
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/bundles/vendorscripts.bundle.js"></script>
+
+<script src="assets/bundles/c3.bundle.js"></script>
+<script src="assets/bundles/flotscripts.bundle.js"></script><!-- flot charts Plugin Js --> 
+<script src="assets/bundles/knob.bundle.js"></script>
+
+<!-- Project Common JS -->
+<script src="assets/js/common.js"></script>
+<script src="assets/js/index.js"></script>
+
+    </body>
+    </html>

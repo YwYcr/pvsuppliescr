@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+include 'bd_conn.php';
+include 'redirect.php';
+
+?>
 
 <script src= "../../Cliente/formLogin.js"></script>
 <script src= "../../Cliente/FormRegistro.js"></script>
@@ -28,12 +35,39 @@
                             <div class="ht-right_area">
                                 <div class="ht-menu">
                                     <ul>
-                                        <li style="border-left: 1px solid #e5e5e5"><a href="my-account.php">Mi Cuenta<i class="fa fa-chevron-down"></i></a>
+                                    
+                                    
+<?php
+if(isset($_SESSION['rol'])) {
+     // Si el usuario ha iniciado sesión, mostrar opciones de sesión iniciada
+    echo ' 
+    <li style="border-left: 1px solid #e5e5e5"><a href="my-account.php">Mi Cuenta<i class="fa fa-chevron-down"></i></a>
+        <ul class="ht-dropdown ht-my_account">
+            <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>
+        </ul>
+    </li>';
+} else {
+     // Si el usuario no ha iniciado sesión, mostrar opciones de inicio de sesión y registro -->
+    echo '
+    <li style="border-left: 1px solid #e5e5e5"><a href="#">Mi Cuenta<i class="fa fa-chevron-down"></i></a>
+        <ul class="ht-dropdown ht-my_account">
+            <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasRight">Iniciar Sesión</a></li>
+            <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="offcanvasRight">Registrarse</a></li>
+        </ul>
+    </li>';
+}
+?>
+
+
+
+
+
+                                        <!-- <li style="border-left: 1px solid #e5e5e5"><a href="my-account.php">Mi Cuenta<i class="fa fa-chevron-down"></i></a>
                                             <ul class="ht-dropdown ht-my_account">
                                                 <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasRight">Iniciar Sesion</a></li>
                                                 <li><a href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="offcanvasRight">Regístrate</a></li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>

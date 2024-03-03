@@ -14,7 +14,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
     $password = $_POST["password"];
     // Realizar la consulta SQL para obtener la contraseña hash del usuario
     // Aquí deberías utilizar consultas preparadas para protegerte contra la inyección SQL
-    $sql = "SELECT IDUSER, PASSWORD, IDROL FROM USERS WHERE email = ?";
+    $sql = "SELECT IDUSER, PASSWORD, IDROL, NAME, EMAIL, FLASTNAME, PHONE, ADDRESS, CREATEDATE FROM USERS WHERE email = ?";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -28,6 +28,14 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
         if(password_verify($password, $hashedPassword)) {
             // Contraseña válida
             $_SESSION['rol'] = $row['IDROL'];
+            $_SESSION['userID'] = $row['IDUSER'];
+            $_SESSION['emailID'] = $row['EMAIL'];
+            $_SESSION['nombre'] = $row['NAME'];
+            $_SESSION['primerApellido'] = $row['FLASTNAME'];
+            $_SESSION['telefono'] = $row['PHONE'];
+            $_SESSION['Direccion'] = $row['ADDRESS'];
+            $_SESSION['cuentaCreada'] = $row['CREATEDATE'];
+
             // Redirigir según el rol
              $response = array();
             if($_SESSION['rol'] == 1) {
@@ -38,7 +46,8 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
                 // header("Location: ../../Admin/light/index2.php");
                 // exit;
             } else {
-                $response['redirect'] = "index.php";
+                $response = array("redirect" => "my-account.php");
+                // $response['redirect'] = "index.php";
                 // header("Location: index.php");
                 // exit;
             }

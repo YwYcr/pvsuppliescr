@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.redirect){
                 window.location.href = response.redirect;
             }else{
+                
                 console.error("Error: No se recibió una URL de redirección válida");
             }
             

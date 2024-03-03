@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -21,6 +24,9 @@
 <link rel="stylesheet" href="assets/css/site.min.css">
 
 </head>
+
+
+
 <body class="theme-blue">
 
 <!-- Page Loader -->
@@ -34,8 +40,17 @@
 <div id="wrapper">
 
     <?php
+    session_start();
+    if (!isset($_SESSION['userID']) || !isset($_SESSION['rol']) || $_SESSION['rol'] != 1) {
+        // Si el usuario no tiene sesión activa o su rol no es el requerido, redirigir al usuario a la página de inicio
+        header("Location: ../../Cliente/tools/index.php");
+        exit;
+    }
+       
         include 'header2.php';
     ?>
+
+    
 
     <div id="main-content">
         <div class="block-header">
