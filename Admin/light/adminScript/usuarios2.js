@@ -10,6 +10,8 @@ $('#createUser').on('shown.bs.modal', function (e) {
 
         // Desactiva los estilos de validación
         $('#createUser').find('.was-validated').removeClass('was-validated');
+        $('#createUser').find('.is-valid').removeClass('is-valid');
+        $('#createUser').find('.is-invalid').removeClass('is-invalid');
 
     });
 });
@@ -20,6 +22,8 @@ $('#editUser').on('shown.bs.modal', function (e) {
         $('#editUserForm')[0].reset();
         // Desactiva los estilos de validación
         $('#editUser').find('.was-validated').removeClass('was-validated');
+        $('#editUser').find('.is-valid').removeClass('is-valid');
+        $('#editUser').find('.is-invalid').removeClass('is-invalid');
     });
 });
 
@@ -30,6 +34,8 @@ $('#editPass').on('shown.bs.modal', function (e) {
 
         // Desactiva los estilos de validación
         $('#editPass').find('.was-validated').removeClass('was-validated');
+        $('#editPass').find('.is-valid').removeClass('is-valid');
+        $('#editPass').find('.is-invalid').removeClass('is-invalid');
 
     });
 });
@@ -191,7 +197,7 @@ $(document).ready(function () {
             },
             error: function (xhr, status, error) {
                 // Mostrar error en SweetAlert
-                swal("Error", "Error al crear el Usuario", "error");
+                swal("Error", "Error al crear el Usuario: " + error, "error");
                 console.error(error);
             }
         });

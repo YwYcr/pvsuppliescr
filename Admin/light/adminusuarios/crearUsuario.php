@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt = $con->prepare("CALL InsertUserAdmin(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, @p_success)");
 
-        $stmt->bind_param("ssssssssssi", $email, $nombre, $primerApellido, $segundoApellido, $hashedPassword, $phone, $address, $province, $canton, $district, $suscription, $rol);
+        $stmt->bind_param("sssssssssssi", $email, $nombre, $primerApellido, $segundoApellido, $hashedPassword, $phone, $address, $province, $canton, $district, $suscription, $rol);
         $stmt->execute();
 
         // Obtiene el valor de la variable de usuario desde la sesión

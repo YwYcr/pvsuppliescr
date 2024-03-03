@@ -186,7 +186,7 @@
 					</div>
 					<div class="mb-3">
 						<label for="editUserEmail" class="form-label">Email</label>
-						<input type="email" class="form-control" id="editUserEmail" name="editUserEmail" placeholder="name@example.com" required pattern="[a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+						<input type="email" class="form-control" id="editUserEmail" name="editUserEmail" placeholder="name@example.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
 						<div class="invalid-feedback">Por favor, introduce un correo electrónico válido.</div>
 						<div class="valid-feedback">Válido</div>
 					</div>
