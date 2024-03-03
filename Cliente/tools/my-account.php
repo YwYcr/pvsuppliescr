@@ -1,4 +1,4 @@
-<?php include 'bd_conn.php'; ?>
+
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -48,7 +48,19 @@
         <!-- Begin Hiraola's Header Main Area -->
         <?php
         include 'header.php'
-            ?>
+        ?>
+        <?php
+        if (isset($_SESSION['userID'])) {
+            // La sesión está activa, puedes continuar con el código aquí
+        } else {
+            // La sesión no está activa, redirigir al usuario a la página de inicio
+            // echo "Inicia sesion para ver esta pagina";
+            echo '<div style="text-align: center; margin-top: 20px;"><a href="index.php">Inicia sesión</a> para ver esta página</div>';
+            exit;
+        }
+        ?>
+        
+
         <!-- Hiraola's Header Main Area End Here -->
 
         <!-- Begin Hiraola's Breadcrumb Area -->
@@ -66,6 +78,8 @@
         </div>
         <!-- Hiraola's Breadcrumb Area End Here -->
         <!-- Begin Hiraola's Page Content Area -->
+
+
         <main class="page-content">
             <!-- Begin Hiraola's Account Page Area -->
             <div class="account-page-area">
@@ -76,7 +90,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
                                         href="#account-dashboard" role="tab" aria-controls="account-dashboard"
-                                        aria-selected="true">Panel</a>
+                                        aria-selected="true">Mi Perfil</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab"
@@ -94,7 +108,7 @@
                                         aria-selected="false">Detalles de la cuenta</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-logout-tab" href="index.php" role="tab"
+                                    <a class="nav-link" id="account-logout-tab" href="cerrarSesion.php" role="tab"
                                         aria-selected="false">Cerrar sesion</a>
                                 </li>
                             </ul>
@@ -103,14 +117,15 @@
                             <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                                 <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
                                     aria-labelledby="account-dashboard-tab">
-                                    <div class="myaccount-dashboard">
-                                        <p>Hola <b>$nombre</b> (No es $nombre? <a href="index.php">Cerrar Sesion</a>)
+                                    <div class="myaccount-dashboard">                           
+                                        <p>Hola <b> <?php echo $_SESSION['nombre'] . ' ' . $_SESSION['primerApellido'] ; ?>
+                                            </b> (No es <?php echo $_SESSION['nombre']; ?>? <a href="cerrarSesion.php">Cerrar Sesion</a>)
                                         </p>
                                         <p>Desde el panel de su cuenta puede ver sus pedidos recientes, administrar su
                                             envío y
-                                            direcciones de facturación y <a href="javascript:void(0)">editar su
+                                            direcciones de facturación y editar su
                                                 contraseña y los
-                                                detalles de su cuenta.</a>.</p>
+                                                detalles de su cuenta.</p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="account-orders" role="tabpanel"
@@ -118,37 +133,57 @@
                                     <div class="myaccount-orders">
                                         <h4 class="small-title">MIS ORDENES</h4>
                                         <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                    <tr>
-                                                        <th>ÓRDENES</th>
-                                                        <th>FECHAS</th>
-                                                        <th>ESTADOS</th>
-                                                        <th>TOTAL</th>
-                                                        <th></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a class="account-order-id"
-                                                                href="javascript:void(0)">#5364</a></td>
-                                                        <td>Mar 27, 2022</td>
-                                                        <td>On Hold</td>
-                                                        <td>£162.00 for 2 items</td>
-                                                        <td><a href="javascript:void(0)"
-                                                                class="hiraola-btn hiraola-btn_dark hiraola-btn_sm"><span>View</span></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a class="account-order-id"
-                                                                href="javascript:void(0)">#5356</a></td>
-                                                        <td>Mar 27, 2022</td>
-                                                        <td>On Hold</td>
-                                                        <td>£162.00 for 2 items</td>
-                                                        <td><a href="javascript:void(0)"
-                                                                class="hiraola-btn hiraola-btn_dark hiraola-btn_sm"><span>View</span></a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <?php
+
+// Realizar la consulta para obtener las órdenes del usuario actual
+include 'bd_conn.php';
+
+$sql = "SELECT * FROM ORDERS WHERE IDUSER = ?";
+
+$stmt = $con->prepare($sql);
+$stmt->bind_param('s', $_SESSION['userID']);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Si hay órdenes para mostrar
+if ($result->num_rows > 0) {
+    echo '<table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th>ÓRDENES</th>
+                    <th>FECHAS</th>
+                    <th>ESTADOS</th>
+                    <th>TOTAL</th>
+                    
+                </tr>';
+
+    // Iterar sobre cada fila de resultado
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>
+                <td><a class="account-order-id" href="javascript:void(0)">' . $row['IDORDER'] . '</a></td>
+                <td>' . $row['CREATEDATE'] . '</td>
+                <td>' . $row['STATUS'] . '</td>
+                <td>₡' . $row['TOTAL'] . '</td>
+            </tr>';
+    }
+
+    echo '</tbody></table>';
+} else {
+    // Si no hay órdenes para mostrar 
+    
+    echo "No hay órdenes disponibles.";
+}
+
+$stmt->close();
+include 'bd_disconn.php';
+?> 
+
+
+
+
+
+
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -157,20 +192,45 @@
                                     <div class="myaccount-address">
                                         <p>Las siguientes direcciones se utilizarán en la página de pago de forma
                                             predeterminada.</p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h4 class="small-title">DIRECCIÓN DE ENVIO</h4>
-                                                <address>
-                                                    1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
-                                                </address>
-                                            </div>
-                                            <div class="col">
-                                                <h4 class="small-title">DIRECCIÓN DE ENVÍO</h4>
-                                                <address>
-                                                    1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
-                                                </address>
-                                            </div>
-                                        </div>
+
+<?php
+
+// Realizar la consulta para obtener las órdenes del usuario actual
+include 'bd_conn.php';
+
+$sql = "SELECT ADDRESS FROM USERS WHERE IDUSER = ?";
+
+$stmt = $con->prepare($sql);
+$stmt->bind_param('s', $_SESSION['userID']);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Si hay órdenes para mostrar
+if ($result->num_rows > 0) {
+    echo '<table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th>Direccion</th>
+                </tr>';
+
+    // Iterar sobre cada fila de resultado
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>               
+                <td>' . $row['ADDRESS'] . '</td>
+            </tr>';
+    }
+
+    echo '</tbody></table>';
+} else {
+    // Si no hay órdenes para mostrar 
+    
+    echo "No hay Direcciones disponibles.";
+}
+
+$stmt->close();
+include 'bd_disconn.php';
+?> 
+                                    
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="account-details" role="tabpanel"
@@ -179,38 +239,24 @@
                                         <form action="#" class="hiraola-form">
                                             <div class="hiraola-form-inner">
                                                 <div class="single-input single-input-half">
-                                                    <label for="account-details-firstname">Nombre*</label>
-                                                    <input type="text" id="account-details-firstname">
+                                                    <label for="account-details-firstname">Nombre</label>
+                                                    <?php echo $_SESSION['nombre']; ?>
+                                                    <!-- <input type="text" <?php echo $_SESSION['nombre']; ?> id="account-details-firstname"> -->
+                                                    
                                                 </div>
                                                 <div class="single-input single-input-half">
-                                                    <label for="account-details-lastname">Apellido*</label>
-                                                    <input type="text" id="account-details-lastname">
+                                                    <label for="account-details-lastname">Apellido</label>
+                                                    <?php echo $_SESSION['primerApellido']; ?>
+                                                    <!-- <input type="text" id="account-details-lastname"> -->
                                                 </div>
                                                 <div class="single-input">
-                                                    <label for="account-details-email">Correo*</label>
-                                                    <input type="email" id="account-details-email">
+                                                    <label for="account-details-email">Correo</label>
+                                                    <?php echo $_SESSION['emailID']; ?></p>
                                                 </div>
+                                                
                                                 <div class="single-input">
-                                                    <label for="account-details-oldpass">Contraseña actual (dejar en
-                                                        blanco para salir
-                                                        sin modificar)</label>
-                                                    <input type="password" id="account-details-oldpass">
-                                                </div>
-                                                <div class="single-input">
-                                                    <label for="account-details-newpass">Nueva contraseña (dejar en
-                                                        blanco para salir
-                                                        sin modificar)</label>
-                                                    <input type="password" id="account-details-newpass">
-                                                </div>
-                                                <div class="single-input">
-                                                    <label for="account-details-confpass">Confirmar nueva
-                                                        contraseña</label>
-                                                    <input type="password" id="account-details-confpass">
-                                                </div>
-                                                <div class="single-input">
-                                                    <button class="hiraola-btn hiraola-btn_dark"
-                                                        type="submit"><span>Guardar Cambios</span></button>
-                                                </div>
+                                                <a href="my-account.php" class="btn btn-primary">Ir al Perfil</a>
+                                             </div>
                                             </div>
                                         </form>
                                     </div>
@@ -277,5 +323,3 @@
 </body>
 
 </html>
-
-<?php include 'bd_conn.php'; ?>
