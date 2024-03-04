@@ -4,8 +4,8 @@ console.log('Hello World. FormResetClave.js');
 // Function to execute reCAPTCHA
 function executeRecaptcha() {
     grecaptcha.ready(function() {
-        grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b', { action: 'submit' }).then(function(recaptcha_token) {
-            document.getElementById("recaptchaResponse").value = recaptcha_token;
+        grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b', { action: 'submit' }).then(function(token) {
+            document.getElementById("recaptchaResponse").value = token;
         });
     });
 }
@@ -40,28 +40,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var data = {
             email: email,
-            recaptcha_token_response: js_recaptcha_response,
+            recaptcha_response: js_recaptcha_response,
             reset_token: jscodigo_reset, //cargar codigo de activacion en DB
         };
 
         console.log("VAR DATA:", data);
 
-        // $.ajax({
-        //     type: "POST",
-        //     url: "../tools/reset_clave.php",
-        //     data: data,
-        //     success: function(response) {
-        //         displayMessage(response, "success");
-        //         ResetPassForm.reset();
-        //         executeRecaptcha(); // Refresh reCAPTCHA after a successful submission
-        //     },
-        //     error: function(xhr, status, error) {
-        //         displayMessage("Error en la solicitud AJAX. Por favor, inténtelo de nuevo.", "error");
-        //         ResetPassForm.reset();
-        //         executeRecaptcha(); // Refresh reCAPTCHA after a successful submission
-        //         console.error(error);
-        //     }
-        // });
+        $.ajax({
+            type: "POST",
+            url: "../tools/reset_clave.php",
+            data: data,
+            success: function(response) {
+                displayMessage(response, "success");
+                ResetPassForm.reset();
+                executeRecaptcha(); // Refresh reCAPTCHA after a successful submission
+            },
+            error: function(xhr, status, error) {
+                displayMessage("Error en la solicitud AJAX. Por favor, inténtelo de nuevo.", "error");
+                ResetPassForm.reset();
+                executeRecaptcha(); // Refresh reCAPTCHA after a successful submission
+                console.error(error);
+            }
+        });
     });
 
     function displayMessage(message, type) {

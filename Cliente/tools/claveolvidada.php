@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <script src="../FormResetClave.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
     <!-- Recaptcha -->
@@ -36,8 +37,8 @@
         grecaptcha.ready(function() {
             // console.log("grecaptcha is ready");
             // Your original script inside the grecaptcha.ready callback
-            grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b', { action: 'submit' }).then(function(recaptcha_token) {
-                document.getElementById("recaptchaResponse").value = recaptcha_token;
+            grecaptcha.execute('6LeXSA4pAAAAACX0zhbYo5f_gt9g6e_YlTZ8rw0b', { action: 'submit' }).then(function(token) {
+                document.getElementById("recaptchaResponse").value = token;
             });
         });
     </script>

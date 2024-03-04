@@ -8,8 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
     // Extract form data
     $email = $_POST['email'];
     $reset_token = $_POST['reset_token'];
-    $hashedResetToken = token_hash($reset_token, PASSWORD_BCRYPT); // Hash the reset token
-    $expiration_date = (new DateTime())->add(new DateInterval('PT1H'))->format('Y-m-d H:i:s');
+    $hashedResetToken = password_hash($reset_token, PASSWORD_BCRYPT); // Hash the reset token
+    // $expiration_date = (new DateTime())->add(new DateInterval('PT1H'))->format('Y-m-d H:i:s');
+    $expiration_date = date("Y-m-d H:i:s", time() + 60 * 30);
 
     echo "expiration_date" . $expiration_date;
 
@@ -86,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
             if ($insertion_success == 1) {
 
                 correo_activacion($email, $nombre, $primerApellido, $codigo_act);
-                echo "Registro exitoso. Revisa tu correo para confirmar tu cuenta";
+                echo "Revise su correo electronico para crear una nueva clave";
 
             } else {
                 echo "Error al registrar: El correo electrónico ya está en uso.";
@@ -98,8 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response']
         }
 
     } else {
-        // Email already in use
-        echo "El correo electrónico ya está en uso. Por favor, utilice otro correo.";
+        // Email no existe
+        echo "NO EXISTE EMAIL ";
     }
 
 } else {
