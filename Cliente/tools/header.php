@@ -102,7 +102,7 @@ if(isset($_SESSION['rol'])) {
                                     <br>
                                     <div class="col-md-12 col-12">
                                         <div class="forgotton-password_info">
-                                            <a href="#"> ¿Olvidó la contraseña?</a>
+                                            <a href="claveolvidada.php"> ¿Olvidó la contraseña?</a>                                            
                                         </div>
                                     </div>
                                     <br>
