@@ -1,4 +1,11 @@
-
+<?php
+    session_start();
+    if (!isset($_SESSION['userID']) || !isset($_SESSION['rol']) || $_SESSION['rol'] != 1) {
+        // Si el usuario no tiene sesión activa o su rol no es el requerido, redirigir al usuario a la página de inicio
+        header("Location: ../../../Cliente/tools/index.php");
+        exit;
+    }
+?>
 <!-- NAV DE ARRIBA -->
 <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
