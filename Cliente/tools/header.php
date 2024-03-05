@@ -105,6 +105,7 @@ if(isset($_SESSION['rol'])) {
                                             <a href="#"> ¿Olvidó la contraseña?</a>
                                         </div>
                                     </div>
+                                    <div id="error-container"></div>
                                     <br>
                                     <div class="col-md-12">
                                         <button type="submit" name="loginButton" class="hiraola-btn hiraola-btn-bondi_blue hiraola-btn_fullwidth">Iniciar Sesión</button>
