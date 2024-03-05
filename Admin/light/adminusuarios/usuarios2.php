@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
     <link rel="stylesheet" href="../../assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../assets/vendor/sweetalert/sweetalert.css" />
+    <!-- <link rel="stylesheet" href="../../assets/vendor/sweetalert/sweetalert.css" /> -->
 
 
 
@@ -64,48 +64,56 @@
                     <div class="modal-body">
                         <form id="infoUserForm">
                             <div class="mb-3">
-                                <input type="hidden" class="form-control" id="infoUserID" name="infoUserID" required>
+                                <input type="hidden" class="form-control" id="infoUserID" name="infoUserID">
                             </div>
 
                             <div class="mb-3">
                                 <label for="infoUserEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="infoUserEmail" name="infoUserEmail" required>
+                                <input type="text" class="form-control" id="infoUserEmail" name="infoUserEmail" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="infoUserName" name="infoUserName" required>
+                                <input type="text" class="form-control" id="infoUserName" name="infoUserName" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserFLASTNAME" class="form-label"> Primer apellido </label>
-                                <input type="text" class="form-control" id="infoUserFLASTNAME" name="infoUserFLASTNAME" required>
+                                <input type="text" class="form-control" id="infoUserFLASTNAME" name="infoUserFLASTNAME" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserSLASTNAME" class="form-label"> Segundo apellido </label>
-                                <input type="text" class="form-control" id="infoUserSLASTNAME" name="infoUserSLASTNAME" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="infoUserPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="infoUserPassword" name="infoUserPassword" autocomplete="on" required>
+                                <input type="text" class="form-control" id="infoUserSLASTNAME" name="infoUserSLASTNAME" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserPhone" class="form-label">Telefono</label>
-                                <input type="text" class="form-control" id="infoUserPhone" name="infoUserPhone">
+                                <input type="text" class="form-control" id="infoUserPhone" name="infoUserPhone" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserAddress" class="form-label">Direccion</label>
-                                <input type="text" class="form-control" id="infoUserAddress" name="infoUserAddress" rows="3">
+                                <input type="text" class="form-control" id="infoUserAddress" name="infoUserAddress" rows="3" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoUserProvincia" class="form-label">Provincia</label>
+                                <input type="text" class="form-control" id="infoUserProvincia" name="infoUserProvincia" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoUserCanton" class="form-label">Cantón</label>
+                                <input type="text" class="form-control" id="infoUserCanton" name="infoUserCanton" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="infoUserDistrito" class="form-label">Distrito</label>
+                                <input type="text" class="form-control" id="infoUserDistrito" name="infoUserDistrito" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserCreation" class="form-label">Ingresado el</label>
-                                <input type="text" class="form-control" id="infoUserCreation" name="infoUserCreation">
+                                <input type="text" class="form-control" id="infoUserCreation" name="infoUserCreation" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserSuscrito" class="form-label">Suscripcion</label>
-                                <input type="text" class="form-control" id="infoUserSuscrito" name="infoUserSuscrito">
+                                <input type="text" class="form-control" id="infoUserSuscrito" name="infoUserSuscrito" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="infoUserRol" class="form-label">Rol</label>
-                                <input type="text" class="form-control" id="infoUserRol" name="infoUserRol">
+                                <input type="text" class="form-control" id="infoUserRol" name="infoUserRol" readonly>
                             </div>
                         </form>
 
@@ -116,71 +124,150 @@
                 </div>
             </div>
         </div>
+
+<!-- Modal Edit User Password -->
+<div class="modal fade" id="editPass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">Cambio de contraseña</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="editPassUserForm" class="needs-validation" novalidate>
+					<div class="mb-3">
+						<input type="hidden" class="form-control" id="editPassUserID" name="editPassUserID">
+					</div>
+                    <div class="mb-3">
+                                <label for="editPassUserEmail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="editPassUserEmail" name="editPassUserEmail" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPassUserName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editPassUserName" name="editPassUserName" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPassUserFLASTNAME" class="form-label"> Primer apellido </label>
+                                <input type="text" class="form-control" id="editPassUserFLASTNAME" name="editPassUserFLASTNAME" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPassUserSLASTNAME" class="form-label"> Segundo apellido </label>
+                                <input type="text" class="form-control" id="editPassUserSLASTNAME" name="editPassUserSLASTNAME" readonly>
+                            </div>
+					<div class="mb-3">
+						<label for="editPassUserPassword" class="form-label">Nueva Contraseña</label>
+						<input type="password" class="form-control" id="editPassUserPassword" name="editPassUserPassword" autocomplete="on" required
+							pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+						<div class="invalid-feedback">La contraseña debe tener al menos:<ul></ul><li>8 caracteres</li><li>1 mayúscula</li><li>1 minúscula</li><li>1 número</li><li>1 caracter especial</li></ul></div>
+						<div class="valid-feedback">Válido</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+						<button type="button" id="editPassUsuarioButton" class="btn btn-actualizarPass btn-primary " data-type="success">Modificar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
         <!-- Modal Edit User -->
-
-        <div class="modal fade" id="editUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modificar usuario</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="editUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">Modificar usuario</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="editUserForm" class="needs-validation" novalidate>
+					<div class="mb-3">
+						<input type="hidden" class="form-control" id="editUserID" name="editUserID" required>
+					</div>
+					<div class="mb-3">
+						<label for="editUserEmail" class="form-label">Email</label>
+						<input type="email" class="form-control" id="editUserEmail" name="editUserEmail" placeholder="name@example.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+						<div class="invalid-feedback">Por favor, introduce un correo electrónico válido.</div>
+						<div class="valid-feedback">Válido</div>
+					</div>
+					<div class="mb-3">
+						<label for="editUserName" class="form-label">Nombre</label>
+						<input type="text" class="form-control" id="editUserName" name="editUserName" required>
+						<div class="invalid-feedback">Por favor, introduce un nombre válido.</div>
+						<div class="valid-feedback">Válido</div>
+					</div>
+					<div class="mb-3">
+						<label for="editUserFLASTNAME" class="form-label"> Primer apellido </label>
+						<input type="text" class="form-control" id="editUserFLASTNAME" name="editUserFLASTNAME" required>
+						<div class="invalid-feedback">Por favor, introduce un apellido válido.</div>
+						<div class="valid-feedback">Válido</div>
+					</div>
+					<div class="mb-3">
+						<label for="editUserSLASTNAME" class="form-label"> Segundo apellido </label>
+						<input type="text" class="form-control" id="editUserSLASTNAME" name="editUserSLASTNAME">
+						<div class="invalid-feedback">Por favor, introduce un apellido válido.</div>
+						<div class="valid-feedback">Válido</div>
+					</div>
+					<div class="mb-3">
+						<label for="editUserPhone" class="form-label">Telefono</label>
+						<input type="text" class="form-control" id="editUserPhone" name="editUserPhone" placeholder="####-####">
+					</div>
+					<div class="mb-3">
+						<label for="editUserAddress" class="form-label">Direccion</label>
+						<input type="text" class="form-control" id="editUserAddress" name="editUserAddress" rows="3">
+					</div>
+					<div class="mb-3">
+						<label for="editUserProvincia" class="form-label">Provincia</label>
+						<select class="form-select" id="editUserProvincia" name="editUserProvincia">
+							<option value="" disabled selected>Selecciona una provincia</option>
+							<option value="Alajuela">Alajuela</option>
+							<option value="Cartago">Cartago</option>
+							<option value="Guanacaste">Guanacaste</option>
+							<option value="Heredia">Heredia</option>
+							<option value="Limón">Limón</option>
+							<option value="Puntarenas">Puntarenas</option>
+							<option value="San José">San José</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="editUserCanton" class="form-label">Cantón</label>
+						<select class="form-select" id="editUserCanton" name="editUserCanton">
+							<option value="" disabled selected>Selecciona un cantón</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="editUserDistrito" class="form-label">Distrito</label>
+						<select class="form-select" id="editUserDistrito" name="editUserDistrito">
+							<option value="" disabled selected>Selecciona un distrito</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="editUserCreation" class="form-label">Ingresado el</label>
+						<input type="text" class="form-control" id="editUserCreation" name="editUserCreation" readonly>
+					</div>
+                    <div class="mb-3">
+                        <label for="editUserSuscrito" class="form-label">Suscripcion</label>
+                        <select class="form-select" id="editUserSuscrito" name="editUserSuscrito">
+                            <option value="0" selected>No</option>
+                            <option value="1">Si</option>
+                        </select>
                     </div>
-                    <div class="modal-body">
-                        <form id="editUserForm">
-                            <div class="mb-3">
-                                <input type="hidden" class="form-control" id="editUserID" name="editUserID" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="editUserEmail" name="editUserEmail" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="editUserName" name="editUserName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserFLASTNAME" class="form-label"> Primer apellido </label>
-                                <input type="text" class="form-control" id="editUserFLASTNAME" name="editUserFLASTNAME" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserSLASTNAME" class="form-label"> Segundo apellido </label>
-                                <input type="text" class="form-control" id="editUserSLASTNAME" name="editUserSLASTNAME" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="editUserPassword" name="editUserPassword" autocomplete="on" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserPhone" class="form-label">Telefono</label>
-                                <input type="text" class="form-control" id="editUserPhone" name="editUserPhone">
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserAddress" class="form-label">Direccion</label>
-                                <input type="text" class="form-control" id="editUserAddress" name="editUserAddress" rows="3">
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserCreation" class="form-label">Ingresado el</label>
-                                <input type="text" class="form-control" id="editUserCreation" name="editUserCreation">
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserSuscrito" class="form-label">Suscripcion</label>
-                                <input type="text" class="form-control" id="editUserSuscrito" name="editUserSuscrito">
-                            </div>
-                            <div class="mb-3">
-                                <label for="editUserRol" class="form-label">Rol</label>
-                                <input type="text" class="form-control" id="editUserRol" name="editUserRol">
-                            </div>
-                        </form>
-
+                    <div class="mb-3">
+                        <label for="editUserRol" class="form-label">Rol</label>
+                        <select class="form-select" id="editUserRol" name="editUserRol">
+                            <option value="3" selected>Cliente</option>
+                            <option value="1">Administrador</option>
+                        </select>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button class="btn btn-actualizarUser btn-primary " data-bs-dismiss="modal" data-type="success">Modificar</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+						<button type="button" id="editUsuarioButton" class="btn btn-actualizarUser btn-primary " data-type="success">Modificar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 
         <!-- Modal Create Users -->
         <div class="modal fade" id="createUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -191,52 +278,91 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="createContactoForm">
+                        <form id="createUserForm" class="needs-validation" novalidate>
                             <div class="mb-3">
-                                <label for="createUserEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="createUserEmail" name="createUserEmail" required>
+                                <label for="createUserEmail" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="createUserEmail" name="createUserEmail" placeholder="name@example.com" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                                <div class="invalid-feedback">Por favor, introduce un correo electrónico válido.</div>
+                                <div class="valid-feedback">Válido</div>
                             </div>
                             <div class="mb-3">
-                                <label for="createUserName" class="form-label">Nombre</label>
+                                <label for="createUserName" class="form-label">Nombre *</label>
                                 <input type="text" class="form-control" id="createUserName" name="createUserName" required>
+                                <div class="invalid-feedback">Por favor, introduce un nombre válido.</div>
+                                <div class="valid-feedback">Válido</div>
                             </div>
                             <div class="mb-3">
-                                <label for="createUserFLASTNAME" class="form-label"> Primer apellido </label>
+                                <label for="createUserFLASTNAME" class="form-label">Primer apellido *</label>
                                 <input type="text" class="form-control" id="createUserFLASTNAME" name="createUserFLASTNAME" required>
+                                <div class="invalid-feedback">Por favor, introduce un apellido válido.</div>
+                                <div class="valid-feedback">Válido</div>
                             </div>
                             <div class="mb-3">
-                                <label for="createUserSLASTNAME" class="form-label"> Segundo apellido </label>
+                                <label for="createUserSLASTNAME" class="form-label">Segundo apellido *</label>
                                 <input type="text" class="form-control" id="createUserSLASTNAME" name="createUserSLASTNAME" required>
+                                <div class="invalid-feedback">Por favor, introduce un apellido válido.</div>
+                                <div class="valid-feedback">Válido</div>
                             </div>
                             <div class="mb-3">
-                                <label for="createUserPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="createUserPassword" name="createUserPassword" autocomplete="on" required>
+                                <label for="createUserPassword" class="form-label">Contraseña *</label>
+                                <input type="password" class="form-control" id="createUserPassword" name="createUserPassword" autocomplete="on" required
+                                    pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+                                <div class="invalid-feedback">La contraseña debe tener al menos:<ul></ul><li>8 caracteres</li><li>1 mayúscula</li><li>1 minúscula</li><li>1 número</li><li>1 caracter especial</li></ul></div>
+                                <div class="valid-feedback">Válido</div>
                             </div>
+
                             <div class="mb-3">
                                 <label for="createUserPhone" class="form-label">Telefono</label>
-                                <input type="text" class="form-control" id="createUserPhone" name="createUserPhone">
+                                <input type="text" class="form-control" id="createUserPhone" name="createUserPhone" placeholder="####-####">
                             </div>
                             <div class="mb-3">
                                 <label for="createUserAddress" class="form-label">Direccion</label>
                                 <input type="text" class="form-control" id="createUserAddress" name="createUserAddress" rows="3">
                             </div>
                             <div class="mb-3">
+                                <label for="createUserProvincia" class="form-label">Provincia</label>
+                                <select class="form-select" id="createUserProvincia" name="createUserProvincia">
+                                    <option value="" disabled selected>Selecciona una provincia</option>
+                                    <option value="Alajuela">Alajuela</option>
+                                    <option value="Cartago">Cartago</option>
+                                    <option value="Guanacaste">Guanacaste</option>
+                                    <option value="Heredia">Heredia</option>
+                                    <option value="Limón">Limón</option>
+                                    <option value="Puntarenas">Puntarenas</option>
+                                    <option value="San José">San José</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserCanton" class="form-label">Cantón</label>
+                                <select class="form-select " id="createUserCanton" name="createUserCanton">
+                                    <option value="" disabled selected>Selecciona un cantón</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createUserDistrito" class="form-label">Distrito</label>
+                                <select class="form-select" id="createUserDistrito" name="createUserDistrito">
+                                    <option value="" disabled selected>Selecciona un distrito</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
                                 <label for="createUserSuscrito" class="form-label">Suscripcion</label>
-                                <input type="text" class="form-control" id="createUserSuscrito" name="createUserSuscrito">
+                                <select class="form-select" id="createUserSuscrito" name="createUserSuscrito">
+                                    <option value="0" selected>No</option>
+                                    <option value="1">Si</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="createUserRol" class="form-label">Rol</label>
-                                <input type="text" class="form-control" id="createUserRol" name="createUserRol">
+                                <select class="form-select" id="createUserRol" name="createUserRol">
+                                    <option value="3" selected>Cliente</option>
+                                    <option value="1">Administrador</option>
+                                </select>
                             </div>
-
-
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" id="crearUsuarioButton" class="btn btn-primary" data-type="success">Agregar</button>
+                            </div>
                         </form>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button id="crearUsuarioButton" class="btn btn-primary" data-bs-dismiss="modal" data-type="success">Agregar</button>
-
                     </div>
                 </div>
             </div>
@@ -274,75 +400,7 @@
                                 </ul>
                             </div>
                             <div class="body">
-                                <div class="table-responsive">
-                                    <?php
-                                        include '../adminTool/bd_conn.php';
-
-                                        $consulta = "SELECT * FROM USERS";
-                                        $result = $con->query($consulta);
-
-
-                                        if ($result->num_rows > 0) {
-                                            echo "<table id='userTable' class='table table-hover js-basic-example dataTable table-custom spacing5'>";
-                                            echo "<thead><tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                            <th>Primer Apellido</th>
-                                            <th>Segundo Apellido</th>
-                                            <th>Email</th>
-                                            <th>Teléfono</th> 
-                                            <th>Acciones</th>
-                                            </tr></thead>";
-                                            echo "<tbody id='userTableBody'>";
-
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<tr>";
-                                                echo "<td>" . $row['IDUSER'] . "</td>";
-                                                $userId = $row['IDUSER'];
-                                                echo "<td>" . $row['NAME'] . "</td>";
-                                                echo "<td>" . $row['FLASTNAME'] . "</td>";
-                                                echo "<td>" . $row['SLASTNAME'] . "</td>";
-                                                echo "<td>" . $row['EMAIL'] . "</td>";
-                                                echo "<td>" . $row['PHONE'] . "</td>";
-
-                                                echo "<td>
-
-                                                <button type='button' class='btn btn-info btn-infoUsuarios  mb-2' data-bs-toggle='modal' data-bs-target='#infoUser' data-bs-id='$userId'> 
-                                                <i class='fa fa-info-circle'></i>
-                                                <span>Ver</span></button>
-                                                
-                                                <button type='button' class='btn btn-editar btn-editarUser btn-warning mb-2' data-bs-toggle='modal' data-bs-id='$userId' data-bs-target='#editUser' >
-                                                <i class='fa fa-pencil'></i>
-                                                <span>Editar</span></button>
-                                            
-                                                <button type='button' class='btn btn-borrar btn-borrarUser btn-danger mb-2 js-sweetalert' data-type='confirm' data-bs-id='$userId'>
-                                                <i class='fa fa-trash-o'></i> 
-                                                <span>Eliminar</span></button>
-                                        
-                                                </td>";
-
-                                                echo "</tr>";
-                                            }
-
-                                            echo "</tbody>";
-                                            echo "<tfoot>
-                                                <tr>
-                                                <th>ID</th>
-                                                <th>Nombre</th>
-                                                <th>Primer Apellido</th>
-                                                <th>Segundo Apellido</th>
-                                                <th>Email</th>
-                                                <th>Teléfono</th> 
-                                                <th>Acciones</th>
-                                                </tr>
-                                            </tfoot>";
-                                            echo "</table>";
-                                        } else {
-                                            echo "No hay usuarios";
-                                        }
-                                        include '../adminTool/bd_disconn.php'
-                                    ?>
-                                </div>
+                             
                             </div>
                         </div>
                     </div>
@@ -367,7 +425,8 @@
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
     <script src="../../assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
-    <script src="\pvsuppliescr\Admin\assets\vendor\sweetalert\sweetalert.min.js"></script><!-- SweetAlert Plugin Js -->
+    <!-- <script src="\pvsuppliescr\Admin\assets\vendor\sweetalert\sweetalert.min.js"></script> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/pages/tables/jquery-datatable.js"></script>
 

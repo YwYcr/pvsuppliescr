@@ -11,7 +11,7 @@ $(document).ready(function () {
         if (tabId === "#productTab") {
             // Cargar contenido de la pestaña de productos
             $.ajax({
-                url: 'cargarContProducto.php', // Reemplaza 'cargarProductos.php' con el nombre de tu archivo PHP para cargar productos
+                url: 'cargarContProducto.php', 
                 type: 'GET',
                 success: function (data) {
                     $('#productTab .body').html(data);
@@ -23,7 +23,7 @@ $(document).ready(function () {
         } else if (tabId === "#categoryTab") {
             // Cargar contenido de la pestaña de categorías
             $.ajax({
-                url: 'cargarContCategoria.php', // Reemplaza 'cargarCategorias.php' con el nombre de tu archivo PHP para cargar categorías
+                url: 'cargarContCategoria.php',
                 type: 'GET',
                 success: function (data) {
                     $('#categoryTab .body').html(data);
@@ -35,7 +35,7 @@ $(document).ready(function () {
         } else if (tabId === "#imgTab") {
             // Cargar contenido de la pestaña de imágenes
             $.ajax({
-                url: 'cargarContImagenes.php', // Reemplaza 'cargarImagenes.php' con el nombre de tu archivo PHP para cargar imágenes
+                url: 'cargarContImagenes.php', 
                 type: 'GET',
                 success: function (data) {
                     $('#imgTab .body').html(data);
@@ -209,7 +209,7 @@ $(document).ready(function () {
                 swal("Agregado!", "Se agrego el producto con éxito!", "success");
                 clearFormProduct();
                 $.ajax({
-                    url: 'cargarContProducto.php', // Reemplaza 'cargarProductos.php' con el nombre de tu archivo PHP para cargar productos
+                    url: 'cargarContProducto.php', 
                     type: 'GET',
                     success: function (data) {
                         $('#productTab .body').html(data);
@@ -373,45 +373,61 @@ $(document).ready(function () {
     $(document).on("click", ".btn-borrarProducto", function () {
         var productID = $(this).data("bs-id");
 
-        $.ajax({
-            type: "POST",
-            url: "borrarProducto.php",
-            data: { productID: productID },
-            success: function (response) {
-                // alert('Producto eliminado con éxito');
-
-                swal({
-                    title: "Seguro que quieres eliminarlo?",
-                    text: "Una vez eliminado no podras volver a recuperar este producto!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#dc3545",
-                    confirmButtonText: "Si, Eliminalo!",
-                    closeOnConfirm: false
-                }, function () {
-                    swal("Eliminado!", "Producto eliminado con éxito", "success");
-                    $.ajax({
-                        url: 'cargarContProducto.php', // Reemplaza 'cargarProductos.php' con el nombre de tu archivo PHP para cargar productos
-                        type: 'GET',
-                        success: function (data) {
-                            $('#productTab .body').html(data);
-                        },
-                        error: function (xhr, status, error) {
-                            console.error(error);
+        swal({
+            title: "Seguro que quieres eliminarlo?",
+            text: "Una vez eliminado no podrás volver a recuperar este producto!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                // Usuario hizo clic en "Sí"
+                $.ajax({
+                    type: "POST",
+                    url: "borrarProducto.php",
+                    data: { productID: productID },
+                    dataType: 'json', // Asegura que el resultado se interprete como JSON
+                    success: function (response) {
+                        if (response.success) {
+                            swal("Eliminado!", "Producto eliminado con éxito", "success");
+                            // Lógica después de recargar la lista
+                            $.ajax({
+                                url: 'cargarContProducto.php',
+                                type: 'GET',
+                                success: function (data) {
+                                    $('#productTab .body').html(data);
+                                    console.log("Producto eliminado: " + productID);
+                                },
+                                error: function (xhr, status, error) {
+                                    console.error(error);
+                                }
+                            });
+                        } else {
+                            // Mostrar error en SweetAlert
+                            if (response.error.includes("PRODUCT_IMAGE")) {
+                                // swal("Error", "Error al eliminar el producto: " + response.error, "error");
+                                swal("Error", "Error al eliminar el producto: El producto tiene imagenes asociadas", "error");
+                            } else if (response.error.includes("ORDERDETAIL")) {
+                                swal("Error", "Error al eliminar el producto: El producto esta asociado a una orden", "error");
+                            } else {
+                                swal("Error", "Error al eliminar el producto: " + response.error, "error");
+                            } 
                         }
-                    });
-                    console.log("Producto eliminado: " + productID);
+                    },
+                    error: function (xhr, status, error) {
+                        // Mostrar error en SweetAlert
+                        swal("Error", "Error al eliminar el producto", "error");
+                        console.error(error);
+                    }
                 });
-
-
-                
-            },
-            error: function (xhr, status, error) {
-                console.error(error);
+            } else {
+                // Usuario hizo clic en "Cancelar" o fuera del cuadro de diálogo
+                swal("Eliminar cancelado");
             }
         });
     });
 });
+
 
 
 // <!-- Script para crear categorias nuevas -->
@@ -501,6 +517,7 @@ $(document).ready(function () {
         });
     });
 });
+
 // <!-- Script para actualizar categorias  -->
 $(document).ready(function () {
     $(document).on("click", ".btn-actualizarCategoria", function () {
@@ -541,46 +558,66 @@ $(document).ready(function () {
         });
     });
 });
+
 // <!-- Script para borrar categoria -->
 $(document).ready(function () {
     $(document).on("click", ".btn-borrarCategoria", function () {
         var categoryID = $(this).data("bs-id");
 
-        $.ajax({
-            type: "POST",
-            url: "borrarCategoria.php",
-            data: { categoryID: categoryID },
-            success: function (response) {
-                swal({
-                    title: "Seguro que quieres eliminarlo?",
-                    text: "Una vez eliminado no podras volver a recuperar esta categoría!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#dc3545",
-                    confirmButtonText: "Si, Eliminalo!",
-                    closeOnConfirm: false
-                }, function () {
-                    swal("Eliminado!", "Categoría eliminado con éxito", "success");
-                    $.ajax({
-                        url: 'cargarContCategoria.php', // Reemplaza 'cargarCategorias.php' con el nombre de tu archivo PHP para cargar categorías
-                        type: 'GET',
-                        success: function (data) {
-                            $('#categoryTab .body').html(data);
-                        },
-                        error: function (xhr, status, error) {
-                            console.error(error);
+        swal({
+            title: "Seguro que quieres eliminarlo?",
+            text: "Una vez eliminado no podrás volver a recuperar esta categoría!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                // Usuario hizo clic en "Sí"
+                $.ajax({
+                    type: "POST",
+                    url: "borrarCategoria.php",
+                    data: { categoryID: categoryID },
+                    dataType: 'json', // Asegura que el resultado se interprete como JSON
+                    success: function (response) {
+                        if (response.success) {
+                            swal("Eliminado!", "Categoría eliminada con éxito", "success");
+                            // Lógica después de recargar la lista
+                            $.ajax({
+                                url: 'cargarContCategoria.php',
+                                type: 'GET',
+                                success: function (data) {
+                                    $('#categoryTab .body').html(data);
+                                    console.log("Categoría eliminada: " + categoryID);
+                                },
+                                error: function (xhr, status, error) {
+                                    console.error(error);
+                                }
+                            });
+                        } else {
+                            // Mostrar error en SweetAlert
+                            if (response.error.includes("PRODUCT")) {
+                                // swal("Error", "Error al eliminar el producto: " + response.error, "error");
+                                swal("Error", "Error al eliminar la categoría: Esta Categoría tiene productos asociadas", "error");
+                            } else {
+                                swal("Error", "Error al eliminar la categoría: " + response.error, "error");
+                            } 
                         }
-                    });
-                    console.log("Categoria eliminado: " + productID);
+                    },
+                    error: function (xhr, status, error) {
+                        // Mostrar error en SweetAlert
+                        swal("Error", "Error al eliminar la categoría " + error, "error");
+                        console.error(error);
+                    }
                 });
-                
-            },
-            error: function (xhr, status, error) {
-                console.error(error);
+            } else {
+                // Usuario hizo clic en "Cancelar" o fuera del cuadro de diálogo
+                swal("Eliminar cancelado");
             }
         });
     });
 });
+
+
 
 
 
