@@ -72,7 +72,7 @@
                             equipos, nuestro objetivo es ser su solución integral, permitiéndoles brindar una
                             experiencia excepcional a sus huéspedes sin comprometer su presupuesto.</p>
                         <div class="hiraola-about-us_btn-area">
-                            <a class="about-us_btn" href="shop-left-sidebar.html">Comprar Ahora</a>
+                            <a class="about-us_btn" href="shop-left-sidebar.php">Comprar Ahora</a>
                         </div>
                     </div>
                 </div>
@@ -92,50 +92,7 @@
     <div class="project-count-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-ios-briefcase-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">2169</h2>
-                            <span>Proyectos Terminados</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-ios-wineglass-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">869</h2>
-                            <span>Premios Ganados</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-ios-lightbulb-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">689</h2>
-                            <span>Horas Trabajadas</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-count text-center">
-                        <div class="count-icon">
-                            <span class="ion-happy-outline"></span>
-                        </div>
-                        <div class="count-title">
-                            <h2 class="count">2169</h2>
-                            <span>Compradores Felices</span>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -147,7 +104,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section_title-2">
-                        <h4>Nuestro Equipo</h4>
+                        <!-- <h4>Nuestro Equipo</h4> -->
                     </div>
                 </div>
             </div> <!-- section title end -->
@@ -155,195 +112,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team-member">
                         <div class="team-thumb img-hover_effect">
-                            <a href="#">
-                                <img src="../../assets/images/about-us/team/Mujer1.png" alt="Miembro del Equipo">
-                            </a>
                         </div>
-                        <div class="team-content text-center">
-                            <h3>Sarah Sánchez</h3>
-                            <p>Experto de TI</p>
-                            <a href="#">info@example.com</a>
-                            <div class="hiraola-social_link">
-                                <ul>
-                                    <li class="facebook">
-                                        <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Facebook">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Twitter">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </li>
-                                    <li class="youtube">
-                                        <a href="https://www.youtube.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Youtube">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li class="google-plus">
-                                        <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip"
-                                            target="_blank" title="Google Plus">
-                                            <i class="fab fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li class="instagram">
-                                        <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Instagram">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div> <!-- end single team member -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team-member">
-                        <div class="team-thumb img-hover_effect">
-                            <a href="#">
-                                <img src="../../assets/images/about-us/team/Hombre1.png" alt="Miembro del Equipo">
-                            </a>
-                        </div>
-                        <div class="team-content text-center">
-                            <h3>Diego Brenes</h3>
-                            <p>Diseñador Web</p>
-                            <a href="#">info@example.com</a>
-                            <div class="hiraola-social_link">
-                                <ul>
-                                    <li class="facebook">
-                                        <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Facebook">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Twitter">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </li>
-                                    <li class="youtube">
-                                        <a href="https://www.youtube.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Youtube">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li class="google-plus">
-                                        <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip"
-                                            target="_blank" title="Google Plus">
-                                            <i class="fab fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li class="instagram">
-                                        <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Instagram">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end single team member -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team-member">
-                        <div class="team-thumb img-hover_effect">
-                            <a href="#">
-                                <img src="../../assets/images/about-us/team/Hombre2.png" alt="Miembro del Equipo">
-                            </a>
-                        </div>
-                        <div class="team-content text-center">
-                            <h3>Edwin Adams</h3>
-                            <p>Recursos Humanos</p>
-                            <a href="javascript:void(0)">info@example.com</a>
-                            <div class="hiraola-social_link">
-                                <ul>
-                                    <li class="facebook">
-                                        <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Facebook">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Twitter">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </li>
-                                    <li class="youtube">
-                                        <a href="https://www.youtube.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Youtube">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li class="google-plus">
-                                        <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip"
-                                            target="_blank" title="Google Plus">
-                                            <i class="fab fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li class="instagram">
-                                        <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Instagram">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end single team member -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team-member">
-                        <div class="team-thumb img-hover_effect">
-                            <a href="#">
-                                <img src="../../assets/images/about-us/team/Mujer2.png" alt="Miembro del Equipo">
-                            </a>
-                        </div>
-                        <div class="team-content text-center">
-                            <h3>Anny Adams</h3>
-                            <p>Marketing</p>
-                            <a href="#">info@example.com</a>
-                            <div class="hiraola-social_link">
-                                <ul>
-                                    <li class="facebook">
-                                        <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Facebook">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Twitter">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </li>
-                                    <li class="youtube">
-                                        <a href="https://www.youtube.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Youtube">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li class="google-plus">
-                                        <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip"
-                                            target="_blank" title="Google Plus">
-                                            <i class="fab fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li class="instagram">
-                                        <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank"
-                                            title="Instagram">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end single team member -->
+
             </div>
         </div>
     </div>

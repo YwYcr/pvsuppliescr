@@ -11,7 +11,7 @@
     
 
     
-
+    
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon.ico">
 
@@ -84,8 +84,6 @@ include 'footer.php';
 
 <!-- JS
 ============================================ -->
-
-
 <!-- jQuery JS -->
 <script src="../../assets/js/vendor/jquery-3.6.0.min.js"></script>
 <script src="../../assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
@@ -122,10 +120,11 @@ include 'footer.php';
 <script src="../../assets/js/plugins/mailchimp-ajax.js"></script>
 
 <!-- Main JS -->
-<script src="../../assets/js/main.js"></script>
+<script src="../index.js"></script> 
 <script src="../busqueda.js"></script>
 <script src="../categoriafilter.js"></script>
-<!-- <script src="assets/js/main.min.js"></script> -->
+<script src="../../assets/js/main.js"></script>
+
 
 <script>
     $(document).ready(function() {
@@ -155,8 +154,6 @@ include 'footer.php';
     });
 
  </script>
-
-
 
 </body>
 

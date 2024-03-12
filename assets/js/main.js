@@ -1,4 +1,5 @@
-(function ($) {
+$(document).ready(function () {
+// (function ($) {
     'use strict';
     /*----------------------------------------*/
     /* Hiraola's Newsletter Popup
@@ -222,11 +223,14 @@
     /*----------------------------------------*/
     /*  Hiraola's Product Slider
 /*----------------------------------------*/
+$(window).on('load', function() {
     $('.hiraola-product_slider').slick({
         infinite: true,
         arrows: true,
         dots: false,
-        speed: 2000,
+        speed: 1000,
+        autoplay:false,
+        autoplaySpeed: 2000,
         slidesToShow: 5,
         slidesToScroll: 1,
         prevArrow:
@@ -266,6 +270,7 @@
             },
         ],
     });
+});
     /*----------------------------------------*/
     /*  Hiraola's Product Slider Two
 /*----------------------------------------*/
@@ -1751,5 +1756,5 @@ $(function () {
             });
     });
 });
-
-})(jQuery);
+});
+// })(jQuery);
