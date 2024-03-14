@@ -155,6 +155,37 @@ include 'footer.php';
 
  </script>
 
+<script>
+    // Función para generar un parámetro único
+    function generateUniqueParam() {
+        return Date.now(); // Utilizar la marca de tiempo actual como parámetro único
+    }
+
+    // Función para recargar la página con un parámetro único
+    function reloadPageWithUniqueParam() {
+        var uniqueParam = generateUniqueParam();
+        var currentPageUrl = window.location.href;
+        if (!currentPageUrl.includes('cache_bust=')) {
+            var separator = currentPageUrl.includes('?') ? '&' : '?';
+            var newUrl = currentPageUrl + separator + 'cache_bust=' + uniqueParam;
+            window.location.href = newUrl;
+        }
+    }
+
+    // Manejar el evento 'load' una sola vez
+    function handleLoadEvent() {
+        reloadPageWithUniqueParam();
+        window.removeEventListener('load', handleLoadEvent); // Eliminar el listener después de la primera llamada
+    }
+
+    // Llamar a la función para recargar la página con un parámetro único cuando se carga la página
+    window.addEventListener('load', handleLoadEvent);
+</script>
+
+
+
+
+
 </body>
 
 </html>

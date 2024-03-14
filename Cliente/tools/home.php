@@ -9,10 +9,10 @@
                             </div>
                             <div id="cate-toggle" class="category-menu-list">
                                 <ul>
-                                    
-                                <?php 
+
+                                    <?php
                                     include '..\Categoria\getCategoria.php';
-                                ?>
+                                    ?>
 
                                     <li class="rx-parent">
                                         <a class="rx-default" href="shop-left-sidebar.php">Más Categorías</a>
@@ -26,7 +26,7 @@
                             <div class="main-slider">
                                 <!-- Begin Single Slide Area -->
                                 <div class="single-slide animation-style-01 bg-1">
-                                <img class="single-slide animation-style-01 bg-1" style="object-fit:cover;" src="../../assets/images/product/Cama1.png" alt="Cama1">
+                                    <img class="single-slide animation-style-01 bg-1" style="object-fit:cover;" src="../../assets/images/product/Cama1.png" alt="Cama1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>Viernes Negro</span> Esta Semana</h5>
@@ -43,7 +43,7 @@
                                 <!-- Single Slide Area End Here -->
                                 <!-- Begin Single Slide Area -->
                                 <div class="single-slide animation-style-02 bg-2">
-                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="../../assets/images/product/Mesa1.png" alt="Mesa1">
+                                    <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="../../assets/images/product/Mesa1.png" alt="Mesa1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>-50% de descuento</span> Esta semana</h5>
@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
                                 <div class="single-slide animation-style-02 bg-3">
-                                <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="../../assets/images/product/Librero1.png" alt="Librero1">
+                                    <img class="single-slide animation-style-01 bg-2" style="object-fit:cover;" src="../../assets/images/product/Librero1.png" alt="Librero1">
                                     <div class="container">
                                         <div class="slider-content">
                                             <h5><span>Viernes Negro</span> Esta Semana</h5>
@@ -78,7 +78,7 @@
                     <div class="col grid-half grid-md_half order-md-2 order-lg-3">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="../../assets/images/banner/Anuncio1.png" alt="Anuncio1">
+                                <img class="banner-item img-hover_effect" src="../../assets/images/banner/Anuncio1.png" alt="Anuncio1">
                             </a>
                         </div>
                     </div>
@@ -92,21 +92,21 @@
                     <div class="col-lg-4">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="../../assets/images/product/Baño1.png" alt="Baño1">
+                                <img class="banner-item img-hover_effect" src="../../assets/images/product/Baño1.png" alt="Baño1">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="../../assets/images/product/Descanso1.png" alt="Descanso1">
+                                <img class="banner-item img-hover_effect" src="../../assets/images/product/Descanso1.png" alt="Descanso1">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="banner-item img-hover_effect">
                             <a href="shop-left-sidebar.php">
-                            <img class="banner-item img-hover_effect" src="../../assets/images/banner/Recepcion1.png" alt="Recepción1">
+                                <img class="banner-item img-hover_effect" src="../../assets/images/banner/Recepcion1.png" alt="Recepción1">
                             </a>
                         </div>
                     </div>
@@ -124,9 +124,9 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                    <div id="contenedor-productos" class="hiraola-product_slider">
- 
-                    </div>
+                        <div id="contenedor-productos" class="hiraola-product_slider">
+                                
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="static-banner-image">
-                        <img class="static-banner-image" src="../../assets/images/product/Mesap1.png" alt="Mesa 1">
+                            <img class="static-banner-image" src="../../assets/images/product/Mesap1.png" alt="Mesa 1">
                             <div class="static-banner-content">
                                 <p><span>-25% de descuento</span>This Week</p>
                                 <h2>Más vendido</h2>
@@ -158,28 +158,23 @@
         </div>
 
         <div class="team-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section_title-2">
-                        <!-- <h4>Nuestro Equipo</h4> -->
-                    </div>
-                </div>
-            </div> <!-- section title end -->
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team-member">
-                        <div class="team-thumb img-hover_effect">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title-2">
+                            <!-- <h4>Nuestro Equipo</h4> -->
                         </div>
-                       
                     </div>
-                </div> <!-- end single team member -->
+                </div> <!-- section title end -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="team-member">
+                            <div class="team-thumb img-hover_effect">
+                            </div>
 
+                        </div>
+                    </div> <!-- end single team member -->
+
+                </div>
             </div>
         </div>
-    </div>
-
-
-
-
-         

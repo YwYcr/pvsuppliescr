@@ -45,7 +45,7 @@ $(document).ready(function () {
 
                     // Agrega el código HTML al contenedor deseado
                     $('#contenedor-productos').append(productoHTML);
-                }
+                } 
             } else {
                 // Maneja el caso donde no hay resultados
                 console.log('No se encontraron productos.');
