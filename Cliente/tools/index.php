@@ -75,12 +75,15 @@ include 'header.php';
 include 'home.php';
 ?> 
 
+
 <?php
 include 'footer.php';
 ?>
 
 
 </div>
+
+<script src="../index.js"></script> 
 
 <!-- JS
 ============================================ -->
@@ -120,7 +123,7 @@ include 'footer.php';
 <script src="../../assets/js/plugins/mailchimp-ajax.js"></script>
 
 <!-- Main JS -->
-<script src="../index.js"></script> 
+<script src="../index.js"></script>
 <script src="../busqueda.js"></script>
 <script src="../categoriafilter.js"></script>
 <script src="../../assets/js/main.js"></script>
@@ -155,7 +158,7 @@ include 'footer.php';
 
  </script>
 
-<script>
+<!-- <script>
     // Función para generar un parámetro único
     function generateUniqueParam() {
         return Date.now(); // Utilizar la marca de tiempo actual como parámetro único
@@ -180,7 +183,7 @@ include 'footer.php';
 
     // Llamar a la función para recargar la página con un parámetro único cuando se carga la página
     window.addEventListener('load', handleLoadEvent);
-</script>
+</script> -->
 
 
 

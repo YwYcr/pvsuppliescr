@@ -41,7 +41,8 @@ $(document).ready(function () {
                         '</div>' +
                         '</div>' +
                         '</div>' +
-                        '</div>';
+                        '</div>' 
+                        ;
 
                     // Agrega el código HTML al contenedor deseado
                     $('#contenedor-productos').append(productoHTML);
